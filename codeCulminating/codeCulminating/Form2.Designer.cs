@@ -36,7 +36,7 @@
             // bmpWood
             // 
             this.bmpWood.Image = ((System.Drawing.Image)(resources.GetObject("bmpWood.Image")));
-            this.bmpWood.Location = new System.Drawing.Point(82, 125);
+            this.bmpWood.Location = new System.Drawing.Point(67, 51);
             this.bmpWood.Name = "bmpWood";
             this.bmpWood.Size = new System.Drawing.Size(57, 58);
             this.bmpWood.TabIndex = 0;

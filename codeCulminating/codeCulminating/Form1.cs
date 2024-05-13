@@ -18,9 +18,29 @@ namespace codeCulminating
         }
 
         int tileSize = 50;
+        frmGraphics frmG = new frmGraphics();  
+        Bitmap backbuffer;                     
+        Bitmap minibuffer;                     
+
+        Bitmap bmpGirl;                        
+        Bitmap bmpWood;
+        Bitmap bmpWater;
+        Rectangle rectSource, rect0, rectDest; 
+        int curX, curY;                        
+        int moves;                             
+        int smallMove = 11;                   
+        int direction;                     
+
+        int[,] map = new int[10, 10];
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+
+            backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
+            minibuffer = new Bitmap(tileSize, tileSize);
+
+
+
             Graphics G;
             G = this.CreateGraphics();
             // for loop to fill the form with black tiles
@@ -28,7 +48,7 @@ namespace codeCulminating
             {
                 for (int y = 0; y < this.Height; y += tileSize)
                 {
-                    G.DrawImage(bmpWood, newX, newY, tileSize, tileSize);
+                    G.DrawImage(bmpWood, x, y, tileSize, tileSize);
 
                 }
             }
