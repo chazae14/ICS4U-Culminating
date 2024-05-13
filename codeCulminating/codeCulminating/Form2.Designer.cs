@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGraphics));
-            this.picWood = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picWood)).BeginInit();
+            this.bmpWood = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             this.SuspendLayout();
             // 
-            // picWood
+            // bmpWood
             // 
-            this.picWood.Image = ((System.Drawing.Image)(resources.GetObject("picWood.Image")));
-            this.picWood.Location = new System.Drawing.Point(82, 125);
-            this.picWood.Name = "picWood";
-            this.picWood.Size = new System.Drawing.Size(57, 58);
-            this.picWood.TabIndex = 0;
-            this.picWood.TabStop = false;
+            this.bmpWood.Image = ((System.Drawing.Image)(resources.GetObject("bmpWood.Image")));
+            this.bmpWood.Location = new System.Drawing.Point(82, 125);
+            this.bmpWood.Name = "bmpWood";
+            this.bmpWood.Size = new System.Drawing.Size(57, 58);
+            this.bmpWood.TabIndex = 0;
+            this.bmpWood.TabStop = false;
             // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.picWood);
+            this.Controls.Add(this.bmpWood);
             this.Name = "frmGraphics";
             this.Text = "Graphics";
-            ((System.ComponentModel.ISupportInitialize)(this.picWood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.PictureBox picWood;
+        public System.Windows.Forms.PictureBox bmpWood;
     }
 }

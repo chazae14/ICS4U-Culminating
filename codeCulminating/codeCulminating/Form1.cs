@@ -17,9 +17,25 @@ namespace codeCulminating
             InitializeComponent();
         }
 
+        int tileSize = 50;
+
         private void frmMain_Load(object sender, EventArgs e)
         {
+            Graphics G;
+            G = this.CreateGraphics();
+            // for loop to fill the form with black tiles
+            for (int x = 0; x < this.Width; x += tileSize)
+            {
+                for (int y = 0; y < this.Height; y += tileSize)
+                {
+                    G.DrawImage(bmpWood, newX, newY, tileSize, tileSize);
 
+                }
+            }
+            G.Dispose();
         }
+
+        // level uno
+
     }
 }
