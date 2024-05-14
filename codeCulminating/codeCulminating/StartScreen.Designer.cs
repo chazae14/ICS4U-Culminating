@@ -44,13 +44,13 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.Location = new System.Drawing.Point(209, 277);
+            this.btnHelp.Location = new System.Drawing.Point(190, 281);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(363, 139);
             this.btnHelp.TabIndex = 1;
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click_1);
             // 
             // StartScreen
             // 

@@ -25,7 +25,7 @@ namespace codeCulminating
             Hide();
         }
 
-        private void btnHelp_Click(object sender, EventArgs e)
+        private void btnHelp_Click_1(object sender, EventArgs e)
         {
             HelpScreen inHelpscreen = new HelpScreen();
             inHelpscreen.Show();
