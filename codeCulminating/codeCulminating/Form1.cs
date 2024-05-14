@@ -30,30 +30,34 @@ namespace codeCulminating
         int moves;                             
         int smallMove = 11;
 
+
+        int direction;
+        int[,] map = new int[28, 16];
+
         private void frmMain_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
             g.DrawImage(backbuffer, 0, 0, backbuffer.Width, backbuffer.Height);
         }
 
-        int direction;                     
-
-        int[,] map = new int[10, 10];
-
+        // form load to load up first map
         private void frmMain_Load(object sender, EventArgs e)
         {
 
             Graphics G;
             G = this.CreateGraphics();
 
+            // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
             minibuffer = new Bitmap(tileSize, tileSize);
 
+            // loading in the images for the first map
+            bmpGirl = new Bitmap(frmG.picGirl.Image, 300, 50);
             bmpWood = new Bitmap(frmG.bmpWood.Image, tileSize, tileSize);
+            rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
             Graphics gback = Graphics.FromImage(backbuffer);
-
-            rect0 = new Rectangle(0, 0, tileSize, tileSize);
+            Graphics gmini = Graphics.FromImage(minibuffer);
 
             // for loop to fill the form with our background tiles
             for (int m = 0; m < 29; m++)
@@ -64,9 +68,19 @@ namespace codeCulminating
                     gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
                 }
             }
+            // rectDest to start out sprite in top left corner
+            rectDest = new Rectangle(0, 0, tileSize, tileSize);
+            rectSource = new Rectangle(0, 0, tileSize, tileSize);
 
+            // drawing out our girl and the background starting from the top left corner
+            gmini.DrawImage(backbuffer, rect0, rectSource, GraphicsUnit.Pixel);
+            gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
+            
+            // girl's current position
+            curX = 0; 
+            curY = 0;
             gback.Dispose();
-
+            gmini.Dispose();
         }
 
         // level uno

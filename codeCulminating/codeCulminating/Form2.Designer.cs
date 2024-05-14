@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGraphics));
             this.bmpWood = new System.Windows.Forms.PictureBox();
+            this.picGirl = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -43,15 +45,27 @@
             this.bmpWood.TabIndex = 0;
             this.bmpWood.TabStop = false;
             // 
+            // picGirl
+            // 
+            this.picGirl.Image = ((System.Drawing.Image)(resources.GetObject("picGirl.Image")));
+            this.picGirl.Location = new System.Drawing.Point(28, 28);
+            this.picGirl.Name = "picGirl";
+            this.picGirl.Size = new System.Drawing.Size(300, 50);
+            this.picGirl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picGirl.TabIndex = 1;
+            this.picGirl.TabStop = false;
+            // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.picGirl);
             this.Controls.Add(this.bmpWood);
             this.Name = "frmGraphics";
             this.Text = "Graphics";
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGirl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -60,5 +74,6 @@
         #endregion
 
         public System.Windows.Forms.PictureBox bmpWood;
+        public System.Windows.Forms.PictureBox picGirl;
     }
 }
