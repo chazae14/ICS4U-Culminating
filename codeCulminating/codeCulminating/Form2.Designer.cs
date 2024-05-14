@@ -36,9 +36,10 @@
             // bmpWood
             // 
             this.bmpWood.Image = ((System.Drawing.Image)(resources.GetObject("bmpWood.Image")));
-            this.bmpWood.Location = new System.Drawing.Point(67, 51);
+            this.bmpWood.Location = new System.Drawing.Point(98, 128);
             this.bmpWood.Name = "bmpWood";
-            this.bmpWood.Size = new System.Drawing.Size(57, 58);
+            this.bmpWood.Size = new System.Drawing.Size(50, 50);
+            this.bmpWood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.bmpWood.TabIndex = 0;
             this.bmpWood.TabStop = false;
             // 
@@ -52,6 +53,7 @@
             this.Text = "Graphics";
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

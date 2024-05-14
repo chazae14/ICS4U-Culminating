@@ -38,21 +38,21 @@ namespace codeCulminating
 
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
             minibuffer = new Bitmap(tileSize, tileSize);
+            Graphics gback = Graphics.FromImage(backbuffer);
 
 
 
             Graphics G;
             G = this.CreateGraphics();
             // for loop to fill the form with black tiles
-            for (int x = 0; x < this.Width; x += tileSize)
+            for (int m = 0; m < 10; m++)
             {
-                for (int y = 0; y < this.Height; y += tileSize)
+                for (int n = 0; n < 10; n++)
                 {
-                    G.DrawImage(bmpWood, x, y, tileSize, tileSize);
-
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
                 }
             }
-            G.Dispose();
         }
 
         // level uno
