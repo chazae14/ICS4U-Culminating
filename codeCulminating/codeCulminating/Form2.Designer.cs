@@ -48,9 +48,9 @@
             // picGirl
             // 
             this.picGirl.Image = ((System.Drawing.Image)(resources.GetObject("picGirl.Image")));
-            this.picGirl.Location = new System.Drawing.Point(28, 28);
+            this.picGirl.Location = new System.Drawing.Point(46, 230);
             this.picGirl.Name = "picGirl";
-            this.picGirl.Size = new System.Drawing.Size(300, 50);
+            this.picGirl.Size = new System.Drawing.Size(162, 108);
             this.picGirl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picGirl.TabIndex = 1;
             this.picGirl.TabStop = false;

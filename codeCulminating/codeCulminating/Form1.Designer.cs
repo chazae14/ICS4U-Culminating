@@ -39,6 +39,7 @@
             this.Text = "Main";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMain_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.ResumeLayout(false);
 
         }

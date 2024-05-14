@@ -32,6 +32,13 @@ namespace codeCulminating
 
 
         int direction;
+
+        // moving the girl in the proper directions
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
         int[,] map = new int[28, 16];
 
         private void frmMain_Paint(object sender, PaintEventArgs e)
@@ -52,7 +59,7 @@ namespace codeCulminating
             minibuffer = new Bitmap(tileSize, tileSize);
 
             // loading in the images for the first map
-            bmpGirl = new Bitmap(frmG.picGirl.Image, 300, 50);
+            bmpGirl = new Bitmap(frmG.picGirl.Image, 162, 108);
             bmpWood = new Bitmap(frmG.bmpWood.Image, tileSize, tileSize);
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
