@@ -24,22 +24,138 @@ namespace codeCulminating
 
         Bitmap bmpGirl;                        
         Bitmap bmpWood;
-        Bitmap bmpWater;
         Rectangle rectSource, rect0, rectDest; 
         int curX, curY;                        
         int moves;                             
-        int smallMove = 11;
-
-
+        int smallMove = 16;
         int direction;
+
+
+        int[,] map = new int[28, 16];
+
+        enum dir
+        {
+            down,
+            left,
+            right,
+            up
+        }
 
         // moving the girl in the proper directions
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
+            if (tmrMove.Enabled == false)
+            {
+                int destTile = 99;              //default destTile is NOT WALKABLE
+                bool walk = true;
 
+                //depending on key pressed, check the tile you would move to (get it's tile number from the map)
+                if (e.KeyCode == Keys.Right)
+                {
+                    direction = (int)dir.right;
+                    if ((curX > 0 && curX < 297) || (curX < 297)) // can go if within bounds 
+                    {
+                        destTile = map[(curX + tileSize) / tileSize, curY / tileSize];
+                    }
+                    else // cant go if out of bounds
+                    {
+                        walk = false;
+                    }
+                }
+                if (e.KeyCode == Keys.Left)
+                {
+                    direction = (int)dir.left;
+                    if (curX <= 0 || curX >= 298) // cant go if out of bounds
+                    {
+                        walk = false;
+                    }
+                    else // can go if within bounds
+                    {
+                        destTile = map[(curX - tileSize) / tileSize, curY / tileSize];
+                    }
+                }
+                else if (e.KeyCode == Keys.Up)
+                {
+                    direction = (int)dir.up;
+                    if (curY <= 0 || curY >= 298) // cant go if out of bounds
+                    {
+                        walk = false;
+                    }
+                    else // can go if within bounds
+                    {
+                        destTile = map[curX / tileSize, (curY - tileSize) / tileSize];
+                    }
+                }
+                else if (e.KeyCode == Keys.Down)
+                {
+                    direction = (int)dir.down;
+
+                    if ((curY > 0 && curY < 297) || (curY < 297)) // can go if within bounds
+                    {
+                        destTile = map[curX / tileSize, (curY + tileSize) / tileSize];
+                    }
+                    else // cant go if out of bounds
+                    {
+                        walk = false;
+                    }
+                }
+
+                if ((destTile == 0 || destTile == 3) && walk)             //grass - 0 - is only WALKABLE tile.
+                {
+                    moves = 0;
+                    tmrMove.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("You can't go there!");
+                    walk = true;
+                }
+            }
         }
 
-        int[,] map = new int[28, 16];
+        private void tmrMove_Tick(object sender, EventArgs e)
+        {
+            Graphics gback = Graphics.FromImage(backbuffer);
+            Graphics gmini = Graphics.FromImage(minibuffer);
+
+            //Heal the backbuffer (this essentially erases your sprite from the backbuffer)
+            gback.DrawImage(minibuffer, rectSource, rect0, GraphicsUnit.Pixel);
+
+            //adjust x or y coordinates based on direction
+            if (direction == (int)dir.right)
+            {
+                curX += smallMove;
+            }
+            else if (direction == (int)dir.left)
+            {
+                curX -= smallMove;
+            }
+            else if (direction == (int)dir.up)
+            {
+                curY -= smallMove;
+            }
+            else if (direction == (int)dir.down)
+            {
+                curY += smallMove;
+            }
+
+            //Preserve the area of the backbuffer that you intend to move to next
+            rectSource = new Rectangle(curX, curY, tileSize, tileSize);
+            gmini.DrawImage(backbuffer, rect0, rectSource, GraphicsUnit.Pixel);
+
+            //Move your sprite onto the backbuffer at the preserved location
+            //Notice the y-coordinate of where we grab our sprite is multiplied by the direction (0, 1, 2 or 3)
+            rectDest = new Rectangle(moves * tileSize, direction * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpGirl, rectSource, rectDest, GraphicsUnit.Pixel);
+            this.Invalidate();
+
+            //Track the number of mini-moves.  Stop after the 3rd one (because our spritemap has 3 frames)
+            moves++;
+            if (moves == 3)
+            {
+                tmrMove.Enabled = false;
+            }
+        }
 
         private void frmMain_Paint(object sender, PaintEventArgs e)
         {

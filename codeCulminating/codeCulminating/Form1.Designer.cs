@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.tmrMove = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // frmMain
@@ -45,6 +48,9 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer tmrMove;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
