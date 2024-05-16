@@ -23,8 +23,10 @@ namespace codeCulminating
         int tileSize = 50;
         frmGraphics frmG = new frmGraphics();  
         Bitmap backbuffer;                     
-        Bitmap minibuffer;                     
-
+        Bitmap minibuffer;
+        Bitmap bmpWall;
+        Bitmap bmpWindow;
+        Bitmap bmpBlack;
         Bitmap bmpGirl;                        
         Bitmap bmpWood;
         Rectangle rectSource, rect0, rectDest; 
@@ -34,7 +36,7 @@ namespace codeCulminating
         int direction;
 
 
-        int[,] map = new int[28, 16];
+        int[,] map = new int[29, 16];
 
         enum dir
         {
@@ -180,22 +182,34 @@ namespace codeCulminating
             // loading in the images for the first map
             bmpGirl = new Bitmap(frmG.picGirl.Image, 162, 108);
             bmpWood = new Bitmap(frmG.bmpWood.Image, tileSize, tileSize);
+            bmpBlack = new Bitmap(frmG.picBlackTile.Image, tileSize, tileSize);
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
             Graphics gback = Graphics.FromImage(backbuffer);
             Graphics gmini = Graphics.FromImage(minibuffer);
 
-            // for loop to fill the form with our background tiles
-            for (int m = 0; m < 29; m++)
+
+            for (int x = 0; x < 29; x++)
             {
-                for (int n = 0; n < 16; n++)
+                for(int y = 0; y < 16; y++)
                 {
-                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
-                    gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
+                    rectDest = new Rectangle(x * tileSize, y * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpBlack, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(x), (y)] = 0;
                 }
             }
 
-            for (int x = 0; x <  )
+            // for loop to fill the form with our background tiles
+            for (int m = 6; m < 20; m++)
+            {
+                for (int n = 6; n < 13; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 1;
+                }
+            }
+
 
 
             // rectDest to start out sprite in top left corner

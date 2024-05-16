@@ -35,12 +35,14 @@
             this.picWindow = new System.Windows.Forms.PictureBox();
             this.picPlainWall = new System.Windows.Forms.PictureBox();
             this.picBottomWall = new System.Windows.Forms.PictureBox();
+            this.picBlackTile = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCarpet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomWall)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBlackTile)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -103,11 +105,22 @@
             this.picBottomWall.TabIndex = 5;
             this.picBottomWall.TabStop = false;
             // 
+            // picBlackTile
+            // 
+            this.picBlackTile.Image = ((System.Drawing.Image)(resources.GetObject("picBlackTile.Image")));
+            this.picBlackTile.Location = new System.Drawing.Point(225, 114);
+            this.picBlackTile.Name = "picBlackTile";
+            this.picBlackTile.Size = new System.Drawing.Size(50, 50);
+            this.picBlackTile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBlackTile.TabIndex = 6;
+            this.picBlackTile.TabStop = false;
+            // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.picBlackTile);
             this.Controls.Add(this.picBottomWall);
             this.Controls.Add(this.picPlainWall);
             this.Controls.Add(this.picWindow);
@@ -122,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWindow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomWall)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBlackTile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,7 +147,8 @@
         public System.Windows.Forms.PictureBox picGirl;
         public System.Windows.Forms.PictureBox picCarpet;
         public System.Windows.Forms.PictureBox picWindow;
-        private System.Windows.Forms.PictureBox picPlainWall;
-        private System.Windows.Forms.PictureBox picBottomWall;
+        public System.Windows.Forms.PictureBox picPlainWall;
+        public System.Windows.Forms.PictureBox picBottomWall;
+        public System.Windows.Forms.PictureBox picBlackTile;
     }
 }
