@@ -17,14 +17,16 @@ namespace codeCulminating
             InitializeComponent();
         }
 
+        // When clicked open game window
         private void btnStart_Click(object sender, EventArgs e)
         {
             frmMain inGamescreen = new frmMain();
             
             inGamescreen.Show();
-            Hide();
+            
         }
-
+        
+        // When clicked open Help window
         private void btnHelp_Click_1(object sender, EventArgs e)
         {
             HelpScreen inHelpscreen = new HelpScreen();
