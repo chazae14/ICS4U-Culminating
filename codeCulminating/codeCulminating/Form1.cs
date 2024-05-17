@@ -30,6 +30,17 @@ namespace codeCulminating
         Bitmap bmpBlack;
         Bitmap bmpGirl;                        
         Bitmap bmpWood;
+        Bitmap bmpMouseHole;
+        Bitmap bmpTopLeftCarpet;
+        Bitmap bmpTopRightCarpet;
+        Bitmap bmpBottomLeftCarpet;
+        Bitmap bmpBottomRightCarpet;
+        Bitmap bmpLeftCarpet;
+        Bitmap bmpRightCarpet;
+        Bitmap bmpCenterCarpet;
+        Bitmap bmpTopSideCarpet;
+        Bitmap bmpBottomSideCarpet;
+
         Rectangle rectSource, rect0, rectDest; 
         int curX, curY;                        
         int moves;                             
@@ -187,6 +198,16 @@ namespace codeCulminating
             bmpBottomWall = new Bitmap(frmG.picBottomWall.Image, tileSize, tileSize);
             bmpWall = new Bitmap(frmG.picPlainWall.Image, tileSize, tileSize);
             bmpWindow = new Bitmap(frmG.picWindow.Image, tileSize, tileSize);
+            bmpMouseHole = new Bitmap(frmG.picMouseHole.Image, tileSize, tileSize);
+            bmpTopLeftCarpet = new Bitmap(frmG.picToLeftCar.Image, tileSize, tileSize);
+            bmpTopRightCarpet = new Bitmap(frmG.picTopRightCar.Image, tileSize, tileSize);
+            bmpBottomLeftCarpet = new Bitmap (frmG.picBottomLeftCar.Image, tileSize, tileSize);
+            bmpBottomRightCarpet = new Bitmap (frmG.picBottomRightCar.Image, tileSize, tileSize);
+            bmpLeftCarpet = new Bitmap(frmG.picLeftSideCar.Image, tileSize, tileSize);
+            bmpRightCarpet = new Bitmap(frmG.picRightSideCar.Image, tileSize, tileSize);
+            bmpCenterCarpet = new Bitmap(frmG.picCenterCarpet.Image, tileSize, tileSize);
+            bmpBottomSideCarpet = new Bitmap(frmG.picBottomSideCar.Image, tileSize, tileSize);
+
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
             Graphics gback = Graphics.FromImage(backbuffer);
@@ -203,7 +224,7 @@ namespace codeCulminating
                 }
             }
 
-            // for loop to fill the form with our background tiles
+            // for loop to display with floor/wood tiles
             for (int m = 6; m < 20; m++)
             {
                 for (int n = 6; n < 13; n++)
@@ -214,6 +235,7 @@ namespace codeCulminating
                 }
             }
 
+            // for loop to display the crowning of the wakll
             for (int b = 6; b < 20; b++)
             {
                 for (int c = 5; c <6; c++)
@@ -224,6 +246,7 @@ namespace codeCulminating
                 }
             }
 
+            // for loop to display wall
             for (int g = 6; g < 20; g++)
             {
                 for (int h = 3; h < 5; h++)
@@ -234,9 +257,22 @@ namespace codeCulminating
                 }
             }
 
-
+            // displaying the window
             rectDest = new Rectangle(11 * tileSize, 4 * tileSize, 150, 100);
             gback.DrawImage(bmpWindow, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (4)] = 5;
+
+            // displaying the mouse hole
+            rectDest = new Rectangle(14 * tileSize, 5 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpMouseHole, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(14), (5)] = 6;
+
+            // displaying carpet
+            // displaying top left corner
+            rectDest = new Rectangle(11 * tileSize, 8 * tileSize, 200, 150);
+            gback.DrawImage(bmpTopLeftCarpet, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (8)] = 6;
+
 
             // rectDest to start out sprite in top left corner
             rectDest = new Rectangle(0, 0, tileSize, tileSize);
