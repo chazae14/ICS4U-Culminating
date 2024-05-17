@@ -25,6 +25,7 @@ namespace codeCulminating
         Bitmap backbuffer;                     
         Bitmap minibuffer;
         Bitmap bmpWall;
+        Bitmap bmpBottomWall;
         Bitmap bmpWindow;
         Bitmap bmpBlack;
         Bitmap bmpGirl;                        
@@ -183,6 +184,9 @@ namespace codeCulminating
             bmpGirl = new Bitmap(frmG.picGirl.Image, 162, 108);
             bmpWood = new Bitmap(frmG.bmpWood.Image, tileSize, tileSize);
             bmpBlack = new Bitmap(frmG.picBlackTile.Image, tileSize, tileSize);
+            bmpBottomWall = new Bitmap(frmG.picBottomWall.Image, tileSize, tileSize);
+            bmpWall = new Bitmap(frmG.picPlainWall.Image, tileSize, tileSize);
+            bmpWindow = new Bitmap(frmG.picWindow.Image, tileSize, tileSize);
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
             Graphics gback = Graphics.FromImage(backbuffer);
@@ -210,7 +214,29 @@ namespace codeCulminating
                 }
             }
 
+            for (int b = 6; b < 20; b++)
+            {
+                for (int c = 5; c <6; c++)
+                {
+                    rectDest = new Rectangle(b * tileSize, c * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpBottomWall, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(b), (c)] = 2;
+                }
+            }
 
+            for (int g = 6; g < 20; g++)
+            {
+                for (int h = 3; h < 5; h++)
+                {
+                    rectDest = new Rectangle(g * tileSize, h * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpWall, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(g), (h)] = 3;
+                }
+            }
+
+
+            rectDest = new Rectangle(11 * tileSize, 4 * tileSize, 150, 100);
+            gback.DrawImage(bmpWindow, rectDest, rect0, GraphicsUnit.Pixel);
 
             // rectDest to start out sprite in top left corner
             rectDest = new Rectangle(0, 0, tileSize, tileSize);
