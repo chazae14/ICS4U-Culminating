@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -133,9 +134,11 @@
             this.label94 = new System.Windows.Forms.Label();
             this.label95 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
-            this.lblFinish = new System.Windows.Forms.Label();
-            this.lblStart = new System.Windows.Forms.Label();
             this.label97 = new System.Windows.Forms.Label();
+            this.lblStart = new System.Windows.Forms.Label();
+            this.lblEnd = new System.Windows.Forms.Label();
+            this.GameTime = new System.Windows.Forms.Timer(this.components);
+            this.lblTime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -146,6 +149,7 @@
             this.label1.Size = new System.Drawing.Size(11, 682);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
+            this.label1.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label2
             // 
@@ -155,6 +159,7 @@
             this.label2.Size = new System.Drawing.Size(57, 10);
             this.label2.TabIndex = 2;
             this.label2.Text = "label2";
+            this.label2.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label3
             // 
@@ -164,15 +169,17 @@
             this.label3.Size = new System.Drawing.Size(666, 10);
             this.label3.TabIndex = 4;
             this.label3.Text = "label3";
+            this.label3.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(734, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(10, 682);
+            this.label4.Size = new System.Drawing.Size(10, 688);
             this.label4.TabIndex = 5;
             this.label4.Text = "label4";
+            this.label4.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label5
             // 
@@ -182,6 +189,7 @@
             this.label5.Size = new System.Drawing.Size(669, 10);
             this.label5.TabIndex = 6;
             this.label5.Text = "label5";
+            this.label5.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label6
             // 
@@ -191,6 +199,7 @@
             this.label6.Size = new System.Drawing.Size(10, 52);
             this.label6.TabIndex = 7;
             this.label6.Text = "label6";
+            this.label6.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label7
             // 
@@ -200,6 +209,7 @@
             this.label7.Size = new System.Drawing.Size(63, 10);
             this.label7.TabIndex = 8;
             this.label7.Text = "label7";
+            this.label7.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label8
             // 
@@ -209,6 +219,7 @@
             this.label8.Size = new System.Drawing.Size(10, 238);
             this.label8.TabIndex = 9;
             this.label8.Text = "label8";
+            this.label8.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label9
             // 
@@ -218,6 +229,7 @@
             this.label9.Size = new System.Drawing.Size(162, 10);
             this.label9.TabIndex = 10;
             this.label9.Text = "label9";
+            this.label9.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label10
             // 
@@ -227,6 +239,7 @@
             this.label10.Size = new System.Drawing.Size(10, 52);
             this.label10.TabIndex = 11;
             this.label10.Text = "label10";
+            this.label10.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label11
             // 
@@ -236,6 +249,7 @@
             this.label11.Size = new System.Drawing.Size(53, 10);
             this.label11.TabIndex = 12;
             this.label11.Text = "label11";
+            this.label11.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label12
             // 
@@ -245,6 +259,7 @@
             this.label12.Size = new System.Drawing.Size(10, 52);
             this.label12.TabIndex = 13;
             this.label12.Text = "label12";
+            this.label12.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label13
             // 
@@ -254,6 +269,7 @@
             this.label13.Size = new System.Drawing.Size(55, 10);
             this.label13.TabIndex = 14;
             this.label13.Text = "label13";
+            this.label13.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label14
             // 
@@ -263,6 +279,7 @@
             this.label14.Size = new System.Drawing.Size(10, 94);
             this.label14.TabIndex = 15;
             this.label14.Text = "label14";
+            this.label14.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label15
             // 
@@ -272,6 +289,7 @@
             this.label15.Size = new System.Drawing.Size(186, 11);
             this.label15.TabIndex = 16;
             this.label15.Text = "label15";
+            this.label15.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label16
             // 
@@ -281,6 +299,7 @@
             this.label16.Size = new System.Drawing.Size(10, 52);
             this.label16.TabIndex = 17;
             this.label16.Text = "v";
+            this.label16.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label17
             // 
@@ -290,6 +309,7 @@
             this.label17.Size = new System.Drawing.Size(50, 10);
             this.label17.TabIndex = 18;
             this.label17.Text = "label17";
+            this.label17.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label18
             // 
@@ -299,6 +319,7 @@
             this.label18.Size = new System.Drawing.Size(10, 94);
             this.label18.TabIndex = 19;
             this.label18.Text = "label18";
+            this.label18.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label19
             // 
@@ -308,6 +329,7 @@
             this.label19.Size = new System.Drawing.Size(135, 10);
             this.label19.TabIndex = 20;
             this.label19.Text = "label19";
+            this.label19.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label20
             // 
@@ -317,6 +339,7 @@
             this.label20.Size = new System.Drawing.Size(71, 10);
             this.label20.TabIndex = 21;
             this.label20.Text = "label20";
+            this.label20.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label21
             // 
@@ -326,6 +349,7 @@
             this.label21.Size = new System.Drawing.Size(10, 95);
             this.label21.TabIndex = 22;
             this.label21.Text = "label21";
+            this.label21.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label22
             // 
@@ -335,6 +359,7 @@
             this.label22.Size = new System.Drawing.Size(47, 11);
             this.label22.TabIndex = 23;
             this.label22.Text = "label22";
+            this.label22.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label23
             // 
@@ -344,6 +369,7 @@
             this.label23.Size = new System.Drawing.Size(10, 102);
             this.label23.TabIndex = 24;
             this.label23.Text = "label23";
+            this.label23.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label24
             // 
@@ -353,6 +379,7 @@
             this.label24.Size = new System.Drawing.Size(54, 10);
             this.label24.TabIndex = 25;
             this.label24.Text = "label24";
+            this.label24.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label25
             // 
@@ -362,6 +389,7 @@
             this.label25.Size = new System.Drawing.Size(56, 10);
             this.label25.TabIndex = 26;
             this.label25.Text = "label25";
+            this.label25.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label26
             // 
@@ -371,6 +399,7 @@
             this.label26.Size = new System.Drawing.Size(10, 142);
             this.label26.TabIndex = 27;
             this.label26.Text = "label26";
+            this.label26.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label27
             // 
@@ -380,6 +409,7 @@
             this.label27.Size = new System.Drawing.Size(95, 11);
             this.label27.TabIndex = 28;
             this.label27.Text = "label27";
+            this.label27.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label28
             // 
@@ -389,6 +419,7 @@
             this.label28.Size = new System.Drawing.Size(10, 52);
             this.label28.TabIndex = 29;
             this.label28.Text = "label28";
+            this.label28.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label29
             // 
@@ -398,6 +429,7 @@
             this.label29.Size = new System.Drawing.Size(49, 10);
             this.label29.TabIndex = 30;
             this.label29.Text = "label29";
+            this.label29.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label30
             // 
@@ -407,6 +439,7 @@
             this.label30.Size = new System.Drawing.Size(10, 52);
             this.label30.TabIndex = 31;
             this.label30.Text = "label30";
+            this.label30.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label31
             // 
@@ -416,6 +449,7 @@
             this.label31.Size = new System.Drawing.Size(10, 143);
             this.label31.TabIndex = 32;
             this.label31.Text = "label31";
+            this.label31.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label32
             // 
@@ -425,6 +459,7 @@
             this.label32.Size = new System.Drawing.Size(62, 10);
             this.label32.TabIndex = 33;
             this.label32.Text = "label32";
+            this.label32.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label33
             // 
@@ -434,6 +469,7 @@
             this.label33.Size = new System.Drawing.Size(10, 61);
             this.label33.TabIndex = 34;
             this.label33.Text = "label33";
+            this.label33.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label34
             // 
@@ -443,6 +479,7 @@
             this.label34.Size = new System.Drawing.Size(87, 10);
             this.label34.TabIndex = 35;
             this.label34.Text = "label34";
+            this.label34.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label35
             // 
@@ -452,6 +489,7 @@
             this.label35.Size = new System.Drawing.Size(10, 121);
             this.label35.TabIndex = 36;
             this.label35.Text = "label35";
+            this.label35.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label36
             // 
@@ -461,6 +499,7 @@
             this.label36.Size = new System.Drawing.Size(57, 10);
             this.label36.TabIndex = 37;
             this.label36.Text = "label36";
+            this.label36.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label37
             // 
@@ -470,6 +509,7 @@
             this.label37.Size = new System.Drawing.Size(66, 10);
             this.label37.TabIndex = 38;
             this.label37.Text = "label37";
+            this.label37.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label38
             // 
@@ -479,6 +519,7 @@
             this.label38.Size = new System.Drawing.Size(10, 52);
             this.label38.TabIndex = 39;
             this.label38.Text = "label38";
+            this.label38.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label39
             // 
@@ -488,6 +529,7 @@
             this.label39.Size = new System.Drawing.Size(144, 10);
             this.label39.TabIndex = 40;
             this.label39.Text = "label39";
+            this.label39.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label40
             // 
@@ -497,6 +539,7 @@
             this.label40.Size = new System.Drawing.Size(10, 56);
             this.label40.TabIndex = 41;
             this.label40.Text = "label40";
+            this.label40.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label41
             // 
@@ -506,6 +549,7 @@
             this.label41.Size = new System.Drawing.Size(225, 10);
             this.label41.TabIndex = 42;
             this.label41.Text = "label41";
+            this.label41.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label42
             // 
@@ -515,6 +559,7 @@
             this.label42.Size = new System.Drawing.Size(10, 120);
             this.label42.TabIndex = 43;
             this.label42.Text = "label42";
+            this.label42.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label43
             // 
@@ -524,6 +569,7 @@
             this.label43.Size = new System.Drawing.Size(142, 10);
             this.label43.TabIndex = 44;
             this.label43.Text = "label43";
+            this.label43.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label44
             // 
@@ -533,6 +579,7 @@
             this.label44.Size = new System.Drawing.Size(10, 360);
             this.label44.TabIndex = 45;
             this.label44.Text = "label44";
+            this.label44.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label45
             // 
@@ -542,6 +589,7 @@
             this.label45.Size = new System.Drawing.Size(44, 10);
             this.label45.TabIndex = 46;
             this.label45.Text = "label45";
+            this.label45.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label46
             // 
@@ -551,6 +599,7 @@
             this.label46.Size = new System.Drawing.Size(44, 10);
             this.label46.TabIndex = 47;
             this.label46.Text = "label46";
+            this.label46.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label47
             // 
@@ -560,6 +609,7 @@
             this.label47.Size = new System.Drawing.Size(234, 10);
             this.label47.TabIndex = 48;
             this.label47.Text = "label47";
+            this.label47.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label48
             // 
@@ -569,6 +619,7 @@
             this.label48.Size = new System.Drawing.Size(73, 10);
             this.label48.TabIndex = 49;
             this.label48.Text = "label48";
+            this.label48.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label49
             // 
@@ -578,6 +629,7 @@
             this.label49.Size = new System.Drawing.Size(10, 47);
             this.label49.TabIndex = 50;
             this.label49.Text = "label49";
+            this.label49.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label50
             // 
@@ -587,6 +639,7 @@
             this.label50.Size = new System.Drawing.Size(58, 10);
             this.label50.TabIndex = 51;
             this.label50.Text = "label50";
+            this.label50.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label51
             // 
@@ -596,6 +649,7 @@
             this.label51.Size = new System.Drawing.Size(10, 49);
             this.label51.TabIndex = 52;
             this.label51.Text = "label51";
+            this.label51.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label52
             // 
@@ -605,6 +659,7 @@
             this.label52.Size = new System.Drawing.Size(55, 10);
             this.label52.TabIndex = 53;
             this.label52.Text = "label52";
+            this.label52.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label53
             // 
@@ -614,6 +669,7 @@
             this.label53.Size = new System.Drawing.Size(139, 10);
             this.label53.TabIndex = 54;
             this.label53.Text = "label53";
+            this.label53.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label54
             // 
@@ -623,6 +679,7 @@
             this.label54.Size = new System.Drawing.Size(11, 74);
             this.label54.TabIndex = 55;
             this.label54.Text = "label54";
+            this.label54.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label55
             // 
@@ -632,6 +689,7 @@
             this.label55.Size = new System.Drawing.Size(59, 10);
             this.label55.TabIndex = 56;
             this.label55.Text = "label55";
+            this.label55.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label56
             // 
@@ -641,6 +699,7 @@
             this.label56.Size = new System.Drawing.Size(11, 124);
             this.label56.TabIndex = 57;
             this.label56.Text = "label56";
+            this.label56.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label57
             // 
@@ -650,6 +709,7 @@
             this.label57.Size = new System.Drawing.Size(140, 10);
             this.label57.TabIndex = 58;
             this.label57.Text = "label57";
+            this.label57.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label58
             // 
@@ -659,6 +719,7 @@
             this.label58.Size = new System.Drawing.Size(10, 79);
             this.label58.TabIndex = 59;
             this.label58.Text = "label58";
+            this.label58.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label59
             // 
@@ -668,6 +729,7 @@
             this.label59.Size = new System.Drawing.Size(98, 10);
             this.label59.TabIndex = 60;
             this.label59.Text = "label59";
+            this.label59.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label60
             // 
@@ -677,6 +739,7 @@
             this.label60.Size = new System.Drawing.Size(10, 61);
             this.label60.TabIndex = 61;
             this.label60.Text = "label60";
+            this.label60.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label61
             // 
@@ -686,6 +749,7 @@
             this.label61.Size = new System.Drawing.Size(10, 138);
             this.label61.TabIndex = 62;
             this.label61.Text = "label61";
+            this.label61.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label62
             // 
@@ -695,6 +759,7 @@
             this.label62.Size = new System.Drawing.Size(143, 10);
             this.label62.TabIndex = 63;
             this.label62.Text = "label62";
+            this.label62.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label63
             // 
@@ -704,6 +769,7 @@
             this.label63.Size = new System.Drawing.Size(145, 10);
             this.label63.TabIndex = 64;
             this.label63.Text = "label63";
+            this.label63.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label64
             // 
@@ -713,6 +779,7 @@
             this.label64.Size = new System.Drawing.Size(10, 52);
             this.label64.TabIndex = 65;
             this.label64.Text = "label64";
+            this.label64.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label65
             // 
@@ -722,6 +789,7 @@
             this.label65.Size = new System.Drawing.Size(11, 89);
             this.label65.TabIndex = 66;
             this.label65.Text = "label65";
+            this.label65.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label66
             // 
@@ -731,6 +799,7 @@
             this.label66.Size = new System.Drawing.Size(90, 10);
             this.label66.TabIndex = 67;
             this.label66.Text = "v";
+            this.label66.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label67
             // 
@@ -740,6 +809,7 @@
             this.label67.Size = new System.Drawing.Size(10, 225);
             this.label67.TabIndex = 68;
             this.label67.Text = "label67";
+            this.label67.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label68
             // 
@@ -749,6 +819,7 @@
             this.label68.Size = new System.Drawing.Size(10, 52);
             this.label68.TabIndex = 69;
             this.label68.Text = "label68";
+            this.label68.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label69
             // 
@@ -758,6 +829,7 @@
             this.label69.Size = new System.Drawing.Size(10, 200);
             this.label69.TabIndex = 70;
             this.label69.Text = "label69";
+            this.label69.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label70
             // 
@@ -767,6 +839,7 @@
             this.label70.Size = new System.Drawing.Size(97, 10);
             this.label70.TabIndex = 71;
             this.label70.Text = "label70";
+            this.label70.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label71
             // 
@@ -776,6 +849,7 @@
             this.label71.Size = new System.Drawing.Size(10, 52);
             this.label71.TabIndex = 72;
             this.label71.Text = "label71";
+            this.label71.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label72
             // 
@@ -785,6 +859,7 @@
             this.label72.Size = new System.Drawing.Size(11, 95);
             this.label72.TabIndex = 73;
             this.label72.Text = "label72";
+            this.label72.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label73
             // 
@@ -794,6 +869,7 @@
             this.label73.Size = new System.Drawing.Size(10, 124);
             this.label73.TabIndex = 74;
             this.label73.Text = "label73";
+            this.label73.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label74
             // 
@@ -803,6 +879,7 @@
             this.label74.Size = new System.Drawing.Size(392, 10);
             this.label74.TabIndex = 75;
             this.label74.Text = "label74";
+            this.label74.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label75
             // 
@@ -812,6 +889,7 @@
             this.label75.Size = new System.Drawing.Size(10, 82);
             this.label75.TabIndex = 76;
             this.label75.Text = "label75";
+            this.label75.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label76
             // 
@@ -821,6 +899,7 @@
             this.label76.Size = new System.Drawing.Size(10, 203);
             this.label76.TabIndex = 77;
             this.label76.Text = "label76";
+            this.label76.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label77
             // 
@@ -830,6 +909,7 @@
             this.label77.Size = new System.Drawing.Size(10, 94);
             this.label77.TabIndex = 78;
             this.label77.Text = "label77";
+            this.label77.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label78
             // 
@@ -839,6 +919,7 @@
             this.label78.Size = new System.Drawing.Size(146, 10);
             this.label78.TabIndex = 79;
             this.label78.Text = "label78";
+            this.label78.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label79
             // 
@@ -848,6 +929,7 @@
             this.label79.Size = new System.Drawing.Size(10, 164);
             this.label79.TabIndex = 80;
             this.label79.Text = "label79";
+            this.label79.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label80
             // 
@@ -857,6 +939,7 @@
             this.label80.Size = new System.Drawing.Size(10, 51);
             this.label80.TabIndex = 81;
             this.label80.Text = "label80";
+            this.label80.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label81
             // 
@@ -866,6 +949,7 @@
             this.label81.Size = new System.Drawing.Size(127, 10);
             this.label81.TabIndex = 82;
             this.label81.Text = "label81";
+            this.label81.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label82
             // 
@@ -875,6 +959,7 @@
             this.label82.Size = new System.Drawing.Size(10, 52);
             this.label82.TabIndex = 83;
             this.label82.Text = "label82";
+            this.label82.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label83
             // 
@@ -884,6 +969,7 @@
             this.label83.Size = new System.Drawing.Size(54, 10);
             this.label83.TabIndex = 84;
             this.label83.Text = "label83";
+            this.label83.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label84
             // 
@@ -893,6 +979,7 @@
             this.label84.Size = new System.Drawing.Size(10, 113);
             this.label84.TabIndex = 85;
             this.label84.Text = "label84";
+            this.label84.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label85
             // 
@@ -902,6 +989,7 @@
             this.label85.Size = new System.Drawing.Size(10, 31);
             this.label85.TabIndex = 86;
             this.label85.Text = "label85";
+            this.label85.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label86
             // 
@@ -911,6 +999,7 @@
             this.label86.Size = new System.Drawing.Size(180, 10);
             this.label86.TabIndex = 87;
             this.label86.Text = "label86";
+            this.label86.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label87
             // 
@@ -920,6 +1009,7 @@
             this.label87.Size = new System.Drawing.Size(249, 10);
             this.label87.TabIndex = 88;
             this.label87.Text = "label87";
+            this.label87.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label88
             // 
@@ -929,15 +1019,17 @@
             this.label88.Size = new System.Drawing.Size(10, 239);
             this.label88.TabIndex = 89;
             this.label88.Text = "label88";
+            this.label88.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label89
             // 
             this.label89.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label89.Location = new System.Drawing.Point(232, 492);
             this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(54, 10);
+            this.label89.Size = new System.Drawing.Size(47, 10);
             this.label89.TabIndex = 90;
             this.label89.Text = "label89";
+            this.label89.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label90
             // 
@@ -947,6 +1039,7 @@
             this.label90.Size = new System.Drawing.Size(118, 10);
             this.label90.TabIndex = 91;
             this.label90.Text = "label90";
+            this.label90.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label99
             // 
@@ -956,6 +1049,7 @@
             this.label99.Size = new System.Drawing.Size(175, 10);
             this.label99.TabIndex = 100;
             this.label99.Text = "label99";
+            this.label99.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label100
             // 
@@ -965,6 +1059,7 @@
             this.label100.Size = new System.Drawing.Size(116, 10);
             this.label100.TabIndex = 101;
             this.label100.Text = "label100";
+            this.label100.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label101
             // 
@@ -974,6 +1069,7 @@
             this.label101.Size = new System.Drawing.Size(10, 76);
             this.label101.TabIndex = 102;
             this.label101.Text = "label101";
+            this.label101.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label102
             // 
@@ -983,6 +1079,7 @@
             this.label102.Size = new System.Drawing.Size(66, 10);
             this.label102.TabIndex = 103;
             this.label102.Text = "label102";
+            this.label102.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label103
             // 
@@ -992,24 +1089,27 @@
             this.label103.Size = new System.Drawing.Size(10, 50);
             this.label103.TabIndex = 104;
             this.label103.Text = "label103";
+            this.label103.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label104
             // 
             this.label104.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label104.Location = new System.Drawing.Point(232, 549);
             this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(57, 10);
+            this.label104.Size = new System.Drawing.Size(50, 10);
             this.label104.TabIndex = 105;
             this.label104.Text = "label104";
+            this.label104.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label105
             // 
             this.label105.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label105.Location = new System.Drawing.Point(298, 525);
+            this.label105.Location = new System.Drawing.Point(304, 525);
             this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(53, 10);
+            this.label105.Size = new System.Drawing.Size(47, 10);
             this.label105.TabIndex = 106;
             this.label105.Text = "label105";
+            this.label105.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label108
             // 
@@ -1019,6 +1119,7 @@
             this.label108.Size = new System.Drawing.Size(76, 10);
             this.label108.TabIndex = 109;
             this.label108.Text = "label108";
+            this.label108.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label112
             // 
@@ -1028,6 +1129,7 @@
             this.label112.Size = new System.Drawing.Size(124, 10);
             this.label112.TabIndex = 113;
             this.label112.Text = "label112";
+            this.label112.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label91
             // 
@@ -1037,6 +1139,7 @@
             this.label91.Size = new System.Drawing.Size(10, 49);
             this.label91.TabIndex = 114;
             this.label91.Text = "label91";
+            this.label91.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label92
             // 
@@ -1046,6 +1149,7 @@
             this.label92.Size = new System.Drawing.Size(128, 10);
             this.label92.TabIndex = 115;
             this.label92.Text = "label92";
+            this.label92.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label93
             // 
@@ -1055,6 +1159,7 @@
             this.label93.Size = new System.Drawing.Size(10, 51);
             this.label93.TabIndex = 116;
             this.label93.Text = "label93";
+            this.label93.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label94
             // 
@@ -1064,6 +1169,7 @@
             this.label94.Size = new System.Drawing.Size(10, 51);
             this.label94.TabIndex = 117;
             this.label94.Text = "label94";
+            this.label94.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label95
             // 
@@ -1073,6 +1179,7 @@
             this.label95.Size = new System.Drawing.Size(10, 51);
             this.label95.TabIndex = 118;
             this.label95.Text = "label95";
+            this.label95.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label96
             // 
@@ -1082,24 +1189,7 @@
             this.label96.Size = new System.Drawing.Size(10, 51);
             this.label96.TabIndex = 119;
             this.label96.Text = "label96";
-            // 
-            // lblFinish
-            // 
-            this.lblFinish.AutoSize = true;
-            this.lblFinish.Location = new System.Drawing.Point(696, 702);
-            this.lblFinish.Name = "lblFinish";
-            this.lblFinish.Size = new System.Drawing.Size(34, 13);
-            this.lblFinish.TabIndex = 120;
-            this.lblFinish.Text = "Finish";
-            // 
-            // lblStart
-            // 
-            this.lblStart.AutoSize = true;
-            this.lblStart.Location = new System.Drawing.Point(38, 9);
-            this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(29, 13);
-            this.lblStart.TabIndex = 121;
-            this.lblStart.Text = "Start";
+            this.label96.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // label97
             // 
@@ -1109,15 +1199,49 @@
             this.label97.Size = new System.Drawing.Size(55, 10);
             this.label97.TabIndex = 122;
             this.label97.Text = "label97";
+            this.label97.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
+            // 
+            // lblStart
+            // 
+            this.lblStart.AutoSize = true;
+            this.lblStart.Location = new System.Drawing.Point(36, 21);
+            this.lblStart.Name = "lblStart";
+            this.lblStart.Size = new System.Drawing.Size(29, 13);
+            this.lblStart.TabIndex = 123;
+            this.lblStart.Text = "Start";
+            // 
+            // lblEnd
+            // 
+            this.lblEnd.AutoSize = true;
+            this.lblEnd.Location = new System.Drawing.Point(702, 695);
+            this.lblEnd.Name = "lblEnd";
+            this.lblEnd.Size = new System.Drawing.Size(26, 13);
+            this.lblEnd.TabIndex = 124;
+            this.lblEnd.Text = "End";
+            this.lblEnd.MouseEnter += new System.EventHandler(this.lblEnd_MouseEnter);
+            // 
+            // GameTime
+            // 
+            this.GameTime.Interval = 1000;
+            this.GameTime.Tick += new System.EventHandler(this.GameTime_Tick);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(347, 5);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(0, 13);
+            this.lblTime.TabIndex = 125;
             // 
             // Maze
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 724);
-            this.Controls.Add(this.label97);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.lblStart);
-            this.Controls.Add(this.lblFinish);
+            this.Controls.Add(this.label97);
             this.Controls.Add(this.label96);
             this.Controls.Add(this.label95);
             this.Controls.Add(this.label94);
@@ -1226,7 +1350,6 @@
             this.Name = "Maze";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maze";
-            this.Load += new System.EventHandler(this.Maze_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1338,8 +1461,10 @@
         private System.Windows.Forms.Label label94;
         private System.Windows.Forms.Label label95;
         private System.Windows.Forms.Label label96;
-        private System.Windows.Forms.Label lblFinish;
-        private System.Windows.Forms.Label lblStart;
         private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label lblStart;
+        private System.Windows.Forms.Label lblEnd;
+        private System.Windows.Forms.Timer GameTime;
+        private System.Windows.Forms.Label lblTime;
     }
 }

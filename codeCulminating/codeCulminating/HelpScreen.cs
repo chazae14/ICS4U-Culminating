@@ -17,9 +17,10 @@ namespace codeCulminating
             InitializeComponent();
         }
 
+        // Close Help screen
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Hide();
+            this.Close();
         }
     }
 }
