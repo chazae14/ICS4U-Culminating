@@ -32,5 +32,11 @@ namespace codeCulminating
             HelpScreen inHelpscreen = new HelpScreen();
             inHelpscreen.Show();
         }
+
+        private void btnMazeGame_Click(object sender, EventArgs e)
+        {
+            Maze inMazeGame = new Maze();
+            inMazeGame.Show();
+        }
     }
 }

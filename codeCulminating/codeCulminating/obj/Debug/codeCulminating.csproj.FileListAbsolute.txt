@@ -24,3 +24,4 @@ C:\Users\jlateo9076\Source\Repos\ICS4U-Culminating\codeCulminating\codeCulminati
 C:\Users\jlateo9076\Source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.exe
 C:\Users\jlateo9076\Source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.pdb
 C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.HelpScreen.resources
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.Maze.resources

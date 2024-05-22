@@ -31,6 +31,7 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.lblGameTitle = new System.Windows.Forms.Label();
+            this.btnMazeGame = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -67,12 +68,24 @@
             this.lblGameTitle.TabIndex = 2;
             this.lblGameTitle.Text = "Game Title ";
             // 
+            // btnMazeGame
+            // 
+            this.btnMazeGame.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMazeGame.Location = new System.Drawing.Point(51, 316);
+            this.btnMazeGame.Name = "btnMazeGame";
+            this.btnMazeGame.Size = new System.Drawing.Size(114, 38);
+            this.btnMazeGame.TabIndex = 3;
+            this.btnMazeGame.Text = "Maze";
+            this.btnMazeGame.UseVisualStyleBackColor = false;
+            this.btnMazeGame.Click += new System.EventHandler(this.btnMazeGame_Click);
+            // 
             // StartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(754, 450);
+            this.Controls.Add(this.btnMazeGame);
             this.Controls.Add(this.lblGameTitle);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnStart);
@@ -90,5 +103,6 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Label lblGameTitle;
+        private System.Windows.Forms.Button btnMazeGame;
     }
 }
