@@ -1,6 +1,6 @@
 ﻿namespace codeCulminating
 {
-    partial class frmGraphics
+    partial class picBed
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGraphics));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(picBed));
             this.bmpWood = new System.Windows.Forms.PictureBox();
             this.picGirl = new System.Windows.Forms.PictureBox();
             this.picWindow = new System.Windows.Forms.PictureBox();
@@ -45,6 +45,7 @@
             this.picBottomLeftCar = new System.Windows.Forms.PictureBox();
             this.picBottomSideCar = new System.Windows.Forms.PictureBox();
             this.picBottomRightCar = new System.Windows.Forms.PictureBox();
+            this.picBedframe = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindow)).BeginInit();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBottomLeftCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomSideCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomRightCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBedframe)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -223,11 +225,22 @@
             this.picBottomRightCar.TabIndex = 16;
             this.picBottomRightCar.TabStop = false;
             // 
-            // frmGraphics
+            // picBedframe
+            // 
+            this.picBedframe.Image = ((System.Drawing.Image)(resources.GetObject("picBedframe.Image")));
+            this.picBedframe.Location = new System.Drawing.Point(185, 289);
+            this.picBedframe.Name = "picBedframe";
+            this.picBedframe.Size = new System.Drawing.Size(100, 100);
+            this.picBedframe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBedframe.TabIndex = 17;
+            this.picBedframe.TabStop = false;
+            // 
+            // picBed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.picBedframe);
             this.Controls.Add(this.picBottomRightCar);
             this.Controls.Add(this.picBottomSideCar);
             this.Controls.Add(this.picBottomLeftCar);
@@ -244,7 +257,7 @@
             this.Controls.Add(this.picWindow);
             this.Controls.Add(this.picGirl);
             this.Controls.Add(this.bmpWood);
-            this.Name = "frmGraphics";
+            this.Name = "picBed";
             this.Text = "Graphics";
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).EndInit();
@@ -262,6 +275,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBottomLeftCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomSideCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomRightCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBedframe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +299,6 @@
         public System.Windows.Forms.PictureBox picBottomLeftCar;
         public System.Windows.Forms.PictureBox picBottomSideCar;
         public System.Windows.Forms.PictureBox picBottomRightCar;
+        public System.Windows.Forms.PictureBox picBedframe;
     }
 }

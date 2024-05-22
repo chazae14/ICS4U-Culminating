@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace codeCulminating
 {
-    public partial class frmGraphics : Form
+    public partial class picBed : Form
     {
-        public frmGraphics()
+        public picBed()
         {
             InitializeComponent();
         }

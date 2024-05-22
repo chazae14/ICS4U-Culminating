@@ -1,4 +1,4 @@
-﻿// ICS4U Culminaiting 
+﻿// ICS4U Culminating 
 // Chaza, Ryan, Harleen, Jemuel
 // 2024/05/10
 using System;
@@ -22,7 +22,7 @@ namespace codeCulminating
         }
 
         int tileSize = 50;
-        frmGraphics frmG = new frmGraphics();  
+        picBed frmG = new picBed();  
         Bitmap backbuffer;                     
         Bitmap minibuffer;
         Bitmap bmpWall;
@@ -41,6 +41,7 @@ namespace codeCulminating
         Bitmap bmpCenterCarpet;
         Bitmap bmpTopSideCarpet;
         Bitmap bmpBottomSideCarpet;
+        Bitmap bmpBed;
 
         Rectangle rectSource, rect0, rectDest; 
         int curX, curY;                        
@@ -209,6 +210,7 @@ namespace codeCulminating
             bmpRightCarpet = new Bitmap(frmG.picRightSideCar.Image, tileSize, tileSize);
             bmpCenterCarpet = new Bitmap(frmG.picCenterCarpet.Image, tileSize, tileSize);
             bmpBottomSideCarpet = new Bitmap(frmG.picBottomSideCar.Image, tileSize, tileSize);
+            bmpBed = new Bitmap(frmG.picBedframe.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -331,6 +333,11 @@ namespace codeCulminating
             gback.DrawImage(bmpRightCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(15), (8)] = 16;
 
+            // displaying bed in corner
+            rectDest = new Rectangle(17 * tileSize, 6 * tileSize, 100, 100);
+            gback.DrawImage(bmpBed, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(17), (6)] = 17;
+
             // filling in center of carpet
             for (int g = 11; g < 15; g++)
             {
@@ -338,7 +345,7 @@ namespace codeCulminating
                 {
                     rectDest = new Rectangle(g * tileSize, h * tileSize, tileSize, tileSize);
                     gback.DrawImage(bmpCenterCarpet, rectDest, rect0, GraphicsUnit.Pixel);
-                    map[(g), (h)] = 17;
+                    map[(g), (h)] = 18;
                 }
             }
 
