@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,7 +71,7 @@ namespace codeCulminating
                 if (e.KeyCode == Keys.Right)
                 {
                     direction = (int)dir.right;
-                    if ((curX > 0 && curX < 297) || (curX < 297)) // can go if within bounds 
+                    if ((curX > 0 && curX < 1314) || (curX < 1314)) // can go if within bounds 
                     {
                         destTile = map[(curX + tileSize) / tileSize, curY / tileSize];
                     }
@@ -82,7 +83,7 @@ namespace codeCulminating
                 if (e.KeyCode == Keys.Left)
                 {
                     direction = (int)dir.left;
-                    if (curX <= 0 || curX >= 298) // cant go if out of bounds
+                    if (curX <= 0 || curX >= 1314) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -94,7 +95,7 @@ namespace codeCulminating
                 else if (e.KeyCode == Keys.Up)
                 {
                     direction = (int)dir.up;
-                    if (curY <= 0 || curY >= 298) // cant go if out of bounds
+                    if (curY <= 0 || curY >= 700) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -107,7 +108,7 @@ namespace codeCulminating
                 {
                     direction = (int)dir.down;
 
-                    if ((curY > 0 && curY < 297) || (curY < 297)) // can go if within bounds
+                    if ((curY > 0 && curY < 700) || (curY < 700)) // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY + tileSize) / tileSize];
                     }
@@ -117,7 +118,7 @@ namespace codeCulminating
                     }
                 }
 
-                if ((destTile == 0 || destTile == 3) && walk)             //grass - 0 - is only WALKABLE tile.
+                if ((destTile < 18) && walk)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -130,7 +131,7 @@ namespace codeCulminating
             }
         }
 
-        private void tmrMove_Tick(object sender, EventArgs e)
+        private void tmrMove_Tick_1(object sender, EventArgs e)
         {
             Graphics gback = Graphics.FromImage(backbuffer);
             Graphics gmini = Graphics.FromImage(minibuffer);
@@ -192,7 +193,7 @@ namespace codeCulminating
             minibuffer = new Bitmap(tileSize, tileSize);
 
             // loading in the images for the first map
-            bmpGirl = new Bitmap(frmG.picGirl.Image, 162, 108);
+            bmpGirl = new Bitmap(frmG.picGirl.Image, 149, 200);
             bmpWood = new Bitmap(frmG.bmpWood.Image, tileSize, tileSize);
             bmpBlack = new Bitmap(frmG.picBlackTile.Image, tileSize, tileSize);
             bmpBottomWall = new Bitmap(frmG.picBottomWall.Image, tileSize, tileSize);
@@ -214,6 +215,7 @@ namespace codeCulminating
             Graphics gback = Graphics.FromImage(backbuffer);
             Graphics gmini = Graphics.FromImage(minibuffer);
 
+            /// INTRO ONE MAP!! 
             // blacking out the background 
             for (int x = 0; x < 29; x++)
             {
@@ -236,7 +238,7 @@ namespace codeCulminating
                 }
             }
 
-            // for loop to display the crowning of the wakll
+            // for loop to display the crowning of the wall
             for (int b = 6; b < 20; b++)
             {
                 for (int c = 5; c <6; c++)
@@ -353,6 +355,28 @@ namespace codeCulminating
             curY = 0;
             gback.Dispose();
             gmini.Dispose();
+
+
+            try // saving the map to our file from our array
+            {
+                string filePath = Application.StartupPath + "\\levelOneMap.txt";
+                FileStream fs = new FileStream(filePath, FileMode.Create);
+                StreamWriter myFile = new StreamWriter(fs);
+                // saving the numbers of the array into a file to be read later
+                for (int x = 0; x < map.GetLength(0); x++)
+                {
+                    for (int y = 0; y < map.GetLength(1); y++)
+                    {
+                        myFile.WriteLine("" + map[x, y]);
+                    }
+                }
+                myFile.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         // level uno

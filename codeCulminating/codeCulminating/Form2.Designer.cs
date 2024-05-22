@@ -66,7 +66,7 @@
             // bmpWood
             // 
             this.bmpWood.Image = ((System.Drawing.Image)(resources.GetObject("bmpWood.Image")));
-            this.bmpWood.Location = new System.Drawing.Point(12, 114);
+            this.bmpWood.Location = new System.Drawing.Point(179, 115);
             this.bmpWood.Name = "bmpWood";
             this.bmpWood.Size = new System.Drawing.Size(50, 50);
             this.bmpWood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -76,9 +76,9 @@
             // picGirl
             // 
             this.picGirl.Image = ((System.Drawing.Image)(resources.GetObject("picGirl.Image")));
-            this.picGirl.Location = new System.Drawing.Point(1, 0);
+            this.picGirl.Location = new System.Drawing.Point(16, 8);
             this.picGirl.Name = "picGirl";
-            this.picGirl.Size = new System.Drawing.Size(162, 108);
+            this.picGirl.Size = new System.Drawing.Size(149, 200);
             this.picGirl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picGirl.TabIndex = 1;
             this.picGirl.TabStop = false;
@@ -96,7 +96,7 @@
             // picPlainWall
             // 
             this.picPlainWall.Image = ((System.Drawing.Image)(resources.GetObject("picPlainWall.Image")));
-            this.picPlainWall.Location = new System.Drawing.Point(80, 114);
+            this.picPlainWall.Location = new System.Drawing.Point(179, 171);
             this.picPlainWall.Name = "picPlainWall";
             this.picPlainWall.Size = new System.Drawing.Size(50, 50);
             this.picPlainWall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -106,7 +106,7 @@
             // picBottomWall
             // 
             this.picBottomWall.Image = ((System.Drawing.Image)(resources.GetObject("picBottomWall.Image")));
-            this.picBottomWall.Location = new System.Drawing.Point(151, 114);
+            this.picBottomWall.Location = new System.Drawing.Point(187, 227);
             this.picBottomWall.Name = "picBottomWall";
             this.picBottomWall.Size = new System.Drawing.Size(50, 50);
             this.picBottomWall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -116,7 +116,7 @@
             // picBlackTile
             // 
             this.picBlackTile.Image = ((System.Drawing.Image)(resources.GetObject("picBlackTile.Image")));
-            this.picBlackTile.Location = new System.Drawing.Point(225, 114);
+            this.picBlackTile.Location = new System.Drawing.Point(235, 115);
             this.picBlackTile.Name = "picBlackTile";
             this.picBlackTile.Size = new System.Drawing.Size(50, 50);
             this.picBlackTile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -126,7 +126,7 @@
             // picMouseHole
             // 
             this.picMouseHole.Image = ((System.Drawing.Image)(resources.GetObject("picMouseHole.Image")));
-            this.picMouseHole.Location = new System.Drawing.Point(304, 114);
+            this.picMouseHole.Location = new System.Drawing.Point(235, 171);
             this.picMouseHole.Name = "picMouseHole";
             this.picMouseHole.Size = new System.Drawing.Size(50, 50);
             this.picMouseHole.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -136,7 +136,7 @@
             // picToLeftCar
             // 
             this.picToLeftCar.Image = ((System.Drawing.Image)(resources.GetObject("picToLeftCar.Image")));
-            this.picToLeftCar.Location = new System.Drawing.Point(12, 182);
+            this.picToLeftCar.Location = new System.Drawing.Point(16, 227);
             this.picToLeftCar.Name = "picToLeftCar";
             this.picToLeftCar.Size = new System.Drawing.Size(50, 50);
             this.picToLeftCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -146,7 +146,7 @@
             // picTopCar
             // 
             this.picTopCar.Image = ((System.Drawing.Image)(resources.GetObject("picTopCar.Image")));
-            this.picTopCar.Location = new System.Drawing.Point(71, 182);
+            this.picTopCar.Location = new System.Drawing.Point(75, 227);
             this.picTopCar.Name = "picTopCar";
             this.picTopCar.Size = new System.Drawing.Size(50, 50);
             this.picTopCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -156,7 +156,7 @@
             // picTopRightCar
             // 
             this.picTopRightCar.Image = ((System.Drawing.Image)(resources.GetObject("picTopRightCar.Image")));
-            this.picTopRightCar.Location = new System.Drawing.Point(127, 182);
+            this.picTopRightCar.Location = new System.Drawing.Point(131, 227);
             this.picTopRightCar.Name = "picTopRightCar";
             this.picTopRightCar.Size = new System.Drawing.Size(50, 50);
             this.picTopRightCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -166,7 +166,7 @@
             // picLeftSideCar
             // 
             this.picLeftSideCar.Image = ((System.Drawing.Image)(resources.GetObject("picLeftSideCar.Image")));
-            this.picLeftSideCar.Location = new System.Drawing.Point(12, 238);
+            this.picLeftSideCar.Location = new System.Drawing.Point(16, 283);
             this.picLeftSideCar.Name = "picLeftSideCar";
             this.picLeftSideCar.Size = new System.Drawing.Size(50, 50);
             this.picLeftSideCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -176,7 +176,7 @@
             // picCenterCarpet
             // 
             this.picCenterCarpet.Image = ((System.Drawing.Image)(resources.GetObject("picCenterCarpet.Image")));
-            this.picCenterCarpet.Location = new System.Drawing.Point(71, 238);
+            this.picCenterCarpet.Location = new System.Drawing.Point(75, 283);
             this.picCenterCarpet.Name = "picCenterCarpet";
             this.picCenterCarpet.Size = new System.Drawing.Size(50, 50);
             this.picCenterCarpet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -186,7 +186,7 @@
             // picRightSideCar
             // 
             this.picRightSideCar.Image = ((System.Drawing.Image)(resources.GetObject("picRightSideCar.Image")));
-            this.picRightSideCar.Location = new System.Drawing.Point(127, 238);
+            this.picRightSideCar.Location = new System.Drawing.Point(131, 283);
             this.picRightSideCar.Name = "picRightSideCar";
             this.picRightSideCar.Size = new System.Drawing.Size(50, 50);
             this.picRightSideCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -196,7 +196,7 @@
             // picBottomLeftCar
             // 
             this.picBottomLeftCar.Image = ((System.Drawing.Image)(resources.GetObject("picBottomLeftCar.Image")));
-            this.picBottomLeftCar.Location = new System.Drawing.Point(12, 294);
+            this.picBottomLeftCar.Location = new System.Drawing.Point(16, 339);
             this.picBottomLeftCar.Name = "picBottomLeftCar";
             this.picBottomLeftCar.Size = new System.Drawing.Size(50, 50);
             this.picBottomLeftCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -206,7 +206,7 @@
             // picBottomSideCar
             // 
             this.picBottomSideCar.Image = ((System.Drawing.Image)(resources.GetObject("picBottomSideCar.Image")));
-            this.picBottomSideCar.Location = new System.Drawing.Point(71, 294);
+            this.picBottomSideCar.Location = new System.Drawing.Point(75, 339);
             this.picBottomSideCar.Name = "picBottomSideCar";
             this.picBottomSideCar.Size = new System.Drawing.Size(50, 50);
             this.picBottomSideCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -216,7 +216,7 @@
             // picBottomRightCar
             // 
             this.picBottomRightCar.Image = ((System.Drawing.Image)(resources.GetObject("picBottomRightCar.Image")));
-            this.picBottomRightCar.Location = new System.Drawing.Point(127, 294);
+            this.picBottomRightCar.Location = new System.Drawing.Point(131, 339);
             this.picBottomRightCar.Name = "picBottomRightCar";
             this.picBottomRightCar.Size = new System.Drawing.Size(50, 50);
             this.picBottomRightCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
