@@ -269,9 +269,9 @@ namespace codeCulminating
             }
 
             // displaying the window
-            rectDest = new Rectangle(11 * tileSize, 4 * tileSize, 150, 100);
+            rectDest = new Rectangle(10 * tileSize, 4 * tileSize, 150, 100);
             gback.DrawImage(bmpWindow, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(11), (4)] = 5;
+            map[(10), (4)] = 5;
 
             // displaying the mouse hole
             rectDest = new Rectangle(14 * tileSize, 5 * tileSize, tileSize, tileSize);
@@ -285,70 +285,56 @@ namespace codeCulminating
             map[(10), (7)] = 7;
 
             // displayer top side of carpet
-            for (int g = 11; g < 15; g++)
-            {
-                for (int h = 7; h < 8; h++)
-                {
-                    rectDest = new Rectangle(g * tileSize, h * tileSize, tileSize, tileSize);
-                    gback.DrawImage(bmpTopSideCarpet, rectDest, rect0, GraphicsUnit.Pixel);
-                    map[(g), (h)] = 8;
-                }
-            }
+            rectDest = new Rectangle(11 * tileSize, 7 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpTopSideCarpet, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (7)] = 8;
+
+            rectDest = new Rectangle(12 * tileSize, 7 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpTopSideCarpet, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (7)] = 8;
 
             // displaying top right carpet
-            rectDest = new Rectangle(15  * tileSize, 7 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(13  * tileSize, 7 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpTopRightCarpet, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(15), (7)] = 9;
+            map[(13), (7)] = 9;
 
-            // displaying leftside carpet
+            // displaying left side carpet
             rectDest = new Rectangle(10 * tileSize, 8 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpLeftCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(10), (8)] = 10;
 
-            rectDest = new Rectangle(10 * tileSize, 9 * tileSize, tileSize, tileSize);
-            gback.DrawImage(bmpLeftCarpet, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(10), (9)] = 10;
+            // displaying right side carpet
+            rectDest = new Rectangle(13 * tileSize, 8 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpRightCarpet, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(13), (8)] = 11;
+
+            // displaying center carpet
+            rectDest = new Rectangle(11 * tileSize, 8 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpCenterCarpet, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (8)] = 15;
+
+            rectDest = new Rectangle(12 * tileSize, 8 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpCenterCarpet, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (8)] = 15;
 
             // displaying bottom left carpet
-            rectDest = new Rectangle(10 * tileSize, 10 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(10 * tileSize, 9 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpBottomLeftCarpet, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(10), (10)] = 12;
+            map[(10), (9)] = 12;
 
             // displaying bottom side carpet
-            for (int g = 11; g < 15; g++)
-            {
-                for (int h = 10; h < 11; h++)
-                {
-                    rectDest = new Rectangle(g * tileSize, h * tileSize, tileSize, tileSize);
-                    gback.DrawImage(bmpBottomSideCarpet, rectDest, rect0, GraphicsUnit.Pixel);
-                    map[(g), (h)] = 13;
-                }
-            }
+            rectDest = new Rectangle(11 * tileSize, 9 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpBottomSideCarpet, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (9)] = 13;
+
+            rectDest = new Rectangle(12 * tileSize, 9 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpBottomSideCarpet, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (9)] = 13;
 
             // displaying bottom right side carpet
-            rectDest = new Rectangle(15 * tileSize, 10 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(13 * tileSize, 9 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpBottomRightCarpet, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(15), (10)] = 14;
-
-            // displaying right side carpet
-            rectDest = new Rectangle(15 * tileSize, 9 * tileSize, tileSize, tileSize);
-            gback.DrawImage(bmpRightCarpet, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(15), (9)] = 15;
-
-            rectDest = new Rectangle(15 * tileSize, 8 * tileSize, tileSize, tileSize);
-            gback.DrawImage(bmpRightCarpet, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(15), (8)] = 16;
-
-            // filling in center of carpet
-            for (int g = 11; g < 15; g++)
-            {
-                for (int h = 8; h < 10; h++)
-                {
-                    rectDest = new Rectangle(g * tileSize, h * tileSize, tileSize, tileSize);
-                    gback.DrawImage(bmpCenterCarpet, rectDest, rect0, GraphicsUnit.Pixel);
-                    map[(g), (h)] = 18;
-                }
-            }
+            map[(13), (9)] = 14;
 
             // displaying bed in corner
             // top left corner of bed
