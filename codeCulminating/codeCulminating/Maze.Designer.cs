@@ -139,6 +139,7 @@
             this.lblEnd = new System.Windows.Forms.Label();
             this.GameTime = new System.Windows.Forms.Timer(this.components);
             this.lblTime = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -1204,7 +1205,8 @@
             // lblStart
             // 
             this.lblStart.AutoSize = true;
-            this.lblStart.Location = new System.Drawing.Point(36, 21);
+            this.lblStart.BackColor = System.Drawing.Color.GreenYellow;
+            this.lblStart.Location = new System.Drawing.Point(36, 35);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(29, 13);
             this.lblStart.TabIndex = 123;
@@ -1213,6 +1215,7 @@
             // lblEnd
             // 
             this.lblEnd.AutoSize = true;
+            this.lblEnd.BackColor = System.Drawing.Color.IndianRed;
             this.lblEnd.Location = new System.Drawing.Point(702, 695);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Size = new System.Drawing.Size(26, 13);
@@ -1233,11 +1236,22 @@
             this.lblTime.Size = new System.Drawing.Size(0, 13);
             this.lblTime.TabIndex = 125;
             // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(28, 5);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(58, 13);
+            this.label98.TabIndex = 126;
+            this.label98.Text = "                 ";
+            this.label98.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
+            // 
             // Maze
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 724);
+            this.Controls.Add(this.label98);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.lblStart);
@@ -1466,5 +1480,6 @@
         private System.Windows.Forms.Label lblEnd;
         private System.Windows.Forms.Timer GameTime;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label label98;
     }
 }

@@ -38,5 +38,11 @@ namespace codeCulminating
             Maze inMazeGame = new Maze();
             inMazeGame.Show();
         }
+
+        private void btnMemoryGame_Click(object sender, EventArgs e)
+        {
+            MemoryGame inMemoryGame = new MemoryGame();
+            inMemoryGame.Show();
+        }
     }
 }

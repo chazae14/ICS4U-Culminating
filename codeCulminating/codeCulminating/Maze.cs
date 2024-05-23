@@ -45,6 +45,8 @@ namespace codeCulminating
                 GameTime.Stop();
                 // Ask if player wants to continue
                 DialogResult choice = MessageBox.Show("You're out of time\nTry again?","Fail", MessageBoxButtons.YesNo);
+                
+                // If yes, restart maze, else, close window
                 if(choice == DialogResult.Yes)
                 {
                     Start();
