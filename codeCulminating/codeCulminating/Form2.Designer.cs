@@ -45,7 +45,11 @@
             this.picBottomLeftCar = new System.Windows.Forms.PictureBox();
             this.picBottomSideCar = new System.Windows.Forms.PictureBox();
             this.picBottomRightCar = new System.Windows.Forms.PictureBox();
-            this.picBedframe = new System.Windows.Forms.PictureBox();
+            this.picBedTopLeft = new System.Windows.Forms.PictureBox();
+            this.picBedTopRigt = new System.Windows.Forms.PictureBox();
+            this.picBedBottomLeft = new System.Windows.Forms.PictureBox();
+            this.picBedBottomRight = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindow)).BeginInit();
@@ -62,7 +66,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBottomLeftCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomSideCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomRightCar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBedframe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBedTopLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBedTopRigt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBedBottomLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBedBottomRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -225,22 +233,68 @@
             this.picBottomRightCar.TabIndex = 16;
             this.picBottomRightCar.TabStop = false;
             // 
-            // picBedframe
+            // picBedTopLeft
             // 
-            this.picBedframe.Image = ((System.Drawing.Image)(resources.GetObject("picBedframe.Image")));
-            this.picBedframe.Location = new System.Drawing.Point(185, 289);
-            this.picBedframe.Name = "picBedframe";
-            this.picBedframe.Size = new System.Drawing.Size(100, 100);
-            this.picBedframe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picBedframe.TabIndex = 17;
-            this.picBedframe.TabStop = false;
+            this.picBedTopLeft.BackColor = System.Drawing.Color.Transparent;
+            this.picBedTopLeft.Image = ((System.Drawing.Image)(resources.GetObject("picBedTopLeft.Image")));
+            this.picBedTopLeft.Location = new System.Drawing.Point(243, 227);
+            this.picBedTopLeft.Name = "picBedTopLeft";
+            this.picBedTopLeft.Size = new System.Drawing.Size(50, 50);
+            this.picBedTopLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBedTopLeft.TabIndex = 18;
+            this.picBedTopLeft.TabStop = false;
+            // 
+            // picBedTopRigt
+            // 
+            this.picBedTopRigt.BackColor = System.Drawing.Color.Transparent;
+            this.picBedTopRigt.Image = ((System.Drawing.Image)(resources.GetObject("picBedTopRigt.Image")));
+            this.picBedTopRigt.Location = new System.Drawing.Point(243, 283);
+            this.picBedTopRigt.Name = "picBedTopRigt";
+            this.picBedTopRigt.Size = new System.Drawing.Size(50, 50);
+            this.picBedTopRigt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBedTopRigt.TabIndex = 19;
+            this.picBedTopRigt.TabStop = false;
+            // 
+            // picBedBottomLeft
+            // 
+            this.picBedBottomLeft.BackColor = System.Drawing.Color.Transparent;
+            this.picBedBottomLeft.Image = ((System.Drawing.Image)(resources.GetObject("picBedBottomLeft.Image")));
+            this.picBedBottomLeft.Location = new System.Drawing.Point(299, 283);
+            this.picBedBottomLeft.Name = "picBedBottomLeft";
+            this.picBedBottomLeft.Size = new System.Drawing.Size(50, 50);
+            this.picBedBottomLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBedBottomLeft.TabIndex = 20;
+            this.picBedBottomLeft.TabStop = false;
+            // 
+            // picBedBottomRight
+            // 
+            this.picBedBottomRight.BackColor = System.Drawing.Color.Transparent;
+            this.picBedBottomRight.Image = ((System.Drawing.Image)(resources.GetObject("picBedBottomRight.Image")));
+            this.picBedBottomRight.Location = new System.Drawing.Point(187, 283);
+            this.picBedBottomRight.Name = "picBedBottomRight";
+            this.picBedBottomRight.Size = new System.Drawing.Size(50, 50);
+            this.picBedBottomRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBedBottomRight.TabIndex = 21;
+            this.picBedBottomRight.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(299, 114);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
             // 
             // picBed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.picBedframe);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picBedBottomRight);
+            this.Controls.Add(this.picBedBottomLeft);
+            this.Controls.Add(this.picBedTopRigt);
+            this.Controls.Add(this.picBedTopLeft);
             this.Controls.Add(this.picBottomRightCar);
             this.Controls.Add(this.picBottomSideCar);
             this.Controls.Add(this.picBottomLeftCar);
@@ -275,7 +329,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBottomLeftCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomSideCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomRightCar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBedframe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBedTopLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBedTopRigt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBedBottomLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBedBottomRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,6 +357,10 @@
         public System.Windows.Forms.PictureBox picBottomLeftCar;
         public System.Windows.Forms.PictureBox picBottomSideCar;
         public System.Windows.Forms.PictureBox picBottomRightCar;
-        public System.Windows.Forms.PictureBox picBedframe;
+        public System.Windows.Forms.PictureBox picBedTopLeft;
+        public System.Windows.Forms.PictureBox picBedTopRigt;
+        public System.Windows.Forms.PictureBox picBedBottomLeft;
+        public System.Windows.Forms.PictureBox picBedBottomRight;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

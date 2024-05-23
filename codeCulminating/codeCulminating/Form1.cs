@@ -41,9 +41,12 @@ namespace codeCulminating
         Bitmap bmpCenterCarpet;
         Bitmap bmpTopSideCarpet;
         Bitmap bmpBottomSideCarpet;
-        Bitmap bmpBed;
+        Bitmap bmpBedTopLef;
+        Bitmap bmpBedTopRight;
+        Bitmap bmpBedBottomLeft;
+        Bitmap bmpBedBottomRight;
 
-        Rectangle rectSource, rect0, rectDest; 
+        Rectangle rectSource, rect0, rectDest, rectGirlX, rectGirlY; 
         int curX, curY;                        
         int moves;                             
         int smallMove = 16;
@@ -210,7 +213,10 @@ namespace codeCulminating
             bmpRightCarpet = new Bitmap(frmG.picRightSideCar.Image, tileSize, tileSize);
             bmpCenterCarpet = new Bitmap(frmG.picCenterCarpet.Image, tileSize, tileSize);
             bmpBottomSideCarpet = new Bitmap(frmG.picBottomSideCar.Image, tileSize, tileSize);
-            bmpBed = new Bitmap(frmG.picBedframe.Image, tileSize, tileSize);
+            bmpBedBottomLeft = new Bitmap (frmG.picBedBottomLeft.Image, tileSize, tileSize);
+            bmpBedBottomRight = new Bitmap (frmG.picBedBottomRight.Image, tileSize, tileSize);
+            bmpBedTopLef = new Bitmap (frmG.picBedTopLeft.Image, tileSize, tileSize);   
+            bmpBedTopRight = new Bitmap(frmG.picBedTopRigt.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -230,9 +236,9 @@ namespace codeCulminating
             }
 
             // for loop to display with floor/wood tiles
-            for (int m = 6; m < 20; m++)
+            for (int m = 7; m < 19; m++)
             {
-                for (int n = 6; n < 13; n++)
+                for (int n = 6; n < 12; n++)
                 {
                     rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
                     gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
@@ -241,7 +247,7 @@ namespace codeCulminating
             }
 
             // for loop to display the crowning of the wall
-            for (int b = 6; b < 20; b++)
+            for (int b = 7; b < 19; b++)
             {
                 for (int c = 5; c <6; c++)
                 {
@@ -252,7 +258,7 @@ namespace codeCulminating
             }
 
             // for loop to display wall
-            for (int g = 6; g < 20; g++)
+            for (int g = 7; g < 19; g++)
             {
                 for (int h = 3; h < 5; h++)
                 {
@@ -333,11 +339,6 @@ namespace codeCulminating
             gback.DrawImage(bmpRightCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(15), (8)] = 16;
 
-            // displaying bed in corner
-            rectDest = new Rectangle(17 * tileSize, 6 * tileSize, 100, 100);
-            gback.DrawImage(bmpBed, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(17), (6)] = 17;
-
             // filling in center of carpet
             for (int g = 11; g < 15; g++)
             {
@@ -349,12 +350,35 @@ namespace codeCulminating
                 }
             }
 
+            // displaying bed in corner
+            // top left corner of bed
+            rectDest = new Rectangle(17 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpBedTopLef, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(17), (6)] = 17;
+
+            // top right corner of bed
+            rectDest = new Rectangle(18 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpBedTopRight, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(18), (6)] = 18;
+
+            // bottom left corner of bed
+            rectDest = new Rectangle(17 * tileSize, 7 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpBedBottomLeft, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(17), (7)] = 19;
+
+            // bottom right corner of bed
+            rectDest = new Rectangle(18 * tileSize, 7 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpBedBottomRight, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(18), (7)] = 20;
+
+           
+
             // rectDest to start out sprite in top left corner
             rectDest = new Rectangle(0, 0, tileSize, tileSize);
             rectSource = new Rectangle(0, 0, tileSize, tileSize);
 
             // drawing out our girl and the background starting from the top left corner
-            gmini.DrawImage(backbuffer, rect0, rectSource, GraphicsUnit.Pixel);
+            gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
             
             // girl's current position
