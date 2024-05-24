@@ -47,6 +47,12 @@ namespace codeCulminating
         Bitmap bmpBedBottomRight;
         Bitmap bmpRightDesk;
         Bitmap bmpLeftDesk;
+        Bitmap bmpDeskTL;
+        Bitmap bmpDeskBL;
+        Bitmap bmpDeskBM;
+        Bitmap bmpDeskTM;
+        Bitmap bmpDeskBR;
+        Bitmap bmpDeskTR;
 
         Rectangle rectSource, rect0, rectDest, rectGirlX, rectGirlY; 
         int curX, curY;                        
@@ -74,7 +80,7 @@ namespace codeCulminating
                 bool walk = true;
 
                 //depending on key pressed, check the tile you would move to (get it's tile number from the map)
-                if (e.KeyCode == Keys.Right)
+                if (e.KeyCode == Keys.D)
                 {
                     direction = (int)dir.right;
                     if ((curX > 0 && curX < 1314) || (curX < 1314)) // can go if within bounds 
@@ -86,7 +92,7 @@ namespace codeCulminating
                         walk = false;
                     }
                 }
-                if (e.KeyCode == Keys.Left)
+                if (e.KeyCode == Keys.A)
                 {
                     direction = (int)dir.left;
                     if (curX <= 0 || curX >= 1314) // cant go if out of bounds
@@ -98,7 +104,7 @@ namespace codeCulminating
                         destTile = map[(curX - tileSize) / tileSize, curY / tileSize];
                     }
                 }
-                else if (e.KeyCode == Keys.Up)
+                else if (e.KeyCode == Keys.W)
                 {
                     direction = (int)dir.up;
                     if (curY <= 0 || curY >= 700) // cant go if out of bounds
@@ -110,7 +116,7 @@ namespace codeCulminating
                         destTile = map[curX / tileSize, (curY - tileSize) / tileSize];
                     }
                 }
-                else if (e.KeyCode == Keys.Down)
+                else if (e.KeyCode == Keys.S)
                 {
                     direction = (int)dir.down;
 
@@ -221,6 +227,12 @@ namespace codeCulminating
             bmpBedTopRight = new Bitmap(frmG.picBedTopRigt.Image, tileSize, tileSize);
             bmpLeftDesk = new Bitmap (frmG.picLeftSideDesk.Image, tileSize, tileSize);
             bmpRightDesk = new Bitmap (frmG.picRightSideDesk.Image, tileSize, tileSize);
+            bmpDeskTL = new Bitmap(frmG.picDeskTL.Image, tileSize, tileSize);
+            bmpDeskBL = new Bitmap (frmG.picDeskBL.Image, tileSize, tileSize);
+            bmpDeskBM = new Bitmap (frmG.picDeskBM.Image, tileSize, tileSize);
+            bmpDeskTM = new Bitmap (frmG.picDeskTP.Image, tileSize, tileSize);
+            bmpDeskTR = new Bitmap (frmG.picDeskTR.Image, tileSize, tileSize);
+            bmpDeskBR = new Bitmap (frmG.picDeskBR.Image, tileSize, tileSize);  
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -361,7 +373,7 @@ namespace codeCulminating
             gback.DrawImage(bmpBedBottomRight, rectDest, rect0, GraphicsUnit.Pixel);
             map[(18), (7)] = 20;
 
-            // DESK!!
+            // BEDSIDE TABLE!!
             // left side of desk
             rectDest = new Rectangle(15 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpLeftDesk, rectDest, rect0, GraphicsUnit.Pixel);
@@ -372,6 +384,26 @@ namespace codeCulminating
             gback.DrawImage(bmpRightDesk, rectDest, rect0, GraphicsUnit.Pixel);
             map[(16), (6)] = 22;
 
+            // DESK DESK DESK!
+            // top left desk
+            rectDest = new Rectangle(8 * tileSize, 5 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskTL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(8), (5)] = 23;
+
+            // top middle desk
+            rectDest = new Rectangle(9 * tileSize, 5 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskTM, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(9), (5)] = 24;
+
+            // top right desk
+            rectDest = new Rectangle(10 * tileSize, 5 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskTR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(10), (5)] = 25;
+
+            // bottom left desk
+            rectDest = new Rectangle(8 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskBL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(8), (6)] = 23;
 
             // rectDest to start out sprite in top left corner
             rectDest = new Rectangle(0, 0, tileSize, tileSize);

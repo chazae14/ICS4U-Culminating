@@ -51,6 +51,12 @@
             this.picBedBottomRight = new System.Windows.Forms.PictureBox();
             this.picRightSideDesk = new System.Windows.Forms.PictureBox();
             this.picLeftSideDesk = new System.Windows.Forms.PictureBox();
+            this.picDeskBM = new System.Windows.Forms.PictureBox();
+            this.picDeskBR = new System.Windows.Forms.PictureBox();
+            this.picDeskTL = new System.Windows.Forms.PictureBox();
+            this.picDeskTP = new System.Windows.Forms.PictureBox();
+            this.picDeskTR = new System.Windows.Forms.PictureBox();
+            this.picDeskBL = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindow)).BeginInit();
@@ -73,6 +79,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBedBottomRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRightSideDesk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeftSideDesk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskBM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskBR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskTL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskTP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskTR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskBL)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -299,11 +311,77 @@
             this.picLeftSideDesk.TabIndex = 23;
             this.picLeftSideDesk.TabStop = false;
             // 
+            // picDeskBM
+            // 
+            this.picDeskBM.Image = ((System.Drawing.Image)(resources.GetObject("picDeskBM.Image")));
+            this.picDeskBM.Location = new System.Drawing.Point(412, 64);
+            this.picDeskBM.Name = "picDeskBM";
+            this.picDeskBM.Size = new System.Drawing.Size(50, 50);
+            this.picDeskBM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picDeskBM.TabIndex = 24;
+            this.picDeskBM.TabStop = false;
+            // 
+            // picDeskBR
+            // 
+            this.picDeskBR.Image = ((System.Drawing.Image)(resources.GetObject("picDeskBR.Image")));
+            this.picDeskBR.Location = new System.Drawing.Point(468, 64);
+            this.picDeskBR.Name = "picDeskBR";
+            this.picDeskBR.Size = new System.Drawing.Size(50, 50);
+            this.picDeskBR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picDeskBR.TabIndex = 25;
+            this.picDeskBR.TabStop = false;
+            // 
+            // picDeskTL
+            // 
+            this.picDeskTL.Image = ((System.Drawing.Image)(resources.GetObject("picDeskTL.Image")));
+            this.picDeskTL.Location = new System.Drawing.Point(358, 8);
+            this.picDeskTL.Name = "picDeskTL";
+            this.picDeskTL.Size = new System.Drawing.Size(48, 50);
+            this.picDeskTL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picDeskTL.TabIndex = 26;
+            this.picDeskTL.TabStop = false;
+            // 
+            // picDeskTP
+            // 
+            this.picDeskTP.Image = ((System.Drawing.Image)(resources.GetObject("picDeskTP.Image")));
+            this.picDeskTP.Location = new System.Drawing.Point(412, 8);
+            this.picDeskTP.Name = "picDeskTP";
+            this.picDeskTP.Size = new System.Drawing.Size(50, 50);
+            this.picDeskTP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picDeskTP.TabIndex = 27;
+            this.picDeskTP.TabStop = false;
+            // 
+            // picDeskTR
+            // 
+            this.picDeskTR.Image = ((System.Drawing.Image)(resources.GetObject("picDeskTR.Image")));
+            this.picDeskTR.Location = new System.Drawing.Point(468, 8);
+            this.picDeskTR.Name = "picDeskTR";
+            this.picDeskTR.Size = new System.Drawing.Size(50, 50);
+            this.picDeskTR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picDeskTR.TabIndex = 28;
+            this.picDeskTR.TabStop = false;
+            // 
+            // picDeskBL
+            // 
+            this.picDeskBL.Image = ((System.Drawing.Image)(resources.GetObject("picDeskBL.Image")));
+            this.picDeskBL.Location = new System.Drawing.Point(356, 64);
+            this.picDeskBL.Name = "picDeskBL";
+            this.picDeskBL.Size = new System.Drawing.Size(50, 50);
+            this.picDeskBL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picDeskBL.TabIndex = 29;
+            this.picDeskBL.TabStop = false;
+            // 
             // picBed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.picDeskBL);
+            this.Controls.Add(this.picDeskTR);
+            this.Controls.Add(this.picDeskTP);
+            this.Controls.Add(this.picDeskTL);
+            this.Controls.Add(this.picDeskBR);
+            this.Controls.Add(this.picDeskBM);
             this.Controls.Add(this.picLeftSideDesk);
             this.Controls.Add(this.picRightSideDesk);
             this.Controls.Add(this.picBedBottomRight);
@@ -350,6 +428,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBedBottomRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRightSideDesk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeftSideDesk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskBM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskBR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskTL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskTP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskTR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDeskBL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,5 +463,11 @@
         public System.Windows.Forms.PictureBox picBedBottomRight;
         public System.Windows.Forms.PictureBox picRightSideDesk;
         public System.Windows.Forms.PictureBox picLeftSideDesk;
+        public System.Windows.Forms.PictureBox picDeskBM;
+        public System.Windows.Forms.PictureBox picDeskBR;
+        public System.Windows.Forms.PictureBox picDeskTL;
+        public System.Windows.Forms.PictureBox picDeskTP;
+        public System.Windows.Forms.PictureBox picDeskTR;
+        public System.Windows.Forms.PictureBox picDeskBL;
     }
 }
