@@ -45,6 +45,8 @@ namespace codeCulminating
         Bitmap bmpBedTopRight;
         Bitmap bmpBedBottomLeft;
         Bitmap bmpBedBottomRight;
+        Bitmap bmpRightDesk;
+        Bitmap bmpLeftDesk;
 
         Rectangle rectSource, rect0, rectDest, rectGirlX, rectGirlY; 
         int curX, curY;                        
@@ -217,6 +219,8 @@ namespace codeCulminating
             bmpBedBottomRight = new Bitmap (frmG.picBedBottomRight.Image, tileSize, tileSize);
             bmpBedTopLef = new Bitmap (frmG.picBedTopLeft.Image, tileSize, tileSize);   
             bmpBedTopRight = new Bitmap(frmG.picBedTopRigt.Image, tileSize, tileSize);
+            bmpLeftDesk = new Bitmap (frmG.picLeftSideDesk.Image, tileSize, tileSize);
+            bmpRightDesk = new Bitmap (frmG.picRightSideDesk.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -357,7 +361,17 @@ namespace codeCulminating
             gback.DrawImage(bmpBedBottomRight, rectDest, rect0, GraphicsUnit.Pixel);
             map[(18), (7)] = 20;
 
-           
+            // DESK!!
+            // left side of desk
+            rectDest = new Rectangle(15 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpLeftDesk, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(15), (6)] = 21;
+
+            // right side desk
+            rectDest = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpRightDesk, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(16), (6)] = 22;
+
 
             // rectDest to start out sprite in top left corner
             rectDest = new Rectangle(0, 0, tileSize, tileSize);
