@@ -54,6 +54,18 @@ namespace codeCulminating
         Bitmap bmpDeskBR;
         Bitmap bmpDeskTR;
         Bitmap bmpWallDetail;
+        Bitmap bmpWindowTL;
+        Bitmap bmpWindowTML;
+        Bitmap bmpWindowTMR;
+        Bitmap bmpWindowTR;
+        Bitmap bmpWindowML;
+        Bitmap bmpWindowMML;
+        Bitmap bmpWindowMMR;
+        Bitmap bmpWindowMR;
+        Bitmap bmpWindowBL;
+        Bitmap bmpWindowBML;
+        Bitmap bmpWindowBMR;
+        Bitmap bmpWindowBR;
 
         Rectangle rectSource, rect0, rectDest, rectGirlX, rectGirlY; 
         int curX, curY;                        
@@ -131,7 +143,7 @@ namespace codeCulminating
                     }
                 }
 
-                if ((destTile < 35) && walk)
+                if ((destTile < 40) && walk)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -233,7 +245,19 @@ namespace codeCulminating
             bmpDeskTM = new Bitmap (frmG.picDeskTP.Image, tileSize, tileSize);
             bmpDeskTR = new Bitmap (frmG.picDeskTR.Image, tileSize, tileSize);
             bmpDeskBR = new Bitmap (frmG.picDeskBR.Image, tileSize, tileSize);  
-            bmpWallDetail = new Bitmap(frmG.picWallDetail.Image, tileSize, tileSize);   
+            bmpWallDetail = new Bitmap (frmG.picWallDetail.Image, tileSize, tileSize);   
+            bmpWindowBL = new Bitmap (frmG.picWindowBL.Image, tileSize, tileSize);
+            bmpWindowBML = new Bitmap(frmG.picWindowBML.Image, tileSize, tileSize);
+            bmpWindowBMR = new Bitmap (frmG.picWindowBMR.Image, tileSize, tileSize);
+            bmpWindowBR = new Bitmap (frmG.picWindowBR.Image, tileSize, tileSize);  
+            bmpWindowML = new Bitmap (frmG.picWindowML.Image, tileSize, tileSize);  
+            bmpWindowMML = new Bitmap (frmG.picWindowMML.Image, tileSize, tileSize);
+            bmpWindowMMR = new Bitmap (frmG.picWindowMMR.Image, tileSize, tileSize);
+            bmpWindowMR = new Bitmap (frmG.picWindowMR.Image, tileSize, tileSize);
+            bmpWindowTL = new Bitmap (frmG.picWindowTL.Image, tileSize, tileSize);
+            bmpWindowTML = new Bitmap (frmG.picWindowTML.Image, tileSize, tileSize);    
+            bmpWindowTMR = new Bitmap(frmG.picWindowTMR.Image, tileSize, tileSize);
+            bmpWindowTR = new Bitmap (frmG.picWindowTR.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -277,7 +301,7 @@ namespace codeCulminating
             // for loop to display wall
             for (int g = 7; g < 19; g++)
             {
-                for (int h = 3; h < 5; h++)
+                for (int h = 2; h < 5; h++)
                 {
                     rectDest = new Rectangle(g * tileSize, h * tileSize, tileSize, tileSize);
                     gback.DrawImage(bmpWall, rectDest, rect0, GraphicsUnit.Pixel);
@@ -410,6 +434,59 @@ namespace codeCulminating
             rectDest = new Rectangle(10 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpDeskBR, rectDest, rect0, GraphicsUnit.Pixel);
             map[(10), (6)] = 27;
+
+            /// WINDOW!!
+            // window top left 
+            rectDest = new Rectangle(11 * tileSize, 2 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowTL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (2)] = 28;
+
+            // window top middle left
+            rectDest = new Rectangle(12 * tileSize, 2 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowTML, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (2)] = 29;
+
+            // window top middle right
+            rectDest = new Rectangle(13 * tileSize, 2 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowTMR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(13), (2)] = 29;
+
+            // window top right
+            rectDest = new Rectangle(14 * tileSize, 2 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowTR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(14), (2)] = 30;
+
+            // window middle left
+            rectDest = new Rectangle(11 * tileSize, 3 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowML, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (3)] = 31;
+
+            // window middle middle left
+            rectDest = new Rectangle(12 * tileSize, 3 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowMML, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (3)] = 32;
+
+            // window middle middle right
+            rectDest = new Rectangle(13 * tileSize, 3 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowMMR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(13), (3)] = 33;
+
+            // window middle right
+            rectDest = new Rectangle(14 * tileSize, 3 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowMR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(14), (3)] = 34;
+
+            // window bottom left
+            rectDest = new Rectangle(11 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowBL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (4)] = 35;
+
+            // window bottom middle left
+            rectDest = new Rectangle(12 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowBML, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (4)] = 36;
+
+            
 
             // rectDest to start out sprite in top left corner
             rectDest = new Rectangle(18 * tileSize, 6 * tileSize, tileSize, tileSize);
