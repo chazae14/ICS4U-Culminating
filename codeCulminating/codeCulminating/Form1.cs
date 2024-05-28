@@ -53,8 +53,15 @@ namespace codeCulminating
         Bitmap bmpDeskTM;
         Bitmap bmpDeskBR;
         Bitmap bmpDeskTR;
+        Bitmap bmpWallDetail;
+        Bitmap bmpWindowTL;
+        Bitmap bmpWindowTML;
+        Bitmap bmpWindowTR;
+        Bitmap bmpWindowBL;
+        Bitmap bmpWindowBML;
+        Bitmap bmpWindowBR;
 
-        Rectangle rectSource, rect0, rectDest, rectGirlX, rectGirlY; 
+        Rectangle rectSource, rect0, rectDest; 
         int curX, curY;                        
         int moves;                             
         int smallMove = 16;
@@ -83,7 +90,7 @@ namespace codeCulminating
                 if (e.KeyCode == Keys.D)
                 {
                     direction = (int)dir.right;
-                    if ((curX > 0 && curX < 1314) || (curX < 1314)) // can go if within bounds 
+                    if ((curX > 7 * tileSize && curX < 19 * tileSize) || (curX < 7 * tileSize)) // can go if in bounds 
                     {
                         destTile = map[(curX + tileSize) / tileSize, curY / tileSize];
                     }
@@ -95,7 +102,7 @@ namespace codeCulminating
                 if (e.KeyCode == Keys.A)
                 {
                     direction = (int)dir.left;
-                    if (curX <= 0 || curX >= 1314) // cant go if out of bounds
+                    if (curX <= 7 * tileSize || curX >= 19 * tileSize) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -107,7 +114,7 @@ namespace codeCulminating
                 else if (e.KeyCode == Keys.W)
                 {
                     direction = (int)dir.up;
-                    if (curY <= 0 || curY >= 700) // cant go if out of bounds
+                    if (curY <= 11 * tileSize || curY >= 7 * tileSize) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -120,7 +127,7 @@ namespace codeCulminating
                 {
                     direction = (int)dir.down;
 
-                    if ((curY > 0 && curY < 700) || (curY < 700)) // can go if within bounds
+                    if ((curY > 7 * tileSize && curY < 11 * tileSize) || (curY < 11 * tileSize)) // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY + tileSize) / tileSize];
                     }
@@ -130,14 +137,13 @@ namespace codeCulminating
                     }
                 }
 
-                if ((destTile < 18) && walk)
+                if ((destTile < 40) && walk)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
                 }
                 else
                 {
-                    MessageBox.Show("You can't go there!");
                     walk = true;
                 }
             }
@@ -210,7 +216,6 @@ namespace codeCulminating
             bmpBlack = new Bitmap(frmG.picBlackTile.Image, tileSize, tileSize);
             bmpBottomWall = new Bitmap(frmG.picBottomWall.Image, tileSize, tileSize);
             bmpWall = new Bitmap(frmG.picPlainWall.Image, tileSize, tileSize);
-            bmpWindow = new Bitmap(frmG.picWindow.Image, tileSize, tileSize);
             bmpMouseHole = new Bitmap(frmG.picMouseHole.Image, tileSize, tileSize);
             bmpTopLeftCarpet = new Bitmap(frmG.picToLeftCar.Image, tileSize, tileSize);
             bmpTopRightCarpet = new Bitmap(frmG.picTopRightCar.Image, tileSize, tileSize);
@@ -233,6 +238,13 @@ namespace codeCulminating
             bmpDeskTM = new Bitmap (frmG.picDeskTP.Image, tileSize, tileSize);
             bmpDeskTR = new Bitmap (frmG.picDeskTR.Image, tileSize, tileSize);
             bmpDeskBR = new Bitmap (frmG.picDeskBR.Image, tileSize, tileSize);  
+            bmpWallDetail = new Bitmap (frmG.picWallDetail.Image, tileSize, tileSize);   
+            bmpWindowBL = new Bitmap (frmG.picWindowBL.Image, tileSize, tileSize);
+            bmpWindowBML = new Bitmap(frmG.picWindowBML.Image, tileSize, tileSize);
+            bmpWindowBR = new Bitmap (frmG.picWindowBR.Image, tileSize, tileSize);  
+            bmpWindowTL = new Bitmap (frmG.picWindowTL.Image, tileSize, tileSize);
+            bmpWindowTML = new Bitmap (frmG.picWindowTML.Image, tileSize, tileSize);    
+            bmpWindowTR = new Bitmap (frmG.picWindowTR.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -276,7 +288,7 @@ namespace codeCulminating
             // for loop to display wall
             for (int g = 7; g < 19; g++)
             {
-                for (int h = 3; h < 5; h++)
+                for (int h = 2; h < 5; h++)
                 {
                     rectDest = new Rectangle(g * tileSize, h * tileSize, tileSize, tileSize);
                     gback.DrawImage(bmpWall, rectDest, rect0, GraphicsUnit.Pixel);
@@ -284,71 +296,66 @@ namespace codeCulminating
                 }
             }
 
-            // displaying the window
-            rectDest = new Rectangle(10 * tileSize, 4 * tileSize, 150, 100);
-            gback.DrawImage(bmpWindow, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(10), (4)] = 5;
-
-            // displaying the mouse hole
-            rectDest = new Rectangle(14 * tileSize, 5 * tileSize, tileSize, tileSize);
-            gback.DrawImage(bmpMouseHole, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(14), (5)] = 6;
+            // displaying wall detail
+            rectDest = new Rectangle(17 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWallDetail, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(17), (4)] = 6;
 
             // displaying carpet
             // displaying top left corner
-            rectDest = new Rectangle(10 * tileSize, 7 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(11 * tileSize, 7 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpTopLeftCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(10), (7)] = 7;
 
             // displayer top side of carpet
-            rectDest = new Rectangle(11 * tileSize, 7 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(12 * tileSize, 7 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpTopSideCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(11), (7)] = 8;
 
-            rectDest = new Rectangle(12 * tileSize, 7 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(13 * tileSize, 7 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpTopSideCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(12), (7)] = 8;
 
             // displaying top right carpet
-            rectDest = new Rectangle(13  * tileSize, 7 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(14  * tileSize, 7 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpTopRightCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(13), (7)] = 9;
 
             // displaying left side carpet
-            rectDest = new Rectangle(10 * tileSize, 8 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(11 * tileSize, 8 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpLeftCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(10), (8)] = 10;
 
             // displaying right side carpet
-            rectDest = new Rectangle(13 * tileSize, 8 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(14 * tileSize, 8 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpRightCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(13), (8)] = 11;
 
             // displaying center carpet
-            rectDest = new Rectangle(11 * tileSize, 8 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(12 * tileSize, 8 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpCenterCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(11), (8)] = 15;
 
-            rectDest = new Rectangle(12 * tileSize, 8 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(13 * tileSize, 8 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpCenterCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(12), (8)] = 15;
 
             // displaying bottom left carpet
-            rectDest = new Rectangle(10 * tileSize, 9 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(11 * tileSize, 9 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpBottomLeftCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(10), (9)] = 12;
 
             // displaying bottom side carpet
-            rectDest = new Rectangle(11 * tileSize, 9 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(12 * tileSize, 9 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpBottomSideCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(11), (9)] = 13;
 
-            rectDest = new Rectangle(12 * tileSize, 9 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(13 * tileSize, 9 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpBottomSideCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(12), (9)] = 13;
 
             // displaying bottom right side carpet
-            rectDest = new Rectangle(13 * tileSize, 9 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(14 * tileSize, 9 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpBottomRightCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(13), (9)] = 14;
 
@@ -403,10 +410,51 @@ namespace codeCulminating
             // bottom left desk
             rectDest = new Rectangle(8 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpDeskBL, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(8), (6)] = 23;
+            map[(8), (6)] = 26;
+
+            // bottom middle desk
+            rectDest = new Rectangle(9 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskBM, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(9), (6)] = 26;
+
+            // bottom right desk
+            rectDest = new Rectangle(10 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskBR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(10), (6)] = 27;
+
+            /// WINDOW!!
+            // window top left 
+            rectDest = new Rectangle(11 * tileSize, 3 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowTL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (3)] = 28;
+
+            // window top middle 
+            rectDest = new Rectangle(12 * tileSize, 3 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowTML, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (3)] = 29;
+
+            // window top right
+            rectDest = new Rectangle(13 * tileSize, 3 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowTR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(13), (3)] = 30;
+
+            // window bottom left
+            rectDest = new Rectangle(11 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowBL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (4)] = 35;
+
+            // window bottom middle 
+            rectDest = new Rectangle(12 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowBML, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (4)] = 36;
+
+            // window bottom right
+            rectDest = new Rectangle(13 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowBR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(13), (4)] = 37;
 
             // rectDest to start out sprite in top left corner
-            rectDest = new Rectangle(0, 0, tileSize, tileSize);
+            rectDest = new Rectangle(18 * tileSize, 6 * tileSize, tileSize, tileSize);
             rectSource = new Rectangle(0, 0, tileSize, tileSize);
 
             // drawing out our girl and the background starting from the top left corner
@@ -414,8 +462,8 @@ namespace codeCulminating
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
             
             // girl's current position
-            curX = 0; 
-            curY = 0;
+            curX = 18 * tileSize; 
+            curY = 6 * tileSize;
             gback.Dispose();
             gmini.Dispose();
 
