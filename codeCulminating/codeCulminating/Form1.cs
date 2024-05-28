@@ -64,7 +64,7 @@ namespace codeCulminating
         Rectangle rectSource, rect0, rectDest; 
         int curX, curY;                        
         int moves;                             
-        int smallMove = 16;
+        int smallMove = 17;
         int direction;
 
 
@@ -90,7 +90,7 @@ namespace codeCulminating
                 if (e.KeyCode == Keys.D)
                 {
                     direction = (int)dir.right;
-                    if ((curX > 7 * tileSize && curX < 19 * tileSize) || (curX < 7 * tileSize)) // can go if in bounds 
+                    if ((curX > 8 * tileSize && curX < 18 * tileSize) || (curX < 8 * tileSize)) // can go if in bounds 
                     {
                         destTile = map[(curX + tileSize) / tileSize, curY / tileSize];
                     }
@@ -114,7 +114,7 @@ namespace codeCulminating
                 else if (e.KeyCode == Keys.W)
                 {
                     direction = (int)dir.up;
-                    if (curY <= 11 * tileSize || curY >= 7 * tileSize) // cant go if out of bounds
+                    if (curY <= 6 * tileSize || curY >= 12 * tileSize) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -137,7 +137,7 @@ namespace codeCulminating
                     }
                 }
 
-                if ((destTile < 40) && walk)
+                if ((destTile >=19 || destTile <= 23) && walk)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -453,11 +453,11 @@ namespace codeCulminating
             gback.DrawImage(bmpWindowBR, rectDest, rect0, GraphicsUnit.Pixel);
             map[(13), (4)] = 37;
 
-            // rectDest to start out sprite in top left corner
+            // rectDest to start out sprite on her bed
             rectDest = new Rectangle(18 * tileSize, 6 * tileSize, tileSize, tileSize);
             rectSource = new Rectangle(0, 0, tileSize, tileSize);
 
-            // drawing out our girl and the background starting from the top left corner
+            // drawing out our girl and on her bed
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
             
@@ -470,7 +470,7 @@ namespace codeCulminating
 
             try // saving the map to our file from our array
             {
-                string filePath = Application.StartupPath + "\\levelOneMap.txt";
+                string filePath = Application.StartupPath + "\\introLobbyMap.txt";
                 FileStream fs = new FileStream(filePath, FileMode.Create);
                 StreamWriter myFile = new StreamWriter(fs);
                 // saving the numbers of the array into a file to be read later
