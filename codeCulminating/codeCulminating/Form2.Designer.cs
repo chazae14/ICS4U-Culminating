@@ -59,15 +59,9 @@
             this.picWallDetail = new System.Windows.Forms.PictureBox();
             this.picWindowBL = new System.Windows.Forms.PictureBox();
             this.picWindowBML = new System.Windows.Forms.PictureBox();
-            this.picWindowBMR = new System.Windows.Forms.PictureBox();
             this.picWindowBR = new System.Windows.Forms.PictureBox();
-            this.picWindowML = new System.Windows.Forms.PictureBox();
-            this.picWindowMML = new System.Windows.Forms.PictureBox();
-            this.picWindowMMR = new System.Windows.Forms.PictureBox();
-            this.picWindowMR = new System.Windows.Forms.PictureBox();
             this.picWindowTL = new System.Windows.Forms.PictureBox();
             this.picWindowTML = new System.Windows.Forms.PictureBox();
-            this.picWindowTMR = new System.Windows.Forms.PictureBox();
             this.picWindowTR = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
@@ -99,15 +93,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWallDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowBL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowBML)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowBMR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowBR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowML)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowMML)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowMMR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowMR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowTL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowTML)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowTMR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowTR)).BeginInit();
             this.SuspendLayout();
             // 
@@ -398,7 +386,7 @@
             // picWindowBL
             // 
             this.picWindowBL.Image = ((System.Drawing.Image)(resources.GetObject("picWindowBL.Image")));
-            this.picWindowBL.Location = new System.Drawing.Point(348, 119);
+            this.picWindowBL.Location = new System.Drawing.Point(348, 63);
             this.picWindowBL.Name = "picWindowBL";
             this.picWindowBL.Size = new System.Drawing.Size(50, 50);
             this.picWindowBL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -408,72 +396,22 @@
             // picWindowBML
             // 
             this.picWindowBML.Image = ((System.Drawing.Image)(resources.GetObject("picWindowBML.Image")));
-            this.picWindowBML.Location = new System.Drawing.Point(404, 119);
+            this.picWindowBML.Location = new System.Drawing.Point(404, 63);
             this.picWindowBML.Name = "picWindowBML";
             this.picWindowBML.Size = new System.Drawing.Size(50, 50);
             this.picWindowBML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picWindowBML.TabIndex = 32;
             this.picWindowBML.TabStop = false;
             // 
-            // picWindowBMR
-            // 
-            this.picWindowBMR.Image = ((System.Drawing.Image)(resources.GetObject("picWindowBMR.Image")));
-            this.picWindowBMR.Location = new System.Drawing.Point(460, 119);
-            this.picWindowBMR.Name = "picWindowBMR";
-            this.picWindowBMR.Size = new System.Drawing.Size(50, 50);
-            this.picWindowBMR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picWindowBMR.TabIndex = 33;
-            this.picWindowBMR.TabStop = false;
-            // 
             // picWindowBR
             // 
             this.picWindowBR.Image = ((System.Drawing.Image)(resources.GetObject("picWindowBR.Image")));
-            this.picWindowBR.Location = new System.Drawing.Point(516, 119);
+            this.picWindowBR.Location = new System.Drawing.Point(460, 63);
             this.picWindowBR.Name = "picWindowBR";
             this.picWindowBR.Size = new System.Drawing.Size(50, 50);
             this.picWindowBR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picWindowBR.TabIndex = 34;
             this.picWindowBR.TabStop = false;
-            // 
-            // picWindowML
-            // 
-            this.picWindowML.Image = ((System.Drawing.Image)(resources.GetObject("picWindowML.Image")));
-            this.picWindowML.Location = new System.Drawing.Point(348, 63);
-            this.picWindowML.Name = "picWindowML";
-            this.picWindowML.Size = new System.Drawing.Size(50, 50);
-            this.picWindowML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picWindowML.TabIndex = 35;
-            this.picWindowML.TabStop = false;
-            // 
-            // picWindowMML
-            // 
-            this.picWindowMML.Image = ((System.Drawing.Image)(resources.GetObject("picWindowMML.Image")));
-            this.picWindowMML.Location = new System.Drawing.Point(404, 64);
-            this.picWindowMML.Name = "picWindowMML";
-            this.picWindowMML.Size = new System.Drawing.Size(50, 50);
-            this.picWindowMML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picWindowMML.TabIndex = 36;
-            this.picWindowMML.TabStop = false;
-            // 
-            // picWindowMMR
-            // 
-            this.picWindowMMR.Image = ((System.Drawing.Image)(resources.GetObject("picWindowMMR.Image")));
-            this.picWindowMMR.Location = new System.Drawing.Point(460, 63);
-            this.picWindowMMR.Name = "picWindowMMR";
-            this.picWindowMMR.Size = new System.Drawing.Size(50, 50);
-            this.picWindowMMR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picWindowMMR.TabIndex = 37;
-            this.picWindowMMR.TabStop = false;
-            // 
-            // picWindowMR
-            // 
-            this.picWindowMR.Image = ((System.Drawing.Image)(resources.GetObject("picWindowMR.Image")));
-            this.picWindowMR.Location = new System.Drawing.Point(516, 63);
-            this.picWindowMR.Name = "picWindowMR";
-            this.picWindowMR.Size = new System.Drawing.Size(50, 50);
-            this.picWindowMR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picWindowMR.TabIndex = 38;
-            this.picWindowMR.TabStop = false;
             // 
             // picWindowTL
             // 
@@ -488,27 +426,17 @@
             // picWindowTML
             // 
             this.picWindowTML.Image = ((System.Drawing.Image)(resources.GetObject("picWindowTML.Image")));
-            this.picWindowTML.Location = new System.Drawing.Point(404, 8);
+            this.picWindowTML.Location = new System.Drawing.Point(404, 7);
             this.picWindowTML.Name = "picWindowTML";
             this.picWindowTML.Size = new System.Drawing.Size(50, 50);
             this.picWindowTML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picWindowTML.TabIndex = 40;
             this.picWindowTML.TabStop = false;
             // 
-            // picWindowTMR
-            // 
-            this.picWindowTMR.Image = ((System.Drawing.Image)(resources.GetObject("picWindowTMR.Image")));
-            this.picWindowTMR.Location = new System.Drawing.Point(460, 7);
-            this.picWindowTMR.Name = "picWindowTMR";
-            this.picWindowTMR.Size = new System.Drawing.Size(50, 50);
-            this.picWindowTMR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picWindowTMR.TabIndex = 41;
-            this.picWindowTMR.TabStop = false;
-            // 
             // picWindowTR
             // 
             this.picWindowTR.Image = ((System.Drawing.Image)(resources.GetObject("picWindowTR.Image")));
-            this.picWindowTR.Location = new System.Drawing.Point(516, 7);
+            this.picWindowTR.Location = new System.Drawing.Point(460, 7);
             this.picWindowTR.Name = "picWindowTR";
             this.picWindowTR.Size = new System.Drawing.Size(50, 50);
             this.picWindowTR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -521,15 +449,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.picWindowTR);
-            this.Controls.Add(this.picWindowTMR);
             this.Controls.Add(this.picWindowTML);
             this.Controls.Add(this.picWindowTL);
-            this.Controls.Add(this.picWindowMR);
-            this.Controls.Add(this.picWindowMMR);
-            this.Controls.Add(this.picWindowMML);
-            this.Controls.Add(this.picWindowML);
             this.Controls.Add(this.picWindowBR);
-            this.Controls.Add(this.picWindowBMR);
             this.Controls.Add(this.picWindowBML);
             this.Controls.Add(this.picWindowBL);
             this.Controls.Add(this.picWallDetail);
@@ -592,15 +514,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWallDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowBL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowBML)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowBMR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowBR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowML)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowMML)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowMMR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowMR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowTL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowTML)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWindowTMR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWindowTR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -639,15 +555,9 @@
         public System.Windows.Forms.PictureBox picWallDetail;
         public System.Windows.Forms.PictureBox picWindowBL;
         public System.Windows.Forms.PictureBox picWindowBML;
-        public System.Windows.Forms.PictureBox picWindowBMR;
         public System.Windows.Forms.PictureBox picWindowBR;
-        public System.Windows.Forms.PictureBox picWindowML;
-        public System.Windows.Forms.PictureBox picWindowMML;
-        public System.Windows.Forms.PictureBox picWindowMMR;
-        public System.Windows.Forms.PictureBox picWindowMR;
         public System.Windows.Forms.PictureBox picWindowTL;
         public System.Windows.Forms.PictureBox picWindowTML;
-        public System.Windows.Forms.PictureBox picWindowTMR;
         public System.Windows.Forms.PictureBox picWindowTR;
     }
 }
