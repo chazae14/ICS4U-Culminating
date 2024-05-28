@@ -27,11 +27,9 @@ namespace codeCulminating
         Bitmap minibuffer;
         Bitmap bmpWall;
         Bitmap bmpBottomWall;
-        Bitmap bmpWindow;
         Bitmap bmpBlack;
         Bitmap bmpGirl;                        
         Bitmap bmpWood;
-        Bitmap bmpMouseHole;
         Bitmap bmpTopLeftCarpet;
         Bitmap bmpTopRightCarpet;
         Bitmap bmpBottomLeftCarpet;
@@ -84,7 +82,7 @@ namespace codeCulminating
             if (tmrMove.Enabled == false)
             {
                 int destTile = 99;              //default destTile is NOT WALKABLE
-                bool walk = true;
+                bool walk = false;
 
                 //depending on key pressed, check the tile you would move to (get it's tile number from the map)
                 if (e.KeyCode == Keys.D)
@@ -93,6 +91,7 @@ namespace codeCulminating
                     if ((curX > 8 * tileSize && curX < 18 * tileSize) || (curX < 8 * tileSize)) // can go if in bounds 
                     {
                         destTile = map[(curX + tileSize) / tileSize, curY / tileSize];
+                        walk = true;
                     }
                     else // cant go if out of bounds
                     {
@@ -109,6 +108,8 @@ namespace codeCulminating
                     else // can go if within bounds
                     {
                         destTile = map[(curX - tileSize) / tileSize, curY / tileSize];
+                        walk = true;
+
                     }
                 }
                 else if (e.KeyCode == Keys.W)
@@ -121,6 +122,8 @@ namespace codeCulminating
                     else // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY - tileSize) / tileSize];
+                        walk = true;
+
                     }
                 }
                 else if (e.KeyCode == Keys.S)
@@ -130,6 +133,8 @@ namespace codeCulminating
                     if ((curY > 7 * tileSize && curY < 11 * tileSize) || (curY < 11 * tileSize)) // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY + tileSize) / tileSize];
+                        walk = true;
+
                     }
                     else // cant go if out of bounds
                     {
@@ -216,7 +221,6 @@ namespace codeCulminating
             bmpBlack = new Bitmap(frmG.picBlackTile.Image, tileSize, tileSize);
             bmpBottomWall = new Bitmap(frmG.picBottomWall.Image, tileSize, tileSize);
             bmpWall = new Bitmap(frmG.picPlainWall.Image, tileSize, tileSize);
-            bmpMouseHole = new Bitmap(frmG.picMouseHole.Image, tileSize, tileSize);
             bmpTopLeftCarpet = new Bitmap(frmG.picToLeftCar.Image, tileSize, tileSize);
             bmpTopRightCarpet = new Bitmap(frmG.picTopRightCar.Image, tileSize, tileSize);
             bmpTopSideCarpet = new Bitmap(frmG.picTopCar.Image, tileSize, tileSize);
