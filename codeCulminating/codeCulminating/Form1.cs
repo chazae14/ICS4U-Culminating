@@ -84,7 +84,7 @@ namespace codeCulminating
             if (tmrMove.Enabled == false)
             {
                 int destTile = 99;              //default destTile is NOT WALKABLE
-                bool walk = true;
+                bool walk = false;
 
                 //depending on key pressed, check the tile you would move to (get it's tile number from the map)
                 if (e.KeyCode == Keys.D)
@@ -93,6 +93,7 @@ namespace codeCulminating
                     if ((curX > 8 * tileSize && curX < 18 * tileSize) || (curX < 8 * tileSize)) // can go if in bounds 
                     {
                         destTile = map[(curX + tileSize) / tileSize, curY / tileSize];
+                        walk = true;
                     }
                     else // cant go if out of bounds
                     {
@@ -109,6 +110,8 @@ namespace codeCulminating
                     else // can go if within bounds
                     {
                         destTile = map[(curX - tileSize) / tileSize, curY / tileSize];
+                        walk = true;
+
                     }
                 }
                 else if (e.KeyCode == Keys.W)
@@ -121,6 +124,8 @@ namespace codeCulminating
                     else // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY - tileSize) / tileSize];
+                        walk = true;
+
                     }
                 }
                 else if (e.KeyCode == Keys.S)
@@ -130,6 +135,8 @@ namespace codeCulminating
                     if ((curY > 7 * tileSize && curY < 11 * tileSize) || (curY < 11 * tileSize)) // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY + tileSize) / tileSize];
+                        walk = true;
+
                     }
                     else // cant go if out of bounds
                     {
@@ -455,9 +462,9 @@ namespace codeCulminating
 
             // rectDest to start out sprite on her bed
             rectDest = new Rectangle(18 * tileSize, 6 * tileSize, tileSize, tileSize);
-            rectSource = new Rectangle(0, 0, tileSize, tileSize);
+            rectSource = new Rectangle(18 * tileSize, 6 * tileSize, tileSize, tileSize);
 
-            // drawing out our girl and on her bed
+            // drawing out our girl on her bed
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
             
