@@ -37,5 +37,10 @@ namespace codeCulminating
             Maze inMazeGame = new Maze();
             inMazeGame.Show();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
