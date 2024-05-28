@@ -129,17 +129,23 @@ namespace codeCulminating
                         walk = false;
                     }
                 }
+                else if (e.KeyCode == Keys.Escape)
+                {
+                    frmPause frmPause = new frmPause();
+                    frmPause.Show();
+                }
 
-                if ((destTile < 18) && walk)
-                {
-                    moves = 0;
-                    tmrMove.Enabled = true;
-                }
-                else
-                {
-                    MessageBox.Show("You can't go there!");
-                    walk = true;
-                }
+                    if ((destTile < 18) && walk)
+                    {
+                        moves = 0;
+                        tmrMove.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("You can't go there!");
+                        walk = true;
+                    }
+                
             }
         }
 
@@ -196,7 +202,7 @@ namespace codeCulminating
         // form load to load up first map
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            
             Graphics G;
             G = this.CreateGraphics();
 

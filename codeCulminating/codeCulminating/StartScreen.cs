@@ -21,7 +21,6 @@ namespace codeCulminating
         private void btnStart_Click(object sender, EventArgs e)
         {
             frmMain inGamescreen = new frmMain();
-            
             inGamescreen.Show();
             
         }
