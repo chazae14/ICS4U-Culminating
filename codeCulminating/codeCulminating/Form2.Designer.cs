@@ -1,6 +1,6 @@
 ﻿namespace codeCulminating
 {
-    partial class picBed
+    partial class frmGraphics
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(picBed));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGraphics));
             this.bmpWood = new System.Windows.Forms.PictureBox();
             this.picGirl = new System.Windows.Forms.PictureBox();
             this.picPlainWall = new System.Windows.Forms.PictureBox();
@@ -443,7 +443,7 @@
             this.picWindowTR.TabIndex = 42;
             this.picWindowTR.TabStop = false;
             // 
-            // picBed
+            // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -482,7 +482,7 @@
             this.Controls.Add(this.picPlainWall);
             this.Controls.Add(this.picGirl);
             this.Controls.Add(this.bmpWood);
-            this.Name = "picBed";
+            this.Name = "frmGraphics";
             this.Text = "Graphics";
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).EndInit();

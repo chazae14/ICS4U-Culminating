@@ -22,7 +22,7 @@ namespace codeCulminating
         }
 
         int tileSize = 50;
-        picBed frmG = new picBed();  
+        frmGraphics frmG = new frmGraphics();  
         Bitmap backbuffer;                     
         Bitmap minibuffer;
         Bitmap bmpWall;
