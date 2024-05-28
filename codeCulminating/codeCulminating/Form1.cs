@@ -459,9 +459,9 @@ namespace codeCulminating
 
             // rectDest to start out sprite on her bed
             rectDest = new Rectangle(18 * tileSize, 6 * tileSize, tileSize, tileSize);
-            rectSource = new Rectangle(0, 0, tileSize, tileSize);
+            rectSource = new Rectangle(18 * tileSize, 6 * tileSize, tileSize, tileSize);
 
-            // drawing out our girl and on her bed
+            // drawing out our girl on her bed
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
             
