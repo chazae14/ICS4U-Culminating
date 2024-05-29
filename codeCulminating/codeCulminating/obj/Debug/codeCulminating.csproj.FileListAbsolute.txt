@@ -1,6 +1,5 @@
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.csproj.AssemblyReference.cache
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.csproj.SuggestedBindingRedirects.cache
-C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.frmMain.resources
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.Properties.Resources.resources
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.csproj.GenerateResource.cache
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.csproj.CoreCompileInputs.cache
@@ -37,6 +36,5 @@ C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4
 C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.pdb
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.HelpScreen.resources
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.Maze.resources
-C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.StartScreen.resources
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.frmGraphics.resources
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.Level_1.resources
