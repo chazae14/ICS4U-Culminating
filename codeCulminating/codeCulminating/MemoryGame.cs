@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace codeCulminating
 {
@@ -16,8 +17,10 @@ namespace codeCulminating
     {
         Button[] myButtons;
         List<int> myList;
+        int[] myNums = new int[9];
         Random rnd = new Random();
-        int turn = 0;
+        int turn = 1;
+        bool guess = true;
         public MemoryGame()
         {
             InitializeComponent();
@@ -27,88 +30,59 @@ namespace codeCulminating
         {
             myList = new List<int>();
             rnd = new Random();
-            myList.Add(rnd.Next(0,10));
-
 
             myButtons = new Button[] {button1,button2,button3,button4,button5,button6,button7,button8,button9};
             ;
 
             for (int n = 0; n < myButtons.Count(); n++)
             {
-                myButtons[n].Text = "";
-                myButtons[n].Click += new EventHandler(myButtons_Click);
+                
+                myButtons[n].Click += new EventHandler(myButtons_Click);                
+                myNums[n] = rnd.Next(0,9);
             }
-
-
-            
-
+            new Thread(Simon_Says).Start();
         }
 
         private void Simon_Says()
         {
             Thread.Sleep(150);
 
-            foreach(int x in myList) 
+
+            for (int x = 0; x < turn; x++)
             {
-                switch (x)
-                {
-                    case 0:
-                        myButtons[x].BackColor = Color.Black;
-                        Thread.Sleep(1000);
-                        myButtons[x].BackColor = Color.Transparent;
-                        break;
-                    case 1:
-                        myButtons[x].BackColor = Color.Black;
-                        Thread.Sleep(1000);
-                        myButtons[x].BackColor = Color.Transparent;
-                        break;
-                    case 2:
-                        myButtons[x].BackColor = Color.Black;
-                        Thread.Sleep(1000);
-                        myButtons[x].BackColor = Color.Transparent;
-                        break; 
-                    case 3:
-                        myButtons[x].BackColor = Color.Black;
-                        Thread.Sleep(1000);
-                        myButtons[x].BackColor = Color.Transparent;
-                        break;
-                    case 4:
-                        myButtons[x].BackColor = Color.Black;
-                        Thread.Sleep(1000);
-                        myButtons[x].BackColor = Color.Transparent;
-                        break;
-                    case 5:
-                        myButtons[x].BackColor = Color.Black;
-                        Thread.Sleep(1000);
-                        myButtons[x].BackColor = Color.Transparent;
-                        break;
-                    case 6:
-                        myButtons[x].BackColor = Color.Black;
-                        Thread.Sleep(1000);
-                        myButtons[x].BackColor = Color.Transparent;
-                        break;
-                    case 7:
-                        myButtons[x].BackColor = Color.Black;
-                        Thread.Sleep(1000);
-                        myButtons[x].BackColor = Color.Transparent;
-                        break;
-                    case 8:
-                        myButtons[x].BackColor = Color.Black;
-                        Thread.Sleep(1000);
-                        myButtons[x].BackColor = Color.Transparent;
-                        break;
-                }
+                myButtons[myNums[x]].BackColor = Color.Black;
+                Thread.Sleep(750);
+                myButtons[myNums[x]].BackColor = Color.Transparent;
+                Thread.Sleep(150);
             }
+            
+          
         }
 
         private void myButtons_Click(object sender, EventArgs e)
         {
             Button currentButton = (Button)sender;
+
+            for (int x = 0;x < turn; x++)
+            {
+                if (currentButton.Text == myNums[x].ToString())
+                {
+                    guess = true;                 
+                }
+
+                
+            }
+            if (guess)
+            {
+                turn++;
+                new Thread(Simon_Says).Start();
+            }
+            
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            new Thread(Simon_Says).Start();
+            
         }
 
         private void myButtons_MouseDown(object sender, MouseEventArgs e)
