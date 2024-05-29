@@ -34,7 +34,6 @@
             this.picPlainWall = new System.Windows.Forms.PictureBox();
             this.picBottomWall = new System.Windows.Forms.PictureBox();
             this.picBlackTile = new System.Windows.Forms.PictureBox();
-            this.picMouseHole = new System.Windows.Forms.PictureBox();
             this.picToLeftCar = new System.Windows.Forms.PictureBox();
             this.picTopCar = new System.Windows.Forms.PictureBox();
             this.picTopRightCar = new System.Windows.Forms.PictureBox();
@@ -81,7 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomWall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBlackTile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMouseHole)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picToLeftCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTopCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTopRightCar)).BeginInit();
@@ -168,22 +166,12 @@
             // picBlackTile
             // 
             this.picBlackTile.Image = ((System.Drawing.Image)(resources.GetObject("picBlackTile.Image")));
-            this.picBlackTile.Location = new System.Drawing.Point(235, 119);
+            this.picBlackTile.Location = new System.Drawing.Point(235, 175);
             this.picBlackTile.Name = "picBlackTile";
             this.picBlackTile.Size = new System.Drawing.Size(50, 50);
             this.picBlackTile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picBlackTile.TabIndex = 6;
             this.picBlackTile.TabStop = false;
-            // 
-            // picMouseHole
-            // 
-            this.picMouseHole.Image = ((System.Drawing.Image)(resources.GetObject("picMouseHole.Image")));
-            this.picMouseHole.Location = new System.Drawing.Point(235, 175);
-            this.picMouseHole.Name = "picMouseHole";
-            this.picMouseHole.Size = new System.Drawing.Size(50, 50);
-            this.picMouseHole.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picMouseHole.TabIndex = 7;
-            this.picMouseHole.TabStop = false;
             // 
             // picToLeftCar
             // 
@@ -332,7 +320,7 @@
             // picLeftSideDesk
             // 
             this.picLeftSideDesk.Image = ((System.Drawing.Image)(resources.GetObject("picLeftSideDesk.Image")));
-            this.picLeftSideDesk.Location = new System.Drawing.Point(348, 119);
+            this.picLeftSideDesk.Location = new System.Drawing.Point(235, 118);
             this.picLeftSideDesk.Name = "picLeftSideDesk";
             this.picLeftSideDesk.Size = new System.Drawing.Size(50, 50);
             this.picLeftSideDesk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -645,7 +633,6 @@
             this.Controls.Add(this.picTopRightCar);
             this.Controls.Add(this.picTopCar);
             this.Controls.Add(this.picToLeftCar);
-            this.Controls.Add(this.picMouseHole);
             this.Controls.Add(this.picBlackTile);
             this.Controls.Add(this.picBottomWall);
             this.Controls.Add(this.picPlainWall);
@@ -658,7 +645,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBottomWall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBlackTile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMouseHole)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picToLeftCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTopCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTopRightCar)).EndInit();
@@ -712,7 +698,6 @@
         public System.Windows.Forms.PictureBox picPlainWall;
         public System.Windows.Forms.PictureBox picBottomWall;
         public System.Windows.Forms.PictureBox picBlackTile;
-        public System.Windows.Forms.PictureBox picMouseHole;
         public System.Windows.Forms.PictureBox picToLeftCar;
         public System.Windows.Forms.PictureBox picTopCar;
         public System.Windows.Forms.PictureBox picTopRightCar;
