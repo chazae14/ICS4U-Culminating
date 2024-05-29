@@ -29,19 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tmrMove = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblTextBox = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tmrMove
             // 
             this.tmrMove.Tick += new System.EventHandler(this.tmrMove_Tick_1);
             // 
+            // lblTextBox
+            // 
+            this.lblTextBox.Image = ((System.Drawing.Image)(resources.GetObject("lblTextBox.Image")));
+            this.lblTextBox.Location = new System.Drawing.Point(770, 542);
+            this.lblTextBox.Name = "lblTextBox";
+            this.lblTextBox.Size = new System.Drawing.Size(150, 50);
+            this.lblTextBox.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
+            this.Controls.Add(this.lblTextBox);
             this.DoubleBuffered = true;
             this.Name = "frmMain";
             this.Text = "Main";
@@ -56,6 +67,7 @@
 
         private System.Windows.Forms.Timer tmrMove;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblTextBox;
     }
 }
 

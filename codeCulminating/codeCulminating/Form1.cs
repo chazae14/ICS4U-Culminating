@@ -58,6 +58,7 @@ namespace codeCulminating
         Bitmap bmpWindowBL;
         Bitmap bmpWindowBML;
         Bitmap bmpWindowBR;
+        Bitmap bmpTextBox;
 
         Rectangle rectSource, rect0, rectDest; 
         int curX, curY;                        
@@ -83,6 +84,10 @@ namespace codeCulminating
             {
                 int destTile = 99;              //default destTile is NOT WALKABLE
                 bool walk = false;
+                Graphics gback = Graphics.FromImage(backbuffer);
+
+                bmpTextBox = new Bitmap(frmG.picTextBox.Image, 400, 150);
+
 
                 //depending on key pressed, check the tile you would move to (get it's tile number from the map)
                 if (e.KeyCode == Keys.D)
@@ -151,6 +156,16 @@ namespace codeCulminating
                 {
                     walk = true;
                 }
+
+                if (curX >= 7 * tileSize && curX <= 10 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize)
+                {
+                    lblTextBox.Show();
+                    lblTextBox.Text = " \n   Click the desk for Level \n    Select.";
+                }
+                else
+                {
+                    lblTextBox.Hide();
+                }
             }
         }
 
@@ -210,6 +225,8 @@ namespace codeCulminating
 
             Graphics G;
             G = this.CreateGraphics();
+
+            lblTextBox.Hide();
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
@@ -464,7 +481,7 @@ namespace codeCulminating
             // drawing out our girl on her bed
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
-            
+
             // girl's current position
             curX = 18 * tileSize; 
             curY = 6 * tileSize;
