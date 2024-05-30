@@ -147,7 +147,7 @@ namespace codeCulminating
                     }
                 }
 
-                if ((destTile != 20 && destTile != 21 && destTile != 23) && walk)
+                if ((destTile != 20 && destTile != 21 && destTile != 23) && walk) // cant go if destination is edge of bed or side table
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -157,6 +157,7 @@ namespace codeCulminating
                     walk = true;
                 }
 
+                // when near desk, popup to tell you what to do next
                 if (curX >= 7 * tileSize && curX <= 10 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize)
                 {
                     lblTextBox.Show();
@@ -169,6 +170,7 @@ namespace codeCulminating
             }
         }
 
+        // when desk is clicked, it will take you to level select
         private void btnLevelSelect_Click(object sender, EventArgs e)
         {
             frmLevelSelect inGamescreen = new frmLevelSelect();
@@ -239,7 +241,7 @@ namespace codeCulminating
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
             minibuffer = new Bitmap(tileSize, tileSize);
 
-            // loading in the images for the first map
+            // loading in the images for the intro map
             bmpGirl = new Bitmap(frmG.picGirl.Image, 149, 200);
             bmpWood = new Bitmap(frmG.bmpWood.Image, tileSize, tileSize);
             bmpBlack = new Bitmap(frmG.picBlackTile.Image, tileSize, tileSize);
@@ -409,12 +411,12 @@ namespace codeCulminating
             map[(18), (7)] = 20;
 
             // BEDSIDE TABLE!!
-            // left side of bedside
+            // left side of bedside table
             rectDest = new Rectangle(15 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpLeftDesk, rectDest, rect0, GraphicsUnit.Pixel);
             map[(15), (6)] = 21;
 
-            // right side bedside
+            // right side bedside table
             rectDest = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpRightDesk, rectDest, rect0, GraphicsUnit.Pixel);
             map[(16), (6)] = 22;

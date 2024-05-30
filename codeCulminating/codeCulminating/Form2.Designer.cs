@@ -402,7 +402,7 @@
             // picWindowBL
             // 
             this.picWindowBL.Image = ((System.Drawing.Image)(resources.GetObject("picWindowBL.Image")));
-            this.picWindowBL.Location = new System.Drawing.Point(516, 399);
+            this.picWindowBL.Location = new System.Drawing.Point(11, 270);
             this.picWindowBL.Name = "picWindowBL";
             this.picWindowBL.Size = new System.Drawing.Size(50, 50);
             this.picWindowBL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -412,7 +412,7 @@
             // picWindowBML
             // 
             this.picWindowBML.Image = ((System.Drawing.Image)(resources.GetObject("picWindowBML.Image")));
-            this.picWindowBML.Location = new System.Drawing.Point(572, 399);
+            this.picWindowBML.Location = new System.Drawing.Point(67, 270);
             this.picWindowBML.Name = "picWindowBML";
             this.picWindowBML.Size = new System.Drawing.Size(50, 50);
             this.picWindowBML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -422,7 +422,7 @@
             // picWindowBR
             // 
             this.picWindowBR.Image = ((System.Drawing.Image)(resources.GetObject("picWindowBR.Image")));
-            this.picWindowBR.Location = new System.Drawing.Point(628, 399);
+            this.picWindowBR.Location = new System.Drawing.Point(123, 270);
             this.picWindowBR.Name = "picWindowBR";
             this.picWindowBR.Size = new System.Drawing.Size(50, 50);
             this.picWindowBR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -432,7 +432,7 @@
             // picWindowTL
             // 
             this.picWindowTL.Image = ((System.Drawing.Image)(resources.GetObject("picWindowTL.Image")));
-            this.picWindowTL.Location = new System.Drawing.Point(516, 343);
+            this.picWindowTL.Location = new System.Drawing.Point(11, 214);
             this.picWindowTL.Name = "picWindowTL";
             this.picWindowTL.Size = new System.Drawing.Size(50, 50);
             this.picWindowTL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -442,7 +442,7 @@
             // picWindowTML
             // 
             this.picWindowTML.Image = ((System.Drawing.Image)(resources.GetObject("picWindowTML.Image")));
-            this.picWindowTML.Location = new System.Drawing.Point(572, 343);
+            this.picWindowTML.Location = new System.Drawing.Point(67, 214);
             this.picWindowTML.Name = "picWindowTML";
             this.picWindowTML.Size = new System.Drawing.Size(50, 50);
             this.picWindowTML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -452,7 +452,7 @@
             // picWindowTR
             // 
             this.picWindowTR.Image = ((System.Drawing.Image)(resources.GetObject("picWindowTR.Image")));
-            this.picWindowTR.Location = new System.Drawing.Point(628, 343);
+            this.picWindowTR.Location = new System.Drawing.Point(123, 214);
             this.picWindowTR.Name = "picWindowTR";
             this.picWindowTR.Size = new System.Drawing.Size(50, 50);
             this.picWindowTR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -603,7 +603,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 531);
+            this.ClientSize = new System.Drawing.Size(1062, 429);
             this.Controls.Add(this.picTextBox);
             this.Controls.Add(this.picLvlOneWndTR);
             this.Controls.Add(this.picLvlOneWndTMR);
