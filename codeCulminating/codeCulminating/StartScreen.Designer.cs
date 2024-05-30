@@ -32,6 +32,7 @@
             this.btnHelp = new System.Windows.Forms.Button();
             this.lblGameTitle = new System.Windows.Forms.Label();
             this.btnMazeGame = new System.Windows.Forms.Button();
+            this.btnMemoryGame = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -79,12 +80,24 @@
             this.btnMazeGame.UseVisualStyleBackColor = false;
             this.btnMazeGame.Click += new System.EventHandler(this.btnMazeGame_Click);
             // 
+            // btnMemoryGame
+            // 
+            this.btnMemoryGame.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMemoryGame.Location = new System.Drawing.Point(51, 272);
+            this.btnMemoryGame.Name = "btnMemoryGame";
+            this.btnMemoryGame.Size = new System.Drawing.Size(114, 38);
+            this.btnMemoryGame.TabIndex = 4;
+            this.btnMemoryGame.Text = "Memory Game";
+            this.btnMemoryGame.UseVisualStyleBackColor = false;
+            this.btnMemoryGame.Click += new System.EventHandler(this.btnMemoryGame_Click);
+            // 
             // StartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(754, 450);
+            this.Controls.Add(this.btnMemoryGame);
             this.Controls.Add(this.btnMazeGame);
             this.Controls.Add(this.lblGameTitle);
             this.Controls.Add(this.btnHelp);
@@ -104,5 +117,6 @@
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Label lblGameTitle;
         private System.Windows.Forms.Button btnMazeGame;
+        private System.Windows.Forms.Button btnMemoryGame;
     }
 }
