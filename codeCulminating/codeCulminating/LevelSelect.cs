@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace codeCulminating
 {
-    public partial class LevelSelect : Form
+    public partial class frmLevelSelect : Form
     {
-        public LevelSelect()
+        public frmLevelSelect()
         {
             InitializeComponent();
         }

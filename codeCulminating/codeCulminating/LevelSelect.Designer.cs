@@ -1,6 +1,6 @@
 ﻿namespace codeCulminating
 {
-    partial class LevelSelect
+    partial class frmLevelSelect
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LevelSelect));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLevelSelect));
             this.SuspendLayout();
             // 
-            // LevelSelect
+            // frmLevelSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1398, 761);
-            this.Name = "LevelSelect";
+            this.Name = "frmLevelSelect";
             this.Text = "LevelSelect";
             this.ResumeLayout(false);
 

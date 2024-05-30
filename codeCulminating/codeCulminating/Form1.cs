@@ -147,7 +147,7 @@ namespace codeCulminating
                     }
                 }
 
-                if ((destTile >=19 || destTile <= 23) && walk)
+                if ((destTile != 20 && destTile != 21 && destTile != 23) && walk)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -167,6 +167,13 @@ namespace codeCulminating
                     lblTextBox.Hide();
                 }
             }
+        }
+
+        private void btnLevelSelect_Click(object sender, EventArgs e)
+        {
+            frmLevelSelect inGamescreen = new frmLevelSelect();
+
+            inGamescreen.Show();
         }
 
         private void tmrMove_Tick_1(object sender, EventArgs e)
@@ -402,12 +409,12 @@ namespace codeCulminating
             map[(18), (7)] = 20;
 
             // BEDSIDE TABLE!!
-            // left side of desk
+            // left side of bedside
             rectDest = new Rectangle(15 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpLeftDesk, rectDest, rect0, GraphicsUnit.Pixel);
             map[(15), (6)] = 21;
 
-            // right side desk
+            // right side bedside
             rectDest = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpRightDesk, rectDest, rect0, GraphicsUnit.Pixel);
             map[(16), (6)] = 22;
