@@ -1,6 +1,6 @@
 ﻿namespace codeCulminating
 {
-    partial class frmMain
+    partial class Level_1
     {
         /// <summary>
         /// Required designer variable.
@@ -30,24 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tmrMove = new System.Windows.Forms.Timer(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // tmrMove
             // 
-            this.tmrMove.Tick += new System.EventHandler(this.tmrMove_Tick_1);
+            this.tmrMove.Tick += new System.EventHandler(this.tmrMove_Tick);
             // 
-            // frmMain
+            // Level_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
-            this.DoubleBuffered = true;
-            this.Name = "frmMain";
-            this.Text = "Main";
-            this.Load += new System.EventHandler(this.frmMain_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMain_Paint);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
+            this.Name = "Level_1";
+            this.Text = "Level_1";
+            this.Load += new System.EventHandler(this.Level_1_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Level_1_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Level_1_KeyDown);
             this.ResumeLayout(false);
 
         }
@@ -55,7 +53,5 @@
         #endregion
 
         private System.Windows.Forms.Timer tmrMove;
-        private System.Windows.Forms.Timer timer1;
     }
 }
-
