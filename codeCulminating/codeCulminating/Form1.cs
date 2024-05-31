@@ -58,6 +58,7 @@ namespace codeCulminating
         Bitmap bmpWindowBL;
         Bitmap bmpWindowBML;
         Bitmap bmpWindowBR;
+        Bitmap bmpTextBox;
 
         Rectangle rectSource, rect0, rectDest; 
         int curX, curY;                        
@@ -83,6 +84,10 @@ namespace codeCulminating
             {
                 int destTile = 99;              //default destTile is NOT WALKABLE
                 bool walk = false;
+                Graphics gback = Graphics.FromImage(backbuffer);
+
+                bmpTextBox = new Bitmap(frmG.picTextBox.Image, 400, 150);
+
 
                 //depending on key pressed, check the tile you would move to (get it's tile number from the map)
                 if (e.KeyCode == Keys.D)
@@ -142,7 +147,7 @@ namespace codeCulminating
                     }
                 }
 
-                if ((destTile >=19 || destTile <= 23) && walk)
+                if ((destTile != 20 && destTile != 21 && destTile != 23) && walk)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -151,7 +156,24 @@ namespace codeCulminating
                 {
                     walk = true;
                 }
+
+                if (curX >= 7 * tileSize && curX <= 10 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize)
+                {
+                    lblTextBox.Show();
+                    lblTextBox.Text = " \n   Click the desk for Level \n    Select.";
+                }
+                else
+                {
+                    lblTextBox.Hide();
+                }
             }
+        }
+
+        private void btnLevelSelect_Click(object sender, EventArgs e)
+        {
+            frmLevelSelect inGamescreen = new frmLevelSelect();
+
+            inGamescreen.Show();
         }
 
         private void tmrMove_Tick_1(object sender, EventArgs e)
@@ -210,6 +232,8 @@ namespace codeCulminating
 
             Graphics G;
             G = this.CreateGraphics();
+
+            lblTextBox.Hide();
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
@@ -385,12 +409,12 @@ namespace codeCulminating
             map[(18), (7)] = 20;
 
             // BEDSIDE TABLE!!
-            // left side of desk
+            // left side of bedside
             rectDest = new Rectangle(15 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpLeftDesk, rectDest, rect0, GraphicsUnit.Pixel);
             map[(15), (6)] = 21;
 
-            // right side desk
+            // right side bedside
             rectDest = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpRightDesk, rectDest, rect0, GraphicsUnit.Pixel);
             map[(16), (6)] = 22;
@@ -464,7 +488,7 @@ namespace codeCulminating
             // drawing out our girl on her bed
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
-            
+
             // girl's current position
             curX = 18 * tileSize; 
             curY = 6 * tileSize;

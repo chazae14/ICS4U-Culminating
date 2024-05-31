@@ -40,5 +40,5 @@ C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae1
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.StartScreen.resources
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.frmGraphics.resources
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.Level_1.resources
-C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.Level_1.resources
-C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.MemoryGame.resources
+C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.frmLevelSelect.resources
+C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.MemoryGame.resources
