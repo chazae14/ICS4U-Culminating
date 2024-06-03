@@ -40,7 +40,7 @@
             this.btnLevelOne.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnLevelOne.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLevelOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLevelOne.Location = new System.Drawing.Point(235, 128);
+            this.btnLevelOne.Location = new System.Drawing.Point(235, 79);
             this.btnLevelOne.Name = "btnLevelOne";
             this.btnLevelOne.Size = new System.Drawing.Size(408, 317);
             this.btnLevelOne.TabIndex = 0;
