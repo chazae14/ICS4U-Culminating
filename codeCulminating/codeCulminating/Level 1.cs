@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace codeCulminating
 {
-    public partial class Level_1 : Form
+    public partial class frmLevelOne : Form
     {
-        public Level_1()
+        public frmLevelOne()
         {
             InitializeComponent();
         }
@@ -54,9 +54,15 @@ namespace codeCulminating
         Bitmap bmpWallDetail;
         Bitmap bmpWindowTL;
         Bitmap bmpWindowTML;
+        Bitmap bmpWindowTMR;
         Bitmap bmpWindowTR;
+        Bitmap bmpWindowML;
+        Bitmap bmpWindowMML;
+        Bitmap bmpWindowMMR;
+        Bitmap bmpWindowMR;
         Bitmap bmpWindowBL;
         Bitmap bmpWindowBML;
+        Bitmap bmpWindowBMR;
         Bitmap bmpWindowBR;
 
         Rectangle rectSource, rect0, rectDest;
@@ -82,12 +88,13 @@ namespace codeCulminating
             {
                 int destTile = 99;              //default destTile is NOT WALKABLE
                 bool walk = false;
+                Graphics gback = Graphics.FromImage(backbuffer);
 
                 //depending on key pressed, check the tile you would move to (get it's tile number from the map)
                 if (e.KeyCode == Keys.D)
                 {
                     direction = (int)dir.right;
-                    if ((curX > 8 * tileSize && curX < 18 * tileSize) || (curX < 8 * tileSize)) // can go if in bounds 
+                    if ((curX > 6 * tileSize && curX < 19 * tileSize) || (curX < 6 * tileSize)) // can go if in bounds 
                     {
                         destTile = map[(curX + tileSize) / tileSize, curY / tileSize];
                         walk = true;
@@ -100,7 +107,7 @@ namespace codeCulminating
                 if (e.KeyCode == Keys.A)
                 {
                     direction = (int)dir.left;
-                    if (curX <= 7 * tileSize || curX >= 19 * tileSize) // cant go if out of bounds
+                    if (curX <= 6 * tileSize || curX >= 20 * tileSize) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -114,7 +121,7 @@ namespace codeCulminating
                 else if (e.KeyCode == Keys.W)
                 {
                     direction = (int)dir.up;
-                    if (curY <= 6 * tileSize || curY >= 12 * tileSize) // cant go if out of bounds
+                    if (curY <= 7 * tileSize || curY >= 14 * tileSize) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -129,7 +136,7 @@ namespace codeCulminating
                 {
                     direction = (int)dir.down;
 
-                    if ((curY > 7 * tileSize && curY < 11 * tileSize) || (curY < 11 * tileSize)) // can go if within bounds
+                    if ((curY > 7 * tileSize && curY < 16 * tileSize) || (curY < 16 * tileSize)) // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY + tileSize) / tileSize];
                         walk = true;
@@ -141,7 +148,7 @@ namespace codeCulminating
                     }
                 }
 
-                if ((destTile >= 19 || destTile <= 23) && walk)
+                if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -240,12 +247,18 @@ namespace codeCulminating
             bmpDeskTR = new Bitmap(frmG.picDeskTR.Image, tileSize, tileSize);
             bmpDeskBR = new Bitmap(frmG.picDeskBR.Image, tileSize, tileSize);
             bmpWallDetail = new Bitmap(frmG.picWallDetail.Image, tileSize, tileSize);
-            bmpWindowBL = new Bitmap(frmG.picWindowBL.Image, tileSize, tileSize);
-            bmpWindowBML = new Bitmap(frmG.picWindowBML.Image, tileSize, tileSize);
-            bmpWindowBR = new Bitmap(frmG.picWindowBR.Image, tileSize, tileSize);
-            bmpWindowTL = new Bitmap(frmG.picWindowTL.Image, tileSize, tileSize);
-            bmpWindowTML = new Bitmap(frmG.picWindowTML.Image, tileSize, tileSize);
-            bmpWindowTR = new Bitmap(frmG.picWindowTR.Image, tileSize, tileSize);
+            bmpWindowBL = new Bitmap(frmG.picLvlOneWndBL.Image, tileSize, tileSize);
+            bmpWindowBML = new Bitmap(frmG.picLvlOneWndBML.Image, tileSize, tileSize);
+            bmpWindowBMR = new Bitmap(frmG.picLvlOneWndBMR.Image, tileSize, tileSize);
+            bmpWindowBR = new Bitmap(frmG.picLvlOneWndBR.Image, tileSize, tileSize);
+            bmpWindowTL = new Bitmap(frmG.picLvlOneWndTL.Image, tileSize, tileSize);
+            bmpWindowTML = new Bitmap(frmG.picLvlOneWndTML.Image, tileSize, tileSize);
+            bmpWindowTMR = new Bitmap(frmG.picLvlOneWndTMR.Image, tileSize, tileSize);
+            bmpWindowTR = new Bitmap(frmG.picLvlOneWndTR.Image, tileSize, tileSize);
+            bmpWindowML = new Bitmap(frmG.picLvlOneWndML.Image, tileSize, tileSize);
+            bmpWindowMML = new Bitmap(frmG.picLvlOneWndMML.Image, tileSize, tileSize);
+            bmpWindowMMR = new Bitmap(frmG.picLvlOneWndMMR.Image, tileSize, tileSize);
+            bmpWindowMR = new Bitmap(frmG.picLvlOneWndMR.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -274,6 +287,14 @@ namespace codeCulminating
                     map[(m), (n)] = 1;
                 }
             }
+            /// EXIT TILES
+            rectDest = new Rectangle(19 * tileSize, 13 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(19), (13)] = 1;
+
+            rectDest = new Rectangle(18 * tileSize, 13 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(18), (13)] = 1;
 
             // for loop to display the crowning of the wall
             for (int b = 6; b < 20; b++)
@@ -289,7 +310,7 @@ namespace codeCulminating
             // for loop to display wall
             for (int g = 6; g < 20; g++)
             {
-                for (int h = 3; h < 5; h++)
+                for (int h = 2; h < 5; h++)
                 {
                     rectDest = new Rectangle(g * tileSize, h * tileSize, tileSize, tileSize);
                     gback.DrawImage(bmpWall, rectDest, rect0, GraphicsUnit.Pixel);
@@ -390,17 +411,120 @@ namespace codeCulminating
                 }
             }
 
-            // rectDest to start out sprite in top left corner
-            rectDest = new Rectangle(0, 0, tileSize, tileSize);
-            rectSource = new Rectangle(0, 0, tileSize, tileSize);
+            /// WINDOW!!
+            // window top left 
+            rectDest = new Rectangle(11 * tileSize, 2 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowTL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (2)] = 28;
 
-            // drawing out our girl and the background starting from the top left corner
+            // window top middle left
+            rectDest = new Rectangle(12 * tileSize, 2 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowTML, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (2)] = 29;
+
+            // window top middle right
+            rectDest = new Rectangle(13 * tileSize, 2 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowTMR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(13), (2)] = 30;
+
+            // window top right
+            rectDest = new Rectangle(14 * tileSize, 2 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowTR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(14), (2)] = 31;
+
+            // window middle left
+            rectDest = new Rectangle(11 * tileSize, 3 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowML, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (3)] = 32;
+
+            // window middle middle left
+            rectDest = new Rectangle(12 * tileSize, 3 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowMML, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (3)] = 33;
+
+            // window middle middle right
+            rectDest = new Rectangle(13 * tileSize, 3 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowMMR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(13), (3)] = 34;
+
+            // window middle right
+            rectDest = new Rectangle(14 * tileSize, 3 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowMR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(14), (3)] = 35;
+
+            // window bottom left
+            rectDest = new Rectangle(11 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowBL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(11), (4)] = 36;
+
+            // window bottom middle left
+            rectDest = new Rectangle(12 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowBML, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (4)] = 37;
+
+            // window bottom middle right
+            rectDest = new Rectangle(13 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowBMR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(13), (4)] = 38;
+
+            // window bottom right
+            rectDest = new Rectangle(14 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWindowBR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(14), (4)] = 39;
+
+            /// BEDSIDE TABLE!!
+            // left side of bedside table
+            rectDest = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpLeftDesk, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(16), (6)] = 21;
+
+            // right side bedside table
+            rectDest = new Rectangle(17 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpRightDesk, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(17), (6)] = 22;
+
+            /// DESK DESK DESK!
+            // top left desk
+            rectDest = new Rectangle(8 * tileSize, 5 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskTL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(8), (5)] = 23;
+
+            // top middle desk
+            rectDest = new Rectangle(9 * tileSize, 5 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskTM, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(9), (5)] = 24;
+
+            // top right desk
+            rectDest = new Rectangle(10 * tileSize, 5 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskTR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(10), (5)] = 25;
+
+            // bottom left desk
+            rectDest = new Rectangle(8 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskBL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(8), (6)] = 26;
+
+            // bottom middle desk
+            rectDest = new Rectangle(9 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskBM, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(9), (6)] = 26;
+
+            // bottom right desk
+            rectDest = new Rectangle(10 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskBR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(10), (6)] = 27;
+
+            // rectDest to start out sprite on her bed
+            rectDest = new Rectangle(19 * tileSize, 6 * tileSize, tileSize, tileSize);
+            rectSource = new Rectangle(19 * tileSize, 6 * tileSize, tileSize, tileSize);       
+
+            // drawing out our girl on her bed
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
 
             // girl's current position
-            curX = 0;
-            curY = 0;
+            curX = 19 * tileSize;
+            curY = 6 * tileSize;
             gback.Dispose();
             gmini.Dispose();
 
