@@ -121,7 +121,7 @@ namespace codeCulminating
                 else if (e.KeyCode == Keys.W)
                 {
                     direction = (int)dir.up;
-                    if (curY <= 7 * tileSize || curY >= 13 * tileSize) // cant go if out of bounds
+                    if (curY <= 7 * tileSize || curY >= 14 * tileSize) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -136,7 +136,7 @@ namespace codeCulminating
                 {
                     direction = (int)dir.down;
 
-                    if ((curY > 7 * tileSize && curY < 12 * tileSize) || (curY < 12 * tileSize)) // can go if within bounds
+                    if ((curY > 7 * tileSize && curY < 16 * tileSize) || (curY < 16 * tileSize)) // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY + tileSize) / tileSize];
                         walk = true;
@@ -148,7 +148,7 @@ namespace codeCulminating
                     }
                 }
 
-                if ((destTile != 20 && destTile != 21 && destTile != 23) && walk)
+                if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -287,6 +287,14 @@ namespace codeCulminating
                     map[(m), (n)] = 1;
                 }
             }
+            /// EXIT TILES
+            rectDest = new Rectangle(19 * tileSize, 13 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(19), (13)] = 1;
+
+            rectDest = new Rectangle(18 * tileSize, 13 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(18), (13)] = 1;
 
             // for loop to display the crowning of the wall
             for (int b = 6; b < 20; b++)
@@ -505,15 +513,6 @@ namespace codeCulminating
             rectDest = new Rectangle(10 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpDeskBR, rectDest, rect0, GraphicsUnit.Pixel);
             map[(10), (6)] = 27;
-
-            /// EXIT TILES
-            rectDest = new Rectangle(16 * tileSize, 12 * tileSize, tileSize, tileSize);
-            gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(16), (12)] = 1;
-
-            rectDest = new Rectangle(17 * tileSize, 12 * tileSize, tileSize, tileSize);
-            gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(17), (12)] = 1;
 
             // rectDest to start out sprite on her bed
             rectDest = new Rectangle(19 * tileSize, 6 * tileSize, tileSize, tileSize);
