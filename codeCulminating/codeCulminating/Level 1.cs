@@ -157,6 +157,14 @@ namespace codeCulminating
                 {
                     walk = true;
                 }
+
+                /// ITEM INTERACTION
+                if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 12 * tileSize && curY < 15 * tileSize)
+                {
+                    frmMain inGamescreen = new frmMain();
+
+                    inGamescreen.Show();
+                }
             }
         }
 
@@ -548,10 +556,7 @@ namespace codeCulminating
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
-
-
     }
 }
 
