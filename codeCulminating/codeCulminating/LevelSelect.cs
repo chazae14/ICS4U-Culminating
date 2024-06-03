@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace codeCulminating
 {
-    public partial class frmGraphics : Form
+    public partial class frmLevelSelect : Form
     {
-        public frmGraphics()
+        public frmLevelSelect()
         {
             InitializeComponent();
         }
-
     }
 }
