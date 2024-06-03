@@ -26,7 +26,6 @@ C:\Users\jlateo9076\Source\Repos\ICS4U-Culminating\codeCulminating\codeCulminati
 C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.HelpScreen.resources
 C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.Maze.resources
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.picBed.resources
-<<<<<<< HEAD
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\bin\Debug\codeCulminating.exe.config
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\bin\Debug\codeCulminating.exe
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\bin\Debug\codeCulminating.pdb
@@ -43,7 +42,6 @@ C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulmina
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.csproj.CoreCompileInputs.cache
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.exe
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.pdb
-=======
 C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\bin\Debug\codeCulminating.exe.config
 C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\bin\Debug\codeCulminating.exe
 C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\bin\Debug\codeCulminating.pdb
@@ -55,7 +53,6 @@ C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4
 C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.csproj.CoreCompileInputs.cache
 C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.exe
 C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.pdb
->>>>>>> main
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\Interop.WMPLib.dll
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.csproj.ResolveComReference.cache
