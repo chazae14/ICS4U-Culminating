@@ -28,15 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnResume = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.btnMusicCont = new System.Windows.Forms.Button();
+            this.timerPause = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnResume
             // 
             this.btnResume.BackColor = System.Drawing.Color.Transparent;
+            this.btnResume.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnResume.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnResume.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnResume.FlatAppearance.BorderSize = 0;
+            this.btnResume.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnResume.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResume.Location = new System.Drawing.Point(523, 319);
             this.btnResume.Name = "btnResume";
             this.btnResume.Size = new System.Drawing.Size(375, 99);
@@ -47,7 +54,11 @@
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnMenu.Location = new System.Drawing.Point(523, 606);
             this.btnMenu.Name = "btnMenu";
@@ -55,6 +66,27 @@
             this.btnMenu.TabIndex = 1;
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnMusicCont
+            // 
+            this.btnMusicCont.BackColor = System.Drawing.Color.Transparent;
+            this.btnMusicCont.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMusicCont.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnMusicCont.FlatAppearance.BorderSize = 0;
+            this.btnMusicCont.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMusicCont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMusicCont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMusicCont.Location = new System.Drawing.Point(523, 468);
+            this.btnMusicCont.Name = "btnMusicCont";
+            this.btnMusicCont.Size = new System.Drawing.Size(375, 99);
+            this.btnMusicCont.TabIndex = 2;
+            this.btnMusicCont.UseVisualStyleBackColor = false;
+            this.btnMusicCont.Click += new System.EventHandler(this.btnMusicCont_Click);
+            // 
+            // timerPause
+            // 
+            this.timerPause.Interval = 10;
+            this.timerPause.Tick += new System.EventHandler(this.timerPause_Tick);
             // 
             // frmPause
             // 
@@ -64,11 +96,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnResume;
             this.ClientSize = new System.Drawing.Size(1440, 900);
+            this.Controls.Add(this.btnMusicCont);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnResume);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPause";
+            this.Opacity = 0D;
             this.Text = "PauseMenu";
             this.Load += new System.EventHandler(this.frmPause_Load);
             this.ResumeLayout(false);
@@ -79,5 +113,7 @@
 
         private System.Windows.Forms.Button btnResume;
         private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button btnMusicCont;
+        private System.Windows.Forms.Timer timerPause;
     }
 }

@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartScreen));
             this.btnStart = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.lblGameTitle = new System.Windows.Forms.Label();
             this.btnMazeGame = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.audPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.audPlayer)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStart
@@ -104,6 +109,20 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // audPlayer
+            // 
+            this.audPlayer.Enabled = true;
+            this.audPlayer.Location = new System.Drawing.Point(1099, 12);
+            this.audPlayer.Name = "audPlayer";
+            this.audPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("audPlayer.OcxState")));
+            this.audPlayer.Size = new System.Drawing.Size(138, 108);
+            this.audPlayer.TabIndex = 5;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // StartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +131,7 @@
             this.BackgroundImage = global::codeCulminating.Properties.Resources.titleWbuttons;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1424, 861);
+            this.Controls.Add(this.audPlayer);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnMazeGame);
             this.Controls.Add(this.lblGameTitle);
@@ -119,9 +139,13 @@
             this.Controls.Add(this.btnStart);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StartScreen";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StartScreen";
+            this.Load += new System.EventHandler(this.StartScreen_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.audPlayer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +158,7 @@
         private System.Windows.Forms.Label lblGameTitle;
         private System.Windows.Forms.Button btnMazeGame;
         private System.Windows.Forms.Button btnExit;
+        private AxWMPLib.AxWindowsMediaPlayer audPlayer;
+        private System.Windows.Forms.Timer timer1;
     }
 }

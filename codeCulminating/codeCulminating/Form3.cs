@@ -19,7 +19,7 @@ namespace codeCulminating
 
         private void frmPause_Load(object sender, EventArgs e)
         {
-            // nothing yet
+            timerPause.Start();
         }
 
         // closes the pause menu
@@ -36,6 +36,14 @@ namespace codeCulminating
             startScreen.Show();
         }
 
-        
+        private void btnMusicCont_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timerPause_Tick(object sender, EventArgs e)
+        {
+            Opacity += 0.1;
+        }
     }
 }
