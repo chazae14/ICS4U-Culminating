@@ -32,8 +32,8 @@
             this.btnResume = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.timerPause = new System.Windows.Forms.Timer(this.components);
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.volumeBar = new System.Windows.Forms.TrackBar();
+            ((System.ComponentModel.ISupportInitialize)(this.volumeBar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnResume
@@ -73,14 +73,14 @@
             this.timerPause.Interval = 10;
             this.timerPause.Tick += new System.EventHandler(this.timerPause_Tick);
             // 
-            // trackBar1
+            // volumeBar
             // 
-            this.trackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(185)))), ((int)(((byte)(85)))));
-            this.trackBar1.Location = new System.Drawing.Point(536, 656);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(349, 45);
-            this.trackBar1.TabIndex = 2;
-            this.trackBar1.Value = 5;
+            this.volumeBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(185)))), ((int)(((byte)(85)))));
+            this.volumeBar.Location = new System.Drawing.Point(536, 656);
+            this.volumeBar.Name = "volumeBar";
+            this.volumeBar.Size = new System.Drawing.Size(349, 45);
+            this.volumeBar.TabIndex = 2;
+            this.volumeBar.Value = 5;
             // 
             // frmPause
             // 
@@ -90,7 +90,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnResume;
             this.ClientSize = new System.Drawing.Size(1440, 900);
-            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.volumeBar);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnResume);
             this.DoubleBuffered = true;
@@ -99,7 +99,7 @@
             this.Opacity = 0D;
             this.Text = "PauseMenu";
             this.Load += new System.EventHandler(this.frmPause_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volumeBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,6 +110,6 @@
         private System.Windows.Forms.Button btnResume;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Timer timerPause;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar volumeBar;
     }
 }
