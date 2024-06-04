@@ -157,6 +157,16 @@ namespace codeCulminating
                 {
                     walk = true;
                 }
+
+                /// ITEM INTERACTIONS
+                if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 12 * tileSize && curY < 15 * tileSize && e.KeyCode == Keys.E)
+                {
+                    frmMain inGamescreen = new frmMain();
+
+                    inGamescreen.Show();
+                }
+
+
             }
         }
 
@@ -514,10 +524,41 @@ namespace codeCulminating
             gback.DrawImage(bmpDeskBR, rectDest, rect0, GraphicsUnit.Pixel);
             map[(10), (6)] = 27;
 
+            /// DESK DESK DESK!
+            // top left desk
+            rectDest = new Rectangle(8 * tileSize, 5 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskTL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(8), (5)] = 23;
+
+            // top middle desk
+            rectDest = new Rectangle(9 * tileSize, 5 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskTM, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(9), (5)] = 24;
+
+            // top right desk
+            rectDest = new Rectangle(10 * tileSize, 5 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskTR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(10), (5)] = 25;
+
+            // bottom left desk
+            rectDest = new Rectangle(8 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskBL, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(8), (6)] = 26;
+
+            // bottom middle desk
+            rectDest = new Rectangle(9 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskBM, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(9), (6)] = 26;
+
+            // bottom right desk
+            rectDest = new Rectangle(10 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpDeskBR, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(10), (6)] = 27;
+
             // rectDest to start out sprite on her bed
             rectDest = new Rectangle(19 * tileSize, 6 * tileSize, tileSize, tileSize);
-            rectSource = new Rectangle(19 * tileSize, 6 * tileSize, tileSize, tileSize);       
-
+            rectSource = new Rectangle(19 * tileSize, 6 * tileSize, tileSize, tileSize);     
+            
             // drawing out our girl on her bed
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
