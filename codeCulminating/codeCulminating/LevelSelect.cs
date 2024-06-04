@@ -16,5 +16,12 @@ namespace codeCulminating
         {
             InitializeComponent();
         }
+
+        private void btnLevelOne_Click(object sender, EventArgs e)
+        {
+            frmLevelOne inGamescreen = new frmLevelOne();
+
+            inGamescreen.Show();
+        }
     }
 }

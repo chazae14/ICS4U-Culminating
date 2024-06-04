@@ -33,7 +33,6 @@
             this.tmrMove = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblTextBox = new System.Windows.Forms.Label();
-            this.btnLevelSelect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tmrMove
@@ -42,34 +41,19 @@
             // 
             // lblTextBox
             // 
+            this.lblTextBox.BackColor = System.Drawing.Color.Transparent;
             this.lblTextBox.Image = ((System.Drawing.Image)(resources.GetObject("lblTextBox.Image")));
-            this.lblTextBox.Location = new System.Drawing.Point(770, 542);
+            this.lblTextBox.Location = new System.Drawing.Point(189, 418);
             this.lblTextBox.Name = "lblTextBox";
-            this.lblTextBox.Size = new System.Drawing.Size(150, 50);
+            this.lblTextBox.Size = new System.Drawing.Size(1020, 334);
             this.lblTextBox.TabIndex = 0;
-            // 
-            // btnLevelSelect
-            // 
-            this.btnLevelSelect.BackColor = System.Drawing.Color.Transparent;
-            this.btnLevelSelect.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLevelSelect.FlatAppearance.BorderSize = 0;
-            this.btnLevelSelect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLevelSelect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLevelSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLevelSelect.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLevelSelect.Location = new System.Drawing.Point(399, 275);
-            this.btnLevelSelect.Name = "btnLevelSelect";
-            this.btnLevelSelect.Size = new System.Drawing.Size(127, 50);
-            this.btnLevelSelect.TabIndex = 1;
-            this.btnLevelSelect.UseVisualStyleBackColor = false;
-            this.btnLevelSelect.Click += new System.EventHandler(this.btnLevelSelect_Click);
+            this.lblTextBox.Click += new System.EventHandler(this.lblTextBox_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
-            this.Controls.Add(this.btnLevelSelect);
             this.Controls.Add(this.lblTextBox);
             this.DoubleBuffered = true;
             this.Name = "frmMain";
@@ -86,7 +70,6 @@
         private System.Windows.Forms.Timer tmrMove;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblTextBox;
-        private System.Windows.Forms.Button btnLevelSelect;
     }
 }
 

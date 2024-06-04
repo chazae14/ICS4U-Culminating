@@ -1,6 +1,6 @@
 ﻿namespace codeCulminating
 {
-    partial class Level_1
+    partial class frmLevelOne
     {
         /// <summary>
         /// Required designer variable.
@@ -36,12 +36,13 @@
             // 
             this.tmrMove.Tick += new System.EventHandler(this.tmrMove_Tick);
             // 
-            // Level_1
+            // frmLevelOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
-            this.Name = "Level_1";
+            this.DoubleBuffered = true;
+            this.Name = "frmLevelOne";
             this.Text = "Level_1";
             this.Load += new System.EventHandler(this.Level_1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Level_1_Paint);
