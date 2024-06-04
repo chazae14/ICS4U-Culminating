@@ -64,6 +64,10 @@ namespace codeCulminating
         Bitmap bmpWindowBML;
         Bitmap bmpWindowBMR;
         Bitmap bmpWindowBR;
+        Bitmap bmpTrashCan;
+        Bitmap bmpTopDresser;
+        Bitmap bmpMiddleDresser;
+        Bitmap bmpBottomDresser;
 
         Rectangle rectSource, rect0, rectDest;
         int curX, curY;
@@ -80,7 +84,6 @@ namespace codeCulminating
             right,
             up
         }
-
 
         private void Level_1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -148,7 +151,8 @@ namespace codeCulminating
                     }
                 }
 
-                if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk)
+
+                if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk) // walk when on the right tiles (no bedside or bottom of bed
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -159,14 +163,19 @@ namespace codeCulminating
                 }
 
                 /// ITEM INTERACTIONS
-                if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 12 * tileSize && curY < 15 * tileSize && e.KeyCode == Keys.E)
+                // when on exit tiles and e is clicked
+                if (curX > 16 * tileSize && curX < 20 * tileSize && curY > 12 * tileSize && curY < 15 * tileSize && e.KeyCode == Keys.E)
                 {
-                    frmMain inGamescreen = new frmMain();
+                    this.Close();
+                }
+                // when near bedside table and e is clicked
+                else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
+                {
+                    Maze inGamescreen = new Maze();
 
                     inGamescreen.Show();
+
                 }
-
-
             }
         }
 
@@ -269,6 +278,10 @@ namespace codeCulminating
             bmpWindowMML = new Bitmap(frmG.picLvlOneWndMML.Image, tileSize, tileSize);
             bmpWindowMMR = new Bitmap(frmG.picLvlOneWndMMR.Image, tileSize, tileSize);
             bmpWindowMR = new Bitmap(frmG.picLvlOneWndMR.Image, tileSize, tileSize);
+            bmpTrashCan = new Bitmap(frmG.picTrashCan.Image, tileSize, tileSize);
+            bmpTopDresser = new Bitmap(frmG.picTopDresser.Image, tileSize, tileSize);
+            bmpMiddleDresser = new Bitmap(frmG.picMiddleDresser.Image, tileSize, tileSize);
+            bmpBottomDresser = new Bitmap(frmG.picBottomDresser.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -305,6 +318,8 @@ namespace codeCulminating
             rectDest = new Rectangle(18 * tileSize, 13 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
             map[(18), (13)] = 1;
+
+            map[17, 13] = 1;
 
             // for loop to display the crowning of the wall
             for (int b = 6; b < 20; b++)
@@ -554,6 +569,28 @@ namespace codeCulminating
             rectDest = new Rectangle(10 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpDeskBR, rectDest, rect0, GraphicsUnit.Pixel);
             map[(10), (6)] = 27;
+
+
+            // trash can
+            rectDest = new Rectangle(7 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpTrashCan, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(7), (6)] = 40;
+
+            /// dresser
+            // top dresser
+            rectDest = new Rectangle(6 * tileSize, 7 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpTopDresser, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(6), (7)] = 41;
+
+            // middle dresser
+            rectDest = new Rectangle(6 * tileSize, 8 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpMiddleDresser, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(6), (8)] = 42;
+
+            // bottom dresser
+            rectDest = new Rectangle(6 * tileSize, 9 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpBottomDresser, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(6), (9)] = 43;
 
             // rectDest to start out sprite on her bed
             rectDest = new Rectangle(19 * tileSize, 6 * tileSize, tileSize, tileSize);

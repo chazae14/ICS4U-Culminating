@@ -75,6 +75,10 @@
             this.picLvlOneWndTML = new System.Windows.Forms.PictureBox();
             this.picLvlOneWndTMR = new System.Windows.Forms.PictureBox();
             this.picLvlOneWndTR = new System.Windows.Forms.PictureBox();
+            this.picTrashCan = new System.Windows.Forms.PictureBox();
+            this.picBottomDresser = new System.Windows.Forms.PictureBox();
+            this.picMiddleDresser = new System.Windows.Forms.PictureBox();
+            this.picTopDresser = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).BeginInit();
@@ -121,6 +125,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTML)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTMR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTrashCan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBottomDresser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMiddleDresser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTopDresser)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -587,11 +595,55 @@
             this.picLvlOneWndTR.TabIndex = 55;
             this.picLvlOneWndTR.TabStop = false;
             // 
+            // picTrashCan
+            // 
+            this.picTrashCan.Image = ((System.Drawing.Image)(resources.GetObject("picTrashCan.Image")));
+            this.picTrashCan.Location = new System.Drawing.Point(516, 175);
+            this.picTrashCan.Name = "picTrashCan";
+            this.picTrashCan.Size = new System.Drawing.Size(50, 50);
+            this.picTrashCan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picTrashCan.TabIndex = 56;
+            this.picTrashCan.TabStop = false;
+            // 
+            // picBottomDresser
+            // 
+            this.picBottomDresser.Image = ((System.Drawing.Image)(resources.GetObject("picBottomDresser.Image")));
+            this.picBottomDresser.Location = new System.Drawing.Point(572, 121);
+            this.picBottomDresser.Name = "picBottomDresser";
+            this.picBottomDresser.Size = new System.Drawing.Size(50, 50);
+            this.picBottomDresser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBottomDresser.TabIndex = 57;
+            this.picBottomDresser.TabStop = false;
+            // 
+            // picMiddleDresser
+            // 
+            this.picMiddleDresser.Image = ((System.Drawing.Image)(resources.GetObject("picMiddleDresser.Image")));
+            this.picMiddleDresser.Location = new System.Drawing.Point(572, 64);
+            this.picMiddleDresser.Name = "picMiddleDresser";
+            this.picMiddleDresser.Size = new System.Drawing.Size(50, 50);
+            this.picMiddleDresser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picMiddleDresser.TabIndex = 58;
+            this.picMiddleDresser.TabStop = false;
+            // 
+            // picTopDresser
+            // 
+            this.picTopDresser.Image = ((System.Drawing.Image)(resources.GetObject("picTopDresser.Image")));
+            this.picTopDresser.Location = new System.Drawing.Point(572, 8);
+            this.picTopDresser.Name = "picTopDresser";
+            this.picTopDresser.Size = new System.Drawing.Size(50, 50);
+            this.picTopDresser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picTopDresser.TabIndex = 59;
+            this.picTopDresser.TabStop = false;
+            // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 429);
+            this.Controls.Add(this.picTopDresser);
+            this.Controls.Add(this.picMiddleDresser);
+            this.Controls.Add(this.picBottomDresser);
+            this.Controls.Add(this.picTrashCan);
             this.Controls.Add(this.picLvlOneWndTR);
             this.Controls.Add(this.picLvlOneWndTMR);
             this.Controls.Add(this.picLvlOneWndTML);
@@ -686,6 +738,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTML)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTMR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTrashCan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBottomDresser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMiddleDresser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTopDresser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -739,5 +795,9 @@
         public System.Windows.Forms.PictureBox picLvlOneWndTML;
         public System.Windows.Forms.PictureBox picLvlOneWndTMR;
         public System.Windows.Forms.PictureBox picLvlOneWndTR;
+        public System.Windows.Forms.PictureBox picTrashCan;
+        public System.Windows.Forms.PictureBox picBottomDresser;
+        public System.Windows.Forms.PictureBox picMiddleDresser;
+        public System.Windows.Forms.PictureBox picTopDresser;
     }
 }

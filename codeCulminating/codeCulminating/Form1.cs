@@ -58,7 +58,10 @@ namespace codeCulminating
         Bitmap bmpWindowBL;
         Bitmap bmpWindowBML;
         Bitmap bmpWindowBR;
-        Bitmap bmpTextBox;
+        Bitmap bmpTrashCan;
+        Bitmap bmpTopDresser;
+        Bitmap bmpMiddleDresser;
+        Bitmap bmpBottomDresser;
 
         Rectangle rectSource, rect0, rectDest; 
         int curX, curY;                        
@@ -145,7 +148,7 @@ namespace codeCulminating
                     }
                 }
 
-                if ((destTile != 20 && destTile != 21 && destTile != 23) && walk) // cant go if destination is edge of bed or side table
+                if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -169,6 +172,7 @@ namespace codeCulminating
                     lblTextBox.Show();
                     
                 }
+                // when near bed and e is clicked
                 else if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
                     lblTextBox.Show();
@@ -278,6 +282,10 @@ namespace codeCulminating
             bmpWindowTL = new Bitmap (frmG.picWindowTL.Image, tileSize, tileSize);
             bmpWindowTML = new Bitmap (frmG.picWindowTML.Image, tileSize, tileSize);    
             bmpWindowTR = new Bitmap (frmG.picWindowTR.Image, tileSize, tileSize);
+            bmpTrashCan = new Bitmap(frmG.picTrashCan.Image, tileSize, tileSize);
+            bmpTopDresser = new Bitmap(frmG.picTopDresser.Image, tileSize, tileSize);
+            bmpMiddleDresser = new Bitmap(frmG.picMiddleDresser.Image, tileSize, tileSize);
+            bmpBottomDresser = new Bitmap(frmG.picBottomDresser.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -485,6 +493,28 @@ namespace codeCulminating
             rectDest = new Rectangle(13 * tileSize, 4 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpWindowBR, rectDest, rect0, GraphicsUnit.Pixel);
             map[(13), (4)] = 37;
+
+            // trash can
+            rectDest = new Rectangle(7 * tileSize, 6 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpTrashCan, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(7), (6)] = 38;
+
+            /// dresser
+            // top dresser
+            rectDest = new Rectangle(7 * tileSize, 7 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpTopDresser, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(7), (7)] = 39;
+
+            // middle dresser
+            rectDest = new Rectangle(7 * tileSize, 8 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpMiddleDresser, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(7), (8)] = 40;
+
+            // bottom dresser
+            rectDest = new Rectangle(7 * tileSize, 9 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpBottomDresser, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(7), (9)] = 41;
+
 
             // rectDest to start out sprite on her bed
             rectDest = new Rectangle(16 * tileSize, 7 * tileSize, tileSize, tileSize);
