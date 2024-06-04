@@ -159,7 +159,7 @@ namespace codeCulminating
                 }
 
                 /// ITEM INTERACTION
-                if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 12 * tileSize && curY < 15 * tileSize)
+                if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 12 * tileSize && curY < 15 * tileSize && e.KeyCode == Keys.E)
                 {
                     frmMain inGamescreen = new frmMain();
 
