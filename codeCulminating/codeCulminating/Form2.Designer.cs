@@ -75,7 +75,6 @@
             this.picLvlOneWndTML = new System.Windows.Forms.PictureBox();
             this.picLvlOneWndTMR = new System.Windows.Forms.PictureBox();
             this.picLvlOneWndTR = new System.Windows.Forms.PictureBox();
-            this.picTextBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).BeginInit();
@@ -122,7 +121,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTML)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTMR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTextBox)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -178,7 +176,7 @@
             // picToLeftCar
             // 
             this.picToLeftCar.Image = ((System.Drawing.Image)(resources.GetObject("picToLeftCar.Image")));
-            this.picToLeftCar.Location = new System.Drawing.Point(348, 174);
+            this.picToLeftCar.Location = new System.Drawing.Point(348, 176);
             this.picToLeftCar.Name = "picToLeftCar";
             this.picToLeftCar.Size = new System.Drawing.Size(50, 50);
             this.picToLeftCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -188,7 +186,7 @@
             // picTopCar
             // 
             this.picTopCar.Image = ((System.Drawing.Image)(resources.GetObject("picTopCar.Image")));
-            this.picTopCar.Location = new System.Drawing.Point(404, 174);
+            this.picTopCar.Location = new System.Drawing.Point(404, 176);
             this.picTopCar.Name = "picTopCar";
             this.picTopCar.Size = new System.Drawing.Size(50, 50);
             this.picTopCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -198,7 +196,7 @@
             // picTopRightCar
             // 
             this.picTopRightCar.Image = ((System.Drawing.Image)(resources.GetObject("picTopRightCar.Image")));
-            this.picTopRightCar.Location = new System.Drawing.Point(460, 175);
+            this.picTopRightCar.Location = new System.Drawing.Point(460, 177);
             this.picTopRightCar.Name = "picTopRightCar";
             this.picTopRightCar.Size = new System.Drawing.Size(50, 50);
             this.picTopRightCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -208,7 +206,7 @@
             // picLeftSideCar
             // 
             this.picLeftSideCar.Image = ((System.Drawing.Image)(resources.GetObject("picLeftSideCar.Image")));
-            this.picLeftSideCar.Location = new System.Drawing.Point(348, 230);
+            this.picLeftSideCar.Location = new System.Drawing.Point(348, 232);
             this.picLeftSideCar.Name = "picLeftSideCar";
             this.picLeftSideCar.Size = new System.Drawing.Size(50, 50);
             this.picLeftSideCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -218,7 +216,7 @@
             // picCenterCarpet
             // 
             this.picCenterCarpet.Image = ((System.Drawing.Image)(resources.GetObject("picCenterCarpet.Image")));
-            this.picCenterCarpet.Location = new System.Drawing.Point(404, 230);
+            this.picCenterCarpet.Location = new System.Drawing.Point(404, 232);
             this.picCenterCarpet.Name = "picCenterCarpet";
             this.picCenterCarpet.Size = new System.Drawing.Size(50, 50);
             this.picCenterCarpet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -228,7 +226,7 @@
             // picRightSideCar
             // 
             this.picRightSideCar.Image = ((System.Drawing.Image)(resources.GetObject("picRightSideCar.Image")));
-            this.picRightSideCar.Location = new System.Drawing.Point(460, 231);
+            this.picRightSideCar.Location = new System.Drawing.Point(460, 233);
             this.picRightSideCar.Name = "picRightSideCar";
             this.picRightSideCar.Size = new System.Drawing.Size(50, 50);
             this.picRightSideCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -238,7 +236,7 @@
             // picBottomLeftCar
             // 
             this.picBottomLeftCar.Image = ((System.Drawing.Image)(resources.GetObject("picBottomLeftCar.Image")));
-            this.picBottomLeftCar.Location = new System.Drawing.Point(348, 286);
+            this.picBottomLeftCar.Location = new System.Drawing.Point(348, 288);
             this.picBottomLeftCar.Name = "picBottomLeftCar";
             this.picBottomLeftCar.Size = new System.Drawing.Size(50, 50);
             this.picBottomLeftCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -248,7 +246,7 @@
             // picBottomSideCar
             // 
             this.picBottomSideCar.Image = ((System.Drawing.Image)(resources.GetObject("picBottomSideCar.Image")));
-            this.picBottomSideCar.Location = new System.Drawing.Point(404, 286);
+            this.picBottomSideCar.Location = new System.Drawing.Point(404, 288);
             this.picBottomSideCar.Name = "picBottomSideCar";
             this.picBottomSideCar.Size = new System.Drawing.Size(50, 50);
             this.picBottomSideCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -258,7 +256,7 @@
             // picBottomRightCar
             // 
             this.picBottomRightCar.Image = ((System.Drawing.Image)(resources.GetObject("picBottomRightCar.Image")));
-            this.picBottomRightCar.Location = new System.Drawing.Point(460, 287);
+            this.picBottomRightCar.Location = new System.Drawing.Point(460, 289);
             this.picBottomRightCar.Name = "picBottomRightCar";
             this.picBottomRightCar.Size = new System.Drawing.Size(50, 50);
             this.picBottomRightCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -402,7 +400,7 @@
             // picWindowBL
             // 
             this.picWindowBL.Image = ((System.Drawing.Image)(resources.GetObject("picWindowBL.Image")));
-            this.picWindowBL.Location = new System.Drawing.Point(516, 399);
+            this.picWindowBL.Location = new System.Drawing.Point(11, 270);
             this.picWindowBL.Name = "picWindowBL";
             this.picWindowBL.Size = new System.Drawing.Size(50, 50);
             this.picWindowBL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -412,7 +410,7 @@
             // picWindowBML
             // 
             this.picWindowBML.Image = ((System.Drawing.Image)(resources.GetObject("picWindowBML.Image")));
-            this.picWindowBML.Location = new System.Drawing.Point(572, 399);
+            this.picWindowBML.Location = new System.Drawing.Point(67, 270);
             this.picWindowBML.Name = "picWindowBML";
             this.picWindowBML.Size = new System.Drawing.Size(50, 50);
             this.picWindowBML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -422,7 +420,7 @@
             // picWindowBR
             // 
             this.picWindowBR.Image = ((System.Drawing.Image)(resources.GetObject("picWindowBR.Image")));
-            this.picWindowBR.Location = new System.Drawing.Point(628, 399);
+            this.picWindowBR.Location = new System.Drawing.Point(123, 270);
             this.picWindowBR.Name = "picWindowBR";
             this.picWindowBR.Size = new System.Drawing.Size(50, 50);
             this.picWindowBR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -432,7 +430,7 @@
             // picWindowTL
             // 
             this.picWindowTL.Image = ((System.Drawing.Image)(resources.GetObject("picWindowTL.Image")));
-            this.picWindowTL.Location = new System.Drawing.Point(516, 343);
+            this.picWindowTL.Location = new System.Drawing.Point(11, 214);
             this.picWindowTL.Name = "picWindowTL";
             this.picWindowTL.Size = new System.Drawing.Size(50, 50);
             this.picWindowTL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -442,7 +440,7 @@
             // picWindowTML
             // 
             this.picWindowTML.Image = ((System.Drawing.Image)(resources.GetObject("picWindowTML.Image")));
-            this.picWindowTML.Location = new System.Drawing.Point(572, 343);
+            this.picWindowTML.Location = new System.Drawing.Point(67, 214);
             this.picWindowTML.Name = "picWindowTML";
             this.picWindowTML.Size = new System.Drawing.Size(50, 50);
             this.picWindowTML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -452,7 +450,7 @@
             // picWindowTR
             // 
             this.picWindowTR.Image = ((System.Drawing.Image)(resources.GetObject("picWindowTR.Image")));
-            this.picWindowTR.Location = new System.Drawing.Point(628, 343);
+            this.picWindowTR.Location = new System.Drawing.Point(123, 214);
             this.picWindowTR.Name = "picWindowTR";
             this.picWindowTR.Size = new System.Drawing.Size(50, 50);
             this.picWindowTR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -472,7 +470,7 @@
             // picLvlOneWndBL
             // 
             this.picLvlOneWndBL.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndBL.Image")));
-            this.picLvlOneWndBL.Location = new System.Drawing.Point(516, 287);
+            this.picLvlOneWndBL.Location = new System.Drawing.Point(348, 121);
             this.picLvlOneWndBL.Name = "picLvlOneWndBL";
             this.picLvlOneWndBL.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndBL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -482,7 +480,7 @@
             // picLvlOneWndBML
             // 
             this.picLvlOneWndBML.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndBML.Image")));
-            this.picLvlOneWndBML.Location = new System.Drawing.Point(572, 286);
+            this.picLvlOneWndBML.Location = new System.Drawing.Point(404, 120);
             this.picLvlOneWndBML.Name = "picLvlOneWndBML";
             this.picLvlOneWndBML.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndBML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -492,7 +490,7 @@
             // picLvlOneWndBMR
             // 
             this.picLvlOneWndBMR.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndBMR.Image")));
-            this.picLvlOneWndBMR.Location = new System.Drawing.Point(628, 287);
+            this.picLvlOneWndBMR.Location = new System.Drawing.Point(460, 121);
             this.picLvlOneWndBMR.Name = "picLvlOneWndBMR";
             this.picLvlOneWndBMR.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndBMR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -502,7 +500,7 @@
             // picLvlOneWndBR
             // 
             this.picLvlOneWndBR.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndBR.Image")));
-            this.picLvlOneWndBR.Location = new System.Drawing.Point(684, 286);
+            this.picLvlOneWndBR.Location = new System.Drawing.Point(516, 120);
             this.picLvlOneWndBR.Name = "picLvlOneWndBR";
             this.picLvlOneWndBR.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndBR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -512,7 +510,7 @@
             // picLvlOneWndML
             // 
             this.picLvlOneWndML.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndML.Image")));
-            this.picLvlOneWndML.Location = new System.Drawing.Point(516, 230);
+            this.picLvlOneWndML.Location = new System.Drawing.Point(348, 64);
             this.picLvlOneWndML.Name = "picLvlOneWndML";
             this.picLvlOneWndML.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -522,7 +520,7 @@
             // picLvlOneWndMML
             // 
             this.picLvlOneWndMML.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndMML.Image")));
-            this.picLvlOneWndMML.Location = new System.Drawing.Point(572, 231);
+            this.picLvlOneWndMML.Location = new System.Drawing.Point(404, 65);
             this.picLvlOneWndMML.Name = "picLvlOneWndMML";
             this.picLvlOneWndMML.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndMML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -532,7 +530,7 @@
             // picLvlOneWndMMR
             // 
             this.picLvlOneWndMMR.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndMMR.Image")));
-            this.picLvlOneWndMMR.Location = new System.Drawing.Point(628, 230);
+            this.picLvlOneWndMMR.Location = new System.Drawing.Point(460, 64);
             this.picLvlOneWndMMR.Name = "picLvlOneWndMMR";
             this.picLvlOneWndMMR.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndMMR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -542,7 +540,7 @@
             // picLvlOneWndMR
             // 
             this.picLvlOneWndMR.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndMR.Image")));
-            this.picLvlOneWndMR.Location = new System.Drawing.Point(684, 230);
+            this.picLvlOneWndMR.Location = new System.Drawing.Point(516, 64);
             this.picLvlOneWndMR.Name = "picLvlOneWndMR";
             this.picLvlOneWndMR.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndMR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -552,7 +550,7 @@
             // picLvlOneWndTL
             // 
             this.picLvlOneWndTL.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndTL.Image")));
-            this.picLvlOneWndTL.Location = new System.Drawing.Point(516, 174);
+            this.picLvlOneWndTL.Location = new System.Drawing.Point(348, 8);
             this.picLvlOneWndTL.Name = "picLvlOneWndTL";
             this.picLvlOneWndTL.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndTL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -562,7 +560,7 @@
             // picLvlOneWndTML
             // 
             this.picLvlOneWndTML.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndTML.Image")));
-            this.picLvlOneWndTML.Location = new System.Drawing.Point(572, 175);
+            this.picLvlOneWndTML.Location = new System.Drawing.Point(404, 9);
             this.picLvlOneWndTML.Name = "picLvlOneWndTML";
             this.picLvlOneWndTML.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndTML.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -572,7 +570,7 @@
             // picLvlOneWndTMR
             // 
             this.picLvlOneWndTMR.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndTMR.Image")));
-            this.picLvlOneWndTMR.Location = new System.Drawing.Point(628, 174);
+            this.picLvlOneWndTMR.Location = new System.Drawing.Point(460, 8);
             this.picLvlOneWndTMR.Name = "picLvlOneWndTMR";
             this.picLvlOneWndTMR.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndTMR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -582,29 +580,18 @@
             // picLvlOneWndTR
             // 
             this.picLvlOneWndTR.Image = ((System.Drawing.Image)(resources.GetObject("picLvlOneWndTR.Image")));
-            this.picLvlOneWndTR.Location = new System.Drawing.Point(684, 174);
+            this.picLvlOneWndTR.Location = new System.Drawing.Point(516, 8);
             this.picLvlOneWndTR.Name = "picLvlOneWndTR";
             this.picLvlOneWndTR.Size = new System.Drawing.Size(50, 50);
             this.picLvlOneWndTR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picLvlOneWndTR.TabIndex = 55;
             this.picLvlOneWndTR.TabStop = false;
             // 
-            // picTextBox
-            // 
-            this.picTextBox.Image = ((System.Drawing.Image)(resources.GetObject("picTextBox.Image")));
-            this.picTextBox.Location = new System.Drawing.Point(348, 8);
-            this.picTextBox.Name = "picTextBox";
-            this.picTextBox.Size = new System.Drawing.Size(400, 150);
-            this.picTextBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTextBox.TabIndex = 56;
-            this.picTextBox.TabStop = false;
-            // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 531);
-            this.Controls.Add(this.picTextBox);
+            this.ClientSize = new System.Drawing.Size(1062, 429);
             this.Controls.Add(this.picLvlOneWndTR);
             this.Controls.Add(this.picLvlOneWndTMR);
             this.Controls.Add(this.picLvlOneWndTML);
@@ -699,7 +686,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTML)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTMR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLvlOneWndTR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTextBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -753,6 +739,5 @@
         public System.Windows.Forms.PictureBox picLvlOneWndTML;
         public System.Windows.Forms.PictureBox picLvlOneWndTMR;
         public System.Windows.Forms.PictureBox picLvlOneWndTR;
-        public System.Windows.Forms.PictureBox picTextBox;
     }
 }

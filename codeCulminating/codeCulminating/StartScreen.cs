@@ -44,5 +44,10 @@ namespace codeCulminating
             MemoryGame inMemoryGame = new MemoryGame();
             inMemoryGame.Show();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

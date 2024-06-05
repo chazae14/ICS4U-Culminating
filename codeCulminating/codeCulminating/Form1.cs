@@ -86,8 +86,6 @@ namespace codeCulminating
                 bool walk = false;
                 Graphics gback = Graphics.FromImage(backbuffer);
 
-                bmpTextBox = new Bitmap(frmG.picTextBox.Image, 400, 150);
-
 
                 //depending on key pressed, check the tile you would move to (get it's tile number from the map)
                 if (e.KeyCode == Keys.D)
@@ -146,8 +144,13 @@ namespace codeCulminating
                         walk = false;
                     }
                 }
+                else if (e.KeyCode == Keys.Escape)
+                {
+                    frmPause frmPause = new frmPause();
+                    frmPause.Show();
+                }
 
-                if ((destTile != 20 && destTile != 21 && destTile != 23) && walk)
+                if ((destTile != 20 && destTile != 21 && destTile != 23) && walk) // cant go if destination is edge of bed or side table
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -157,23 +160,30 @@ namespace codeCulminating
                     walk = true;
                 }
 
-                if (curX >= 7 * tileSize && curX <= 10 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize)
+                /// ITEM INTERACTION
+                // when near desk, & E is clicked, level select shows up
+                if (curX >= 7 * tileSize && curX <= 10 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize && e.KeyCode == Keys.E)
+                {
+                    frmLevelSelect inGamescreen = new frmLevelSelect();
+
+                    inGamescreen.Show();
+                }
+                // when near bedside table and E is clicked, interaction occurs
+                else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
                     lblTextBox.Show();
-                    lblTextBox.Text = " \n   Click the desk for Level \n    Select.";
+                    
                 }
-                else
+                else if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
-                    lblTextBox.Hide();
+                    lblTextBox.Show();
                 }
             }
         }
 
-        private void btnLevelSelect_Click(object sender, EventArgs e)
+        private void lblTextBox_Click(object sender, EventArgs e)
         {
-            frmLevelSelect inGamescreen = new frmLevelSelect();
-
-            inGamescreen.Show();
+            lblTextBox.Hide();
         }
 
         private void tmrMove_Tick_1(object sender, EventArgs e)
@@ -239,7 +249,7 @@ namespace codeCulminating
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
             minibuffer = new Bitmap(tileSize, tileSize);
 
-            // loading in the images for the first map
+            // loading in the images for the intro map
             bmpGirl = new Bitmap(frmG.picGirl.Image, 149, 200);
             bmpWood = new Bitmap(frmG.bmpWood.Image, tileSize, tileSize);
             bmpBlack = new Bitmap(frmG.picBlackTile.Image, tileSize, tileSize);
@@ -329,7 +339,7 @@ namespace codeCulminating
             gback.DrawImage(bmpWallDetail, rectDest, rect0, GraphicsUnit.Pixel);
             map[(17), (4)] = 6;
 
-            // displaying carpet
+            /// displaying carpet
             // displaying top left corner
             rectDest = new Rectangle(11 * tileSize, 7 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpTopLeftCarpet, rectDest, rect0, GraphicsUnit.Pixel);
@@ -387,7 +397,7 @@ namespace codeCulminating
             gback.DrawImage(bmpBottomRightCarpet, rectDest, rect0, GraphicsUnit.Pixel);
             map[(13), (9)] = 14;
 
-            // displaying bed in corner
+            /// displaying bed in corner
             // top left corner of bed
             rectDest = new Rectangle(17 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpBedTopLef, rectDest, rect0, GraphicsUnit.Pixel);
@@ -408,18 +418,18 @@ namespace codeCulminating
             gback.DrawImage(bmpBedBottomRight, rectDest, rect0, GraphicsUnit.Pixel);
             map[(18), (7)] = 20;
 
-            // BEDSIDE TABLE!!
-            // left side of bedside
+            /// BEDSIDE TABLE!!
+            // left side of bedside table
             rectDest = new Rectangle(15 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpLeftDesk, rectDest, rect0, GraphicsUnit.Pixel);
             map[(15), (6)] = 21;
 
-            // right side bedside
+            // right side bedside table
             rectDest = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpRightDesk, rectDest, rect0, GraphicsUnit.Pixel);
             map[(16), (6)] = 22;
 
-            // DESK DESK DESK!
+            /// DESK DESK DESK!
             // top left desk
             rectDest = new Rectangle(8 * tileSize, 5 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpDeskTL, rectDest, rect0, GraphicsUnit.Pixel);
@@ -482,16 +492,16 @@ namespace codeCulminating
             map[(13), (4)] = 37;
 
             // rectDest to start out sprite on her bed
-            rectDest = new Rectangle(18 * tileSize, 6 * tileSize, tileSize, tileSize);
-            rectSource = new Rectangle(18 * tileSize, 6 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(16 * tileSize, 7 * tileSize, tileSize, tileSize);
+            rectSource = new Rectangle(16 * tileSize, 7 * tileSize, tileSize, tileSize);
 
             // drawing out our girl on her bed
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
 
             // girl's current position
-            curX = 18 * tileSize; 
-            curY = 6 * tileSize;
+            curX = 16 * tileSize; 
+            curY = 7 * tileSize;
             gback.Dispose();
             gmini.Dispose();
 
@@ -515,10 +525,6 @@ namespace codeCulminating
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
-
-        // level uno
-
     }
 }
