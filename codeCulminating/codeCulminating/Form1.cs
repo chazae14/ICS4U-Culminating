@@ -144,6 +144,11 @@ namespace codeCulminating
                         walk = false;
                     }
                 }
+                else if (e.KeyCode == Keys.Escape)
+                {
+                    frmPause frmPause = new frmPause();
+                    frmPause.Show();
+                }
 
                 if ((destTile != 20 && destTile != 21 && destTile != 23) && walk) // cant go if destination is edge of bed or side table
                 {
