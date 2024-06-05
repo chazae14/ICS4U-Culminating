@@ -22,6 +22,8 @@ namespace codeCulminating
             frmLevelOne inGamescreen = new frmLevelOne();
 
             inGamescreen.Show();
+
+            this.Close();
         }
     }
 }
