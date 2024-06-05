@@ -74,6 +74,7 @@ namespace codeCulminating
         int moves;
         int smallMove = 17;
         int direction;
+        int clicksCount = 0;
 
         int[,] map = new int[29, 16];
 
@@ -171,11 +172,60 @@ namespace codeCulminating
                 // when near bedside table and e is clicked
                 else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
-                    Maze inGamescreen = new Maze();
-
-                    inGamescreen.Show();
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+                    clicksCount += 9;
 
                 }
+                // desk interaction
+                if (curX >= 7 * tileSize && curX <= 10 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize && e.KeyCode == Keys.E)
+                {
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+
+                }
+                // when near bed and e is clicked
+                else if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
+                {
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+                }
+                // dresser interaction
+                else if (curX > 6 * tileSize && curX < 8 * tileSize && curY > 6 * tileSize && curY < 10 * tileSize && e.KeyCode == Keys.E)
+                {
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+                }
+
+
+            }
+        }
+
+        private void lblTextBox_Click(object sender, EventArgs e)
+        {
+            clicksCount++;
+
+            if (clicksCount == 10)
+            {
+                Maze inGamescreen = new Maze();
+
+                inGamescreen.Show();
+
+
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+            }
+            else if (clicksCount == 3)
+            {
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                clicksCount = 0;
             }
         }
 
@@ -233,6 +283,10 @@ namespace codeCulminating
         {
             Graphics G;
             G = this.CreateGraphics();
+
+            lblTextBox.Hide();
+            picGirlInteract.Hide();
+            lblTransparent.Hide();
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);

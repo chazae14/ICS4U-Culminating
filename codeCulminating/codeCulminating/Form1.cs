@@ -68,7 +68,7 @@ namespace codeCulminating
         int moves;                             
         int smallMove = 17;
         int direction;
-
+        int clicksCount = 0;
 
         int[,] map = new int[29, 16];
 
@@ -162,27 +162,57 @@ namespace codeCulminating
                 // when near desk, & E is clicked, level select shows up
                 if (curX >= 7 * tileSize && curX <= 10 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize && e.KeyCode == Keys.E)
                 {
-                    frmLevelSelect inGamescreen = new frmLevelSelect();
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
 
-                    inGamescreen.Show();
+                    clicksCount += 9;
                 }
                 // when near bedside table and E is clicked, interaction occurs
                 else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
+                    picGirlInteract.Show();
                     lblTextBox.Show();
-                    
+                    lblTransparent.Show();
                 }
                 // when near bed and e is clicked
                 else if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
+                    picGirlInteract.Show();
                     lblTextBox.Show();
+                    lblTransparent.Show();
+                }
+                // dresser interaction
+                else if( curX > 7 * tileSize && curX < 9 * tileSize && curY > 6 * tileSize && curY < 10 * tileSize && e.KeyCode == Keys.E)
+                {
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
                 }
             }
         }
 
         private void lblTextBox_Click(object sender, EventArgs e)
         {
-            lblTextBox.Hide();
+            clicksCount++;
+
+            if (clicksCount == 10)
+            {
+                frmLevelSelect inGamescreen = new frmLevelSelect();
+
+                inGamescreen.Show();
+
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+            }
+            else if (clicksCount == 3)
+            {
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                clicksCount = 0; 
+            }
         }
 
         private void tmrMove_Tick_1(object sender, EventArgs e)
@@ -243,6 +273,8 @@ namespace codeCulminating
             G = this.CreateGraphics();
 
             lblTextBox.Hide();
+            picGirlInteract.Hide();
+            lblTransparent.Hide();
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
