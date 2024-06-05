@@ -31,8 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.btnResume = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.btnMusicCont = new System.Windows.Forms.Button();
             this.timerPause = new System.Windows.Forms.Timer(this.components);
+            this.volumeBar = new System.Windows.Forms.TrackBar();
+            this.picVolume = new System.Windows.Forms.PictureBox();
+            this.timerClose = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.volumeBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVolume)).BeginInit();
             this.SuspendLayout();
             // 
             // btnResume
@@ -60,52 +64,65 @@
             this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnMenu.Location = new System.Drawing.Point(523, 606);
+            this.btnMenu.Location = new System.Drawing.Point(523, 467);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(375, 103);
             this.btnMenu.TabIndex = 1;
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // btnMusicCont
-            // 
-            this.btnMusicCont.BackColor = System.Drawing.Color.Transparent;
-            this.btnMusicCont.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMusicCont.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnMusicCont.FlatAppearance.BorderSize = 0;
-            this.btnMusicCont.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMusicCont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnMusicCont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMusicCont.Location = new System.Drawing.Point(523, 468);
-            this.btnMusicCont.Name = "btnMusicCont";
-            this.btnMusicCont.Size = new System.Drawing.Size(375, 99);
-            this.btnMusicCont.TabIndex = 2;
-            this.btnMusicCont.UseVisualStyleBackColor = false;
-            this.btnMusicCont.Click += new System.EventHandler(this.btnMusicCont_Click);
-            // 
             // timerPause
             // 
             this.timerPause.Interval = 10;
             this.timerPause.Tick += new System.EventHandler(this.timerPause_Tick);
             // 
+            // volumeBar
+            // 
+            this.volumeBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(185)))), ((int)(((byte)(85)))));
+            this.volumeBar.Location = new System.Drawing.Point(535, 659);
+            this.volumeBar.Name = "volumeBar";
+            this.volumeBar.Size = new System.Drawing.Size(349, 45);
+            this.volumeBar.TabIndex = 2;
+            this.volumeBar.Value = 5;
+            // 
+            // picVolume
+            // 
+            this.picVolume.BackColor = System.Drawing.Color.Transparent;
+            this.picVolume.Image = global::codeCulminating.Properties.Resources.Pause_menu;
+            this.picVolume.Location = new System.Drawing.Point(523, 597);
+            this.picVolume.Name = "picVolume";
+            this.picVolume.Size = new System.Drawing.Size(178, 76);
+            this.picVolume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picVolume.TabIndex = 3;
+            this.picVolume.TabStop = false;
+            // 
+            // timerClose
+            // 
+            this.timerClose.Interval = 10;
+            this.timerClose.Tick += new System.EventHandler(this.timerClose_Tick);
+            // 
             // frmPause
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::codeCulminating.Properties.Resources.pausemenu;
+            this.BackgroundImage = global::codeCulminating.Properties.Resources.Pause_menu_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnResume;
             this.ClientSize = new System.Drawing.Size(1440, 900);
-            this.Controls.Add(this.btnMusicCont);
+            this.Controls.Add(this.volumeBar);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnResume);
+            this.Controls.Add(this.picVolume);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPause";
             this.Opacity = 0D;
             this.Text = "PauseMenu";
             this.Load += new System.EventHandler(this.frmPause_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.volumeBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVolume)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,7 +130,9 @@
 
         private System.Windows.Forms.Button btnResume;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Button btnMusicCont;
         private System.Windows.Forms.Timer timerPause;
+        private System.Windows.Forms.TrackBar volumeBar;
+        private System.Windows.Forms.PictureBox picVolume;
+        private System.Windows.Forms.Timer timerClose;
     }
 }
