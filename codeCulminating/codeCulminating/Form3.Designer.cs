@@ -33,7 +33,10 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.timerPause = new System.Windows.Forms.Timer(this.components);
             this.volumeBar = new System.Windows.Forms.TrackBar();
+            this.picVolume = new System.Windows.Forms.PictureBox();
+            this.timerClose = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.volumeBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVolume)).BeginInit();
             this.SuspendLayout();
             // 
             // btnResume
@@ -76,11 +79,27 @@
             // volumeBar
             // 
             this.volumeBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(185)))), ((int)(((byte)(85)))));
-            this.volumeBar.Location = new System.Drawing.Point(536, 656);
+            this.volumeBar.Location = new System.Drawing.Point(535, 659);
             this.volumeBar.Name = "volumeBar";
             this.volumeBar.Size = new System.Drawing.Size(349, 45);
             this.volumeBar.TabIndex = 2;
             this.volumeBar.Value = 5;
+            // 
+            // picVolume
+            // 
+            this.picVolume.BackColor = System.Drawing.Color.Transparent;
+            this.picVolume.Image = global::codeCulminating.Properties.Resources.Pause_menu;
+            this.picVolume.Location = new System.Drawing.Point(523, 597);
+            this.picVolume.Name = "picVolume";
+            this.picVolume.Size = new System.Drawing.Size(178, 76);
+            this.picVolume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picVolume.TabIndex = 3;
+            this.picVolume.TabStop = false;
+            // 
+            // timerClose
+            // 
+            this.timerClose.Interval = 10;
+            this.timerClose.Tick += new System.EventHandler(this.timerClose_Tick);
             // 
             // frmPause
             // 
@@ -93,6 +112,7 @@
             this.Controls.Add(this.volumeBar);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnResume);
+            this.Controls.Add(this.picVolume);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPause";
@@ -100,6 +120,7 @@
             this.Text = "PauseMenu";
             this.Load += new System.EventHandler(this.frmPause_Load);
             ((System.ComponentModel.ISupportInitialize)(this.volumeBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVolume)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +132,7 @@
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Timer timerPause;
         private System.Windows.Forms.TrackBar volumeBar;
+        private System.Windows.Forms.PictureBox picVolume;
+        private System.Windows.Forms.Timer timerClose;
     }
 }

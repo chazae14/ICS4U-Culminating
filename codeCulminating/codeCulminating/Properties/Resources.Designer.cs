@@ -63,6 +63,16 @@ namespace codeCulminating.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pause_menu {
+            get {
+                object obj = ResourceManager.GetObject("Pause_menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pause_menu_1 {
             get {
                 object obj = ResourceManager.GetObject("Pause_menu 1", resourceCulture);
@@ -76,6 +86,16 @@ namespace codeCulminating.Properties {
         internal static System.Drawing.Bitmap pausemenu {
             get {
                 object obj = ResourceManager.GetObject("pausemenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StartMenuSketch_1 {
+            get {
+                object obj = ResourceManager.GetObject("StartMenuSketch 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
