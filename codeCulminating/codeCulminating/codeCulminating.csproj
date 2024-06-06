@@ -180,5 +180,14 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pause_menu 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pause_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartMenuSketch 1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

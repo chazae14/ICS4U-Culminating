@@ -25,25 +25,42 @@ namespace codeCulminating
         // closes the pause menu
         private void btnResume_Click(object sender, EventArgs e)
         {
-            this.Close();
+            timerClose.Start();
+            while (Opacity < 0)
+            {
+            }
         }
 
         // closes the pause menu and re-opens the startscreen 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            this.Close();
+            timerClose.Start();
+            while (Opacity < 0)
+            {
+            }
             StartScreen startScreen = new StartScreen();
             startScreen.Show();
         }
 
-        private void btnMusicCont_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // adds fade in animation effect when form is made
         private void timerPause_Tick(object sender, EventArgs e)
         {
+            if (Opacity == 1)
+            {
+                timerPause.Stop();
+            }
             Opacity += 0.1;
+        }
+
+        // adds fade out animation effect when form is closed
+        private void timerClose_Tick(object sender, EventArgs e)
+        {
+            if (Opacity == 0)
+            {
+                timerClose.Stop();
+                this.Close();
+            }
+            Opacity -= 0.1;
         }
     }
 }
