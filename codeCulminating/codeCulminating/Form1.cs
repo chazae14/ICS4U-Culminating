@@ -202,16 +202,41 @@ namespace codeCulminating
 
                 inGamescreen.Show();
 
+                clicksCount = 0;
+
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
                 lblTransparent.Hide();
             }
-            else if (clicksCount == 3)
+            else if (clicksCount == 1)
             {
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
                 lblTransparent.Hide();
                 clicksCount = 0; 
+            }
+        }
+
+        private void lblTransparent_Click(object sender, EventArgs e)
+        {
+            clicksCount++;
+
+            if (clicksCount == 10)
+            {
+                frmLevelSelect inGamescreen = new frmLevelSelect();
+
+                inGamescreen.Show();
+                clicksCount = 0;
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+            }
+            else if (clicksCount == 1)
+            {
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                clicksCount = 0;
             }
         }
 

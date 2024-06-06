@@ -167,7 +167,10 @@ namespace codeCulminating
                 // when on exit tiles and e is clicked
                 if (curX > 16 * tileSize && curX < 20 * tileSize && curY > 12 * tileSize && curY < 15 * tileSize && e.KeyCode == Keys.E)
                 {
-                    this.Close();
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+                    clicksCount += 10;
                 }
                 // when near bedside table and e is clicked
                 else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
@@ -175,7 +178,6 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    clicksCount += 9;
 
                 }
                 // desk interaction
@@ -184,7 +186,7 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-
+                    clicksCount += 9;
                 }
                 // when near bed and e is clicked
                 else if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
@@ -200,8 +202,6 @@ namespace codeCulminating
                     lblTextBox.Show();
                     lblTransparent.Show();
                 }
-
-
             }
         }
 
@@ -215,12 +215,49 @@ namespace codeCulminating
 
                 inGamescreen.Show();
 
+                clicksCount = 0;
 
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
                 lblTransparent.Hide();
             }
-            else if (clicksCount == 3)
+            else if (clicksCount == 13)
+            {
+                clicksCount = 0;
+                this.Close();
+            }
+            else if (clicksCount == 1)
+            {
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                clicksCount = 0;
+            }
+        }
+
+        private void lblTransparent_Click(object sender, EventArgs e)
+        {
+            clicksCount++;
+
+            if (clicksCount == 10)
+            {
+                Maze inGamescreen = new Maze();
+
+                inGamescreen.Show();
+
+                clicksCount = 0;
+
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+            }
+            else if (clicksCount == 13)
+            {
+                clicksCount = 0;
+
+                this.Close();
+            }
+            else if (clicksCount == 1)
             {
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
@@ -310,7 +347,7 @@ namespace codeCulminating
             bmpBedBottomLeft = new Bitmap(frmG.picBedBottomLeft.Image, tileSize, tileSize);
             bmpBedBottomRight = new Bitmap(frmG.picBedBottomRight.Image, tileSize, tileSize);
             bmpBedTopLef = new Bitmap(frmG.picBedTopLeft.Image, tileSize, tileSize);
-            bmpBedTopRight = new Bitmap(frmG.picBedTopRigt.Image, tileSize, tileSize);
+            bmpBedTopRight = new Bitmap(frmG.picLevelOneBed.Image, tileSize, tileSize);
             bmpLeftDesk = new Bitmap(frmG.picLeftSideDesk.Image, tileSize, tileSize);
             bmpRightDesk = new Bitmap(frmG.picRightSideDesk.Image, tileSize, tileSize);
             bmpDeskTL = new Bitmap(frmG.picDeskTL.Image, tileSize, tileSize);
