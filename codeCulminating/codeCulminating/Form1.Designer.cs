@@ -33,6 +33,9 @@
             this.tmrMove = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblTextBox = new System.Windows.Forms.Label();
+            this.lblTransparent = new System.Windows.Forms.Label();
+            this.picGirlInteract = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrMove
@@ -43,11 +46,32 @@
             // 
             this.lblTextBox.BackColor = System.Drawing.Color.Transparent;
             this.lblTextBox.Image = ((System.Drawing.Image)(resources.GetObject("lblTextBox.Image")));
-            this.lblTextBox.Location = new System.Drawing.Point(189, 418);
+            this.lblTextBox.Location = new System.Drawing.Point(223, 454);
             this.lblTextBox.Name = "lblTextBox";
-            this.lblTextBox.Size = new System.Drawing.Size(1020, 334);
+            this.lblTextBox.Size = new System.Drawing.Size(975, 298);
             this.lblTextBox.TabIndex = 0;
             this.lblTextBox.Click += new System.EventHandler(this.lblTextBox_Click);
+            // 
+            // lblTransparent
+            // 
+            this.lblTransparent.BackColor = System.Drawing.Color.Transparent;
+            this.lblTransparent.Image = ((System.Drawing.Image)(resources.GetObject("lblTransparent.Image")));
+            this.lblTransparent.Location = new System.Drawing.Point(-1, -14);
+            this.lblTransparent.Name = "lblTransparent";
+            this.lblTransparent.Size = new System.Drawing.Size(1407, 781);
+            this.lblTransparent.TabIndex = 2;
+            // 
+            // picGirlInteract
+            // 
+            this.picGirlInteract.BackColor = System.Drawing.Color.Transparent;
+            this.picGirlInteract.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picGirlInteract.BackgroundImage")));
+            this.picGirlInteract.Image = ((System.Drawing.Image)(resources.GetObject("picGirlInteract.Image")));
+            this.picGirlInteract.Location = new System.Drawing.Point(12, -14);
+            this.picGirlInteract.Name = "picGirlInteract";
+            this.picGirlInteract.Size = new System.Drawing.Size(495, 800);
+            this.picGirlInteract.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picGirlInteract.TabIndex = 3;
+            this.picGirlInteract.TabStop = false;
             // 
             // frmMain
             // 
@@ -55,13 +79,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
             this.Controls.Add(this.lblTextBox);
+            this.Controls.Add(this.picGirlInteract);
+            this.Controls.Add(this.lblTransparent);
             this.DoubleBuffered = true;
             this.Name = "frmMain";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMain_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -70,6 +98,8 @@
         private System.Windows.Forms.Timer tmrMove;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblTextBox;
+        private System.Windows.Forms.Label lblTransparent;
+        private System.Windows.Forms.PictureBox picGirlInteract;
     }
 }
 
