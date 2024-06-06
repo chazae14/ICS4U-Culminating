@@ -65,7 +65,7 @@ namespace codeCulminating
         private void lblEnd_MouseEnter(object sender, EventArgs e)
         {
             GameTime.Stop();
-            DialogResult choice = MessageBox.Show("Maze complete.", "Win`", MessageBoxButtons.OK);
+            DialogResult choice = MessageBox.Show("Maze complete.", "Win", MessageBoxButtons.OK);
             if (choice == DialogResult.OK) 
             {
                 this.Close();
