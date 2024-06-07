@@ -85,7 +85,7 @@ namespace codeCulminating
                 else if (e.KeyCode == Keys.W)
                 {
                     direction = (int)dir.up;
-                    if (curY <= 2 * tileSize || curY >= 14 * tileSize) // cant go if out of bounds
+                    if (curY <= 1 * tileSize || curY >= 14 * tileSize) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -100,7 +100,7 @@ namespace codeCulminating
                 {
                     direction = (int)dir.down;
 
-                    if ((curY > 2 * tileSize && curY < 16 * tileSize) || (curY < 16 * tileSize)) // can go if within bounds
+                    if ((curY > 1 * tileSize && curY < 16 * tileSize) || (curY < 16 * tileSize)) // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY + tileSize) / tileSize];
                         walk = true;
