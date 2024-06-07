@@ -85,7 +85,7 @@ namespace codeCulminating
                 else if (e.KeyCode == Keys.W)
                 {
                     direction = (int)dir.up;
-                    if (curY <= 7 * tileSize || curY >= 14 * tileSize) // cant go if out of bounds
+                    if (curY <= 2 * tileSize || curY >= 14 * tileSize) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -100,7 +100,7 @@ namespace codeCulminating
                 {
                     direction = (int)dir.down;
 
-                    if ((curY > 7 * tileSize && curY < 16 * tileSize) || (curY < 16 * tileSize)) // can go if within bounds
+                    if ((curY > 2 * tileSize && curY < 16 * tileSize) || (curY < 16 * tileSize)) // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY + tileSize) / tileSize];
                         walk = true;
@@ -113,7 +113,7 @@ namespace codeCulminating
                 }
 
 
-                if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk) // walk when on the right tiles (no bedside or bottom of bed
+                if (destTile != 0 && walk) // walk when on the right tiles (no bedside or bottom of bed
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -299,8 +299,8 @@ namespace codeCulminating
 
 
             // rectDest to start out sprite on her bed
-            rectDest = new Rectangle(16 * tileSize, 7 * tileSize, tileSize, tileSize);
-            rectSource = new Rectangle(16 * tileSize, 7 * tileSize, tileSize, tileSize);
+            rectDest = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
+            rectSource = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
 
             // drawing out our girl on her bed
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
@@ -308,7 +308,7 @@ namespace codeCulminating
 
             // girl's current position
             curX = 16 * tileSize;
-            curY = 7 * tileSize;
+            curY = 6 * tileSize;
             gback.Dispose();
             gmini.Dispose();
 
