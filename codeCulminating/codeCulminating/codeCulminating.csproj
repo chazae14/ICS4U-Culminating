@@ -85,6 +85,12 @@
     <Compile Include="LevelSelect.Designer.cs">
       <DependentUpon>LevelSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="LevelTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LevelTwo.Designer.cs">
+      <DependentUpon>LevelTwo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maze.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LevelSelect.resx">
       <DependentUpon>LevelSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelTwo.resx">
+      <DependentUpon>LevelTwo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maze.resx">
       <DependentUpon>Maze.cs</DependentUpon>
@@ -188,6 +197,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\StartMenuSketch 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

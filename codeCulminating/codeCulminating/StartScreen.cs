@@ -23,6 +23,7 @@ namespace codeCulminating
             frmMain inGamescreen = new frmMain();
             
             inGamescreen.Show();
+            this.Hide();
             
         }
         
