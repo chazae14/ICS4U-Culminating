@@ -79,6 +79,10 @@
             this.picBottomDresser = new System.Windows.Forms.PictureBox();
             this.picMiddleDresser = new System.Windows.Forms.PictureBox();
             this.picTopDresser = new System.Windows.Forms.PictureBox();
+            this.picRoadBottom = new System.Windows.Forms.PictureBox();
+            this.picRoadMiddle = new System.Windows.Forms.PictureBox();
+            this.picRoadTop = new System.Windows.Forms.PictureBox();
+            this.picSideWalk = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).BeginInit();
@@ -129,6 +133,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBottomDresser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMiddleDresser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTopDresser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoadBottom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoadMiddle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoadTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSideWalk)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -635,11 +643,55 @@
             this.picTopDresser.TabIndex = 59;
             this.picTopDresser.TabStop = false;
             // 
+            // picRoadBottom
+            // 
+            this.picRoadBottom.Image = ((System.Drawing.Image)(resources.GetObject("picRoadBottom.Image")));
+            this.picRoadBottom.Location = new System.Drawing.Point(572, 286);
+            this.picRoadBottom.Name = "picRoadBottom";
+            this.picRoadBottom.Size = new System.Drawing.Size(50, 50);
+            this.picRoadBottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picRoadBottom.TabIndex = 60;
+            this.picRoadBottom.TabStop = false;
+            // 
+            // picRoadMiddle
+            // 
+            this.picRoadMiddle.Image = ((System.Drawing.Image)(resources.GetObject("picRoadMiddle.Image")));
+            this.picRoadMiddle.Location = new System.Drawing.Point(572, 230);
+            this.picRoadMiddle.Name = "picRoadMiddle";
+            this.picRoadMiddle.Size = new System.Drawing.Size(50, 50);
+            this.picRoadMiddle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picRoadMiddle.TabIndex = 61;
+            this.picRoadMiddle.TabStop = false;
+            // 
+            // picRoadTop
+            // 
+            this.picRoadTop.Image = ((System.Drawing.Image)(resources.GetObject("picRoadTop.Image")));
+            this.picRoadTop.Location = new System.Drawing.Point(572, 177);
+            this.picRoadTop.Name = "picRoadTop";
+            this.picRoadTop.Size = new System.Drawing.Size(50, 50);
+            this.picRoadTop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picRoadTop.TabIndex = 62;
+            this.picRoadTop.TabStop = false;
+            // 
+            // picSideWalk
+            // 
+            this.picSideWalk.Image = ((System.Drawing.Image)(resources.GetObject("picSideWalk.Image")));
+            this.picSideWalk.Location = new System.Drawing.Point(516, 233);
+            this.picSideWalk.Name = "picSideWalk";
+            this.picSideWalk.Size = new System.Drawing.Size(50, 50);
+            this.picSideWalk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picSideWalk.TabIndex = 63;
+            this.picSideWalk.TabStop = false;
+            // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 429);
+            this.Controls.Add(this.picSideWalk);
+            this.Controls.Add(this.picRoadTop);
+            this.Controls.Add(this.picRoadMiddle);
+            this.Controls.Add(this.picRoadBottom);
             this.Controls.Add(this.picTopDresser);
             this.Controls.Add(this.picMiddleDresser);
             this.Controls.Add(this.picBottomDresser);
@@ -742,6 +794,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBottomDresser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMiddleDresser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTopDresser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoadBottom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoadMiddle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoadTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSideWalk)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -799,5 +855,9 @@
         public System.Windows.Forms.PictureBox picBottomDresser;
         public System.Windows.Forms.PictureBox picMiddleDresser;
         public System.Windows.Forms.PictureBox picTopDresser;
+        public System.Windows.Forms.PictureBox picRoadBottom;
+        public System.Windows.Forms.PictureBox picRoadMiddle;
+        public System.Windows.Forms.PictureBox picRoadTop;
+        public System.Windows.Forms.PictureBox picSideWalk;
     }
 }

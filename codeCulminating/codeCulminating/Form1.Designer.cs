@@ -60,6 +60,7 @@
             this.lblTransparent.Name = "lblTransparent";
             this.lblTransparent.Size = new System.Drawing.Size(1407, 781);
             this.lblTransparent.TabIndex = 2;
+            this.lblTransparent.Click += new System.EventHandler(this.lblTransparent_Click);
             // 
             // picGirlInteract
             // 
