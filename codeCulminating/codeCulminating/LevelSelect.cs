@@ -25,5 +25,14 @@ namespace codeCulminating
 
             this.Close();
         }
+
+        private void bnLevelTwoSelect_Click(object sender, EventArgs e)
+        {
+            LevelTwo inGamescreen = new LevelTwo();
+
+            inGamescreen.Show();
+
+            this.Close();
+        }
     }
 }
