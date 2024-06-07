@@ -49,5 +49,11 @@ namespace codeCulminating
         {
             Application.Exit();
         }
+
+        private void btnCombinationLock_Click(object sender, EventArgs e)
+        {
+            CombinationLock inCombinationLock = new CombinationLock();
+            inCombinationLock.Show();
+        }
     }
 }

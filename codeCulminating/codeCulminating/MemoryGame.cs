@@ -28,7 +28,8 @@ namespace codeCulminating
         public MemoryGame()
         {
             InitializeComponent();         
-            myLabels = new Label[] { label1, label2, label3, label4, label5, label6, label7, label8 };// Labels in array     
+            myLabels = new Label[] { label1, label2, label3, label4, label5, label6, label7, label8 };// Labels in array
+            Start();                                                                                          
         }
   
         // Display game sequence
@@ -152,17 +153,12 @@ namespace codeCulminating
             // Enables start button 
             if (level == enable)
             {
-                btnStart.Enabled = true;
                 Start();
             }                  
         }
 
-        // When clicked, Make random sequence and display it
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            Start();
-        }
 
+        // Add random number to sequence
         void Start()
         {
             sequence.Add(rnd.Next(0, 9));
@@ -170,7 +166,6 @@ namespace codeCulminating
             level = 0;
             enable++;
 
-            btnStart.Enabled = false;
         }
    
         // When mouse down, turn button black

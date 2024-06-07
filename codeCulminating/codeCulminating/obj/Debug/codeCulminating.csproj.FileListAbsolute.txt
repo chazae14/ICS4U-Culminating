@@ -81,3 +81,4 @@ C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminati
 C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.csproj.ResolveComReference.cache
 C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.frmPause.resources
 C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.frmLevelOne.resources
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.CombinationLock.resources

@@ -37,7 +37,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.btnStart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -165,16 +164,6 @@
             this.button9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Buttons_MouseDown);
             this.button9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Buttons_MouseUp);
             // 
-            // btnStart
-            // 
-            this.btnStart.Location = new System.Drawing.Point(104, 275);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(60, 23);
-            this.btnStart.TabIndex = 9;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -259,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 337);
+            this.ClientSize = new System.Drawing.Size(272, 294);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -268,7 +257,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button9);
@@ -297,7 +285,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
