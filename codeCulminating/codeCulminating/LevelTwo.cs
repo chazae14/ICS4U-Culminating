@@ -36,6 +36,11 @@ namespace codeCulminating
         Bitmap bmpTopRoad;
         Bitmap bmpBttmRoad;
         Bitmap bmpRoadFiller;
+        Bitmap bmpWood;
+        Bitmap bmpRoadRightSide;
+        Bitmap bmpRoadLeftSide;
+        Bitmap bmpSidewalkTop;
+        Bitmap bmpCrosswalk;  
 
         enum dir
         {
@@ -192,6 +197,11 @@ namespace codeCulminating
             bmpTopRoad = new Bitmap(frmG.picRoadTop.Image, tileSize, tileSize);
             bmpRoadFiller = new Bitmap(frmG.picRoadBottom.Image, tileSize, tileSize);
             bmpSidewalk = new Bitmap (frmG.picSideWalk.Image, tileSize, tileSize);  
+            bmpWood = new Bitmap(frmG.bmpWood.Image, tileSize, tileSize);
+            bmpRoadLeftSide = new Bitmap(frmG.picRoadSideLeft.Image, tileSize, tileSize);
+            bmpRoadRightSide = new Bitmap(frmG.picRideSideRoad.Image, tileSize, tileSize);
+            bmpSidewalkTop = new Bitmap(frmG.picSidewalkTop.Image, tileSize, tileSize); 
+            bmpCrosswalk = new Bitmap(frmG.picCrosswalk.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -242,6 +252,16 @@ namespace codeCulminating
                 }
             }
 
+            for (int m = 22; m < 23; m++)
+            {
+                for (int n = 6; n < 13; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpRoadFiller, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 1;
+                }
+            }
+
             // middle top road
             for (int m = 4; m < 18; m++)
             {
@@ -252,6 +272,17 @@ namespace codeCulminating
                     map[(m), (n)] = 2;
                 }
             }
+
+            for (int m = 20; m < 21; m++)
+            {
+                for (int n = 6; n < 13; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpRoadLeftSide, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 6;
+                }
+            }
+
 
             // middle bottom road
             for (int m = 4; m < 18; m++)
@@ -264,7 +295,15 @@ namespace codeCulminating
                 }
             }
 
-
+            for (int m = 21; m < 22; m++)
+            {
+                for (int n = 6; n < 13; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpRoadRightSide, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 7;
+                }
+            }
 
             //sidewalk
             for (int m = 4; m < 18; m++)
@@ -272,7 +311,7 @@ namespace codeCulminating
                 for (int n = 6; n < 7; n++)
                 {
                     rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
-                    gback.DrawImage(bmpSidewalk, rectDest, rect0, GraphicsUnit.Pixel);
+                    gback.DrawImage(bmpSidewalkTop, rectDest, rect0, GraphicsUnit.Pixel);
                     map[(m), (n)] = 4;
                 }
             }
@@ -282,7 +321,7 @@ namespace codeCulminating
                 for (int n = 1; n < 2; n++)
                 {
                     rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
-                    gback.DrawImage(bmpSidewalk, rectDest, rect0, GraphicsUnit.Pixel);
+                    gback.DrawImage(bmpSidewalkTop, rectDest, rect0, GraphicsUnit.Pixel);
                     map[(m), (n)] = 4;
                 }
             }
@@ -297,6 +336,17 @@ namespace codeCulminating
                 }
             }
 
+            ///CAFE
+            // wood floor
+            for (int m = 4; m < 15; m++)
+            {
+                for (int n = 7; n < 13; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 5;
+                }
+            }
 
             // rectDest to start out sprite on her bed
             rectDest = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);

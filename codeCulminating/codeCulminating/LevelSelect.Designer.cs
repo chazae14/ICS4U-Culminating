@@ -41,7 +41,7 @@
             this.btnLevelOne.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnLevelOne.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLevelOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLevelOne.Location = new System.Drawing.Point(235, 65);
+            this.btnLevelOne.Location = new System.Drawing.Point(235, 74);
             this.btnLevelOne.Name = "btnLevelOne";
             this.btnLevelOne.Size = new System.Drawing.Size(408, 317);
             this.btnLevelOne.TabIndex = 0;
@@ -56,9 +56,9 @@
             this.bnLevelTwoSelect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.bnLevelTwoSelect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.bnLevelTwoSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bnLevelTwoSelect.Location = new System.Drawing.Point(235, 379);
+            this.bnLevelTwoSelect.Location = new System.Drawing.Point(245, 391);
             this.bnLevelTwoSelect.Name = "bnLevelTwoSelect";
-            this.bnLevelTwoSelect.Size = new System.Drawing.Size(408, 311);
+            this.bnLevelTwoSelect.Size = new System.Drawing.Size(398, 287);
             this.bnLevelTwoSelect.TabIndex = 1;
             this.bnLevelTwoSelect.UseVisualStyleBackColor = false;
             this.bnLevelTwoSelect.Click += new System.EventHandler(this.bnLevelTwoSelect_Click);
