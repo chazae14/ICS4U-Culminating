@@ -1372,6 +1372,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(772, 763);
+            this.MinimumSize = new System.Drawing.Size(772, 763);
             this.Name = "Maze";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maze";

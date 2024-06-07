@@ -193,6 +193,8 @@
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
+            this.MaximumSize = new System.Drawing.Size(274, 450);
+            this.MinimumSize = new System.Drawing.Size(274, 450);
             this.Name = "CombinationLock";
             this.Text = "CombinationLock";
             this.ResumeLayout(false);
