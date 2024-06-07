@@ -139,7 +139,8 @@
             this.lblEnd = new System.Windows.Forms.Label();
             this.GameTime = new System.Windows.Forms.Timer(this.components);
             this.lblTime = new System.Windows.Forms.Label();
-            this.label98 = new System.Windows.Forms.Label();
+            this.lblHidden = new System.Windows.Forms.Label();
+            this.lblHidden2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -1236,22 +1237,32 @@
             this.lblTime.Size = new System.Drawing.Size(0, 13);
             this.lblTime.TabIndex = 125;
             // 
-            // label98
+            // lblHidden
             // 
-            this.label98.AutoSize = true;
-            this.label98.Location = new System.Drawing.Point(28, 5);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(58, 13);
-            this.label98.TabIndex = 126;
-            this.label98.Text = "                 ";
-            this.label98.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
+            this.lblHidden.AutoSize = true;
+            this.lblHidden.Location = new System.Drawing.Point(28, 5);
+            this.lblHidden.Name = "lblHidden";
+            this.lblHidden.Size = new System.Drawing.Size(58, 13);
+            this.lblHidden.TabIndex = 126;
+            this.lblHidden.Text = "                 ";
+            this.lblHidden.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
+            // 
+            // lblHidden2
+            // 
+            this.lblHidden2.AutoSize = true;
+            this.lblHidden2.Location = new System.Drawing.Point(678, 709);
+            this.lblHidden2.Name = "lblHidden2";
+            this.lblHidden2.Size = new System.Drawing.Size(58, 13);
+            this.lblHidden2.TabIndex = 127;
+            this.lblHidden2.Text = "                 ";
             // 
             // Maze
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 724);
-            this.Controls.Add(this.label98);
+            this.Controls.Add(this.lblHidden2);
+            this.Controls.Add(this.lblHidden);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.lblStart);
@@ -1480,6 +1491,7 @@
         private System.Windows.Forms.Label lblEnd;
         private System.Windows.Forms.Timer GameTime;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label lblHidden;
+        private System.Windows.Forms.Label lblHidden2;
     }
 }
