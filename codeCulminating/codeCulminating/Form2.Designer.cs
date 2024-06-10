@@ -83,6 +83,14 @@
             this.picRoadMiddle = new System.Windows.Forms.PictureBox();
             this.picRoadTop = new System.Windows.Forms.PictureBox();
             this.picSideWalk = new System.Windows.Forms.PictureBox();
+            this.picRideSideRoad = new System.Windows.Forms.PictureBox();
+            this.picRoadSideLeft = new System.Windows.Forms.PictureBox();
+            this.picSidewalkTop = new System.Windows.Forms.PictureBox();
+            this.picCrosswalk = new System.Windows.Forms.PictureBox();
+            this.picCrosswalkSide = new System.Windows.Forms.PictureBox();
+            this.picGrass = new System.Windows.Forms.PictureBox();
+            this.picCafeWall = new System.Windows.Forms.PictureBox();
+            this.picCafeWallSide = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).BeginInit();
@@ -137,6 +145,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoadMiddle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoadTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSideWalk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRideSideRoad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoadSideLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSidewalkTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrosswalk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrosswalkSide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGrass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCafeWall)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCafeWallSide)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -683,11 +699,99 @@
             this.picSideWalk.TabIndex = 63;
             this.picSideWalk.TabStop = false;
             // 
+            // picRideSideRoad
+            // 
+            this.picRideSideRoad.Image = ((System.Drawing.Image)(resources.GetObject("picRideSideRoad.Image")));
+            this.picRideSideRoad.Location = new System.Drawing.Point(572, 342);
+            this.picRideSideRoad.Name = "picRideSideRoad";
+            this.picRideSideRoad.Size = new System.Drawing.Size(50, 50);
+            this.picRideSideRoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picRideSideRoad.TabIndex = 64;
+            this.picRideSideRoad.TabStop = false;
+            // 
+            // picRoadSideLeft
+            // 
+            this.picRoadSideLeft.Image = ((System.Drawing.Image)(resources.GetObject("picRoadSideLeft.Image")));
+            this.picRoadSideLeft.Location = new System.Drawing.Point(572, 398);
+            this.picRoadSideLeft.Name = "picRoadSideLeft";
+            this.picRoadSideLeft.Size = new System.Drawing.Size(50, 50);
+            this.picRoadSideLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picRoadSideLeft.TabIndex = 65;
+            this.picRoadSideLeft.TabStop = false;
+            // 
+            // picSidewalkTop
+            // 
+            this.picSidewalkTop.Image = ((System.Drawing.Image)(resources.GetObject("picSidewalkTop.Image")));
+            this.picSidewalkTop.Location = new System.Drawing.Point(516, 286);
+            this.picSidewalkTop.Name = "picSidewalkTop";
+            this.picSidewalkTop.Size = new System.Drawing.Size(50, 50);
+            this.picSidewalkTop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picSidewalkTop.TabIndex = 66;
+            this.picSidewalkTop.TabStop = false;
+            // 
+            // picCrosswalk
+            // 
+            this.picCrosswalk.Image = ((System.Drawing.Image)(resources.GetObject("picCrosswalk.Image")));
+            this.picCrosswalk.Location = new System.Drawing.Point(628, 8);
+            this.picCrosswalk.Name = "picCrosswalk";
+            this.picCrosswalk.Size = new System.Drawing.Size(100, 200);
+            this.picCrosswalk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picCrosswalk.TabIndex = 67;
+            this.picCrosswalk.TabStop = false;
+            // 
+            // picCrosswalkSide
+            // 
+            this.picCrosswalkSide.Image = ((System.Drawing.Image)(resources.GetObject("picCrosswalkSide.Image")));
+            this.picCrosswalkSide.Location = new System.Drawing.Point(734, 8);
+            this.picCrosswalkSide.Name = "picCrosswalkSide";
+            this.picCrosswalkSide.Size = new System.Drawing.Size(200, 100);
+            this.picCrosswalkSide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picCrosswalkSide.TabIndex = 68;
+            this.picCrosswalkSide.TabStop = false;
+            // 
+            // picGrass
+            // 
+            this.picGrass.Image = ((System.Drawing.Image)(resources.GetObject("picGrass.Image")));
+            this.picGrass.Location = new System.Drawing.Point(516, 342);
+            this.picGrass.Name = "picGrass";
+            this.picGrass.Size = new System.Drawing.Size(50, 50);
+            this.picGrass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picGrass.TabIndex = 69;
+            this.picGrass.TabStop = false;
+            // 
+            // picCafeWall
+            // 
+            this.picCafeWall.Image = ((System.Drawing.Image)(resources.GetObject("picCafeWall.Image")));
+            this.picCafeWall.Location = new System.Drawing.Point(516, 398);
+            this.picCafeWall.Name = "picCafeWall";
+            this.picCafeWall.Size = new System.Drawing.Size(50, 50);
+            this.picCafeWall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picCafeWall.TabIndex = 70;
+            this.picCafeWall.TabStop = false;
+            // 
+            // picCafeWallSide
+            // 
+            this.picCafeWallSide.Image = ((System.Drawing.Image)(resources.GetObject("picCafeWallSide.Image")));
+            this.picCafeWallSide.Location = new System.Drawing.Point(460, 398);
+            this.picCafeWallSide.Name = "picCafeWallSide";
+            this.picCafeWallSide.Size = new System.Drawing.Size(50, 50);
+            this.picCafeWallSide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picCafeWallSide.TabIndex = 71;
+            this.picCafeWallSide.TabStop = false;
+            // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 429);
+            this.ClientSize = new System.Drawing.Size(1069, 495);
+            this.Controls.Add(this.picCafeWallSide);
+            this.Controls.Add(this.picCafeWall);
+            this.Controls.Add(this.picGrass);
+            this.Controls.Add(this.picCrosswalkSide);
+            this.Controls.Add(this.picCrosswalk);
+            this.Controls.Add(this.picSidewalkTop);
+            this.Controls.Add(this.picRoadSideLeft);
+            this.Controls.Add(this.picRideSideRoad);
             this.Controls.Add(this.picSideWalk);
             this.Controls.Add(this.picRoadTop);
             this.Controls.Add(this.picRoadMiddle);
@@ -798,6 +902,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRoadMiddle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRoadTop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSideWalk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRideSideRoad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRoadSideLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSidewalkTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrosswalk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrosswalkSide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGrass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCafeWall)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCafeWallSide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -859,5 +971,13 @@
         public System.Windows.Forms.PictureBox picRoadMiddle;
         public System.Windows.Forms.PictureBox picRoadTop;
         public System.Windows.Forms.PictureBox picSideWalk;
+        public System.Windows.Forms.PictureBox picRideSideRoad;
+        public System.Windows.Forms.PictureBox picRoadSideLeft;
+        public System.Windows.Forms.PictureBox picSidewalkTop;
+        public System.Windows.Forms.PictureBox picCrosswalk;
+        public System.Windows.Forms.PictureBox picCrosswalkSide;
+        public System.Windows.Forms.PictureBox picGrass;
+        public System.Windows.Forms.PictureBox picCafeWall;
+        public System.Windows.Forms.PictureBox picCafeWallSide;
     }
 }

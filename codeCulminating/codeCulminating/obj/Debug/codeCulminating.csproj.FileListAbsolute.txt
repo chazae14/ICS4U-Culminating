@@ -48,3 +48,22 @@ C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4
 C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.LevelTwo.resources
 C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.Maze.resources
 C:\Users\chaza\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.StartScreen.resources
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\bin\Debug\Interop.WMPLib.dll
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\Interop.WMPLib.dll
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.csproj.ResolveComReference.cache
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.CombinationLock.resources
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.frmPause.resources
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.frmLevelOne.resources
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.frmLevelSelect.resources
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.LevelTwo.resources
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.MemoryGame.resources
+C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\bin\Debug\Interop.WMPLib.dll
+C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\Interop.WMPLib.dll
+C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.csproj.ResolveComReference.cache
+C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.CombinationLock.resources
+C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.frmPause.resources
+C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.MemoryGame.resources
