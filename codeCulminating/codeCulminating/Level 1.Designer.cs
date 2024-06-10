@@ -69,6 +69,8 @@
             // lblTextBox
             // 
             this.lblTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.lblTextBox.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.lblTextBox.Image = ((System.Drawing.Image)(resources.GetObject("lblTextBox.Image")));
             this.lblTextBox.Location = new System.Drawing.Point(223, 454);
             this.lblTextBox.Name = "lblTextBox";

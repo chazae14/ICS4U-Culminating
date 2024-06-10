@@ -170,6 +170,7 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
+                    lblTextBox.Text = "";
                     clicksCount++;
 
                 }
@@ -179,7 +180,7 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    clicksCount += 7;
+                    clicksCount += 3;
 
                 }
 
@@ -215,6 +216,17 @@ namespace codeCulminating
         {
             clicksCount++;
 
+            if (clicksCount == 2)
+            {
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTextBox.Text = "";
+                lblTransparent.Hide();
+                clicksCount = 0;
+            }
+            else (clicksCount == )
+
+
 
             if (clicksCount == 10)
             {
@@ -246,13 +258,7 @@ namespace codeCulminating
                 clicksCount = 0;
                 this.Close();
             }
-            else if (clicksCount == 1)
-            {
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                clicksCount = 0;
-            }
+            
         }
 
         private void lblTransparent_Click(object sender, EventArgs e)
