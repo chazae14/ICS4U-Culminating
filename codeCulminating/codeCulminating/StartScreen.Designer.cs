@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartScreen));
             this.btnStart = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.btnMazeGame = new System.Windows.Forms.Button();
             this.btnMemoryGame = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.audioPlayer = new AxWMPLib.AxWindowsMediaPlayer();
-            ((System.ComponentModel.ISupportInitialize)(this.audioPlayer)).BeginInit();
+            this.btnCombinationLock = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -108,14 +106,16 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // audioPlayer
+            // btnCombinationLock
             // 
-            this.audioPlayer.Enabled = true;
-            this.audioPlayer.Location = new System.Drawing.Point(693, 285);
-            this.audioPlayer.Name = "audioPlayer";
-            this.audioPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("audioPlayer.OcxState")));
-            this.audioPlayer.Size = new System.Drawing.Size(200, 111);
-            this.audioPlayer.TabIndex = 6;
+            this.btnCombinationLock.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCombinationLock.Location = new System.Drawing.Point(698, 167);
+            this.btnCombinationLock.Name = "btnCombinationLock";
+            this.btnCombinationLock.Size = new System.Drawing.Size(114, 38);
+            this.btnCombinationLock.TabIndex = 6;
+            this.btnCombinationLock.Text = "Combination Lock";
+            this.btnCombinationLock.UseVisualStyleBackColor = false;
+            this.btnCombinationLock.Click += new System.EventHandler(this.btnCombinationLock_Click);
             // 
             // StartScreen
             // 
@@ -125,7 +125,7 @@
             this.BackgroundImage = global::codeCulminating.Properties.Resources.StartMenuSketch_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1424, 861);
-            this.Controls.Add(this.audioPlayer);
+            this.Controls.Add(this.btnCombinationLock);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnMemoryGame);
             this.Controls.Add(this.btnMazeGame);
@@ -137,8 +137,6 @@
             this.Name = "StartScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StartScreen";
-            this.Load += new System.EventHandler(this.StartScreen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.audioPlayer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,6 +148,6 @@
         private System.Windows.Forms.Button btnMazeGame;
         private System.Windows.Forms.Button btnMemoryGame;
         private System.Windows.Forms.Button btnExit;
-        private AxWMPLib.AxWindowsMediaPlayer audioPlayer;
+        private System.Windows.Forms.Button btnCombinationLock;
     }
 }
