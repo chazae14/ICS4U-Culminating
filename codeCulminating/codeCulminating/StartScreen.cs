@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Media;
+using WMPLib;
+using static System.Net.WebRequestMethods;
+using AxWMPLib;
 
 namespace codeCulminating
 {
@@ -15,13 +20,14 @@ namespace codeCulminating
         public StartScreen()
         {
             InitializeComponent();
+            audioPlayer.URL = "Title_Music.mp3";
         }
 
         // When clicked open game window
         private void btnStart_Click(object sender, EventArgs e)
         {
             frmMain inGamescreen = new frmMain();
-            
+            audioPlayer.Ctlcontrols.stop();
             inGamescreen.Show();
             this.Hide();
             
@@ -49,6 +55,12 @@ namespace codeCulminating
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void StartScreen_Load(object sender, EventArgs e)
+        {
+            audioPlayer.uiMode = "none";
+            audioPlayer.Hide();
         }
     }
 }

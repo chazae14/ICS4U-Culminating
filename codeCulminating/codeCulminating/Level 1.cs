@@ -6,11 +6,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Media;
+using WMPLib;
+using static System.Net.WebRequestMethods;
 
 namespace codeCulminating
 {
@@ -19,6 +22,7 @@ namespace codeCulminating
         public frmLevelOne()
         {
             InitializeComponent();
+            audPlayerLvl1.URL = "Lv1_Eerie_House.mp3";
         }
 
         int tileSize = 50;
@@ -151,6 +155,11 @@ namespace codeCulminating
                         walk = false;
                     }
                 }
+                else if (e.KeyCode == Keys.Escape)
+                {
+                    frmPause frmPause = new frmPause();
+                    frmPause.Show();
+                }
 
 
                 if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk) // walk when on the right tiles (no bedside or bottom of bed
@@ -175,6 +184,12 @@ namespace codeCulminating
                 // when near bedside table and e is clicked
                 else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
+
+                    picText1.Show();
+                    
+                    
+                    
+                    
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
@@ -318,6 +333,8 @@ namespace codeCulminating
 
         private void Level_1_Load(object sender, EventArgs e)
         {
+            audPlayerLvl1.uiMode = "none";
+            audPlayerLvl1.Hide();
             Graphics G;
             G = this.CreateGraphics();
 

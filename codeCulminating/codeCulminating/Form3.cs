@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Media;
+using WMPLib;
+using static System.Net.WebRequestMethods;
+using AxWMPLib;
 
 namespace codeCulminating
 {
@@ -61,6 +66,11 @@ namespace codeCulminating
                 this.Close();
             }
             Opacity -= 0.1;
+        }
+
+        private void volumeBar_Scroll(object sender, EventArgs e)
+        {
+
         }
     }
 }
