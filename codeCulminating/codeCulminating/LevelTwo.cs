@@ -40,7 +40,11 @@ namespace codeCulminating
         Bitmap bmpRoadRightSide;
         Bitmap bmpRoadLeftSide;
         Bitmap bmpSidewalkTop;
-        Bitmap bmpCrosswalk;  
+        Bitmap bmpCrosswalk;
+        Bitmap bmpCrosswalkSide;
+        Bitmap bmpGrass;
+        Bitmap bmpCafeWallTop;
+        Bitmap bmpCafeWallSide;
 
         enum dir
         {
@@ -202,6 +206,10 @@ namespace codeCulminating
             bmpRoadRightSide = new Bitmap(frmG.picRideSideRoad.Image, tileSize, tileSize);
             bmpSidewalkTop = new Bitmap(frmG.picSidewalkTop.Image, tileSize, tileSize); 
             bmpCrosswalk = new Bitmap(frmG.picCrosswalk.Image, tileSize, tileSize);
+            bmpCrosswalkSide = new Bitmap(frmG.picCrosswalkSide.Image, tileSize, tileSize); 
+            bmpGrass = new Bitmap(frmG.picGrass.Image, tileSize, tileSize);
+            bmpCafeWallTop = new Bitmap(frmG.picCafeWall.Image, tileSize, tileSize);
+            bmpCafeWallSide = new Bitmap(frmG.picCafeWallSide.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -255,6 +263,16 @@ namespace codeCulminating
             for (int m = 22; m < 23; m++)
             {
                 for (int n = 6; n < 13; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpRoadFiller, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 1;
+                }
+            }
+
+            for (int m = 18; m < 23; m++)
+            {
+                for (int n = 2; n < 6; n++)
                 {
                     rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
                     gback.DrawImage(bmpRoadFiller, rectDest, rect0, GraphicsUnit.Pixel);
@@ -336,6 +354,27 @@ namespace codeCulminating
                 }
             }
 
+            // crosswalk
+            for (int m = 17; m < 18; m++)
+            {
+                for (int n = 2; n < 3; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, 100, 200);
+                    gback.DrawImage(bmpCrosswalk, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 6;
+                }
+            }
+
+            for (int m = 19; m < 20; m++)
+            {
+                for (int n = 6; n < 7; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, 200, 100);
+                    gback.DrawImage(bmpCrosswalkSide, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 6;
+                }
+            }
+
             ///CAFE
             // wood floor
             for (int m = 4; m < 15; m++)
@@ -345,6 +384,39 @@ namespace codeCulminating
                     rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
                     gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
                     map[(m), (n)] = 5;
+                }
+            }
+
+            // grasss in front of cafe
+            for (int m = 15; m < 18; m++)
+            {
+                for (int n = 7; n < 13; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpGrass, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 7;
+                }
+            }
+
+            // top wall of cafe
+            for (int m = 4; m < 15; m++)
+            {
+                for (int n = 7; n < 8; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpCafeWallTop, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 8;
+                }
+            }
+
+            // side wall of cafe
+            for (int m = 15; m < 16; m++)
+            {
+                for (int n = 7; n < 13; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpCafeWallSide, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 9;
                 }
             }
 
