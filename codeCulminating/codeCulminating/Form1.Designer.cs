@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tmrMove = new System.Windows.Forms.Timer(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerIn = new System.Windows.Forms.Timer(this.components);
             this.lblTextBox = new System.Windows.Forms.Label();
             this.lblTransparent = new System.Windows.Forms.Label();
             this.picGirlInteract = new System.Windows.Forms.PictureBox();
@@ -41,6 +41,10 @@
             // tmrMove
             // 
             this.tmrMove.Tick += new System.EventHandler(this.tmrMove_Tick_1);
+            // 
+            // timerIn
+            // 
+            this.timerIn.Tick += new System.EventHandler(this.timerIn_Tick_1);
             // 
             // lblTextBox
             // 
@@ -97,7 +101,7 @@
         #endregion
 
         private System.Windows.Forms.Timer tmrMove;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerIn;
         private System.Windows.Forms.Label lblTextBox;
         private System.Windows.Forms.Label lblTransparent;
         private System.Windows.Forms.PictureBox picGirlInteract;

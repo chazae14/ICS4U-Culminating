@@ -84,6 +84,7 @@
             this.volumeBar.Size = new System.Drawing.Size(349, 45);
             this.volumeBar.TabIndex = 2;
             this.volumeBar.Value = 5;
+            this.volumeBar.Scroll += new System.EventHandler(this.volumeBar_Scroll);
             // 
             // picVolume
             // 
