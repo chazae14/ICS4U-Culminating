@@ -23,6 +23,7 @@ namespace codeCulminating
             frmMain inGamescreen = new frmMain();
             
             inGamescreen.Show();
+            this.Hide();
             
         }
         
@@ -48,6 +49,12 @@ namespace codeCulminating
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnCombinationLock_Click(object sender, EventArgs e)
+        {
+            CombinationLock inCombinationLock = new CombinationLock();
+            inCombinationLock.Show();
         }
     }
 }
