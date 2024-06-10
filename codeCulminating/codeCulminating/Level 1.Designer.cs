@@ -34,7 +34,10 @@
             this.lblTransparent = new System.Windows.Forms.Label();
             this.picGirlInteract = new System.Windows.Forms.PictureBox();
             this.lblTextBox = new System.Windows.Forms.Label();
+            this.picObjectives = new System.Windows.Forms.PictureBox();
+            this.lblObjectives = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picObjectives)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrMove
@@ -73,11 +76,33 @@
             this.lblTextBox.TabIndex = 5;
             this.lblTextBox.Click += new System.EventHandler(this.lblTextBox_Click);
             // 
+            // picObjectives
+            // 
+            this.picObjectives.Image = ((System.Drawing.Image)(resources.GetObject("picObjectives.Image")));
+            this.picObjectives.Location = new System.Drawing.Point(1069, 122);
+            this.picObjectives.Name = "picObjectives";
+            this.picObjectives.Size = new System.Drawing.Size(300, 300);
+            this.picObjectives.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picObjectives.TabIndex = 6;
+            this.picObjectives.TabStop = false;
+            // 
+            // lblObjectives
+            // 
+            this.lblObjectives.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(208)))), ((int)(((byte)(124)))));
+            this.lblObjectives.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObjectives.Location = new System.Drawing.Point(1100, 201);
+            this.lblObjectives.Name = "lblObjectives";
+            this.lblObjectives.Size = new System.Drawing.Size(238, 154);
+            this.lblObjectives.TabIndex = 7;
+            this.lblObjectives.Text = "- Get clothing from dresser\r\n- Get money for the cafe ";
+            // 
             // frmLevelOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
+            this.Controls.Add(this.lblObjectives);
+            this.Controls.Add(this.picObjectives);
             this.Controls.Add(this.lblTextBox);
             this.Controls.Add(this.picGirlInteract);
             this.Controls.Add(this.lblTransparent);
@@ -88,6 +113,7 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Level_1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Level_1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picObjectives)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +125,7 @@
         private System.Windows.Forms.Label lblTransparent;
         private System.Windows.Forms.PictureBox picGirlInteract;
         private System.Windows.Forms.Label lblTextBox;
+        private System.Windows.Forms.PictureBox picObjectives;
+        private System.Windows.Forms.Label lblObjectives;
     }
 }

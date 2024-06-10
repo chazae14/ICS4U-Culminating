@@ -45,12 +45,13 @@
             // lblTextBox
             // 
             this.lblTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.lblTextBox.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.lblTextBox.Image = ((System.Drawing.Image)(resources.GetObject("lblTextBox.Image")));
             this.lblTextBox.Location = new System.Drawing.Point(223, 454);
             this.lblTextBox.Name = "lblTextBox";
             this.lblTextBox.Size = new System.Drawing.Size(975, 298);
             this.lblTextBox.TabIndex = 0;
-            this.lblTextBox.Click += new System.EventHandler(this.lblTextBox_Click);
             // 
             // lblTransparent
             // 

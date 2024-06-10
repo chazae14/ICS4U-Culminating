@@ -164,20 +164,13 @@ namespace codeCulminating
                 }
 
                 /// ITEM INTERACTIONS
-                // when on exit tiles and e is clicked
-                if (curX > 16 * tileSize && curX < 20 * tileSize && curY > 12 * tileSize && curY < 15 * tileSize && e.KeyCode == Keys.E)
-                {
-                    picGirlInteract.Show();
-                    lblTextBox.Show();
-                    lblTransparent.Show();
-                    clicksCount += 10;
-                }
                 // when near bedside table and e is clicked
-                else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
+                if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
+                    clicksCount++;
 
                 }
                 // desk interaction
@@ -186,8 +179,20 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    clicksCount += 9;
+                    clicksCount += 7;
+
                 }
+
+                // when on exit tiles and e is clicked
+                else if (curX > 16 * tileSize && curX < 20 * tileSize && curY > 12 * tileSize && curY < 15 * tileSize && e.KeyCode == Keys.E)
+                {
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+                    clicksCount += 12;
+                }
+                
+               
                 // when near bed and e is clicked
                 else if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
@@ -201,6 +206,7 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
+                    clicksCount += 9;
                 }
             }
         }
@@ -208,6 +214,7 @@ namespace codeCulminating
         private void lblTextBox_Click(object sender, EventArgs e)
         {
             clicksCount++;
+
 
             if (clicksCount == 10)
             {
@@ -220,6 +227,19 @@ namespace codeCulminating
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
                 lblTransparent.Hide();
+            }
+            else if(clicksCount == 12)
+            {
+                CombinationLock inGamescreen = new CombinationLock();
+                inGamescreen.Show();
+
+                clicksCount = 0;
+
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+            
+
             }
             else if (clicksCount == 13)
             {
