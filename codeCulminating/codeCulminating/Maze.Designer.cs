@@ -139,6 +139,8 @@
             this.lblEnd = new System.Windows.Forms.Label();
             this.GameTime = new System.Windows.Forms.Timer(this.components);
             this.lblTime = new System.Windows.Forms.Label();
+            this.lblHidden = new System.Windows.Forms.Label();
+            this.lblHidden2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -1204,7 +1206,8 @@
             // lblStart
             // 
             this.lblStart.AutoSize = true;
-            this.lblStart.Location = new System.Drawing.Point(36, 21);
+            this.lblStart.BackColor = System.Drawing.Color.GreenYellow;
+            this.lblStart.Location = new System.Drawing.Point(36, 35);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(29, 13);
             this.lblStart.TabIndex = 123;
@@ -1213,6 +1216,7 @@
             // lblEnd
             // 
             this.lblEnd.AutoSize = true;
+            this.lblEnd.BackColor = System.Drawing.Color.IndianRed;
             this.lblEnd.Location = new System.Drawing.Point(702, 695);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.Size = new System.Drawing.Size(26, 13);
@@ -1233,11 +1237,32 @@
             this.lblTime.Size = new System.Drawing.Size(0, 13);
             this.lblTime.TabIndex = 125;
             // 
+            // lblHidden
+            // 
+            this.lblHidden.AutoSize = true;
+            this.lblHidden.Location = new System.Drawing.Point(28, 5);
+            this.lblHidden.Name = "lblHidden";
+            this.lblHidden.Size = new System.Drawing.Size(58, 13);
+            this.lblHidden.TabIndex = 126;
+            this.lblHidden.Text = "                 ";
+            this.lblHidden.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
+            // 
+            // lblHidden2
+            // 
+            this.lblHidden2.AutoSize = true;
+            this.lblHidden2.Location = new System.Drawing.Point(678, 709);
+            this.lblHidden2.Name = "lblHidden2";
+            this.lblHidden2.Size = new System.Drawing.Size(58, 13);
+            this.lblHidden2.TabIndex = 127;
+            this.lblHidden2.Text = "                 ";
+            // 
             // Maze
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 724);
+            this.Controls.Add(this.lblHidden2);
+            this.Controls.Add(this.lblHidden);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.lblStart);
@@ -1347,6 +1372,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(772, 763);
+            this.MinimumSize = new System.Drawing.Size(772, 763);
             this.Name = "Maze";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maze";
@@ -1466,5 +1493,7 @@
         private System.Windows.Forms.Label lblEnd;
         private System.Windows.Forms.Timer GameTime;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblHidden;
+        private System.Windows.Forms.Label lblHidden2;
     }
 }

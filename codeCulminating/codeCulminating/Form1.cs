@@ -147,6 +147,11 @@ namespace codeCulminating
                         walk = false;
                     }
                 }
+                else if (e.KeyCode == Keys.Escape)
+                {
+                    frmPause frmPause = new frmPause();
+                    frmPause.Show();
+                }
 
                 if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk)
                 {

@@ -23,6 +23,7 @@ namespace codeCulminating
             frmMain inGamescreen = new frmMain();
             
             inGamescreen.Show();
+            this.Hide();
             
         }
         
@@ -37,6 +38,23 @@ namespace codeCulminating
         {
             Maze inMazeGame = new Maze();
             inMazeGame.Show();
+        }
+
+        private void btnMemoryGame_Click(object sender, EventArgs e)
+        {
+            MemoryGame inMemoryGame = new MemoryGame();
+            inMemoryGame.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnCombinationLock_Click(object sender, EventArgs e)
+        {
+            CombinationLock inCombinationLock = new CombinationLock();
+            inCombinationLock.Show();
         }
     }
 }
