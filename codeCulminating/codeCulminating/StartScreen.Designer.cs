@@ -34,6 +34,7 @@
             this.btnMemoryGame = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCombinationLock = new System.Windows.Forms.Button();
+            this.btnSlidingPuzzle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -117,6 +118,17 @@
             this.btnCombinationLock.UseVisualStyleBackColor = false;
             this.btnCombinationLock.Click += new System.EventHandler(this.btnCombinationLock_Click);
             // 
+            // btnSlidingPuzzle
+            // 
+            this.btnSlidingPuzzle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSlidingPuzzle.Location = new System.Drawing.Point(698, 211);
+            this.btnSlidingPuzzle.Name = "btnSlidingPuzzle";
+            this.btnSlidingPuzzle.Size = new System.Drawing.Size(114, 38);
+            this.btnSlidingPuzzle.TabIndex = 7;
+            this.btnSlidingPuzzle.Text = "Sliding Puzzle Game";
+            this.btnSlidingPuzzle.UseVisualStyleBackColor = false;
+            this.btnSlidingPuzzle.Click += new System.EventHandler(this.btnSlidingPuzzle_Click);
+            // 
             // StartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,6 +137,7 @@
             this.BackgroundImage = global::codeCulminating.Properties.Resources.StartMenuSketch_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1424, 861);
+            this.Controls.Add(this.btnSlidingPuzzle);
             this.Controls.Add(this.btnCombinationLock);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnMemoryGame);
@@ -149,5 +162,6 @@
         private System.Windows.Forms.Button btnMemoryGame;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnCombinationLock;
+        private System.Windows.Forms.Button btnSlidingPuzzle;
     }
 }

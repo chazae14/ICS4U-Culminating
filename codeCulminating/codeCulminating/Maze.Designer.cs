@@ -1255,6 +1255,7 @@
             this.lblHidden2.Size = new System.Drawing.Size(58, 13);
             this.lblHidden2.TabIndex = 127;
             this.lblHidden2.Text = "                 ";
+            this.lblHidden2.MouseEnter += new System.EventHandler(this.MazeWall_MouseEnter);
             // 
             // Maze
             // 
