@@ -196,6 +196,7 @@
             this.MaximumSize = new System.Drawing.Size(274, 450);
             this.MinimumSize = new System.Drawing.Size(274, 450);
             this.Name = "CombinationLock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CombinationLock";
             this.ResumeLayout(false);
             this.PerformLayout();
