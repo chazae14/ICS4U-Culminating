@@ -56,5 +56,11 @@ namespace codeCulminating
             CombinationLock inCombinationLock = new CombinationLock();
             inCombinationLock.Show();
         }
+
+        private void btnSlidingPuzzle_Click(object sender, EventArgs e)
+        {
+            SlidingPuzzle inSlidingPuzzle = new SlidingPuzzle();
+            inSlidingPuzzle.Show();
+        }
     }
 }

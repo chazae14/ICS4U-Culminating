@@ -173,8 +173,8 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-
-                    clicksCount += 9;
+                    lblTextBox.Text = "\n \n \n      My desk. I keep all my valubles here. Wait, what is that...?";
+                    clicksCount += 11;
                 }
                 // when near bedside table and E is clicked, interaction occurs
                 else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
@@ -182,6 +182,9 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
+                    clicksCount += 2;
+                    lblTextBox.Text = "\n \n \n     This is my bedside table, where i usually keep my phone.";
+
                 }
                 // when near bed and e is clicked
                 else if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
@@ -189,39 +192,20 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
+                    clicksCount += 8;
+                    lblTextBox.Text = "\n \n \n      My bed! And my teddy named Lorenzo!";
+
                 }
                 // dresser interaction
-                else if( curX > 7 * tileSize && curX < 9 * tileSize && curY > 6 * tileSize && curY < 10 * tileSize && e.KeyCode == Keys.E)
+                else if(curX > 7 * tileSize && curX < 9 * tileSize && curY > 6 * tileSize && curY < 10 * tileSize && e.KeyCode == Keys.E)
                 {
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
+                    clicksCount += 9;
+                    lblTextBox.Text = "\n \n \n      This is my dresser, where I keep all my clothes!";
+
                 }
-            }
-        }
-
-        private void lblTextBox_Click(object sender, EventArgs e)
-        {
-            clicksCount++;
-
-            if (clicksCount == 10)
-            {
-                frmLevelSelect inGamescreen = new frmLevelSelect();
-
-                inGamescreen.Show();
-
-                clicksCount = 0;
-
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-            }
-            else if (clicksCount == 1)
-            {
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                clicksCount = 0; 
             }
         }
 
@@ -229,23 +213,56 @@ namespace codeCulminating
         {
             clicksCount++;
 
-            if (clicksCount == 10)
+            /// CLICKS FOR BEDSIDE TABLE INTERACTION
+            if (clicksCount == 3)
+            {
+                lblTransparent.Hide();
+                clicksCount = 0;
+                lblTextBox.Hide();
+                lblTextBox.Text = "";
+                picGirlInteract.Hide();
+            }
+
+            /// CLICKS FOR BED
+            else if (clicksCount == 9)
+            {
+                lblTextBox.Hide();
+                lblTextBox.Text = "";
+
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                clicksCount = 0;
+            }
+
+            /// dresser interactions
+            else if (clicksCount == 10)
+            {
+                lblTextBox.Hide();
+                lblTextBox.Text = "";
+
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                clicksCount = 0;
+            }
+
+            /// desk interactions
+            else if (clicksCount == 12)
+            {
+                lblTextBox.Text = "\n \n \n      My photo album! Maybe this will help me remember what \n      happened yesterday. Let's start with the beginning \n      of the day.";
+            }
+            else if (clicksCount == 13)
             {
                 frmLevelSelect inGamescreen = new frmLevelSelect();
 
                 inGamescreen.Show();
                 clicksCount = 0;
+                lblTextBox.Text = "";
+
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
                 lblTransparent.Hide();
             }
-            else if (clicksCount == 1)
-            {
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                clicksCount = 0;
-            }
+
         }
 
         private void timerIn_Tick_1(object sender, EventArgs e)

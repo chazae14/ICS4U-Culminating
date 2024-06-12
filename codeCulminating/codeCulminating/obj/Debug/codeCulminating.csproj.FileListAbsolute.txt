@@ -67,3 +67,4 @@ C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae1
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.CombinationLock.resources
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.frmPause.resources
 C:\Users\celfizy8745\OneDrive - Hamilton Wentworth District School Board\chazae14\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.MemoryGame.resources
+C:\Users\jlateo9076\source\Repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.SlidingPuzzle.resources
