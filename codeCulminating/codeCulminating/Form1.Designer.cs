@@ -56,6 +56,7 @@
             this.lblTextBox.Name = "lblTextBox";
             this.lblTextBox.Size = new System.Drawing.Size(975, 298);
             this.lblTextBox.TabIndex = 0;
+            this.lblTextBox.Click += new System.EventHandler(this.lblTextBox_Click);
             // 
             // lblTransparent
             // 
