@@ -22,7 +22,7 @@ namespace codeCulminating
         public frmLevelOne()
         {
             InitializeComponent();
-            audPlayerLvl1.URL = "Lv1_Eerie_House.mp3";
+            //audPlayerLvl1.URL = "Lv1_Eerie_House.mp3";
         }
 
         int tileSize = 50;
@@ -177,7 +177,7 @@ namespace codeCulminating
                 if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
 
-                    picText1.Show();
+                    //picText1.Show();
                     
                     
                     
@@ -353,8 +353,8 @@ namespace codeCulminating
 
         private void Level_1_Load(object sender, EventArgs e)
         {
-            audPlayerLvl1.uiMode = "none";
-            audPlayerLvl1.Hide();
+            //audPlayerLvl1.uiMode = "none";
+            //audPlayerLvl1.Hide();
             Graphics G;
             G = this.CreateGraphics();
 
