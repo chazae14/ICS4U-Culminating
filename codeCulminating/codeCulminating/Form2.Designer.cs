@@ -91,6 +91,7 @@
             this.picGrass = new System.Windows.Forms.PictureBox();
             this.picCafeWall = new System.Windows.Forms.PictureBox();
             this.picCafeWallSide = new System.Windows.Forms.PictureBox();
+            this.picSlidingGame = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).BeginInit();
@@ -153,6 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGrass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCafeWall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCafeWallSide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSlidingGame)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -779,11 +781,23 @@
             this.picCafeWallSide.TabIndex = 71;
             this.picCafeWallSide.TabStop = false;
             // 
+            // picSlidingGame
+            // 
+            this.picSlidingGame.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picSlidingGame.ErrorImage")));
+            this.picSlidingGame.Image = ((System.Drawing.Image)(resources.GetObject("picSlidingGame.Image")));
+            this.picSlidingGame.Location = new System.Drawing.Point(702, 286);
+            this.picSlidingGame.Name = "picSlidingGame";
+            this.picSlidingGame.Size = new System.Drawing.Size(143, 149);
+            this.picSlidingGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picSlidingGame.TabIndex = 72;
+            this.picSlidingGame.TabStop = false;
+            // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 495);
+            this.Controls.Add(this.picSlidingGame);
             this.Controls.Add(this.picCafeWallSide);
             this.Controls.Add(this.picCafeWall);
             this.Controls.Add(this.picGrass);
@@ -910,6 +924,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGrass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCafeWall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCafeWallSide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSlidingGame)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -979,5 +994,6 @@
         public System.Windows.Forms.PictureBox picGrass;
         public System.Windows.Forms.PictureBox picCafeWall;
         public System.Windows.Forms.PictureBox picCafeWallSide;
+        public System.Windows.Forms.PictureBox picSlidingGame;
     }
 }
