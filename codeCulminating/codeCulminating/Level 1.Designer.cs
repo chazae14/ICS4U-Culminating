@@ -36,8 +36,14 @@
             this.lblTextBox = new System.Windows.Forms.Label();
             this.picObjectives = new System.Windows.Forms.PictureBox();
             this.lblObjectives = new System.Windows.Forms.Label();
+            this.lblYes = new System.Windows.Forms.Label();
+            this.lblNo = new System.Windows.Forms.Label();
+            this.picDresserCheck = new System.Windows.Forms.PictureBox();
+            this.picMoneyCheck = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picObjectives)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDresserCheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoneyCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrMove
@@ -98,11 +104,61 @@
             this.lblObjectives.TabIndex = 7;
             this.lblObjectives.Text = "- Get clothing from dresser\r\n- Get money for the cafe ";
             // 
+            // lblYes
+            // 
+            this.lblYes.AutoSize = true;
+            this.lblYes.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblYes.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYes.Location = new System.Drawing.Point(754, 688);
+            this.lblYes.Name = "lblYes";
+            this.lblYes.Size = new System.Drawing.Size(58, 24);
+            this.lblYes.TabIndex = 8;
+            this.lblYes.Text = "Yes.";
+            this.lblYes.Click += new System.EventHandler(this.lblYes_Click);
+            // 
+            // lblNo
+            // 
+            this.lblNo.AutoSize = true;
+            this.lblNo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNo.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNo.Location = new System.Drawing.Point(875, 688);
+            this.lblNo.Name = "lblNo";
+            this.lblNo.Size = new System.Drawing.Size(46, 24);
+            this.lblNo.TabIndex = 9;
+            this.lblNo.Text = "No.";
+            this.lblNo.Click += new System.EventHandler(this.lblNo_Click);
+            // 
+            // picDresserCheck
+            // 
+            this.picDresserCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(208)))), ((int)(((byte)(128)))));
+            this.picDresserCheck.Image = ((System.Drawing.Image)(resources.GetObject("picDresserCheck.Image")));
+            this.picDresserCheck.Location = new System.Drawing.Point(1104, 200);
+            this.picDresserCheck.Name = "picDresserCheck";
+            this.picDresserCheck.Size = new System.Drawing.Size(21, 22);
+            this.picDresserCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDresserCheck.TabIndex = 10;
+            this.picDresserCheck.TabStop = false;
+            // 
+            // picMoneyCheck
+            // 
+            this.picMoneyCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(208)))), ((int)(((byte)(128)))));
+            this.picMoneyCheck.Image = ((System.Drawing.Image)(resources.GetObject("picMoneyCheck.Image")));
+            this.picMoneyCheck.Location = new System.Drawing.Point(1104, 237);
+            this.picMoneyCheck.Name = "picMoneyCheck";
+            this.picMoneyCheck.Size = new System.Drawing.Size(21, 23);
+            this.picMoneyCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMoneyCheck.TabIndex = 11;
+            this.picMoneyCheck.TabStop = false;
+            // 
             // frmLevelOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
+            this.Controls.Add(this.picMoneyCheck);
+            this.Controls.Add(this.picDresserCheck);
+            this.Controls.Add(this.lblNo);
+            this.Controls.Add(this.lblYes);
             this.Controls.Add(this.lblObjectives);
             this.Controls.Add(this.picObjectives);
             this.Controls.Add(this.lblTextBox);
@@ -116,6 +172,8 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Level_1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picObjectives)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDresserCheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoneyCheck)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +187,9 @@
         private System.Windows.Forms.Label lblTextBox;
         private System.Windows.Forms.PictureBox picObjectives;
         private System.Windows.Forms.Label lblObjectives;
+        private System.Windows.Forms.Label lblYes;
+        private System.Windows.Forms.Label lblNo;
+        private System.Windows.Forms.PictureBox picDresserCheck;
+        private System.Windows.Forms.PictureBox picMoneyCheck;
     }
 }

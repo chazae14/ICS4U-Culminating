@@ -90,6 +90,7 @@ namespace codeCulminating
             right,
             up
         }
+        public static int compCount = 0;
 
         private void Level_1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -202,18 +203,18 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      Hrm. Should i leave yet? I need to make sure i have everything \n \n \n      i need.";
+                    lblTextBox.Text = "\n \n \n      Hrm. Should i leave yet? I need to make sure i have everything \n      i need.";
                     clicksCount += 6;
                 }
                 
                 // when near bed and e is clicked
-                else if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
+                else if (curX > 17 * tileSize && curX < 20 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
                     lblTextBox.Text = "\n \n \n      I wish i could go back to bed. I gotta go though!";
-                    clicksCount += 7;
+                    clicksCount += 1;
                 }
                 // dresser interaction
                 else if (curX > 6 * tileSize && curX < 8 * tileSize && curY > 6 * tileSize && curY < 10 * tileSize && e.KeyCode == Keys.E)
@@ -222,14 +223,83 @@ namespace codeCulminating
                     lblTextBox.Show();
                     lblTransparent.Show();
                     clicksCount += 9;
-                    lblTextBox.Text = "Time to get dressed, i guess.";
+                    lblTextBox.Text = "\n \n \n      Time to get dressed, i guess.";
                 }
             }
         }
 
         private void lblTextBox_Click(object sender, EventArgs e)
         {
-            
+            clicksCount++;
+
+            // interaction with bedside table
+            if (clicksCount == 2)
+            {
+                clicksCount = 0;
+
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                lblTextBox.Text = "";
+            }
+
+            // interaction with desk
+            else if (clicksCount == 3)
+            {
+                lblTextBox.Text = "\n \n \n      Oh shoot, i forgot i locked my drawer where i keep my wallet! \n       And i forgot my passcode!";
+            }
+            else if (clicksCount == 4)
+            {
+                lblTextBox.Text = "\n \n \n      That's alright, i know i wrote it down on a piece of paper somewhere.";
+            }
+            else if (clicksCount == 5)
+            {
+                CombinationLock inGamescreen = new CombinationLock();
+                inGamescreen.Show();
+
+                clicksCount = 0;
+
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                lblTextBox.Text = "";
+            }
+
+            // interaction with exit tiles if not all objectives are completed
+            else if (clicksCount == 7 && compCount == 2)
+            {
+                lblTextBox.Text = "\n \n \n      I'm all set! Let's go!";
+                clicksCount = 0;
+                this.Close();
+            }
+            else if (clicksCount == 7 && compCount == 1)
+            {
+                lblTextBox.Text = "\n \n \n      I still have one last thing to do. Should i really leave?.";
+                lblYes.Show();
+                lblNo.Show();
+            }
+            else if (clicksCount == 7 && compCount == 0)
+            {
+                lblTextBox.Text = "\n \n \n      I still have to get ready! Should i really leave?";
+                lblYes.Show();
+                lblNo.Show();
+
+            }
+
+            else if (clicksCount == 10)
+            {
+                SlidingPuzzle inGamescreen = new SlidingPuzzle();
+                inGamescreen.Show();
+                if (SlidingPuzzle.slideCode == 1)
+                {
+                    picDresserCheck.Show();
+                }
+                clicksCount = 0;
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                lblTextBox.Text = "";
+            }
         }
 
         private void lblTransparent_Click(object sender, EventArgs e)
@@ -270,29 +340,26 @@ namespace codeCulminating
             }
 
             // interaction with exit tiles if not all objectives are completed
-            else if (clicksCount == 7 && objectiveCount == 2)
+            else if (clicksCount == 7 && compCount == 2)
             {
                 lblTextBox.Text = "\n \n \n      I'm all set! Let's go!";
                 clicksCount = 0;
                 this.Close();
             }
-            else if (clicksCount == 7 && objectiveCount == 1)
+            else if (clicksCount == 7 && compCount == 1)
             {
-                lblTextBox.Text = "\n \n \n      I still have one last thing to do. I should stay.";
+                lblTextBox.Text = "\n \n \n      I still have one last thing to do. Should i really leave?.";
+                lblYes.Show();
+                lblNo.Show();
             }
-            else if (clicksCount == 7 && objectiveCount == 0)
+            else if (clicksCount == 7 && compCount == 0)
             {
-                lblTextBox.Text = "\n \n \n      I still have to get ready! I should stay.";
+                lblTextBox.Text = "\n \n \n      I still have to get ready! Should i really leave?";
+                lblYes.Show();
+                lblNo.Show();
                 
             }
-            else if (clicksCount == 8)
-            {
-                clicksCount = 0;
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                lblTextBox.Text = "";
-            }
+            // dresser interaction!!!!
             else if (clicksCount == 10)
             {
                 SlidingPuzzle inGamescreen = new SlidingPuzzle();
@@ -304,6 +371,28 @@ namespace codeCulminating
                 lblTextBox.Text = "";
             }
 
+        }
+
+        private void lblYes_Click(object sender, EventArgs e)
+        {
+            clicksCount = 0;
+            lblTextBox.Hide();
+            picGirlInteract.Hide();
+            lblTransparent.Hide();
+            lblTextBox.Text = "";
+            this.Close();
+
+        }
+
+        private void lblNo_Click(object sender, EventArgs e)
+        {
+            clicksCount = 0;
+            lblTextBox.Hide();
+            picGirlInteract.Hide();
+            lblTransparent.Hide();
+            lblTextBox.Text = "";
+            lblNo.Hide();
+            lblYes.Hide();
         }
 
         private void tmrMove_Tick(object sender, EventArgs e)
@@ -363,9 +452,14 @@ namespace codeCulminating
             Graphics G;
             G = this.CreateGraphics();
 
+            // hiding all the random pictures 
             lblTextBox.Hide();
             picGirlInteract.Hide();
             lblTransparent.Hide();
+            lblNo.Hide();
+            lblYes.Hide();
+            picDresserCheck.Hide();
+            picMoneyCheck.Hide();
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);

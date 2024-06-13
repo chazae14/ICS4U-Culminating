@@ -17,7 +17,7 @@ namespace codeCulminating
         Point EmptyPoint;
         ArrayList images = new ArrayList(); // stores croped image
         frmGraphics frmG =new frmGraphics(); // get image from form2
-
+        public static int slideCode = 0; // variable to inform what mini-game was completed to check off right box
         public SlidingPuzzle()
         {
             InitializeComponent();
@@ -146,6 +146,8 @@ namespace codeCulminating
             if (count == 8)
             {
                 DialogResult choice = MessageBox.Show("Sliding puzzle complete.", "Win", MessageBoxButtons.OK);
+                frmLevelOne.compCount++;
+                slideCode++;
                 if (choice == DialogResult.OK)
                 {
                     this.Close();
