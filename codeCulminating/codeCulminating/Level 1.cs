@@ -222,6 +222,7 @@ namespace codeCulminating
                     lblTextBox.Show();
                     lblTransparent.Show();
                     clicksCount += 9;
+                    lblTextBox.Text = "Time to get dressed, i guess.";
                 }
             }
         }
@@ -292,6 +293,17 @@ namespace codeCulminating
                 lblTransparent.Hide();
                 lblTextBox.Text = "";
             }
+            else if (clicksCount == 10)
+            {
+                SlidingPuzzle inGamescreen = new SlidingPuzzle();
+                inGamescreen.Show();
+                clicksCount = 0;
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                lblTextBox.Text = "";
+            }
+
         }
 
         private void tmrMove_Tick(object sender, EventArgs e)

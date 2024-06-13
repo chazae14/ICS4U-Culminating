@@ -92,6 +92,8 @@
             this.picCafeWall = new System.Windows.Forms.PictureBox();
             this.picCafeWallSide = new System.Windows.Forms.PictureBox();
             this.picSlidingGame = new System.Windows.Forms.PictureBox();
+            this.picTableLeft = new System.Windows.Forms.PictureBox();
+            this.picTableRight = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).BeginInit();
@@ -155,6 +157,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCafeWall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCafeWallSide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSlidingGame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTableLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTableRight)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -792,11 +796,33 @@
             this.picSlidingGame.TabIndex = 72;
             this.picSlidingGame.TabStop = false;
             // 
+            // picTableLeft
+            // 
+            this.picTableLeft.Image = ((System.Drawing.Image)(resources.GetObject("picTableLeft.Image")));
+            this.picTableLeft.Location = new System.Drawing.Point(348, 398);
+            this.picTableLeft.Name = "picTableLeft";
+            this.picTableLeft.Size = new System.Drawing.Size(50, 50);
+            this.picTableLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picTableLeft.TabIndex = 73;
+            this.picTableLeft.TabStop = false;
+            // 
+            // picTableRight
+            // 
+            this.picTableRight.Image = ((System.Drawing.Image)(resources.GetObject("picTableRight.Image")));
+            this.picTableRight.Location = new System.Drawing.Point(404, 398);
+            this.picTableRight.Name = "picTableRight";
+            this.picTableRight.Size = new System.Drawing.Size(50, 50);
+            this.picTableRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picTableRight.TabIndex = 74;
+            this.picTableRight.TabStop = false;
+            // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 495);
+            this.Controls.Add(this.picTableRight);
+            this.Controls.Add(this.picTableLeft);
             this.Controls.Add(this.picSlidingGame);
             this.Controls.Add(this.picCafeWallSide);
             this.Controls.Add(this.picCafeWall);
@@ -925,6 +951,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCafeWall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCafeWallSide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSlidingGame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTableLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTableRight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -995,5 +1023,7 @@
         public System.Windows.Forms.PictureBox picCafeWall;
         public System.Windows.Forms.PictureBox picCafeWallSide;
         public System.Windows.Forms.PictureBox picSlidingGame;
+        public System.Windows.Forms.PictureBox picTableLeft;
+        public System.Windows.Forms.PictureBox picTableRight;
     }
 }

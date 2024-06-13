@@ -48,6 +48,8 @@ namespace codeCulminating
         Bitmap bmpGrass;
         Bitmap bmpCafeWallTop;
         Bitmap bmpCafeWallSide;
+        Bitmap bmpTableLeft;
+        Bitmap bmpTableRight;
 
         enum dir
         {
@@ -70,7 +72,7 @@ namespace codeCulminating
                 if (e.KeyCode == Keys.D)
                 {
                     direction = (int)dir.right;
-                    if ((curX > 6 * tileSize && curX < 19 * tileSize) || (curX < 6 * tileSize)) // can go if in bounds 
+                    if ((curX > 3 * tileSize && curX < 19 * tileSize) || (curX < 4 * tileSize)) // can go if in bounds 
                     {
                         destTile = map[(curX + tileSize) / tileSize, curY / tileSize];
                         walk = true;
@@ -83,7 +85,7 @@ namespace codeCulminating
                 if (e.KeyCode == Keys.A)
                 {
                     direction = (int)dir.left;
-                    if (curX <= 6 * tileSize || curX >= 20 * tileSize) // cant go if out of bounds
+                    if (curX <= 4 * tileSize || curX >= 20 * tileSize) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -125,7 +127,7 @@ namespace codeCulminating
                 }
 
 
-                if (destTile != 0 && walk) // walk when on the right tiles (no bedside or bottom of bed
+                if (destTile != 0 && destTile != 8 && destTile != 9 && destTile != 10 && destTile != 11 && walk) // walk when on the right tiles (no walls or out of bounds)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -213,6 +215,8 @@ namespace codeCulminating
             bmpGrass = new Bitmap(frmG.picGrass.Image, tileSize, tileSize);
             bmpCafeWallTop = new Bitmap(frmG.picCafeWall.Image, tileSize, tileSize);
             bmpCafeWallSide = new Bitmap(frmG.picCafeWallSide.Image, tileSize, tileSize);
+            bmpTableLeft = new Bitmap(frmG.picTableLeft.Image, tileSize, tileSize);
+            bmpTableRight = new Bitmap(frmG.picTableRight.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -379,17 +383,6 @@ namespace codeCulminating
             }
 
             ///CAFE
-            // wood floor
-            for (int m = 4; m < 15; m++)
-            {
-                for (int n = 7; n < 13; n++)
-                {
-                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
-                    gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
-                    map[(m), (n)] = 5;
-                }
-            }
-
             // grasss in front of cafe
             for (int m = 15; m < 18; m++)
             {
@@ -400,9 +393,19 @@ namespace codeCulminating
                     map[(m), (n)] = 7;
                 }
             }
+            // wood floor
+            for (int m = 4; m < 15; m++)
+            {
+                for (int n = 7; n < 13; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 5;
+                }
+            } 
 
             // top wall of cafe
-            for (int m = 4; m < 15; m++)
+            for (int m = 4; m < 14; m++)
             {
                 for (int n = 7; n < 8; n++)
                 {
@@ -423,11 +426,32 @@ namespace codeCulminating
                 }
             }
 
-            // rectDest to start out sprite on her bed
+            // cafe tables
+            for (int m = 5; m < 6; m++) // right side of table
+            {
+                for (int n = 8; n < 13; n+=2)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpTableRight, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 10;
+                }
+            }
+
+            for (int m = 4; m < 5; m++) // left side of table
+            {
+                for (int n = 8; n < 13; n += 2)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpTableLeft, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 11;
+                }
+            }
+
+            // rectDest to start out sprite outside of cafe
             rectDest = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
             rectSource = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
 
-            // drawing out our girl on her bed
+            // drawing out our girl outside of cafe
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
 

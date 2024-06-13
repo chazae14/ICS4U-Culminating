@@ -19,7 +19,7 @@ namespace codeCulminating
 
 
         string userInput = " "; // Stores user input
-        string correctCode = "1234"; // Stores correct code - only make up to 4 digits
+        string correctCode = "1420"; // Stores correct code - only make up to 4 digits
 
         // Add Numbers to text box
         private void Buttons_MouseClick(object sender, MouseEventArgs e)
@@ -85,5 +85,9 @@ namespace codeCulminating
             }
         }
 
+        private void CombinationLock_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
