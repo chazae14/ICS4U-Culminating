@@ -143,6 +143,66 @@ namespace codeCulminating.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Phonecrop {
+            get {
+                object obj = ResourceManager.GetObject("Phonecrop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Phonecrop_1 {
+            get {
+                object obj = ResourceManager.GetObject("Phonecrop 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Phonecrop_2 {
+            get {
+                object obj = ResourceManager.GetObject("Phonecrop 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Phonecrop_3 {
+            get {
+                object obj = ResourceManager.GetObject("Phonecrop 3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Phonecrop_4 {
+            get {
+                object obj = ResourceManager.GetObject("Phonecrop 4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Phonecrop_5 {
+            get {
+                object obj = ResourceManager.GetObject("Phonecrop 5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap StartMenuSketch_1 {
             get {
                 object obj = ResourceManager.GetObject("StartMenuSketch 1", resourceCulture);
@@ -156,6 +216,16 @@ namespace codeCulminating.Properties {
         internal static System.Drawing.Bitmap titleWbuttons {
             get {
                 object obj = ResourceManager.GetObject("titleWbuttons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_Artwork__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Untitled_Artwork (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

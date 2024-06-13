@@ -32,6 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLevelOne));
             this.tmrMove = new System.Windows.Forms.Timer(this.components);
             this.audPlayerLvl1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.picText5 = new System.Windows.Forms.PictureBox();
+            this.picText4 = new System.Windows.Forms.PictureBox();
+            this.picText3 = new System.Windows.Forms.PictureBox();
+            this.picText2 = new System.Windows.Forms.PictureBox();
+            this.picLockscreen = new System.Windows.Forms.PictureBox();
             this.picText1 = new System.Windows.Forms.PictureBox();
             this.picPhoneBuzz = new System.Windows.Forms.PictureBox();
             this.picPhone = new System.Windows.Forms.PictureBox();
@@ -39,6 +44,11 @@
             this.picGirlInteract = new System.Windows.Forms.PictureBox();
             this.lblTransparent = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.audPlayerLvl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picText5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picText4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picText3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picText2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLockscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picText1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPhoneBuzz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPhone)).BeginInit();
@@ -58,13 +68,79 @@
             this.audPlayerLvl1.Size = new System.Drawing.Size(160, 84);
             this.audPlayerLvl1.TabIndex = 6;
             // 
+            // picText5
+            // 
+            this.picText5.BackColor = System.Drawing.Color.Transparent;
+            this.picText5.BackgroundImage = global::codeCulminating.Properties.Resources.Untitled_Artwork__1_;
+            this.picText5.Image = global::codeCulminating.Properties.Resources.Phonecrop_5;
+            this.picText5.Location = new System.Drawing.Point(373, 35);
+            this.picText5.Name = "picText5";
+            this.picText5.Size = new System.Drawing.Size(674, 689);
+            this.picText5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picText5.TabIndex = 14;
+            this.picText5.TabStop = false;
+            this.picText5.Visible = false;
+            // 
+            // picText4
+            // 
+            this.picText4.BackColor = System.Drawing.Color.Transparent;
+            this.picText4.BackgroundImage = global::codeCulminating.Properties.Resources.Untitled_Artwork__1_;
+            this.picText4.Image = global::codeCulminating.Properties.Resources.Phonecrop_4;
+            this.picText4.Location = new System.Drawing.Point(373, 35);
+            this.picText4.Name = "picText4";
+            this.picText4.Size = new System.Drawing.Size(674, 689);
+            this.picText4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picText4.TabIndex = 13;
+            this.picText4.TabStop = false;
+            this.picText4.Visible = false;
+            // 
+            // picText3
+            // 
+            this.picText3.BackColor = System.Drawing.Color.Transparent;
+            this.picText3.BackgroundImage = global::codeCulminating.Properties.Resources.Untitled_Artwork__1_;
+            this.picText3.Image = global::codeCulminating.Properties.Resources.Phonecrop_3;
+            this.picText3.Location = new System.Drawing.Point(373, 35);
+            this.picText3.Name = "picText3";
+            this.picText3.Size = new System.Drawing.Size(674, 689);
+            this.picText3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picText3.TabIndex = 12;
+            this.picText3.TabStop = false;
+            this.picText3.Visible = false;
+            // 
+            // picText2
+            // 
+            this.picText2.BackColor = System.Drawing.Color.Transparent;
+            this.picText2.BackgroundImage = global::codeCulminating.Properties.Resources.Untitled_Artwork__1_;
+            this.picText2.Image = global::codeCulminating.Properties.Resources.Phonecrop_2;
+            this.picText2.Location = new System.Drawing.Point(373, 35);
+            this.picText2.Name = "picText2";
+            this.picText2.Size = new System.Drawing.Size(674, 689);
+            this.picText2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picText2.TabIndex = 11;
+            this.picText2.TabStop = false;
+            this.picText2.Visible = false;
+            // 
+            // picLockscreen
+            // 
+            this.picLockscreen.BackColor = System.Drawing.Color.Transparent;
+            this.picLockscreen.BackgroundImage = global::codeCulminating.Properties.Resources.Untitled_Artwork__1_;
+            this.picLockscreen.Image = global::codeCulminating.Properties.Resources.Phonecrop;
+            this.picLockscreen.Location = new System.Drawing.Point(373, 35);
+            this.picLockscreen.Name = "picLockscreen";
+            this.picLockscreen.Size = new System.Drawing.Size(674, 689);
+            this.picLockscreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLockscreen.TabIndex = 10;
+            this.picLockscreen.TabStop = false;
+            this.picLockscreen.Visible = false;
+            // 
             // picText1
             // 
             this.picText1.BackColor = System.Drawing.Color.Transparent;
-            this.picText1.Image = global::codeCulminating.Properties.Resources.Phone_1;
-            this.picText1.Location = new System.Drawing.Point(373, 12);
+            this.picText1.BackgroundImage = global::codeCulminating.Properties.Resources.Untitled_Artwork__1_;
+            this.picText1.Image = global::codeCulminating.Properties.Resources.Phonecrop_1;
+            this.picText1.Location = new System.Drawing.Point(373, 35);
             this.picText1.Name = "picText1";
-            this.picText1.Size = new System.Drawing.Size(676, 644);
+            this.picText1.Size = new System.Drawing.Size(674, 689);
             this.picText1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picText1.TabIndex = 9;
             this.picText1.TabStop = false;
@@ -128,6 +204,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
+            this.Controls.Add(this.picText5);
+            this.Controls.Add(this.picText4);
+            this.Controls.Add(this.picText3);
+            this.Controls.Add(this.picText2);
             this.Controls.Add(this.picText1);
             this.Controls.Add(this.picPhoneBuzz);
             this.Controls.Add(this.picPhone);
@@ -135,6 +215,7 @@
             this.Controls.Add(this.lblTextBox);
             this.Controls.Add(this.picGirlInteract);
             this.Controls.Add(this.lblTransparent);
+            this.Controls.Add(this.picLockscreen);
             this.DoubleBuffered = true;
             this.Name = "frmLevelOne";
             this.Text = "Level_1";
@@ -142,6 +223,11 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Level_1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Level_1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.audPlayerLvl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picText5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picText4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picText3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picText2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLockscreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picText1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPhoneBuzz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPhone)).EndInit();
@@ -161,5 +247,10 @@
         private System.Windows.Forms.PictureBox picPhone;
         private System.Windows.Forms.PictureBox picPhoneBuzz;
         private System.Windows.Forms.PictureBox picText1;
+        private System.Windows.Forms.PictureBox picLockscreen;
+        private System.Windows.Forms.PictureBox picText2;
+        private System.Windows.Forms.PictureBox picText3;
+        private System.Windows.Forms.PictureBox picText4;
+        private System.Windows.Forms.PictureBox picText5;
     }
 }

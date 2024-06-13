@@ -184,14 +184,7 @@ namespace codeCulminating
                 // when near bedside table and e is clicked
                 else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
-
-                    picText1.Show();
-                    
-                    
-                    
-                    
-                    picGirlInteract.Show();
-                    lblTextBox.Show();
+                    TextSequence();
                     lblTransparent.Show();
 
                 }
@@ -218,6 +211,47 @@ namespace codeCulminating
                     lblTransparent.Show();
                 }
             }
+        }
+        PictureBox[] textChain;
+        private void TextSequence()
+        {
+            clicksCount = 15;
+            picLockscreen.Show();
+           
+        }
+
+        private void textChain_Click(object sender, EventArgs e)
+        {
+            clicksCount++;
+            if (clicksCount == 16)
+            {
+                textChain[1].Show();
+            }
+            else if (clicksCount == 17)
+            {
+                textChain[2].Show();
+            }
+            else if (clicksCount == 18)
+            {
+                textChain[3].Show();
+            }
+            else if (clicksCount == 19)
+            {
+                textChain[4].Show();
+            }
+            else if (clicksCount == 20)
+            {
+                textChain[5].Show();
+            }
+            else if (clicksCount == 21)
+            {
+                for (int i = 0; i < textChain.Length; i++)
+                {
+                    textChain[i].Hide();
+                }
+            }
+            clicksCount = 0;
+
         }
 
         private void lblTextBox_Click(object sender, EventArgs e)
@@ -279,6 +313,36 @@ namespace codeCulminating
                 lblTransparent.Hide();
                 clicksCount = 0;
             }
+
+            if (clicksCount == 15)
+            {
+                textChain[1].Show();
+            }
+            else if (clicksCount == 16)
+            {
+                textChain[2].Show();
+            }
+            else if (clicksCount == 17)
+            {
+                textChain[3].Show();
+            }
+            else if (clicksCount == 18)
+            {
+                textChain[4].Show();
+            }
+            else if (clicksCount == 19)
+            {
+                textChain[5].Show();
+            }
+            else if (clicksCount == 20)
+            {
+                for (int i = 0; i < textChain.Length; i++)
+                {
+                    textChain[i].Hide();
+                }
+            }
+
+
         }
 
         private void tmrMove_Tick(object sender, EventArgs e)
@@ -333,8 +397,16 @@ namespace codeCulminating
 
         private void Level_1_Load(object sender, EventArgs e)
         {
+            textChain = new PictureBox[] { picLockscreen, picText1, picText2, picText3, picText4, picText5 };
+            // sets up eventhandler for texts to register as events when clicked
+            for (int i = 0; i < textChain.Length; i++)
+            {
+                textChain[i].Click += new EventHandler(textChain_Click);
+            }
+            // sets media player
             audPlayerLvl1.uiMode = "none";
             audPlayerLvl1.Hide();
+
             Graphics G;
             G = this.CreateGraphics();
 
