@@ -55,13 +55,37 @@ namespace codeCulminating
             }
         }
 
-        // Get random sequence
+        // Get random sequence and check if it's possible
         private int[] shuffle(int[] myButtons)
         {
+            
+            int count = 0; // keep track of inversion
+            int inversion = 0;           
+
             Random rnd = new Random();
             myButtons = myButtons.OrderBy(x => rnd.Next()).ToArray();
 
-            return myButtons;
+            // check for inversions
+            for (int i = 0; i < myButtons.Length - 1; i++)
+            {
+                for (int j = i; j < myButtons.Length ; j++)
+                {
+                    if (myButtons[i] < myButtons[j])
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            inversion = count % 2; 
+
+            // if inversino of even, the puzzle is possible
+            if( inversion == 0)
+            {
+                return myButtons;
+            }
+  
+            return shuffle(myButtons); // if inversion is odd, call shuffle function again
         }
 
         // Crop images
