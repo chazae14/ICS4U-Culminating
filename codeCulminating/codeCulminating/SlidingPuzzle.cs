@@ -94,7 +94,7 @@ namespace codeCulminating
 
                 movr += 90; // Do 1st row first
 
-                if (movr == 270) // the move down
+                if (movr == 270) // then move down
                 {
                     movr = 0;
                     movd += 90;
