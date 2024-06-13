@@ -79,6 +79,7 @@ namespace codeCulminating
         int smallMove = 17;
         int direction;
         int clicksCount = 0;
+        int objectiveCount = 0;
 
         int[,] map = new int[29, 16];
 
@@ -176,15 +177,11 @@ namespace codeCulminating
                 // when near bedside table and e is clicked
                 if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
-
-                    //picText1.Show();
-                    
-                    
-                    
-                    
+                                                                            
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
+                    lblTextBox.Text = "\n \n \n      I'm not quite ready to leave yet.";
                     clicksCount++;
 
                 }
@@ -194,7 +191,8 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    clicksCount += 7;
+                    lblTextBox.Text = "\n \n \n      I should grab my money from my desk!";
+                    clicksCount += 2;
 
                 }
 
@@ -204,16 +202,18 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    clicksCount += 12;
+                    lblTextBox.Text = "\n \n \n      Hrm. Should i leave yet? I need to make sure i have everything \n \n \n      i need.";
+                    clicksCount += 6;
                 }
                 
-               
                 // when near bed and e is clicked
                 else if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
                 {
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
+                    lblTextBox.Text = "\n \n \n      I wish i could go back to bed. I gotta go though!";
+                    clicksCount += 7;
                 }
                 // dresser interaction
                 else if (curX > 6 * tileSize && curX < 8 * tileSize && curY > 6 * tileSize && curY < 10 * tileSize && e.KeyCode == Keys.E)
@@ -228,22 +228,34 @@ namespace codeCulminating
 
         private void lblTextBox_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void lblTransparent_Click(object sender, EventArgs e)
+        {
             clicksCount++;
 
-
-            if (clicksCount == 10)
+            // interaction with bedside table
+            if (clicksCount == 2)
             {
-                Maze inGamescreen = new Maze();
-
-                inGamescreen.Show();
-
                 clicksCount = 0;
 
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
                 lblTransparent.Hide();
+                lblTextBox.Text = "";
             }
-            else if(clicksCount == 12)
+
+            // interaction with desk
+            else if (clicksCount == 3)
+            {
+                lblTextBox.Text = "\n \n \n      Oh shoot, i forgot i locked my drawer where i keep my wallet! \n       And i forgot my passcode!";
+            }
+            else if (clicksCount == 4)
+            {
+                lblTextBox.Text = "\n \n \n      That's alright, i know i wrote it down on a piece of paper somewhere.";
+            }
+            else if (clicksCount == 5)
             {
                 CombinationLock inGamescreen = new CombinationLock();
                 inGamescreen.Show();
@@ -253,51 +265,32 @@ namespace codeCulminating
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
                 lblTransparent.Hide();
-            
-
+                lblTextBox.Text = "";
             }
-            else if (clicksCount == 13)
+
+            // interaction with exit tiles if not all objectives are completed
+            else if (clicksCount == 7 && objectiveCount == 2)
             {
+                lblTextBox.Text = "\n \n \n      I'm all set! Let's go!";
                 clicksCount = 0;
                 this.Close();
             }
-            else if (clicksCount == 1)
+            else if (clicksCount == 7 && objectiveCount == 1)
             {
+                lblTextBox.Text = "\n \n \n      I still have one last thing to do. I should stay.";
+            }
+            else if (clicksCount == 7 && objectiveCount == 0)
+            {
+                lblTextBox.Text = "\n \n \n      I still have to get ready! I should stay.";
+                
+            }
+            else if (clicksCount == 8)
+            {
+                clicksCount = 0;
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
                 lblTransparent.Hide();
-                clicksCount = 0;
-            }
-        }
-
-        private void lblTransparent_Click(object sender, EventArgs e)
-        {
-            clicksCount++;
-
-            if (clicksCount == 10)
-            {
-                Maze inGamescreen = new Maze();
-
-                inGamescreen.Show();
-
-                clicksCount = 0;
-
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-            }
-            else if (clicksCount == 13)
-            {
-                clicksCount = 0;
-
-                this.Close();
-            }
-            else if (clicksCount == 1)
-            {
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                clicksCount = 0;
+                lblTextBox.Text = "";
             }
         }
 

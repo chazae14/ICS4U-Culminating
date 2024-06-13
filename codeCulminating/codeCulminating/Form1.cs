@@ -270,6 +270,11 @@ namespace codeCulminating
             
         }
 
+        private void lblTextBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void tmrMove_Tick_1(object sender, EventArgs e)
         {
             Graphics gback = Graphics.FromImage(backbuffer);
