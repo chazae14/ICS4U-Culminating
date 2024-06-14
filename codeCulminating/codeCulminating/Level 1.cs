@@ -220,23 +220,22 @@ namespace codeCulminating
                     clicksCount += 6;
                 }
                 
-                // when near bed and e is clicked
-                /*else if (curX > 16 * tileSize && curX < 19 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
-                {
-                    picGirlInteract.Show();
-                    lblTextBox.Show();
-                    lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      I wish I could go back to bed. I have to go though!";
-                    clicksCount += 7;
-                }*/
+           
                 // dresser interaction
                 else if (curX > 6 * tileSize && curX < 8 * tileSize && curY > 6 * tileSize && curY < 10 * tileSize && e.KeyCode == Keys.E)
                 {
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      I don't see the paper here... I should check somewhere else.";
+                    lblTextBox.Text = "\n \n \n      I don't see the paper here... but i guess i can get changed.";
                     clicksCount += 9;
+                }
+
+                // trash can interaction
+                else if (curX > 5 * tileSize && curX < 7 * tileSize && curY > 4 * tileSize && curY < 7 * tileSize && e.KeyCode == Keys.E)
+                {
+                    LockCode inGamescreen = new LockCode();
+                    inGamescreen.Show();
                 }
             }
         }
@@ -308,13 +307,16 @@ namespace codeCulminating
                 lblTextBox.Text = "";
             }
 
-            // interaction with dresser
             else if (clicksCount == 9)
             {
                 lblTextBox.Text = "\n \n \n      I don't see the paper here... I should check somewhere else.";
             }
+            // interaction with dresser
             else if (clicksCount == 10)
             {
+                SlidingPuzzle inGamescreen = new SlidingPuzzle();
+                inGamescreen.Show();
+                
                 clicksCount = 0;
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
@@ -361,6 +363,8 @@ namespace codeCulminating
                 lblTextBox.Show();
                 picGirlInteract.Show();
                 lblTextBox.Text = "\n \n \n      I'll head over to the cafe once I'm ready.";
+                picObjectives.Show();
+                lblObjectives.Show();
             }
             else if (clicksCount == 21)
             {
@@ -491,6 +495,8 @@ namespace codeCulminating
             lblTextBox.Hide();
             picGirlInteract.Hide();
             lblTransparent.Hide();
+            picObjectives.Hide();
+            lblObjectives.Hide();
 
             // phone starts ringing
             phoneRing.SoundLocation = "phoneVibrate.wav";
