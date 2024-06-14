@@ -28,6 +28,8 @@ namespace codeCulminating
         int clicksCount = 0;
         int[,] map = new int[29, 16];
 
+        public static int completedCount = 0;
+
         int tileSize = 50;
         frmGraphics frmG = new frmGraphics();
         Bitmap backbuffer;
@@ -140,9 +142,73 @@ namespace codeCulminating
                 {
                     walk = true;
                 }
+
+                if (curX > 10 * tileSize && curX < 14 * tileSize && curY > 10 * tileSize && curY < 12 * tileSize && e.KeyCode == Keys.E)
+                {
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+                    lblTextBox.Text = "\n \n \n     My friend is taking a while. I think i'll just order something.";
+                    clicksCount++;
+                }
+
+                if (completedCount == 1)
+                {
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+                    lblTextBox.Text = "\n \n \n     Oh. A new text message.";
+                    clicksCount+= 8;
+                }
             }
         }
 
+        private void lblTransparent_Click(object sender, EventArgs e)
+        {
+            clicksCount++;
+            if (clicksCount == 2)
+            {
+                lblTextBox.Text = "\n\n\n     I'll just take a coffee and a brownie. Thanks.";
+            }
+            else if (clicksCount == 3)
+            {
+                lblTextBox.Text = "   Barista: \n\n      Absolutely! Cash or card?";
+            }
+            else if (clicksCount == 4)
+            {
+                lblTextBox.Text = "\n\n\n     Card, please.";
+            }
+            else if (clicksCount == 5)
+            {
+                lblTextBox.Text = "   Barista: \n\n      Whenever it's ready for you.";
+            } 
+            else if (clicksCount == 6)
+            {
+                MemoryGame inGamescreen = new MemoryGame();
+                inGamescreen.Show();
+                clicksCount = 0;
+
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                lblTextBox.Text = "";
+            }
+            else if (clicksCount == 9)
+            {
+                lblTextBox.Text = "\n\n\n     My friend is just outside. Let's go meet her.";
+
+            }
+            else if (clicksCount == 10)
+            {
+                clicksCount = 0;
+
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                lblTextBox.Text = "";
+            }
+
+        }
 
         private void tmrMove_Tick(object sender, EventArgs e)
         {
@@ -199,6 +265,11 @@ namespace codeCulminating
         {
             Graphics G;
             G = this.CreateGraphics();
+
+            // hiding all the random pictures 
+            lblTextBox.Hide();
+            picGirlInteract.Hide();
+            lblTransparent.Hide();
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
