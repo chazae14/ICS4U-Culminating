@@ -231,7 +231,6 @@ namespace codeCulminating
                     LockCode inGamescreen = new LockCode();
                     inGamescreen.Show();
                 }
-
             }
         }
 
