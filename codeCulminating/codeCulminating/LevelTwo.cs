@@ -50,6 +50,11 @@ namespace codeCulminating
         Bitmap bmpCafeWallSide;
         Bitmap bmpTableLeft;
         Bitmap bmpTableRight;
+        Bitmap bmpCounterLeftEdge;
+        Bitmap bmpCounterMiddleLeft;
+        Bitmap bmpCounterMiddle;
+        Bitmap bmpCounterMiddleRight;
+        Bitmap bmpCounterRightEdge;
 
         enum dir
         {
@@ -114,7 +119,7 @@ namespace codeCulminating
                 {
                     direction = (int)dir.down;
 
-                    if ((curY > 1 * tileSize && curY < 16 * tileSize) || (curY < 16 * tileSize)) // can go if within bounds
+                    if ((curY > 1 * tileSize && curY < 13 * tileSize) || (curY < 13 * tileSize)) // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY + tileSize) / tileSize];
                         walk = true;
@@ -127,7 +132,7 @@ namespace codeCulminating
                 }
 
 
-                if (destTile != 0 && destTile != 8 && destTile != 9 && destTile != 10 && destTile != 11 && walk) // walk when on the right tiles (no walls or out of bounds)
+                if (destTile != 0 && destTile != 8 && destTile != 9 && destTile != 10 && destTile != 11 && destTile != 12 && walk) // walk when on the right tiles (no walls or out of bounds)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -217,6 +222,11 @@ namespace codeCulminating
             bmpCafeWallSide = new Bitmap(frmG.picCafeWallSide.Image, tileSize, tileSize);
             bmpTableLeft = new Bitmap(frmG.picTableLeft.Image, tileSize, tileSize);
             bmpTableRight = new Bitmap(frmG.picTableRight.Image, tileSize, tileSize);
+            bmpCounterLeftEdge = new Bitmap(frmG.picLeftEndCounter.Image, tileSize, tileSize);  
+            bmpCounterMiddleLeft = new Bitmap(frmG.picLeftMiddleCounter.Image, tileSize, tileSize); 
+            bmpCounterMiddle = new Bitmap(frmG.picMiddleCounter.Image, tileSize, tileSize);
+            bmpCounterMiddleRight = new Bitmap(frmG.picMiddleRightCounter.Image, tileSize, tileSize);
+            bmpCounterRightEdge = new Bitmap(frmG.picRightEndCounter.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -446,6 +456,27 @@ namespace codeCulminating
                     map[(m), (n)] = 11;
                 }
             }
+
+            // cafe counter
+            rectDest = new Rectangle(10 * tileSize, 11 * tileSize, tileSize, tileSize); // left endge of counter
+            gback.DrawImage(bmpCounterLeftEdge, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(10), (11)] = 12;
+
+            rectDest = new Rectangle(11 * tileSize, 11 * tileSize, tileSize, tileSize); // left middle edge of counter
+            gback.DrawImage(bmpCounterMiddleLeft, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(10), (11)] = 12;
+
+            rectDest = new Rectangle(12 * tileSize, 11 * tileSize, tileSize, tileSize); // middle of counter
+            gback.DrawImage(bmpCounterMiddle, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (11)] = 12;
+
+            rectDest = new Rectangle(13 * tileSize, 11 * tileSize, tileSize, tileSize); // middle right endge of counter
+            gback.DrawImage(bmpCounterMiddleRight, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(13), (11)] = 12;
+
+            rectDest = new Rectangle(14 * tileSize, 11 * tileSize, tileSize, tileSize); // right endge of counter
+            gback.DrawImage(bmpCounterRightEdge, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(14), (11)] = 12;
 
             // rectDest to start out sprite outside of cafe
             rectDest = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);

@@ -225,6 +225,13 @@ namespace codeCulminating
                     clicksCount += 9;
                     lblTextBox.Text = "\n \n \n      Time to get dressed, i guess.";
                 }
+                // interaction with can to get lcok code
+                else if (curX > 4 * tileSize && curX < 8 * tileSize && curY > 3 * tileSize && curY < 7 * tileSize && e.KeyCode == Keys.E)
+                {
+                    LockCode inGamescreen = new LockCode();
+                    inGamescreen.Show();
+                }
+
             }
         }
 
@@ -256,6 +263,10 @@ namespace codeCulminating
             {
                 CombinationLock inGamescreen = new CombinationLock();
                 inGamescreen.Show();
+                if (compCount == 2 || compCount == 3)
+                {
+                    picMoneyCheck.Show();
+                }
 
                 clicksCount = 0;
 
@@ -290,7 +301,7 @@ namespace codeCulminating
             {
                 SlidingPuzzle inGamescreen = new SlidingPuzzle();
                 inGamescreen.Show();
-                if (SlidingPuzzle.slideCode == 1)
+                if (compCount == 1 || compCount == 3)
                 {
                     picDresserCheck.Show();
                 }

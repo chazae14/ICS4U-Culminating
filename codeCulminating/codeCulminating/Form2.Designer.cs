@@ -94,6 +94,11 @@
             this.picSlidingGame = new System.Windows.Forms.PictureBox();
             this.picTableLeft = new System.Windows.Forms.PictureBox();
             this.picTableRight = new System.Windows.Forms.PictureBox();
+            this.picRightEndCounter = new System.Windows.Forms.PictureBox();
+            this.picMiddleRightCounter = new System.Windows.Forms.PictureBox();
+            this.picMiddleCounter = new System.Windows.Forms.PictureBox();
+            this.picLeftMiddleCounter = new System.Windows.Forms.PictureBox();
+            this.picLeftEndCounter = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).BeginInit();
@@ -159,6 +164,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSlidingGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTableLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTableRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRightEndCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMiddleRightCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMiddleCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLeftMiddleCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLeftEndCounter)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -816,11 +826,66 @@
             this.picTableRight.TabIndex = 74;
             this.picTableRight.TabStop = false;
             // 
+            // picRightEndCounter
+            // 
+            this.picRightEndCounter.Image = ((System.Drawing.Image)(resources.GetObject("picRightEndCounter.Image")));
+            this.picRightEndCounter.Location = new System.Drawing.Point(460, 342);
+            this.picRightEndCounter.Name = "picRightEndCounter";
+            this.picRightEndCounter.Size = new System.Drawing.Size(50, 50);
+            this.picRightEndCounter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picRightEndCounter.TabIndex = 75;
+            this.picRightEndCounter.TabStop = false;
+            // 
+            // picMiddleRightCounter
+            // 
+            this.picMiddleRightCounter.Image = ((System.Drawing.Image)(resources.GetObject("picMiddleRightCounter.Image")));
+            this.picMiddleRightCounter.Location = new System.Drawing.Point(404, 342);
+            this.picMiddleRightCounter.Name = "picMiddleRightCounter";
+            this.picMiddleRightCounter.Size = new System.Drawing.Size(50, 50);
+            this.picMiddleRightCounter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picMiddleRightCounter.TabIndex = 76;
+            this.picMiddleRightCounter.TabStop = false;
+            // 
+            // picMiddleCounter
+            // 
+            this.picMiddleCounter.Image = ((System.Drawing.Image)(resources.GetObject("picMiddleCounter.Image")));
+            this.picMiddleCounter.Location = new System.Drawing.Point(348, 342);
+            this.picMiddleCounter.Name = "picMiddleCounter";
+            this.picMiddleCounter.Size = new System.Drawing.Size(50, 50);
+            this.picMiddleCounter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picMiddleCounter.TabIndex = 77;
+            this.picMiddleCounter.TabStop = false;
+            // 
+            // picLeftMiddleCounter
+            // 
+            this.picLeftMiddleCounter.Image = ((System.Drawing.Image)(resources.GetObject("picLeftMiddleCounter.Image")));
+            this.picLeftMiddleCounter.Location = new System.Drawing.Point(291, 342);
+            this.picLeftMiddleCounter.Name = "picLeftMiddleCounter";
+            this.picLeftMiddleCounter.Size = new System.Drawing.Size(50, 50);
+            this.picLeftMiddleCounter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picLeftMiddleCounter.TabIndex = 78;
+            this.picLeftMiddleCounter.TabStop = false;
+            // 
+            // picLeftEndCounter
+            // 
+            this.picLeftEndCounter.Image = ((System.Drawing.Image)(resources.GetObject("picLeftEndCounter.Image")));
+            this.picLeftEndCounter.Location = new System.Drawing.Point(235, 342);
+            this.picLeftEndCounter.Name = "picLeftEndCounter";
+            this.picLeftEndCounter.Size = new System.Drawing.Size(50, 50);
+            this.picLeftEndCounter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picLeftEndCounter.TabIndex = 79;
+            this.picLeftEndCounter.TabStop = false;
+            // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 495);
+            this.Controls.Add(this.picLeftEndCounter);
+            this.Controls.Add(this.picLeftMiddleCounter);
+            this.Controls.Add(this.picMiddleCounter);
+            this.Controls.Add(this.picMiddleRightCounter);
+            this.Controls.Add(this.picRightEndCounter);
             this.Controls.Add(this.picTableRight);
             this.Controls.Add(this.picTableLeft);
             this.Controls.Add(this.picSlidingGame);
@@ -953,6 +1018,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSlidingGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTableLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTableRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRightEndCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMiddleRightCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMiddleCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLeftMiddleCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLeftEndCounter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1025,5 +1095,10 @@
         public System.Windows.Forms.PictureBox picSlidingGame;
         public System.Windows.Forms.PictureBox picTableLeft;
         public System.Windows.Forms.PictureBox picTableRight;
+        public System.Windows.Forms.PictureBox picRightEndCounter;
+        public System.Windows.Forms.PictureBox picMiddleRightCounter;
+        public System.Windows.Forms.PictureBox picMiddleCounter;
+        public System.Windows.Forms.PictureBox picLeftMiddleCounter;
+        public System.Windows.Forms.PictureBox picLeftEndCounter;
     }
 }

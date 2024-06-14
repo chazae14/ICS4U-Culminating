@@ -21,6 +21,7 @@ namespace codeCulminating
 
         string userInput = " "; // Stores user input
         string correctCode = "1420"; // Stores correct code - only make up to 4 digits
+        public static int combCode = 0;
 
         // Add Numbers to text box
         private void Buttons_MouseClick(object sender, MouseEventArgs e)
@@ -65,7 +66,7 @@ namespace codeCulminating
             // If correct, exit window, else shake screen
             if (userInput == correctCode)
             {
-                frmLevelOne.compCount++;
+                frmLevelOne.compCount+=2;
                 this.Close();
             }
             else
