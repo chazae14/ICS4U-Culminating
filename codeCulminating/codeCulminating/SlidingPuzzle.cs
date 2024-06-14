@@ -17,7 +17,6 @@ namespace codeCulminating
         Point EmptyPoint;
         ArrayList images = new ArrayList(); // stores croped image
         frmGraphics frmG =new frmGraphics(); // get image from form2
-
         public SlidingPuzzle()
         {
             InitializeComponent();
@@ -55,13 +54,38 @@ namespace codeCulminating
             }
         }
 
-        // Get random sequence
+        // Get random sequence and check if puzzle is possible
         private int[] shuffle(int[] myButtons)
         {
+            
+            int count = 0; // keep track of inversion
+            int inversion = 0;           
+
             Random rnd = new Random();
             myButtons = myButtons.OrderBy(x => rnd.Next()).ToArray();
 
-            return myButtons;
+            // find inversion
+            for (int i = 0; i < myButtons.Length - 1; i++)
+            {
+                for (int j = i; j < myButtons.Length ; j++)
+                {
+                    if (myButtons[i] < myButtons[j])
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            inversion = count % 2;
+
+            // if # of inverion is even, then puzzle is possible
+            if( inversion == 0)
+            {
+                return myButtons;
+            }
+
+            // Call function again if # of inversions is odd 
+            return shuffle(myButtons);
         }
 
         // Crop images
@@ -146,6 +170,7 @@ namespace codeCulminating
             if (count == 8)
             {
                 DialogResult choice = MessageBox.Show("Sliding puzzle complete.", "Win", MessageBoxButtons.OK);
+                frmLevelOne.compCount++;
                 if (choice == DialogResult.OK)
                 {
                     this.Close();
