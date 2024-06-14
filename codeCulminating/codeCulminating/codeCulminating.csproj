@@ -240,5 +240,29 @@
   <ItemGroup>
     <None Include="Resources\Phone 3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phonecrop 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled_Artwork %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phonecrop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phonecrop 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phonecrop 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phonecrop 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phonecrop 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone 2 %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
