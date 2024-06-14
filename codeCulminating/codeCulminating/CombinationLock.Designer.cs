@@ -198,6 +198,7 @@
             this.Name = "CombinationLock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CombinationLock";
+            this.Load += new System.EventHandler(this.CombinationLock_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

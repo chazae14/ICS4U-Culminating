@@ -97,6 +97,12 @@
     <Compile Include="LevelTwo.Designer.cs">
       <DependentUpon>LevelTwo.cs</DependentUpon>
     </Compile>
+    <Compile Include="LockCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LockCode.Designer.cs">
+      <DependentUpon>LockCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maze.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LevelTwo.resx">
       <DependentUpon>LevelTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LockCode.resx">
+      <DependentUpon>LockCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maze.resx">
       <DependentUpon>Maze.cs</DependentUpon>
