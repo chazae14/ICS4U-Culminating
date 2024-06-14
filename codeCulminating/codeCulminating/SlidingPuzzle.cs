@@ -58,10 +58,32 @@ namespace codeCulminating
         // Get random sequence
         private int[] shuffle(int[] myButtons)
         {
+            
+            int count = 0;
+            int inversion = 0;           
+
             Random rnd = new Random();
             myButtons = myButtons.OrderBy(x => rnd.Next()).ToArray();
 
-            return myButtons;
+            for (int i = 0; i < myButtons.Length - 1; i++)
+            {
+                for (int j = i; j < myButtons.Length ; j++)
+                {
+                    if (myButtons[i] < myButtons[j])
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            inversion = count % 2;
+
+            if( inversion == 0)
+            {
+                return myButtons;
+            }
+  
+            return shuffle(myButtons);
         }
 
         // Crop images
