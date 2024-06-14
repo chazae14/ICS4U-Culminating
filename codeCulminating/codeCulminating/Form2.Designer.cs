@@ -785,7 +785,7 @@
             // 
             this.picSlidingGame.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picSlidingGame.ErrorImage")));
             this.picSlidingGame.Image = ((System.Drawing.Image)(resources.GetObject("picSlidingGame.Image")));
-            this.picSlidingGame.Location = new System.Drawing.Point(702, 286);
+            this.picSlidingGame.Location = new System.Drawing.Point(680, 286);
             this.picSlidingGame.Name = "picSlidingGame";
             this.picSlidingGame.Size = new System.Drawing.Size(143, 149);
             this.picSlidingGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
