@@ -96,3 +96,4 @@ C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulmina
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.csproj.CoreCompileInputs.cache
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.exe
 C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.pdb
+C:\Users\rcherian7462\source\repos\ICS4U-Culminating\codeCulminating\codeCulminating\obj\Debug\codeCulminating.LockCode.resources

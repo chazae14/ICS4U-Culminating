@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
-using WMPLib;
 using static System.Net.WebRequestMethods;
 
 namespace codeCulminating
@@ -26,6 +25,7 @@ namespace codeCulminating
         }
 
         int tileSize = 50;
+        public static int compCount = 0;
         frmGraphics frmG = new frmGraphics();
         Bitmap backbuffer;
         Bitmap minibuffer;
