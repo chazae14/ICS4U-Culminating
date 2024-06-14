@@ -133,6 +133,16 @@ namespace codeCulminating.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap phone_2__1_ {
+            get {
+                object obj = ResourceManager.GetObject("phone 2 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Phone_3 {
             get {
                 object obj = ResourceManager.GetObject("Phone 3", resourceCulture);
