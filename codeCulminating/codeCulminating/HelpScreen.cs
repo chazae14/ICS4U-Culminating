@@ -19,6 +19,9 @@ namespace codeCulminating
         public HelpScreen()
         {
             InitializeComponent();
+
+            
+
         }
 
         // Close Help screen
@@ -26,5 +29,6 @@ namespace codeCulminating
         {
             this.Close();
         }
+
     }
 }
