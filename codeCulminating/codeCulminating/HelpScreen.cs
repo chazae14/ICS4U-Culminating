@@ -19,12 +19,20 @@ namespace codeCulminating
         public HelpScreen()
         {
             InitializeComponent();
+
+            
+
         }
 
         // Close Help screen
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void HelpScreen_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
