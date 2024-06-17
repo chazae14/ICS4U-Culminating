@@ -100,6 +100,7 @@
             this.picLeftMiddleCounter = new System.Windows.Forms.PictureBox();
             this.picLeftEndCounter = new System.Windows.Forms.PictureBox();
             this.picWallClock = new System.Windows.Forms.PictureBox();
+            this.picFriendSprite = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).BeginInit();
@@ -171,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLeftMiddleCounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeftEndCounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWallClock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFriendSprite)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -888,11 +890,22 @@
             this.picWallClock.TabIndex = 80;
             this.picWallClock.TabStop = false;
             // 
+            // picFriendSprite
+            // 
+            this.picFriendSprite.Image = ((System.Drawing.Image)(resources.GetObject("picFriendSprite.Image")));
+            this.picFriendSprite.Location = new System.Drawing.Point(235, 398);
+            this.picFriendSprite.Name = "picFriendSprite";
+            this.picFriendSprite.Size = new System.Drawing.Size(50, 50);
+            this.picFriendSprite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picFriendSprite.TabIndex = 81;
+            this.picFriendSprite.TabStop = false;
+            // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 495);
+            this.Controls.Add(this.picFriendSprite);
             this.Controls.Add(this.picWallClock);
             this.Controls.Add(this.picLeftEndCounter);
             this.Controls.Add(this.picLeftMiddleCounter);
@@ -1037,6 +1050,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLeftMiddleCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeftEndCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWallClock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFriendSprite)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1115,5 +1129,6 @@
         public System.Windows.Forms.PictureBox picLeftMiddleCounter;
         public System.Windows.Forms.PictureBox picLeftEndCounter;
         public System.Windows.Forms.PictureBox picWallClock;
+        public System.Windows.Forms.PictureBox picFriendSprite;
     }
 }

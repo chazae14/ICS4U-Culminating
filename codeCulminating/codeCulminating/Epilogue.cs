@@ -67,6 +67,7 @@ namespace codeCulminating
         Bitmap bmpMiddleDresser;
         Bitmap bmpBottomDresser;
         Bitmap bmpCatClock;
+        Bitmap bmpFriendSprite;
 
         Rectangle rectSource, rect0, rectDest;
         int curX, curY;
@@ -91,6 +92,7 @@ namespace codeCulminating
             Graphics g = e.Graphics;
             g.DrawImage(backbuffer, 0, 0, backbuffer.Width, backbuffer.Height);
         }
+
 
         private void Epilogue_KeyDown(object sender, KeyEventArgs e)
         {
@@ -164,7 +166,7 @@ namespace codeCulminating
                 }
 
 
-                if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk) // walk when on the right tiles (no bedside or bottom of bed
+                if ((destTile != 0 && destTile != 8 && destTile != 20 && destTile != 21 && destTile != 23) && walk) // walk when on the right tiles (no bedside or bottom of bed
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -173,9 +175,25 @@ namespace codeCulminating
                 {
                     walk = true;
                 }
+
+                if (curX > 8 * tileSize && curX < 10 * tileSize && curY > 9 * tileSize && curY < 11 * tileSize && e.KeyCode == Keys.E)
+                {
+                    picFriend.Show();
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTextBox.Text = "\n  Friend: \n\n\n       It's all your fault.";
+                }
             }
         }
 
+        private void lblTransparent_Click(object sender, EventArgs e)
+        {
+            clicksCount++; 
+            if (clicksCount == 1)
+            {
+                lblTextBox.Text = "\n\n\n     What? Is this a dream? Why are you here?";
+            }
+        }
 
         private void tmrMove_Tick(object sender, EventArgs e)
         {
@@ -228,6 +246,9 @@ namespace codeCulminating
             Graphics G;
             G = this.CreateGraphics();
 
+            lblTextBox.Hide();
+            picGirlInteract.Hide();
+            picFriend.Hide();
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
@@ -278,6 +299,7 @@ namespace codeCulminating
             bmpMiddleDresser = new Bitmap(frmG.picMiddleDresser.Image, tileSize, tileSize);
             bmpBottomDresser = new Bitmap(frmG.picBottomDresser.Image, tileSize, tileSize);
             bmpCatClock = new Bitmap(frmG.picWallClock.Image, tileSize, tileSize);
+            bmpFriendSprite = new Bitmap(frmG.picFriendSprite.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -597,7 +619,12 @@ namespace codeCulminating
             // cat clock
             rectDest = new Rectangle(9 * tileSize, 4 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpCatClock, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(9), (4)] = 6;
+            map[(9), (4)] = 7;
+
+            /// friend sprite 
+            rectDest = new Rectangle(9 * tileSize, 10 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpFriendSprite, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(9), (10)] = 8;
 
             // rectDest to start out sprite on her bed
             rectDest = new Rectangle(18 * tileSize, 13 * tileSize, tileSize, tileSize);
