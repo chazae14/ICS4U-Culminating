@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
-using WMPLib;
 using static System.Net.WebRequestMethods;
 
 namespace codeCulminating
@@ -28,6 +27,8 @@ namespace codeCulminating
         int direction;
         int clicksCount = 0;
         int[,] map = new int[29, 16];
+
+        public static int completedCount = 0;
 
         int tileSize = 50;
         frmGraphics frmG = new frmGraphics();
@@ -48,6 +49,13 @@ namespace codeCulminating
         Bitmap bmpGrass;
         Bitmap bmpCafeWallTop;
         Bitmap bmpCafeWallSide;
+        Bitmap bmpTableLeft;
+        Bitmap bmpTableRight;
+        Bitmap bmpCounterLeftEdge;
+        Bitmap bmpCounterMiddleLeft;
+        Bitmap bmpCounterMiddle;
+        Bitmap bmpCounterMiddleRight;
+        Bitmap bmpCounterRightEdge;
 
         enum dir
         {
@@ -70,7 +78,7 @@ namespace codeCulminating
                 if (e.KeyCode == Keys.D)
                 {
                     direction = (int)dir.right;
-                    if ((curX > 6 * tileSize && curX < 19 * tileSize) || (curX < 6 * tileSize)) // can go if in bounds 
+                    if ((curX > 3 * tileSize && curX < 19 * tileSize) || (curX < 4 * tileSize)) // can go if in bounds 
                     {
                         destTile = map[(curX + tileSize) / tileSize, curY / tileSize];
                         walk = true;
@@ -83,7 +91,7 @@ namespace codeCulminating
                 if (e.KeyCode == Keys.A)
                 {
                     direction = (int)dir.left;
-                    if (curX <= 6 * tileSize || curX >= 20 * tileSize) // cant go if out of bounds
+                    if (curX <= 4 * tileSize || curX >= 20 * tileSize) // cant go if out of bounds
                     {
                         walk = false;
                     }
@@ -112,7 +120,7 @@ namespace codeCulminating
                 {
                     direction = (int)dir.down;
 
-                    if ((curY > 1 * tileSize && curY < 16 * tileSize) || (curY < 16 * tileSize)) // can go if within bounds
+                    if ((curY > 1 * tileSize && curY < 13 * tileSize) || (curY < 13 * tileSize)) // can go if within bounds
                     {
                         destTile = map[curX / tileSize, (curY + tileSize) / tileSize];
                         walk = true;
@@ -125,7 +133,7 @@ namespace codeCulminating
                 }
 
 
-                if (destTile != 0 && walk) // walk when on the right tiles (no bedside or bottom of bed
+                if (destTile != 0 && destTile != 8 && destTile != 9 && destTile != 10 && destTile != 11 && destTile != 12 && walk) // walk when on the right tiles (no walls or out of bounds)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -134,9 +142,74 @@ namespace codeCulminating
                 {
                     walk = true;
                 }
+
+                if (curX > 10 * tileSize && curX < 14 * tileSize && curY > 10 * tileSize && curY < 12 * tileSize && e.KeyCode == Keys.E)
+                {
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+                    lblTextBox.Text = "\n \n \n     My friend is taking a while. I think i'll just order something.";
+                    clicksCount++;
+                }
+
+                if (completedCount == 1)
+                {
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+                    lblTextBox.Text = "\n \n \n     Oh. A new text message.";
+                    clicksCount+= 8;
+                    completedCount++;
+                }
             }
         }
 
+        private void lblTransparent_Click(object sender, EventArgs e)
+        {
+            clicksCount++;
+            if (clicksCount == 2)
+            {
+                lblTextBox.Text = "\n\n\n     I'll just take a coffee and a brownie. Thanks.";
+            }
+            else if (clicksCount == 3)
+            {
+                lblTextBox.Text = "   Barista: \n\n      Absolutely! Cash or card?";
+            }
+            else if (clicksCount == 4)
+            {
+                lblTextBox.Text = "\n\n\n     Card, please.";
+            }
+            else if (clicksCount == 5)
+            {
+                lblTextBox.Text = "   Barista: \n\n      Whenever it's ready for you.";
+            } 
+            else if (clicksCount == 6)
+            {
+                MemoryGame inGamescreen = new MemoryGame();
+                inGamescreen.Show();
+                clicksCount = 0;
+
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                lblTextBox.Text = "";
+            }
+            else if (clicksCount == 9)
+            {
+                lblTextBox.Text = "\n\n\n     My friend is just outside. Let's go meet her.";
+
+            }
+            else if (clicksCount == 10)
+            {
+                clicksCount = 0;
+
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                lblTextBox.Text = "";
+            }
+
+        }
 
         private void tmrMove_Tick(object sender, EventArgs e)
         {
@@ -194,6 +267,11 @@ namespace codeCulminating
             Graphics G;
             G = this.CreateGraphics();
 
+            // hiding all the random pictures 
+            lblTextBox.Hide();
+            picGirlInteract.Hide();
+            lblTransparent.Hide();
+
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
             minibuffer = new Bitmap(tileSize, tileSize);
@@ -213,6 +291,13 @@ namespace codeCulminating
             bmpGrass = new Bitmap(frmG.picGrass.Image, tileSize, tileSize);
             bmpCafeWallTop = new Bitmap(frmG.picCafeWall.Image, tileSize, tileSize);
             bmpCafeWallSide = new Bitmap(frmG.picCafeWallSide.Image, tileSize, tileSize);
+            bmpTableLeft = new Bitmap(frmG.picTableLeft.Image, tileSize, tileSize);
+            bmpTableRight = new Bitmap(frmG.picTableRight.Image, tileSize, tileSize);
+            bmpCounterLeftEdge = new Bitmap(frmG.picLeftEndCounter.Image, tileSize, tileSize);  
+            bmpCounterMiddleLeft = new Bitmap(frmG.picLeftMiddleCounter.Image, tileSize, tileSize); 
+            bmpCounterMiddle = new Bitmap(frmG.picMiddleCounter.Image, tileSize, tileSize);
+            bmpCounterMiddleRight = new Bitmap(frmG.picMiddleRightCounter.Image, tileSize, tileSize);
+            bmpCounterRightEdge = new Bitmap(frmG.picRightEndCounter.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -379,17 +464,6 @@ namespace codeCulminating
             }
 
             ///CAFE
-            // wood floor
-            for (int m = 4; m < 15; m++)
-            {
-                for (int n = 7; n < 13; n++)
-                {
-                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
-                    gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
-                    map[(m), (n)] = 5;
-                }
-            }
-
             // grasss in front of cafe
             for (int m = 15; m < 18; m++)
             {
@@ -400,9 +474,19 @@ namespace codeCulminating
                     map[(m), (n)] = 7;
                 }
             }
+            // wood floor
+            for (int m = 4; m < 15; m++)
+            {
+                for (int n = 7; n < 13; n++)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpWood, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 5;
+                }
+            } 
 
             // top wall of cafe
-            for (int m = 4; m < 15; m++)
+            for (int m = 4; m < 14; m++)
             {
                 for (int n = 7; n < 8; n++)
                 {
@@ -423,11 +507,53 @@ namespace codeCulminating
                 }
             }
 
-            // rectDest to start out sprite on her bed
+            // cafe tables
+            for (int m = 5; m < 6; m++) // right side of table
+            {
+                for (int n = 8; n < 13; n+=2)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpTableRight, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 10;
+                }
+            }
+
+            for (int m = 4; m < 5; m++) // left side of table
+            {
+                for (int n = 8; n < 13; n += 2)
+                {
+                    rectDest = new Rectangle(m * tileSize, n * tileSize, tileSize, tileSize);
+                    gback.DrawImage(bmpTableLeft, rectDest, rect0, GraphicsUnit.Pixel);
+                    map[(m), (n)] = 11;
+                }
+            }
+
+            // cafe counter
+            rectDest = new Rectangle(10 * tileSize, 11 * tileSize, tileSize, tileSize); // left endge of counter
+            gback.DrawImage(bmpCounterLeftEdge, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(10), (11)] = 12;
+
+            rectDest = new Rectangle(11 * tileSize, 11 * tileSize, tileSize, tileSize); // left middle edge of counter
+            gback.DrawImage(bmpCounterMiddleLeft, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(10), (11)] = 12;
+
+            rectDest = new Rectangle(12 * tileSize, 11 * tileSize, tileSize, tileSize); // middle of counter
+            gback.DrawImage(bmpCounterMiddle, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(12), (11)] = 12;
+
+            rectDest = new Rectangle(13 * tileSize, 11 * tileSize, tileSize, tileSize); // middle right endge of counter
+            gback.DrawImage(bmpCounterMiddleRight, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(13), (11)] = 12;
+
+            rectDest = new Rectangle(14 * tileSize, 11 * tileSize, tileSize, tileSize); // right endge of counter
+            gback.DrawImage(bmpCounterRightEdge, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(14), (11)] = 12;
+
+            // rectDest to start out sprite outside of cafe
             rectDest = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
             rectSource = new Rectangle(16 * tileSize, 6 * tileSize, tileSize, tileSize);
 
-            // drawing out our girl on her bed
+            // drawing out our girl outside of cafe
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
 
