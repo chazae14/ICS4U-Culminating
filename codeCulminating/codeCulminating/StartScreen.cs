@@ -34,33 +34,15 @@ namespace codeCulminating
             inHelpscreen.Show();
         }
 
-        private void btnMazeGame_Click(object sender, EventArgs e)
-        {
-            Maze inMazeGame = new Maze();
-            inMazeGame.Show();
-        }
-
-        private void btnMemoryGame_Click(object sender, EventArgs e)
-        {
-            MemoryGame inMemoryGame = new MemoryGame();
-            inMemoryGame.Show();
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnCombinationLock_Click(object sender, EventArgs e)
+        private void btnepilogue_Click(object sender, EventArgs e)
         {
-            CombinationLock inCombinationLock = new CombinationLock();
-            inCombinationLock.Show();
-        }
-
-        private void btnSlidingPuzzle_Click(object sender, EventArgs e)
-        {
-            SlidingPuzzle inSlidingPuzzle = new SlidingPuzzle();
-            inSlidingPuzzle.Show();
+            Epilogue inGamescreen = new Epilogue();
+            inGamescreen.Show();
         }
     }
 }

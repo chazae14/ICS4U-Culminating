@@ -99,6 +99,7 @@
             this.picMiddleCounter = new System.Windows.Forms.PictureBox();
             this.picLeftMiddleCounter = new System.Windows.Forms.PictureBox();
             this.picLeftEndCounter = new System.Windows.Forms.PictureBox();
+            this.picWallClock = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bmpWood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlainWall)).BeginInit();
@@ -169,6 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMiddleCounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeftMiddleCounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeftEndCounter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWallClock)).BeginInit();
             this.SuspendLayout();
             // 
             // bmpWood
@@ -876,11 +878,22 @@
             this.picLeftEndCounter.TabIndex = 79;
             this.picLeftEndCounter.TabStop = false;
             // 
+            // picWallClock
+            // 
+            this.picWallClock.Image = ((System.Drawing.Image)(resources.GetObject("picWallClock.Image")));
+            this.picWallClock.Location = new System.Drawing.Point(292, 398);
+            this.picWallClock.Name = "picWallClock";
+            this.picWallClock.Size = new System.Drawing.Size(50, 50);
+            this.picWallClock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picWallClock.TabIndex = 80;
+            this.picWallClock.TabStop = false;
+            // 
             // frmGraphics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 495);
+            this.Controls.Add(this.picWallClock);
             this.Controls.Add(this.picLeftEndCounter);
             this.Controls.Add(this.picLeftMiddleCounter);
             this.Controls.Add(this.picMiddleCounter);
@@ -1023,6 +1036,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMiddleCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeftMiddleCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeftEndCounter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWallClock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1100,5 +1114,6 @@
         public System.Windows.Forms.PictureBox picMiddleCounter;
         public System.Windows.Forms.PictureBox picLeftMiddleCounter;
         public System.Windows.Forms.PictureBox picLeftEndCounter;
+        public System.Windows.Forms.PictureBox picWallClock;
     }
 }
