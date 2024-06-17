@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
-using WMPLib;
 using static System.Net.WebRequestMethods;
 
 namespace codeCulminating
@@ -183,7 +182,7 @@ namespace codeCulminating
                     lblTextBox.Show();
                     lblTransparent.Show();
                     clicksCount += 2;
-                    lblTextBox.Text = "\n \n \n     This is my bedside table, where i usually keep my phone.";
+                    lblTextBox.Text = "\n \n \n      This is my bedside table, where I usually keep my phone.";
 
                 }
                 // when near bed and e is clicked
@@ -203,7 +202,7 @@ namespace codeCulminating
                     lblTextBox.Show();
                     lblTransparent.Show();
                     clicksCount += 9;
-                    lblTextBox.Text = "\n \n \n      This is my dresser, where I keep all my clothes!";
+                    lblTextBox.Text = "\n \n \n      This is my dresser, where I keep all my clothes.";
 
                 }
             }
@@ -263,6 +262,27 @@ namespace codeCulminating
                 lblTransparent.Hide();
             }
 
+            // opening cutscene
+            else if (clicksCount == 14)
+            {
+                lblTextBox.Show();
+                lblTextBox.Text = "\n \n \n      I've been awake for a couple minutes now. Ughhh. Mom  \n      moved all my stuff around again...";
+
+            }
+            else if (clicksCount == 15)
+            {
+                lblTextBox.Text = "\n \n \n      Guess I'll look around to see where my stuff's gone.";
+
+            }
+            else if (clicksCount == 16)
+            {
+                lblTextBox.Hide();
+                lblTextBox.Text = "";
+
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                clicksCount = 0;
+            }
         }
 
         private void timerIn_Tick_1(object sender, EventArgs e)
@@ -642,6 +662,13 @@ namespace codeCulminating
             {
                 MessageBox.Show(ex.Message);
             }
+
+            lblTransparent.Show();
+            picGirlInteract.Show();
+            clicksCount += 13;
+
+
+
         }
     }
 }

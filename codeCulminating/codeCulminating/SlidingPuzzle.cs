@@ -17,7 +17,6 @@ namespace codeCulminating
         Point EmptyPoint;
         ArrayList images = new ArrayList(); // stores croped image
         frmGraphics frmG =new frmGraphics(); // get image from form2
-
         public SlidingPuzzle()
         {
             InitializeComponent();
@@ -171,6 +170,7 @@ namespace codeCulminating
             if (count == 8)
             {
                 DialogResult choice = MessageBox.Show("Sliding puzzle complete.", "Win", MessageBoxButtons.OK);
+                frmLevelOne.compCount++;
                 if (choice == DialogResult.OK)
                 {
                     this.Close();
