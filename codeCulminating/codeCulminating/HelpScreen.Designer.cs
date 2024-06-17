@@ -213,7 +213,6 @@
             this.Name = "HelpScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HelpScreen";
-            this.Load += new System.EventHandler(this.HelpScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picWASD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picESC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picE)).EndInit();

@@ -30,9 +30,5 @@ namespace codeCulminating
             this.Close();
         }
 
-        private void HelpScreen_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
