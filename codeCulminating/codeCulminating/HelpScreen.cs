@@ -26,5 +26,9 @@ namespace codeCulminating
         {
             this.Close();
         }
+        //FDEAEA
+        private void HelpScreen_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

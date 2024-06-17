@@ -21,7 +21,6 @@ namespace codeCulminating
         public frmLevelOne()
         {
             InitializeComponent();
-            //audPlayerLvl1.URL = "Lv1_Eerie_House.mp3";
         }
 
         int tileSize = 50;
@@ -185,6 +184,7 @@ namespace codeCulminating
                     tmrRing.Stop();
                     phoneRing.Stop();
                     picPhone.Hide();
+                    picPhoneOn.Hide(); 
                     lblTransparent.Show();
                     picLockscreen.Show();
                     checkTexts = true;

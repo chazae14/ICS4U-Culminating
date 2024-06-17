@@ -248,7 +248,7 @@ namespace codeCulminating
             /// desk interactions
             else if (clicksCount == 12)
             {
-                lblTextBox.Text = "\n \n \n      My photo album! Maybe this will help me remember what \n      happened yesterday. Let's start with the beginning \n      of the day.";
+                lblTextBox.Text = "\n \n \n      My photo album? But I don't remember taking these photos... \n     Let me try to remember.";
             }
             else if (clicksCount == 13)
             {

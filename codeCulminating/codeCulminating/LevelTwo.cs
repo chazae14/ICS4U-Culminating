@@ -159,6 +159,15 @@ namespace codeCulminating
                     clicksCount++;
                 }
 
+                if (curX > 17 * tileSize && curX < 19 * tileSize && curY > 6 * tileSize && curY < 8 * tileSize && completedCount == 2)
+                {
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+                    lblTextBox.Text = "\n \n \n     My friend is taking a while. I think i'll just order something.";
+                    clicksCount++;
+                }
+
                 if (completedCount == 1)
                 {
                     picGirlInteract.Show();
