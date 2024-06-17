@@ -216,7 +216,7 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      Hmmm. Should I leave yet? I need to make sure i have everything \n \n \n      I need.";
+                    lblTextBox.Text = "\n \n \n      Hmmm. Should I leave yet? I need to make sure i have everything \n      I need.";
                     clicksCount += 6;
                 }
                 
@@ -237,12 +237,18 @@ namespace codeCulminating
                     LockCode inGamescreen = new LockCode();
                     inGamescreen.Show();
                 }
-            }
-        }
 
-        private void lblTextBox_Click(object sender, EventArgs e)
-        {
-            
+
+                /// checkmarks for when level is completed
+                if (compCount == 2)
+                {
+                    picCheckCombination.Show();
+                }
+                else if (compCount == 1)
+                {
+                    picCompletedSliding.Show();
+                }
+            }
         }
 
         private void lblTransparent_Click(object sender, EventArgs e)
@@ -291,12 +297,15 @@ namespace codeCulminating
             }
             else if (clicksCount == 7 && (compCount == 2 || compCount == 1))
             {
-                lblTextBox.Text = "\n \n \n      I still have one last thing to do. I should stay.";
+                lblTextBox.Text = "\n \n \n      I still have one last thing to do. Should I stay?";
+                lblYes.Show();
+                lblNo.Show();
             }
             else if (clicksCount == 7 && (compCount == 2 || compCount == 1))
             {
-                lblTextBox.Text = "\n \n \n      I still have to get ready! I should stay.";
-                
+                lblTextBox.Text = "\n \n \n      I still have to get ready! Should I stay?";
+                lblYes.Show();
+                lblNo.Show();
             }
             else if (clicksCount == 8)
             {
@@ -365,6 +374,7 @@ namespace codeCulminating
                 lblTextBox.Text = "\n \n \n      I'll head over to the cafe once I'm ready.";
                 picObjectives.Show();
                 lblObjectives.Show();
+                
             }
             else if (clicksCount == 21)
             {
@@ -373,6 +383,7 @@ namespace codeCulminating
                 picGirlInteract.Hide();
                 lblTransparent.Hide();
                 lblTextBox.Text = "";
+                
             }
 
         }
@@ -432,6 +443,29 @@ namespace codeCulminating
             {
                 picPhoneOn.Visible = false;
             }
+        }
+
+        private void lblYes_Click(object sender, EventArgs e)
+        {
+            clicksCount = 0;
+            lblTextBox.Hide();
+            picGirlInteract.Hide();
+            lblTransparent.Hide();
+            lblYes.Hide();
+            lblNo.Hide();
+            lblTextBox.Text = "";
+            this.Close();
+        }
+
+        private void lblNo_Click(object sender, EventArgs e)
+        {
+            clicksCount = 0;
+            lblTextBox.Hide();
+            picGirlInteract.Hide();
+            lblYes.Hide();
+            lblNo.Hide();
+            lblTransparent.Hide();
+            lblTextBox.Text = "";
         }
 
         private void tmrMove_Tick(object sender, EventArgs e)
@@ -497,6 +531,10 @@ namespace codeCulminating
             lblTransparent.Hide();
             picObjectives.Hide();
             lblObjectives.Hide();
+            picCheckCombination.Hide();
+            picCompletedSliding.Hide();
+            lblNo.Hide();
+            lblYes.Hide();
 
             // phone starts ringing
             phoneRing.SoundLocation = "phoneVibrate.wav";
@@ -871,6 +909,8 @@ namespace codeCulminating
             // rectDest to start out sprite on her bed
             rectDest = new Rectangle(19 * tileSize, 6 * tileSize, tileSize, tileSize);
             rectSource = new Rectangle(19 * tileSize, 6 * tileSize, tileSize, tileSize);     
+
+            
             
             // drawing out our girl on her bed
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
