@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
-using WMPLib;
 using static System.Net.WebRequestMethods;
 
 namespace codeCulminating
@@ -26,6 +25,7 @@ namespace codeCulminating
         }
 
         int tileSize = 50;
+        public static int compCount = 0;
         frmGraphics frmG = new frmGraphics();
         Bitmap backbuffer;
         Bitmap minibuffer;
@@ -73,6 +73,11 @@ namespace codeCulminating
         Bitmap bmpMiddleDresser;
         Bitmap bmpBottomDresser;
 
+        bool ringing;
+        bool checkTexts;
+        SoundPlayer phoneRing = new SoundPlayer();
+        PictureBox[] textMsgs;
+
         Rectangle rectSource, rect0, rectDest;
         int curX, curY;
         int moves;
@@ -90,7 +95,6 @@ namespace codeCulminating
             right,
             up
         }
-        public static int compCount = 0;
 
         private void Level_1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -176,9 +180,18 @@ namespace codeCulminating
 
                 /// ITEM INTERACTIONS
                 // when near bedside table and e is clicked
-                if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
+                if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E && checkTexts == false)
                 {
-                                                                            
+                    clicksCount += 13;
+                    tmrRing.Stop();
+                    phoneRing.Stop();
+                    picPhone.Hide();
+                    lblTransparent.Show();
+                    picLockscreen.Show();
+                    checkTexts = true;
+                }
+                else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E && checkTexts == true)
+                {
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
@@ -192,7 +205,7 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      I should grab my money from my desk!";
+                    lblTextBox.Text = "\n \n \n      I should grab my money from my desk.";
                     clicksCount += 2;
 
                 }
@@ -203,30 +216,23 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      Hrm. Should i leave yet? I need to make sure i have everything \n      i need.";
+                    lblTextBox.Text = "\n \n \n      Hmmm. Should I leave yet? I need to make sure i have everything \n \n \n      I need.";
                     clicksCount += 6;
                 }
                 
-                // when near bed and e is clicked
-                else if (curX > 17 * tileSize && curX < 20 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E)
-                {
-                    picGirlInteract.Show();
-                    lblTextBox.Show();
-                    lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      I wish i could go back to bed. I gotta go though!";
-                    clicksCount += 1;
-                }
+           
                 // dresser interaction
                 else if (curX > 6 * tileSize && curX < 8 * tileSize && curY > 6 * tileSize && curY < 10 * tileSize && e.KeyCode == Keys.E)
                 {
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
+                    lblTextBox.Text = "\n \n \n      I don't see the paper here... but i guess i can get changed.";
                     clicksCount += 9;
-                    lblTextBox.Text = "\n \n \n      Time to get dressed, i guess.";
                 }
-                // interaction with can to get lcok code
-                else if (curX > 4 * tileSize && curX < 8 * tileSize && curY > 3 * tileSize && curY < 7 * tileSize && e.KeyCode == Keys.E)
+
+                // trash can interaction
+                else if (curX > 5 * tileSize && curX < 7 * tileSize && curY > 4 * tileSize && curY < 7 * tileSize && e.KeyCode == Keys.E)
                 {
                     LockCode inGamescreen = new LockCode();
                     inGamescreen.Show();
@@ -236,80 +242,7 @@ namespace codeCulminating
 
         private void lblTextBox_Click(object sender, EventArgs e)
         {
-            clicksCount++;
-
-            // interaction with bedside table
-            if (clicksCount == 2)
-            {
-                clicksCount = 0;
-
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                lblTextBox.Text = "";
-            }
-
-            // interaction with desk
-            else if (clicksCount == 3)
-            {
-                lblTextBox.Text = "\n \n \n      Oh shoot, i forgot i locked my drawer where i keep my wallet! \n       And i forgot my passcode!";
-            }
-            else if (clicksCount == 4)
-            {
-                lblTextBox.Text = "\n \n \n      That's alright, i know i wrote it down on a piece of paper somewhere.";
-            }
-            else if (clicksCount == 5)
-            {
-                CombinationLock inGamescreen = new CombinationLock();
-                inGamescreen.Show();
-                if (compCount == 2 || compCount == 3)
-                {
-                    picMoneyCheck.Show();
-                }
-
-                clicksCount = 0;
-
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                lblTextBox.Text = "";
-            }
-
-            // interaction with exit tiles if not all objectives are completed
-            else if (clicksCount == 7 && compCount == 2)
-            {
-                lblTextBox.Text = "\n \n \n      I'm all set! Let's go!";
-                clicksCount = 0;
-                this.Close();
-            }
-            else if (clicksCount == 7 && compCount == 1)
-            {
-                lblTextBox.Text = "\n \n \n      I still have one last thing to do. Should i really leave?.";
-                lblYes.Show();
-                lblNo.Show();
-            }
-            else if (clicksCount == 7 && compCount == 0)
-            {
-                lblTextBox.Text = "\n \n \n      I still have to get ready! Should i really leave?";
-                lblYes.Show();
-                lblNo.Show();
-
-            }
-
-            else if (clicksCount == 10)
-            {
-                SlidingPuzzle inGamescreen = new SlidingPuzzle();
-                inGamescreen.Show();
-                if (compCount == 1 || compCount == 3)
-                {
-                    picDresserCheck.Show();
-                }
-                clicksCount = 0;
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                lblTextBox.Text = "";
-            }
+            
         }
 
         private void lblTransparent_Click(object sender, EventArgs e)
@@ -330,11 +263,11 @@ namespace codeCulminating
             // interaction with desk
             else if (clicksCount == 3)
             {
-                lblTextBox.Text = "\n \n \n      Oh shoot, i forgot i locked my drawer where i keep my wallet! \n       And i forgot my passcode!";
+                lblTextBox.Text = "\n \n \n      Oh shoot, I locked my drawer and my wallet is in there. \n       I forgot my passcode too!";
             }
             else if (clicksCount == 4)
             {
-                lblTextBox.Text = "\n \n \n      That's alright, i know i wrote it down on a piece of paper somewhere.";
+                lblTextBox.Text = "\n \n \n      That's alright. I'm sure thast I wrote it down on a piece of       paper somewhere...";
             }
             else if (clicksCount == 5)
             {
@@ -350,30 +283,91 @@ namespace codeCulminating
             }
 
             // interaction with exit tiles if not all objectives are completed
-            else if (clicksCount == 7 && compCount == 2)
+            else if (clicksCount == 7 && compCount == 3)
             {
                 lblTextBox.Text = "\n \n \n      I'm all set! Let's go!";
                 clicksCount = 0;
                 this.Close();
             }
-            else if (clicksCount == 7 && compCount == 1)
+            else if (clicksCount == 7 && (compCount == 2 || compCount == 1))
             {
-                lblTextBox.Text = "\n \n \n      I still have one last thing to do. Should i really leave?.";
-                lblYes.Show();
-                lblNo.Show();
+                lblTextBox.Text = "\n \n \n      I still have one last thing to do. I should stay.";
             }
-            else if (clicksCount == 7 && compCount == 0)
+            else if (clicksCount == 7 && (compCount == 2 || compCount == 1))
             {
-                lblTextBox.Text = "\n \n \n      I still have to get ready! Should i really leave?";
-                lblYes.Show();
-                lblNo.Show();
+                lblTextBox.Text = "\n \n \n      I still have to get ready! I should stay.";
                 
             }
-            // dresser interaction!!!!
+            else if (clicksCount == 8)
+            {
+                clicksCount = 0;
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                lblTextBox.Text = "";
+            }
+
+            else if (clicksCount == 9)
+            {
+                lblTextBox.Text = "\n \n \n      I don't see the paper here... I should check somewhere else.";
+            }
+            // interaction with dresser
             else if (clicksCount == 10)
             {
                 SlidingPuzzle inGamescreen = new SlidingPuzzle();
                 inGamescreen.Show();
+                
+                clicksCount = 0;
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                lblTextBox.Text = "";
+            }
+
+            // interaction with texts chain
+            else if (clicksCount == 13)
+            {
+                picLockscreen.Show();
+            }
+            else if (clicksCount == 14)
+            {
+                picLockscreen.Hide();
+                picText1.Show();
+            }
+            else if (clicksCount == 15)
+            {
+                picText1.Hide();
+                picText2.Show();
+            }
+            else if (clicksCount == 16)
+            {
+                picText2.Hide();
+                picText3.Show();
+            }
+            else if (clicksCount == 17)
+            {
+                picText3.Hide();
+                picText4.Show();
+            }
+            else if (clicksCount == 18)
+            {
+                picText4.Hide();
+                picText5.Show();
+            }
+            else if (clicksCount == 19)
+            {
+                picText5.Hide();
+            }
+            else if (clicksCount == 20)
+            {
+                lblTextBox.Show();
+                picGirlInteract.Show();
+                lblTextBox.Text = "\n \n \n      I'll head over to the cafe once I'm ready.";
+                picObjectives.Show();
+                lblObjectives.Show();
+            }
+            else if (clicksCount == 21)
+            {
                 clicksCount = 0;
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
@@ -383,26 +377,61 @@ namespace codeCulminating
 
         }
 
-        private void lblYes_Click(object sender, EventArgs e)
+        private void textMsgs_Click(object sender, EventArgs e)
         {
-            clicksCount = 0;
-            lblTextBox.Hide();
-            picGirlInteract.Hide();
-            lblTransparent.Hide();
-            lblTextBox.Text = "";
-            this.Close();
-
+            clicksCount++;
+            if (clicksCount == 13)
+            {
+                picLockscreen.Show();
+            }
+            else if (clicksCount == 14)
+            {
+                picLockscreen.Hide();
+                picText1.Show();
+            }
+            else if (clicksCount == 15)
+            {
+                picText1.Hide();
+                picText2.Show();
+            }
+            else if (clicksCount == 16)
+            {
+                picText2.Hide();
+                picText3.Show();
+            }
+            else if (clicksCount == 17)
+            {
+                picText3.Hide();
+                picText4.Show();
+            }
+            else if (clicksCount == 18)
+            {
+                picText4.Hide();
+                picText5.Show();
+            }
+            else if (clicksCount == 19)
+            {
+                picText5.Hide();
+            }
+            else if (clicksCount == 20)
+            {
+                lblTextBox.Show();
+                picGirlInteract.Show();
+                lblTextBox.Text = "\n \n \n      I should go meet her outside after I'm ready.";
+            }
         }
 
-        private void lblNo_Click(object sender, EventArgs e)
+        // for the phone ringing
+        private void tmrRing_Tick(object sender, EventArgs e)
         {
-            clicksCount = 0;
-            lblTextBox.Hide();
-            picGirlInteract.Hide();
-            lblTransparent.Hide();
-            lblTextBox.Text = "";
-            lblNo.Hide();
-            lblYes.Hide();
+            if (picPhoneOn.Visible == false)
+            {
+                picPhoneOn.Visible = true;
+            }
+            else if (picPhoneOn.Visible == true)
+            {
+                picPhoneOn.Visible = false;
+            }
         }
 
         private void tmrMove_Tick(object sender, EventArgs e)
@@ -449,6 +478,7 @@ namespace codeCulminating
             }
         }
 
+        
         private void Level_1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -462,14 +492,23 @@ namespace codeCulminating
             Graphics G;
             G = this.CreateGraphics();
 
-            // hiding all the random pictures 
             lblTextBox.Hide();
             picGirlInteract.Hide();
             lblTransparent.Hide();
-            lblNo.Hide();
-            lblYes.Hide();
-            picDresserCheck.Hide();
-            picMoneyCheck.Hide();
+            picObjectives.Hide();
+            lblObjectives.Hide();
+
+            // phone starts ringing
+            phoneRing.SoundLocation = "phoneVibrate.wav";
+            tmrRing.Start();
+            phoneRing.Play();
+
+            // sets up eventhandler for clicking texts
+            textMsgs = new PictureBox[] { picLockscreen, picText1, picText2, picText3, picText4, picText5 };
+            for (int i = 0; i < textMsgs.Length; i++)
+            {
+                textMsgs[i].Click += new EventHandler(textMsgs_Click);
+            }
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
