@@ -45,6 +45,7 @@
             this.lblTextBox = new System.Windows.Forms.Label();
             this.picGirlInteract = new System.Windows.Forms.PictureBox();
             this.lblTransparent = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picText5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picText4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picText3)).BeginInit();
@@ -55,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picObjectives)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrMove
@@ -219,11 +221,20 @@
             this.lblTransparent.TabIndex = 3;
             this.lblTransparent.Click += new System.EventHandler(this.lblTransparent_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(963, 245);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmLevelOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picText5);
             this.Controls.Add(this.picText4);
             this.Controls.Add(this.picText3);
@@ -253,6 +264,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picObjectives)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +287,6 @@
         private System.Windows.Forms.PictureBox picText3;
         private System.Windows.Forms.PictureBox picText4;
         private System.Windows.Forms.PictureBox picText5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

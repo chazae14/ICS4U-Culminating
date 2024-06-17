@@ -283,17 +283,17 @@ namespace codeCulminating
             }
 
             // interaction with exit tiles if not all objectives are completed
-            else if (clicksCount == 7 && objectiveCount == 2)
+            else if (clicksCount == 7 && compCount == 3)
             {
                 lblTextBox.Text = "\n \n \n      I'm all set! Let's go!";
                 clicksCount = 0;
                 this.Close();
             }
-            else if (clicksCount == 7 && objectiveCount == 1)
+            else if (clicksCount == 7 && (compCount == 2 || compCount == 1))
             {
                 lblTextBox.Text = "\n \n \n      I still have one last thing to do. I should stay.";
             }
-            else if (clicksCount == 7 && objectiveCount == 0)
+            else if (clicksCount == 7 && (compCount == 2 || compCount == 1))
             {
                 lblTextBox.Text = "\n \n \n      I still have to get ready! I should stay.";
                 
