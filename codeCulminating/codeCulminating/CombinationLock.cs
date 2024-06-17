@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,6 +23,7 @@ namespace codeCulminating
         string userInput = " "; // Stores user input
         string correctCode = "1420"; // Stores correct code - only make up to 4 digits
         public static int combCode = 0;
+        public bool complete = false;
 
         // Add Numbers to text box
         private void Buttons_MouseClick(object sender, MouseEventArgs e)
@@ -67,6 +69,7 @@ namespace codeCulminating
             if (userInput == correctCode)
             {
                 frmLevelOne.compCount+=2;
+                complete = true;
                 this.Close();
             }
             else
@@ -83,6 +86,7 @@ namespace codeCulminating
             const int shake_amplitude = 5;
             for (int i = 0; i < shake_amplitude; i++)
             {
+                
                 form.Location = new Point(original.X + rnd.Next(-shake_amplitude, shake_amplitude), original.Y + rnd.Next(-shake_amplitude, shake_amplitude));
                 System.Threading.Thread.Sleep(20);
             }

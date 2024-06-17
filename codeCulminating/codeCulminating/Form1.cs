@@ -73,6 +73,7 @@ namespace codeCulminating
         int clicksCount = 0;
 
         int[,] map = new int[29, 16];
+        SoundPlayer lvl1Music = new SoundPlayer();
 
         enum dir
         {
@@ -355,6 +356,9 @@ namespace codeCulminating
             lblTextBox.Hide();
             picGirlInteract.Hide();
             lblTransparent.Hide();
+
+            lvl1Music.SoundLocation = "Title_Music.wav";
+            lvl1Music.Play();
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);

@@ -22,8 +22,10 @@ namespace codeCulminating
         {
             InitializeComponent();
             //audPlayerLvl1.URL = "Lv1_Eerie_House.mp3";
+            
         }
-
+        
+        
         int tileSize = 50;
         public static int compCount = 0;
         frmGraphics frmG = new frmGraphics();
@@ -73,7 +75,6 @@ namespace codeCulminating
         Bitmap bmpMiddleDresser;
         Bitmap bmpBottomDresser;
 
-        bool ringing;
         bool checkTexts;
         SoundPlayer phoneRing = new SoundPlayer();
         PictureBox[] textMsgs;
@@ -189,6 +190,8 @@ namespace codeCulminating
                     lblTransparent.Show();
                     picLockscreen.Show();
                     checkTexts = true;
+                    phoneRing.SoundLocation = "Lv1_Eerie_House.wav";
+                    phoneRing.Play();
                 }
                 else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E && checkTexts == true)
                 {
