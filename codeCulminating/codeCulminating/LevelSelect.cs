@@ -37,5 +37,13 @@ namespace codeCulminating
 
             this.Close();
         }
+
+        private void frmLevelSelect_Load(object sender, EventArgs e)
+        {
+            if (frmLevelOne.compCount == 3)
+            {
+                bnLevelTwoSelect.Show();
+            }
+        }
     }
 }
