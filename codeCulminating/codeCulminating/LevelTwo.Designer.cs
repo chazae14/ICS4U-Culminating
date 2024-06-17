@@ -34,7 +34,9 @@
             this.lblTextBox = new System.Windows.Forms.Label();
             this.picGirlInteract = new System.Windows.Forms.PictureBox();
             this.lblTransparent = new System.Windows.Forms.Label();
+            this.picBarista = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBarista)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrMove
@@ -74,12 +76,26 @@
             this.lblTransparent.TabIndex = 8;
             this.lblTransparent.Click += new System.EventHandler(this.lblTransparent_Click);
             // 
+            // picBarista
+            // 
+            this.picBarista.BackColor = System.Drawing.Color.Transparent;
+            this.picBarista.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBarista.BackgroundImage")));
+            this.picBarista.Image = ((System.Drawing.Image)(resources.GetObject("picBarista.Image")));
+            this.picBarista.Location = new System.Drawing.Point(939, -35);
+            this.picBarista.Name = "picBarista";
+            this.picBarista.Size = new System.Drawing.Size(495, 800);
+            this.picBarista.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBarista.TabIndex = 9;
+            this.picBarista.TabStop = false;
+            this.picBarista.Visible = false;
+            // 
             // LevelTwo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
             this.Controls.Add(this.lblTextBox);
+            this.Controls.Add(this.picBarista);
             this.Controls.Add(this.picGirlInteract);
             this.Controls.Add(this.lblTransparent);
             this.DoubleBuffered = true;
@@ -89,6 +105,7 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.LevelTwo_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LevelTwo_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBarista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,5 +117,6 @@
         private System.Windows.Forms.Label lblTextBox;
         private System.Windows.Forms.PictureBox picGirlInteract;
         private System.Windows.Forms.Label lblTransparent;
+        private System.Windows.Forms.PictureBox picBarista;
     }
 }

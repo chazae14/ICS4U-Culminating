@@ -57,6 +57,8 @@ namespace codeCulminating
         Bitmap bmpCounterMiddleRight;
         Bitmap bmpCounterRightEdge;
 
+        SoundPlayer lvl2Music = new SoundPlayer();
+
         enum dir
         {
             down,
@@ -131,6 +133,11 @@ namespace codeCulminating
                         walk = false;
                     }
                 }
+                else if (e.KeyCode == Keys.Escape)
+                {
+                    frmPause frmPause = new frmPause();
+                    frmPause.Show();
+                }
 
 
                 if (destTile != 0 && destTile != 8 && destTile != 9 && destTile != 10 && destTile != 11 && destTile != 12 && walk) // walk when on the right tiles (no walls or out of bounds)
@@ -144,6 +151,15 @@ namespace codeCulminating
                 }
 
                 if (curX > 10 * tileSize && curX < 14 * tileSize && curY > 10 * tileSize && curY < 12 * tileSize && e.KeyCode == Keys.E)
+                {
+                    picGirlInteract.Show();
+                    lblTextBox.Show();
+                    lblTransparent.Show();
+                    lblTextBox.Text = "\n \n \n     My friend is taking a while. I think i'll just order something.";
+                    clicksCount++;
+                }
+
+                if (curX > 17 * tileSize && curX < 19 * tileSize && curY > 6 * tileSize && curY < 8 * tileSize && completedCount == 2)
                 {
                     picGirlInteract.Show();
                     lblTextBox.Show();
@@ -178,6 +194,7 @@ namespace codeCulminating
             clicksCount++;
             if (clicksCount == 2)
             {
+                picBarista.Show();
                 lblTextBox.Text = "\n\n\n     I'll just take a coffee and a brownie. Thanks.";
             }
             else if (clicksCount == 3)
@@ -201,6 +218,7 @@ namespace codeCulminating
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
                 lblTransparent.Hide();
+                picBarista.Hide();
                 lblTextBox.Text = "";
             }
             else if (clicksCount == 9)
@@ -280,6 +298,10 @@ namespace codeCulminating
             lblTextBox.Hide();
             picGirlInteract.Hide();
             lblTransparent.Hide();
+
+            // sets music
+            lvl2Music.SoundLocation = "High_and_Dry.wav";
+            lvl2Music.Play();
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,9 @@ namespace codeCulminating
         {
             InitializeComponent();
         }
+
+        SoundPlayer titleMusic = new SoundPlayer();
+
 
         // When clicked open game window
         private void btnStart_Click(object sender, EventArgs e)
@@ -43,6 +47,12 @@ namespace codeCulminating
         {
             Epilogue inGamescreen = new Epilogue();
             inGamescreen.Show();
+        }
+
+        private void StartScreen_Load(object sender, EventArgs e)
+        {
+            titleMusic.SoundLocation = "Title_Music.wav";
+            titleMusic.Play();
         }
     }
 }

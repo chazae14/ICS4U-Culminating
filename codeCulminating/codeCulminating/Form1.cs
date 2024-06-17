@@ -73,6 +73,7 @@ namespace codeCulminating
         int clicksCount = 0;
 
         int[,] map = new int[29, 16];
+        SoundPlayer lvl1Music = new SoundPlayer();
 
         enum dir
         {
@@ -247,7 +248,7 @@ namespace codeCulminating
             /// desk interactions
             else if (clicksCount == 12)
             {
-                lblTextBox.Text = "\n \n \n      My photo album! Maybe this will help me remember what \n      happened yesterday. Let's start with the beginning \n      of the day.";
+                lblTextBox.Text = "\n \n \n      My photo album? But I don't remember taking these photos... \n     Let me try to remember.";
             }
             else if (clicksCount == 13)
             {
@@ -355,6 +356,9 @@ namespace codeCulminating
             lblTextBox.Hide();
             picGirlInteract.Hide();
             lblTransparent.Hide();
+
+            lvl1Music.SoundLocation = "Title_Music.wav";
+            lvl1Music.Play();
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
