@@ -73,6 +73,7 @@
             this.Controls.Add(this.btnLevelOne);
             this.Name = "frmLevelSelect";
             this.Text = "LevelSelect";
+            this.Load += new System.EventHandler(this.frmLevelSelect_Load);
             this.ResumeLayout(false);
 
         }
