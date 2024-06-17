@@ -30,11 +30,8 @@
         {
             this.btnStart = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.btnMazeGame = new System.Windows.Forms.Button();
-            this.btnMemoryGame = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnCombinationLock = new System.Windows.Forms.Button();
-            this.btnSlidingPuzzle = new System.Windows.Forms.Button();
+            this.btnepilogue = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -69,28 +66,6 @@
             this.btnHelp.UseVisualStyleBackColor = false;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click_1);
             // 
-            // btnMazeGame
-            // 
-            this.btnMazeGame.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMazeGame.Location = new System.Drawing.Point(698, 123);
-            this.btnMazeGame.Name = "btnMazeGame";
-            this.btnMazeGame.Size = new System.Drawing.Size(114, 38);
-            this.btnMazeGame.TabIndex = 3;
-            this.btnMazeGame.Text = "Maze";
-            this.btnMazeGame.UseVisualStyleBackColor = false;
-            this.btnMazeGame.Click += new System.EventHandler(this.btnMazeGame_Click);
-            // 
-            // btnMemoryGame
-            // 
-            this.btnMemoryGame.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMemoryGame.Location = new System.Drawing.Point(698, 79);
-            this.btnMemoryGame.Name = "btnMemoryGame";
-            this.btnMemoryGame.Size = new System.Drawing.Size(114, 38);
-            this.btnMemoryGame.TabIndex = 4;
-            this.btnMemoryGame.Text = "Memory Game";
-            this.btnMemoryGame.UseVisualStyleBackColor = false;
-            this.btnMemoryGame.Click += new System.EventHandler(this.btnMemoryGame_Click);
-            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
@@ -107,27 +82,15 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnCombinationLock
+            // btnepilogue
             // 
-            this.btnCombinationLock.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCombinationLock.Location = new System.Drawing.Point(698, 167);
-            this.btnCombinationLock.Name = "btnCombinationLock";
-            this.btnCombinationLock.Size = new System.Drawing.Size(114, 38);
-            this.btnCombinationLock.TabIndex = 6;
-            this.btnCombinationLock.Text = "Combination Lock";
-            this.btnCombinationLock.UseVisualStyleBackColor = false;
-            this.btnCombinationLock.Click += new System.EventHandler(this.btnCombinationLock_Click);
-            // 
-            // btnSlidingPuzzle
-            // 
-            this.btnSlidingPuzzle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSlidingPuzzle.Location = new System.Drawing.Point(698, 211);
-            this.btnSlidingPuzzle.Name = "btnSlidingPuzzle";
-            this.btnSlidingPuzzle.Size = new System.Drawing.Size(114, 38);
-            this.btnSlidingPuzzle.TabIndex = 7;
-            this.btnSlidingPuzzle.Text = "Sliding Puzzle Game";
-            this.btnSlidingPuzzle.UseVisualStyleBackColor = false;
-            this.btnSlidingPuzzle.Click += new System.EventHandler(this.btnSlidingPuzzle_Click);
+            this.btnepilogue.Location = new System.Drawing.Point(800, 209);
+            this.btnepilogue.Name = "btnepilogue";
+            this.btnepilogue.Size = new System.Drawing.Size(75, 23);
+            this.btnepilogue.TabIndex = 6;
+            this.btnepilogue.Text = "epilogue";
+            this.btnepilogue.UseVisualStyleBackColor = true;
+            this.btnepilogue.Click += new System.EventHandler(this.btnepilogue_Click);
             // 
             // StartScreen
             // 
@@ -137,11 +100,8 @@
             this.BackgroundImage = global::codeCulminating.Properties.Resources.StartMenuSketch_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1424, 861);
-            this.Controls.Add(this.btnSlidingPuzzle);
-            this.Controls.Add(this.btnCombinationLock);
+            this.Controls.Add(this.btnepilogue);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnMemoryGame);
-            this.Controls.Add(this.btnMazeGame);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnStart);
             this.DoubleBuffered = true;
@@ -158,10 +118,7 @@
 
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Button btnMazeGame;
-        private System.Windows.Forms.Button btnMemoryGame;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnCombinationLock;
-        private System.Windows.Forms.Button btnSlidingPuzzle;
+        private System.Windows.Forms.Button btnepilogue;
     }
 }

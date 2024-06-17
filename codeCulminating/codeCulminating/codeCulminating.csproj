@@ -55,6 +55,12 @@
     <Compile Include="CombinationLock.Designer.cs">
       <DependentUpon>CombinationLock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Epilogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Epilogue.Designer.cs">
+      <DependentUpon>Epilogue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </Compile>
     <EmbeddedResource Include="CombinationLock.resx">
       <DependentUpon>CombinationLock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Epilogue.resx">
+      <DependentUpon>Epilogue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

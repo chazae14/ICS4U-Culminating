@@ -160,6 +160,15 @@ namespace codeCulminating
                     lblTextBox.Text = "\n \n \n     Oh. A new text message.";
                     clicksCount+= 8;
                     completedCount++;
+
+                }
+
+                if (completedCount == 2 && curX > 16 * tileSize && curX < 18 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize)
+                {
+                    Epilogue inGamescreen = new Epilogue();
+                    inGamescreen.Show();
+
+                    this.Close();
                 }
             }
         }
