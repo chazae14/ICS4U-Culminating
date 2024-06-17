@@ -45,7 +45,10 @@
             this.lblTextBox = new System.Windows.Forms.Label();
             this.picGirlInteract = new System.Windows.Forms.PictureBox();
             this.lblTransparent = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picCheckCombination = new System.Windows.Forms.PictureBox();
+            this.picCompletedSliding = new System.Windows.Forms.PictureBox();
+            this.lblYes = new System.Windows.Forms.Label();
+            this.lblNo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picText5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picText4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picText3)).BeginInit();
@@ -56,7 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picObjectives)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCheckCombination)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompletedSliding)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrMove
@@ -197,7 +201,6 @@
             this.lblTextBox.Name = "lblTextBox";
             this.lblTextBox.Size = new System.Drawing.Size(975, 298);
             this.lblTextBox.TabIndex = 5;
-            this.lblTextBox.Click += new System.EventHandler(this.lblTextBox_Click);
             // 
             // picGirlInteract
             // 
@@ -221,20 +224,59 @@
             this.lblTransparent.TabIndex = 3;
             this.lblTransparent.Click += new System.EventHandler(this.lblTransparent_Click);
             // 
-            // pictureBox1
+            // picCheckCombination
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(963, 245);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            this.picCheckCombination.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(208)))), ((int)(((byte)(124)))));
+            this.picCheckCombination.Image = ((System.Drawing.Image)(resources.GetObject("picCheckCombination.Image")));
+            this.picCheckCombination.Location = new System.Drawing.Point(1097, 238);
+            this.picCheckCombination.Name = "picCheckCombination";
+            this.picCheckCombination.Size = new System.Drawing.Size(27, 24);
+            this.picCheckCombination.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCheckCombination.TabIndex = 16;
+            this.picCheckCombination.TabStop = false;
+            // 
+            // picCompletedSliding
+            // 
+            this.picCompletedSliding.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(208)))), ((int)(((byte)(124)))));
+            this.picCompletedSliding.Image = ((System.Drawing.Image)(resources.GetObject("picCompletedSliding.Image")));
+            this.picCompletedSliding.Location = new System.Drawing.Point(1097, 198);
+            this.picCompletedSliding.Name = "picCompletedSliding";
+            this.picCompletedSliding.Size = new System.Drawing.Size(27, 24);
+            this.picCompletedSliding.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCompletedSliding.TabIndex = 17;
+            this.picCompletedSliding.TabStop = false;
+            // 
+            // lblYes
+            // 
+            this.lblYes.AutoSize = true;
+            this.lblYes.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYes.Location = new System.Drawing.Point(1064, 636);
+            this.lblYes.Name = "lblYes";
+            this.lblYes.Size = new System.Drawing.Size(68, 27);
+            this.lblYes.TabIndex = 19;
+            this.lblYes.Text = "Yes.";
+            this.lblYes.Click += new System.EventHandler(this.lblYes_Click);
+            // 
+            // lblNo
+            // 
+            this.lblNo.AutoSize = true;
+            this.lblNo.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNo.Location = new System.Drawing.Point(1064, 681);
+            this.lblNo.Name = "lblNo";
+            this.lblNo.Size = new System.Drawing.Size(54, 27);
+            this.lblNo.TabIndex = 20;
+            this.lblNo.Text = "No.";
+            this.lblNo.Click += new System.EventHandler(this.lblNo_Click);
             // 
             // frmLevelOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblNo);
+            this.Controls.Add(this.lblYes);
+            this.Controls.Add(this.picCompletedSliding);
+            this.Controls.Add(this.picCheckCombination);
             this.Controls.Add(this.picText5);
             this.Controls.Add(this.picText4);
             this.Controls.Add(this.picText3);
@@ -264,7 +306,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picObjectives)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCheckCombination)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompletedSliding)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,6 +330,9 @@
         private System.Windows.Forms.PictureBox picText3;
         private System.Windows.Forms.PictureBox picText4;
         private System.Windows.Forms.PictureBox picText5;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picCheckCombination;
+        private System.Windows.Forms.PictureBox picCompletedSliding;
+        private System.Windows.Forms.Label lblYes;
+        private System.Windows.Forms.Label lblNo;
     }
 }
