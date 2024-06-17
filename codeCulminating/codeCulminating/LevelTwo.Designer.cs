@@ -29,30 +29,76 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LevelTwo));
             this.tmrMove = new System.Windows.Forms.Timer(this.components);
+            this.lblTextBox = new System.Windows.Forms.Label();
+            this.picGirlInteract = new System.Windows.Forms.PictureBox();
+            this.lblTransparent = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrMove
             // 
             this.tmrMove.Tick += new System.EventHandler(this.tmrMove_Tick);
             // 
+            // lblTextBox
+            // 
+            this.lblTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.lblTextBox.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.lblTextBox.Image = ((System.Drawing.Image)(resources.GetObject("lblTextBox.Image")));
+            this.lblTextBox.Location = new System.Drawing.Point(238, 430);
+            this.lblTextBox.Name = "lblTextBox";
+            this.lblTextBox.Size = new System.Drawing.Size(975, 298);
+            this.lblTextBox.TabIndex = 6;
+            // 
+            // picGirlInteract
+            // 
+            this.picGirlInteract.BackColor = System.Drawing.Color.Transparent;
+            this.picGirlInteract.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picGirlInteract.BackgroundImage")));
+            this.picGirlInteract.Image = ((System.Drawing.Image)(resources.GetObject("picGirlInteract.Image")));
+            this.picGirlInteract.Location = new System.Drawing.Point(12, -35);
+            this.picGirlInteract.Name = "picGirlInteract";
+            this.picGirlInteract.Size = new System.Drawing.Size(495, 800);
+            this.picGirlInteract.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picGirlInteract.TabIndex = 7;
+            this.picGirlInteract.TabStop = false;
+            // 
+            // lblTransparent
+            // 
+            this.lblTransparent.BackColor = System.Drawing.Color.Transparent;
+            this.lblTransparent.Image = ((System.Drawing.Image)(resources.GetObject("lblTransparent.Image")));
+            this.lblTransparent.Location = new System.Drawing.Point(-4, -10);
+            this.lblTransparent.Name = "lblTransparent";
+            this.lblTransparent.Size = new System.Drawing.Size(1414, 800);
+            this.lblTransparent.TabIndex = 8;
+            this.lblTransparent.Click += new System.EventHandler(this.lblTransparent_Click);
+            // 
             // LevelTwo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 761);
+            this.Controls.Add(this.lblTextBox);
+            this.Controls.Add(this.picGirlInteract);
+            this.Controls.Add(this.lblTransparent);
             this.DoubleBuffered = true;
             this.Name = "LevelTwo";
             this.Text = "LevelTwo";
             this.Load += new System.EventHandler(this.LevelTwo_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.LevelTwo_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LevelTwo_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.picGirlInteract)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Timer tmrMove;
+        private System.Windows.Forms.Label lblTextBox;
+        private System.Windows.Forms.PictureBox picGirlInteract;
+        private System.Windows.Forms.Label lblTransparent;
     }
 }

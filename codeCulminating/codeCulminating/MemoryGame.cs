@@ -142,6 +142,7 @@ namespace codeCulminating
                 if (label8.BackColor == Color.Green)
                 {
                     DialogResult choice = MessageBox.Show("Memory game complete.", "Win", MessageBoxButtons.OK);
+                    LevelTwo.completedCount++;
                     if (choice == DialogResult.OK)
                     {
                         this.Close();
