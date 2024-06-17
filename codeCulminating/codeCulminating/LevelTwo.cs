@@ -159,6 +159,7 @@ namespace codeCulminating
                     lblTransparent.Show();
                     lblTextBox.Text = "\n \n \n     Oh. A new text message.";
                     clicksCount+= 8;
+                    completedCount++;
                 }
             }
         }
