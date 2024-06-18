@@ -159,15 +159,6 @@ namespace codeCulminating
                     clicksCount++;
                 }
 
-                if (curX > 17 * tileSize && curX < 19 * tileSize && curY > 6 * tileSize && curY < 8 * tileSize && completedCount == 2)
-                {
-                    picGirlInteract.Show();
-                    lblTextBox.Show();
-                    lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n     I should find her here.";
-                    clicksCount++;
-                }
-
                 if (completedCount == 1)
                 {
                     picGirlInteract.Show();
@@ -179,8 +170,12 @@ namespace codeCulminating
 
                 }
 
-                if (completedCount == 2 && curX > 16 * tileSize && curX < 18 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize)
+                if (completedCount == 2 && curX > 17 * tileSize && curX < 19 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize)
                 {
+                    walk = false;
+                    tmrFriend.Start();
+                    tmrCar.Start();
+
                     Epilogue inGamescreen = new Epilogue();
                     inGamescreen.Show();
 
@@ -223,10 +218,27 @@ namespace codeCulminating
             }
             else if (clicksCount == 9)
             {
-                lblTextBox.Text = "\n\n\n     My friend is just outside. Let's go meet her.";
-
+                picGirlInteract.Hide();
+                lblTextBox.Hide();
+                textMsgs[0].Show();
             }
             else if (clicksCount == 10)
+            {
+                textMsgs[0].Hide();
+                textMsgs[1].Show();
+            }
+            else if (clicksCount == 11)
+            {
+                textMsgs[0].Hide();
+                textMsgs[1].Hide();
+            }
+            else if (clicksCount == 12)
+            {
+                picGirlInteract.Show();
+                lblTextBox.Show();
+                lblTextBox.Text = "\n\n\n     My friend is just outside. Let's go meet her.";
+            }
+            else if (clicksCount == 13)
             {
                 clicksCount = 0;
 
@@ -235,6 +247,8 @@ namespace codeCulminating
                 lblTransparent.Hide();
                 lblTextBox.Text = "";
             }
+            
+            
 
         }
 
@@ -289,10 +303,91 @@ namespace codeCulminating
             g.DrawImage(backbuffer, 0, 0, backbuffer.Width, backbuffer.Height);
         }
 
+        private void tmrFriend_Tick(object sender, EventArgs e)
+        {
+            int friendWalk = 0;
+            friendWalk++;
+            if (friendWalk == 1)
+            {
+                picFriendWalking.Show();
+            }
+            else if (friendWalk == 2)
+            {
+                picFriendWalking.Hide();
+                picFriendWalking2.Show();
+            }
+            else if (friendWalk == 3)
+            {
+                picFriendWalking2.Hide();
+                picFriendWaving.Show();
+            }
+        }
+
+        private void tmrCar_Tick(object sender, EventArgs e)
+        {
+            picCar.Show();
+            
+            int carCount = 0;
+            carCount++;
+            if (carCount == 1)
+            {
+                picFriendWalking.Show();
+            }
+            else if (carCount == 2)
+            {
+                picCar.Hide();
+                picCar2.Show();
+            }
+            else if (carCount == 3)
+            {
+                picCar2.Hide();
+                picCar3.Show();
+            }
+            else if (carCount == 4)
+            {
+                Epilogue inGamescreen = new Epilogue();
+                inGamescreen.Show();
+                tmrCar.Stop();
+                this.Close();
+            }
+
+        }
+
+        // procedure for the little text interaction after cafe game
+        PictureBox[] textMsgs;
+        private void textMsgs_Click(object sender, EventArgs e)
+        {
+            clicksCount++;
+            if (clicksCount == 9)
+            {
+                picGirlInteract.Hide();
+                lblTextBox.Hide();
+                textMsgs[0].Show();
+            }
+            else if (clicksCount == 10)
+            {
+                textMsgs[0].Hide();
+                textMsgs[1].Show();
+            }
+            else if (clicksCount == 11)
+            {
+                textMsgs[0].Hide();
+                textMsgs[1].Hide();
+                picGirlInteract.Show();
+                lblTextBox.Show();
+            }
+        }
+
         private void LevelTwo_Load(object sender, EventArgs e)
         {
             Graphics G;
             G = this.CreateGraphics();
+
+            textMsgs = new PictureBox[] {picAfterText1, picAfterText2};
+            for (int i = 0; i < textMsgs.Length; i++)
+            {
+                textMsgs[i].Click += new EventHandler(textMsgs_Click);
+            }
 
             // hiding all the random pictures 
             lblTextBox.Hide();
