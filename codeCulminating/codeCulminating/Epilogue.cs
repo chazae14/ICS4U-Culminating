@@ -180,17 +180,50 @@ namespace codeCulminating
                     picFriend.Show();
                     picGirlInteract.Show();
                     lblTextBox.Show();
-                    lblTextBox.Text = "\n  Friend: \n\n\n       It's all your fault.";
+                    lblTextBox.Text = "  Friend: \n\n\n       It's all your fault.";
                 }
             }
         }
 
         private void lblTransparent_Click(object sender, EventArgs e)
         {
-            clicksCount++; 
+            clicksCount++;
             if (clicksCount == 1)
             {
                 lblTextBox.Text = "\n\n\n     What? Is this a dream? Why are you here?";
+            }
+            else if (clicksCount == 2)
+            {
+                lblTextBox.Text = "  Friend: \n\n\n     If you just waited in the cafe for me, i would not have gotten run over.";
+
+            }
+            else if (clicksCount == 3)
+            {
+                lblTextBox.Text = "\n\n\n     What are you talking about?! You stopped in the middle of the road?!";
+
+            }
+            else if (clicksCount == 4)
+            {
+                lblTextBox.Text = " Friend: \n\n\n     To wave at you! You! You! If you stayed in the cafe, i would not of had to cross and wave.";
+
+            }
+            else if (clicksCount == 5)
+            {
+                lblTextBox.Text = "\n\n\n     This does not make any sense! Leave me alone!";
+
+            }
+            else if (clicksCount == 6)
+            {
+                lblTextBox.Text = " Friend: \n\n\n     NO. I will stay by your side forever now.";
+
+            }
+            else if (clicksCount == 7)
+            {
+                DialogResult choice = MessageBox.Show("The End", "Done", MessageBoxButtons.OK);
+                if (choice == DialogResult.OK)
+                {
+                    this.Close();
+                }
             }
         }
 

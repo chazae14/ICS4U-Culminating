@@ -54,5 +54,11 @@ namespace codeCulminating
             titleMusic.SoundLocation = "Title_Music.wav";
             titleMusic.Play();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Epilogue inGamescreen = new Epilogue();
+            inGamescreen.Show();
+        }
     }
 }
