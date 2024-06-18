@@ -164,12 +164,9 @@
             this.picFriendWaving.Size = new System.Drawing.Size(50, 50);
             this.picFriendWaving.TabIndex = 20;
             this.picFriendWaving.TabStop = false;
-            this.picFriendWaving.Visible = false;
+
             // 
-            // tmrFriend
-            // 
-            this.tmrFriend.Interval = 500;
-            this.tmrFriend.Tick += new System.EventHandler(this.tmrFriend_Tick);
+            
             // 
             // picCar
             // 
@@ -184,8 +181,7 @@
             // 
             // tmrCar
             // 
-            this.tmrCar.Interval = 500;
-            this.tmrCar.Tick += new System.EventHandler(this.tmrCar_Tick);
+            
             // 
             // picCar2
             // 
