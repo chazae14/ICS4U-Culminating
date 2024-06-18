@@ -31,7 +31,6 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnepilogue = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStart
@@ -82,16 +81,6 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnepilogue
-            // 
-            this.btnepilogue.Location = new System.Drawing.Point(800, 209);
-            this.btnepilogue.Name = "btnepilogue";
-            this.btnepilogue.Size = new System.Drawing.Size(75, 23);
-            this.btnepilogue.TabIndex = 6;
-            this.btnepilogue.Text = "epilogue";
-            this.btnepilogue.UseVisualStyleBackColor = true;
-            this.btnepilogue.Click += new System.EventHandler(this.btnepilogue_Click);
-            // 
             // StartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,7 +89,6 @@
             this.BackgroundImage = global::codeCulminating.Properties.Resources.StartMenuSketch_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1424, 861);
-            this.Controls.Add(this.btnepilogue);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnStart);
@@ -120,6 +108,5 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnepilogue;
     }
 }

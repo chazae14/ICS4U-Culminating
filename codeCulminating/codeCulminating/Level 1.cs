@@ -24,7 +24,7 @@ namespace codeCulminating
         }
 
         int tileSize = 50;
-        public static int compCount = 0;
+        public static int compCount = 0; // public counter to count all completed minigames to provide proper interactions
         frmGraphics frmG = new frmGraphics();
         Bitmap backbuffer;
         Bitmap minibuffer;
@@ -81,7 +81,7 @@ namespace codeCulminating
         int moves;
         int smallMove = 17;
         int direction;
-        int clicksCount = 0;
+        int clicksCount = 0; // counter for dialogue interactions
         int objectiveCount = 0;
 
         int[,] map = new int[29, 16];
@@ -166,7 +166,7 @@ namespace codeCulminating
                 }
 
 
-                if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk) // walk when on the right tiles (no bedside or bottom of bed
+                if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk) // walk when on the right tiles (no bedside or bottom of bed)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -191,7 +191,7 @@ namespace codeCulminating
                     phoneRing.SoundLocation = "Lv1_Eerie_House.wav";
                     phoneRing.Play();
                 }
-                else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E && checkTexts == true)
+                else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E && checkTexts == true) // near bedside after phone has been checked
                 {
                     picGirlInteract.Show();
                     lblTextBox.Show();
@@ -228,7 +228,7 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      I don't see the paper here... but i guess i can get changed.";
+                    lblTextBox.Text = "\n \n \n      I guess i can get changed.";
                     clicksCount += 9;
                 }
 
@@ -295,7 +295,7 @@ namespace codeCulminating
                 lblTextBox.Text = "\n \n \n      I'm all set! Let's go!";
                 clicksCount+=14;
             }
-            else if (clicksCount == 7 && (compCount == 2 || compCount == 1)) // when only one of the activities is completed
+            else if (clicksCount == 7 && (compCount == 2 || compCount == 1)) // when only one of the activities completed
             {
                 lblTextBox.Text = "\n \n \n      I still have one last thing to do. Should I stay?";
                 lblYes.Show();
@@ -390,7 +390,7 @@ namespace codeCulminating
             }
 
         }
-
+        // for the text message chain
         private void textMsgs_Click(object sender, EventArgs e)
         {
             clicksCount++;
@@ -447,7 +447,7 @@ namespace codeCulminating
                 picPhoneOn.Visible = false;
             }
         }
-
+        // for when they try to exit (yes they wanna)
         private void lblYes_Click(object sender, EventArgs e)
         {
             clicksCount = 0;
@@ -459,7 +459,7 @@ namespace codeCulminating
             lblTextBox.Text = "";
             this.Close();
         }
-
+        // no they dont want to exit
         private void lblNo_Click(object sender, EventArgs e)
         {
             clicksCount = 0;
@@ -529,6 +529,7 @@ namespace codeCulminating
             Graphics G;
             G = this.CreateGraphics();
 
+            // hiding all form pictures
             lblTextBox.Hide();
             picGirlInteract.Hide();
             lblTransparent.Hide();

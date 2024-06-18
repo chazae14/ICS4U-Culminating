@@ -61,7 +61,6 @@
             this.bnLevelTwoSelect.Size = new System.Drawing.Size(398, 287);
             this.bnLevelTwoSelect.TabIndex = 1;
             this.bnLevelTwoSelect.UseVisualStyleBackColor = false;
-            this.bnLevelTwoSelect.Visible = false;
             this.bnLevelTwoSelect.Click += new System.EventHandler(this.bnLevelTwoSelect_Click);
             // 
             // frmLevelSelect
@@ -74,7 +73,6 @@
             this.Controls.Add(this.btnLevelOne);
             this.Name = "frmLevelSelect";
             this.Text = "LevelSelect";
-            this.Load += new System.EventHandler(this.frmLevelSelect_Load);
             this.ResumeLayout(false);
 
         }

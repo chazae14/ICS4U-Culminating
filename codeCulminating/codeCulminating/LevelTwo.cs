@@ -25,10 +25,10 @@ namespace codeCulminating
         int moves;
         int smallMove = 17;
         int direction;
-        int clicksCount = 0;
+        int clicksCount = 0; // dialogue interactions counter
         int[,] map = new int[29, 16];
 
-        public static int completedCount = 0;
+        public static int completedCount = 0; // count if the minigame is completed
 
         int tileSize = 50;
         frmGraphics frmG = new frmGraphics();
@@ -149,7 +149,8 @@ namespace codeCulminating
                 {
                     walk = true;
                 }
-
+                /// INteractionw
+                // interaction with cafe counter
                 if (curX > 10 * tileSize && curX < 14 * tileSize && curY > 10 * tileSize && curY < 12 * tileSize && e.KeyCode == Keys.E)
                 {
                     picGirlInteract.Show();
@@ -167,7 +168,7 @@ namespace codeCulminating
                     lblTextBox.Text = "\n \n \n     My friend is taking a while. I think i'll just order something.";
                     clicksCount++;
                 }
-
+                // to show up when barista interaction is over
                 if (completedCount == 1)
                 {
                     picGirlInteract.Show();
@@ -178,13 +179,18 @@ namespace codeCulminating
                     completedCount++;
 
                 }
-
-                if (completedCount == 2 && curX > 16 * tileSize && curX < 18 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize)
+                // gets moved to epilogue when on certain tile whne minigame completed
+                if (completedCount == 2 && curX > 16 * tileSize && curX < 18 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize && frmLevelOne.compCount < 3) // when level one was not done
                 {
                     Epilogue inGamescreen = new Epilogue();
                     inGamescreen.Show();
 
                     this.Close();
+                }
+                else if (completedCount == 2 && curX > 16 * tileSize && curX < 18 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize && frmLevelOne.compCount == 3) // when level one was done
+                {
+                    GoodEnding inGamescreen = new GoodEnding();
+                    inGamescreen.Show();
                 }
             }
         }
@@ -192,6 +198,7 @@ namespace codeCulminating
         private void lblTransparent_Click(object sender, EventArgs e)
         {
             clicksCount++;
+            // interaction with cafe counter/barista
             if (clicksCount == 2)
             {
                 picBarista.Show();
@@ -221,6 +228,7 @@ namespace codeCulminating
                 picBarista.Hide();
                 lblTextBox.Text = "";
             }
+            // when game is completed
             else if (clicksCount == 9)
             {
                 lblTextBox.Text = "\n\n\n     My friend is just outside. Let's go meet her.";

@@ -70,9 +70,9 @@ namespace codeCulminating
         int moves;                             
         int smallMove = 17;
         int direction;
-        int clicksCount = 0;
+        int clicksCount = 0; // counter for dialogue interactions
 
-        int[,] map = new int[29, 16];
+        int[,] map = new int[29, 16]; // array for tiles 
         SoundPlayer lvl1Music = new SoundPlayer();
 
         enum dir
@@ -250,7 +250,7 @@ namespace codeCulminating
             {
                 lblTextBox.Text = "\n \n \n      My photo album? But I don't remember taking these photos... \n     Let me try to remember.";
             }
-            else if (clicksCount == 13)
+            else if (clicksCount == 13) // sends you to the form select
             {
                 frmLevelSelect inGamescreen = new frmLevelSelect();
 
@@ -284,11 +284,6 @@ namespace codeCulminating
                 lblTransparent.Hide();
                 clicksCount = 0;
             }
-        }
-
-        private void timerIn_Tick_1(object sender, EventArgs e)
-        {
-            
         }
 
         private void lblTextBox_Click(object sender, EventArgs e)

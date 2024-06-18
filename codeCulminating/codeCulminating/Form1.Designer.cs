@@ -44,7 +44,6 @@
             // 
             // timerIn
             // 
-            this.timerIn.Tick += new System.EventHandler(this.timerIn_Tick_1);
             // 
             // lblTextBox
             // 

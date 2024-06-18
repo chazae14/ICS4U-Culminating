@@ -19,7 +19,6 @@ namespace codeCulminating
             InitializeComponent();
         }
         int tileSize = 50;
-        public static int compCount = 0;
         frmGraphics frmG = new frmGraphics();
         Bitmap backbuffer;
         Bitmap minibuffer;
@@ -159,14 +158,14 @@ namespace codeCulminating
                         walk = false;
                     }
                 }
-                else if (e.KeyCode == Keys.Escape)
+                else if (e.KeyCode == Keys.Escape) // escape menu
                 {
                     frmPause frmPause = new frmPause();
                     frmPause.Show();
                 }
 
 
-                if ((destTile != 0 && destTile != 8 && destTile != 20 && destTile != 21 && destTile != 23) && walk) // walk when on the right tiles (no bedside or bottom of bed
+                if ((destTile != 0 && destTile != 8 && destTile != 20 && destTile != 21 && destTile != 23) && walk) // walk when on the right tiles (no bedside or bottom of bed)
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -176,7 +175,7 @@ namespace codeCulminating
                     walk = true;
                 }
 
-                if (curX > 8 * tileSize && curX < 10 * tileSize && curY > 9 * tileSize && curY < 11 * tileSize && e.KeyCode == Keys.E)
+                if (curX > 8 * tileSize && curX < 10 * tileSize && curY > 9 * tileSize && curY < 11 * tileSize && e.KeyCode == Keys.E) // interacting with dead friend
                 {
                     picFriend.Show();
                     picGirlInteract.Show();
@@ -306,7 +305,7 @@ namespace codeCulminating
             Graphics gback = Graphics.FromImage(backbuffer);
             Graphics gmini = Graphics.FromImage(minibuffer);
 
-            /// LEVEL 1 MAP!!!
+            /// epilogue map
             // blacking out the background 
             for (int x = 0; x < 29; x++)
             {
@@ -624,7 +623,7 @@ namespace codeCulminating
             /// friend sprite 
             rectDest = new Rectangle(9 * tileSize, 10 * tileSize, tileSize, tileSize);
             gback.DrawImage(bmpFriendSprite, rectDest, rect0, GraphicsUnit.Pixel);
-            map[(9), (10)] = 8;
+            map[9, 10] = 8;
 
             // rectDest to start out sprite on her bed
             rectDest = new Rectangle(18 * tileSize, 13 * tileSize, tileSize, tileSize);

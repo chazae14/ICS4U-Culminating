@@ -45,7 +45,7 @@ namespace codeCulminating
 
         private void btnepilogue_Click(object sender, EventArgs e)
         {
-            Epilogue inGamescreen = new Epilogue();
+            GoodEnding inGamescreen = new GoodEnding();
             inGamescreen.Show();
         }
 
