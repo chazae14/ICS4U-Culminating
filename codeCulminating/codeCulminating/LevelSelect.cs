@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Media;
 using static System.Net.WebRequestMethods;
+using System.ComponentModel.Design;
 
 namespace codeCulminating
 {
@@ -36,6 +37,14 @@ namespace codeCulminating
             inGamescreen.Show();
 
             this.Close();
+        }
+
+        private void frmLevelSelect_Load(object sender, EventArgs e)
+        {
+            if (frmLevelOne.levelComplete == 1)
+            {
+                bnLevelTwoSelect.Show();
+            }
         }
     }
 }

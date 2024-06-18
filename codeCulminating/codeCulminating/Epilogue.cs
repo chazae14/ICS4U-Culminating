@@ -190,31 +190,31 @@ namespace codeCulminating
             clicksCount++;
             if (clicksCount == 1)
             {
-                lblTextBox.Text = "\n\n\n     What? Is this a dream? Why are you here?";
+                lblTextBox.Text = "\n\n\n     What is this? A dream? Why are you here?";
             }
             else if (clicksCount == 2)
             {
-                lblTextBox.Text = "  Friend: \n\n\n     If you just waited in the cafe for me, i would not have gotten run over.";
+                lblTextBox.Text = "  Friend: \n\n\n     If you had just waited in the cafe for me, I wouldn't have \n     gotten run over.";
 
             }
             else if (clicksCount == 3)
             {
-                lblTextBox.Text = "\n\n\n     What are you talking about?! You stopped in the middle of the road?!";
+                lblTextBox.Text = "\n\n\n     What are you talking about?! You're the one who stopped in the       middle of the road!";
 
             }
             else if (clicksCount == 4)
             {
-                lblTextBox.Text = " Friend: \n\n\n     To wave at you! You! You! If you stayed in the cafe, i would not of had to cross and wave.";
+                lblTextBox.Text = " Friend: \n\n\n     I stopped to wave at YOU! If you had stayed in the cafe, I \n     wouldn't have gotten distracted and hit by the car.";
 
             }
             else if (clicksCount == 5)
             {
-                lblTextBox.Text = "\n\n\n     This does not make any sense! Leave me alone!";
+                lblTextBox.Text = "\n\n\n     None of this makes sense! Leave me alone!!";
 
             }
             else if (clicksCount == 6)
             {
-                lblTextBox.Text = " Friend: \n\n\n     NO. I will stay by your side forever now.";
+                lblTextBox.Text = " Friend: \n\n\n     Never. You've bound me here, and now you're cursed to stay with      me forever. \n \n     Forever.";
 
             }
             else if (clicksCount == 7)

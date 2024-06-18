@@ -45,7 +45,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -245,22 +244,11 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "  ";
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(199, 267);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(56, 22);
-            this.button10.TabIndex = 18;
-            this.button10.Text = "win";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // MemoryGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(272, 294);
-            this.Controls.Add(this.button10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -307,6 +295,5 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button10;
     }
 }

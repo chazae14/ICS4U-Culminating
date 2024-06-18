@@ -67,9 +67,6 @@ namespace codeCulminating
             Opacity -= 0.1;
         }
 
-        private void volumeBar_Scroll(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -25,6 +25,7 @@ namespace codeCulminating
 
         int tileSize = 50;
         public static int compCount = 0; // public counter to count all completed minigames to provide proper interactions
+        public static int levelComplete = 0; // public counter to list whether the level is done
         frmGraphics frmG = new frmGraphics();
         Bitmap backbuffer;
         Bitmap minibuffer;
@@ -297,9 +298,10 @@ namespace codeCulminating
             }
             else if (clicksCount == 7 && (compCount == 2 || compCount == 1)) // when only one of the activities completed
             {
-                lblTextBox.Text = "\n \n \n      I still have one last thing to do. Should I stay?";
+                lblTextBox.Text = "\n \n \n      I still have one last thing to do... Should I go?";
                 lblYes.Show();
                 lblNo.Show();
+                levelComplete++;
             }
             else if (clicksCount == 22)
             {
@@ -307,7 +309,8 @@ namespace codeCulminating
                 lblTextBox.Hide();
                 picGirlInteract.Hide();
                 lblTransparent.Hide();
-                lblTextBox.Text = ""; 
+                lblTextBox.Text = "";
+                levelComplete++;
                 this.Close();
             }
             else if (clicksCount == 8)
@@ -457,6 +460,7 @@ namespace codeCulminating
             lblYes.Hide();
             lblNo.Hide();
             lblTextBox.Text = "";
+            
             this.Close();
         }
         // no they dont want to exit
