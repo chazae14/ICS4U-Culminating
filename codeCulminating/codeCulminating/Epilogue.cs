@@ -1,28 +1,23 @@
-﻿// 2024/05/28
-// Level one mapping and interactions
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Media;
-using static System.Net.WebRequestMethods;
 
 namespace codeCulminating
 {
-    public partial class frmLevelOne : Form
+    public partial class Epilogue : Form
     {
-        public frmLevelOne()
+        public Epilogue()
         {
             InitializeComponent();
         }
-
         int tileSize = 50;
         public static int compCount = 0;
         frmGraphics frmG = new frmGraphics();
@@ -71,10 +66,8 @@ namespace codeCulminating
         Bitmap bmpTopDresser;
         Bitmap bmpMiddleDresser;
         Bitmap bmpBottomDresser;
-
-        bool checkTexts;
-        SoundPlayer phoneRing = new SoundPlayer();
-        PictureBox[] textMsgs;
+        Bitmap bmpCatClock;
+        Bitmap bmpFriendSprite;
 
         Rectangle rectSource, rect0, rectDest;
         int curX, curY;
@@ -94,7 +87,14 @@ namespace codeCulminating
             up
         }
 
-        private void Level_1_KeyDown(object sender, KeyEventArgs e)
+        private void Epilogue_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.DrawImage(backbuffer, 0, 0, backbuffer.Width, backbuffer.Height);
+        }
+
+
+        private void Epilogue_KeyDown(object sender, KeyEventArgs e)
         {
             if (tmrMove.Enabled == false)
             {
@@ -166,7 +166,7 @@ namespace codeCulminating
                 }
 
 
-                if ((destTile != 0 && destTile != 20 && destTile != 21 && destTile != 23) && walk) // walk when on the right tiles (no bedside or bottom of bed
+                if ((destTile != 0 && destTile != 8 && destTile != 20 && destTile != 21 && destTile != 23) && walk) // walk when on the right tiles (no bedside or bottom of bed
                 {
                     moves = 0;
                     tmrMove.Enabled = true;
@@ -176,303 +176,28 @@ namespace codeCulminating
                     walk = true;
                 }
 
-                /// ITEM INTERACTIONS
-                // when near bedside table and e is clicked
-                if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E && checkTexts == false)
+                if (curX > 8 * tileSize && curX < 10 * tileSize && curY > 9 * tileSize && curY < 11 * tileSize && e.KeyCode == Keys.E)
                 {
-                    clicksCount += 13;
-                    tmrRing.Stop();
-                    phoneRing.Stop();
-                    picPhone.Hide();
-                    picPhoneOn.Hide(); 
-                    lblTransparent.Show();
-                    picLockscreen.Show();
-                    checkTexts = true;
-                    phoneRing.SoundLocation = "Lv1_Eerie_House.wav";
-                    phoneRing.Play();
-                }
-                else if (curX > 14 * tileSize && curX < 17 * tileSize && curY > 5 * tileSize && curY < 8 * tileSize && e.KeyCode == Keys.E && checkTexts == true)
-                {
+                    picFriend.Show();
                     picGirlInteract.Show();
                     lblTextBox.Show();
-                    lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      I'm not quite ready to leave yet.";
-                    clicksCount++;
-
-                }
-                // desk interaction
-                if (curX >= 7 * tileSize && curX <= 10 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize && e.KeyCode == Keys.E)
-                {
-                    picGirlInteract.Show();
-                    lblTextBox.Show();
-                    lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      I should grab my money from my desk.";
-                    clicksCount += 2;
-
-                }
-
-                // when on exit tiles and e is clicked
-                else if (curX > 16 * tileSize && curX < 20 * tileSize && curY > 12 * tileSize && curY < 15 * tileSize && e.KeyCode == Keys.E)
-                {
-                    picGirlInteract.Show();
-                    lblTextBox.Show();
-                    lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      Hmmm. Should I leave yet? I need to make sure i have \n      everything I need.";
-                    clicksCount += 6;
-                }
-                
-           
-                // dresser interaction
-                else if (curX > 6 * tileSize && curX < 8 * tileSize && curY > 6 * tileSize && curY < 10 * tileSize && e.KeyCode == Keys.E)
-                {
-                    picGirlInteract.Show();
-                    lblTextBox.Show();
-                    lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      I don't see the paper here... but i guess i can get changed.";
-                    clicksCount += 9;
-                }
-
-                // trash can interaction
-                else if (curX > 5 * tileSize && curX < 7 * tileSize && curY > 4 * tileSize && curY < 7 * tileSize && e.KeyCode == Keys.E)
-                {
-                    LockCode inGamescreen = new LockCode();
-                    inGamescreen.Show();
-                }
-
-
-                /// checkmarks for when level is completed
-                if (compCount == 2 || compCount == 3)
-                {
-                    picCheckCombination.Show();
-                }
-                else if (compCount == 1 || compCount == 3)
-                {
-                    picCompletedSliding.Show();
+                    lblTextBox.Text = "\n  Friend: \n\n\n       It's all your fault.";
                 }
             }
         }
 
         private void lblTransparent_Click(object sender, EventArgs e)
         {
-            clicksCount++;
-
-            // interaction with bedside table
-            if (clicksCount == 2)
+            clicksCount++; 
+            if (clicksCount == 1)
             {
-                clicksCount = 0;
-
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                lblTextBox.Text = "";
+                lblTextBox.Text = "\n\n\n     What? Is this a dream? Why are you here?";
             }
-
-            // interaction with desk
-            else if (clicksCount == 3)
-            {
-                lblTextBox.Text = "\n \n \n      Oh shoot, I locked my drawer and my wallet is in there. \n       I forgot my passcode too!";
-            }
-            else if (clicksCount == 4)
-            {
-                lblTextBox.Text = "\n \n \n      That's alright. I'm sure thast I wrote it down on a piece of       paper somewhere...";
-            }
-            else if (clicksCount == 5)
-            {
-                CombinationLock inGamescreen = new CombinationLock();
-                inGamescreen.Show();
-
-                clicksCount = 0;
-
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                lblTextBox.Text = "";
-            }
-
-            // interaction with exit tiles if not all objectives are completed
-            else if (clicksCount == 7 && compCount == 3)
-            {
-                lblTextBox.Text = "\n \n \n      I'm all set! Let's go!";
-                clicksCount+=14;
-            }
-            else if (clicksCount == 7 && (compCount == 2 || compCount == 1)) // when only one of the activities is completed
-            {
-                lblTextBox.Text = "\n \n \n      I still have one last thing to do. Should I stay?";
-                lblYes.Show();
-                lblNo.Show();
-            }
-            else if (clicksCount == 22)
-            {
-                clicksCount = 0;
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                lblTextBox.Text = ""; 
-                this.Close();
-            }
-            else if (clicksCount == 8)
-            {
-                clicksCount = 0;
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                lblTextBox.Text = "";
-            }
-
-            else if (clicksCount == 9)
-            {
-                lblTextBox.Text = "\n \n \n      I don't see the paper here... I should check somewhere else.";
-            }
-            // interaction with dresser
-            else if (clicksCount == 10)
-            {
-                SlidingPuzzle inGamescreen = new SlidingPuzzle();
-                inGamescreen.Show();
-                
-                clicksCount = 0;
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                lblTextBox.Text = "";
-            }
-
-            // interaction with texts chain
-            else if (clicksCount == 13)
-            {
-                picLockscreen.Show();
-            }
-            else if (clicksCount == 14)
-            {
-                picLockscreen.Hide();
-                picText1.Show();
-            }
-            else if (clicksCount == 15)
-            {
-                picText1.Hide();
-                picText2.Show();
-            }
-            else if (clicksCount == 16)
-            {
-                picText2.Hide();
-                picText3.Show();
-            }
-            else if (clicksCount == 17)
-            {
-                picText3.Hide();
-                picText4.Show();
-            }
-            else if (clicksCount == 18)
-            {
-                picText4.Hide();
-                picText5.Show();
-            }
-            else if (clicksCount == 19)
-            {
-                picText5.Hide();
-            }
-            else if (clicksCount == 20)
-            {
-                lblTextBox.Show();
-                picGirlInteract.Show();
-                lblTextBox.Text = "\n \n \n      I'll head over to the cafe once I'm ready.";
-                picObjectives.Show();
-                lblObjectives.Show();
-                
-            }
-            else if (clicksCount == 21)
-            {
-                clicksCount = 0;
-                lblTextBox.Hide();
-                picGirlInteract.Hide();
-                lblTransparent.Hide();
-                lblTextBox.Text = "";
-                
-            }
-
-        }
-
-        private void textMsgs_Click(object sender, EventArgs e)
-        {
-            clicksCount++;
-            if (clicksCount == 13)
-            {
-                picLockscreen.Show();
-            }
-            else if (clicksCount == 14)
-            {
-                picLockscreen.Hide();
-                picText1.Show();
-            }
-            else if (clicksCount == 15)
-            {
-                picText1.Hide();
-                picText2.Show();
-            }
-            else if (clicksCount == 16)
-            {
-                picText2.Hide();
-                picText3.Show();
-            }
-            else if (clicksCount == 17)
-            {
-                picText3.Hide();
-                picText4.Show();
-            }
-            else if (clicksCount == 18)
-            {
-                picText4.Hide();
-                picText5.Show();
-            }
-            else if (clicksCount == 19)
-            {
-                picText5.Hide();
-            }
-            else if (clicksCount == 20)
-            {
-                lblTextBox.Show();
-                picGirlInteract.Show();
-                lblTextBox.Text = "\n \n \n      I should go meet her outside after I'm ready.";
-            }
-        }
-
-        // for the phone ringing
-        private void tmrRing_Tick(object sender, EventArgs e)
-        {
-            if (picPhoneOn.Visible == false)
-            {
-                picPhoneOn.Visible = true;
-            }
-            else if (picPhoneOn.Visible == true)
-            {
-                picPhoneOn.Visible = false;
-            }
-        }
-
-        private void lblYes_Click(object sender, EventArgs e)
-        {
-            clicksCount = 0;
-            lblTextBox.Hide();
-            picGirlInteract.Hide();
-            lblTransparent.Hide();
-            lblYes.Hide();
-            lblNo.Hide();
-            lblTextBox.Text = "";
-            this.Close();
-        }
-
-        private void lblNo_Click(object sender, EventArgs e)
-        {
-            clicksCount = 0;
-            lblTextBox.Hide();
-            picGirlInteract.Hide();
-            lblYes.Hide();
-            lblNo.Hide();
-            lblTransparent.Hide();
-            lblTextBox.Text = "";
         }
 
         private void tmrMove_Tick(object sender, EventArgs e)
         {
+
             Graphics gback = Graphics.FromImage(backbuffer);
             Graphics gmini = Graphics.FromImage(minibuffer);
 
@@ -515,41 +240,15 @@ namespace codeCulminating
             }
         }
 
-        
-        private void Level_1_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            g.DrawImage(backbuffer, 0, 0, backbuffer.Width, backbuffer.Height);
-        }
 
-        private void Level_1_Load(object sender, EventArgs e)
+        private void Epilogue_Load(object sender, EventArgs e)
         {
-            //audPlayerLvl1.uiMode = "none";
-            //audPlayerLvl1.Hide();
             Graphics G;
             G = this.CreateGraphics();
 
             lblTextBox.Hide();
             picGirlInteract.Hide();
-            lblTransparent.Hide();
-            picObjectives.Hide();
-            lblObjectives.Hide();
-            picCheckCombination.Hide();
-            picCompletedSliding.Hide();
-            lblNo.Hide();
-            lblYes.Hide();
-
-            // phone starts ringing
-            phoneRing.SoundLocation = "phoneVibrate.wav";
-            tmrRing.Start();
-            phoneRing.Play();
-
-            // sets up eventhandler for clicking texts
-            textMsgs = new PictureBox[] { picLockscreen, picText1, picText2, picText3, picText4, picText5 };
-            for (int i = 0; i < textMsgs.Length; i++)
-            {
-                textMsgs[i].Click += new EventHandler(textMsgs_Click);
-            }
+            picFriend.Hide();
 
             // loading the backbuffer and the mini buffer to preserve the background behind the sprite
             backbuffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
@@ -599,6 +298,8 @@ namespace codeCulminating
             bmpTopDresser = new Bitmap(frmG.picTopDresser.Image, tileSize, tileSize);
             bmpMiddleDresser = new Bitmap(frmG.picMiddleDresser.Image, tileSize, tileSize);
             bmpBottomDresser = new Bitmap(frmG.picBottomDresser.Image, tileSize, tileSize);
+            bmpCatClock = new Bitmap(frmG.picWallClock.Image, tileSize, tileSize);
+            bmpFriendSprite = new Bitmap(frmG.picFriendSprite.Image, tileSize, tileSize);
 
             rect0 = new Rectangle(0, 0, tileSize, tileSize);
 
@@ -909,19 +610,33 @@ namespace codeCulminating
             gback.DrawImage(bmpBottomDresser, rectDest, rect0, GraphicsUnit.Pixel);
             map[(6), (9)] = 43;
 
-            // rectDest to start out sprite on her bed
-            rectDest = new Rectangle(19 * tileSize, 6 * tileSize, tileSize, tileSize);
-            rectSource = new Rectangle(19 * tileSize, 6 * tileSize, tileSize, tileSize);     
+            /// wall details
+            // poster 
+            rectDest = new Rectangle(17 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpWallDetail, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(17), (4)] = 6;
 
-            
-            
+            // cat clock
+            rectDest = new Rectangle(9 * tileSize, 4 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpCatClock, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(9), (4)] = 7;
+
+            /// friend sprite 
+            rectDest = new Rectangle(9 * tileSize, 10 * tileSize, tileSize, tileSize);
+            gback.DrawImage(bmpFriendSprite, rectDest, rect0, GraphicsUnit.Pixel);
+            map[(9), (10)] = 8;
+
+            // rectDest to start out sprite on her bed
+            rectDest = new Rectangle(18 * tileSize, 13 * tileSize, tileSize, tileSize);
+            rectSource = new Rectangle(18 * tileSize, 13 * tileSize, tileSize, tileSize);
+
             // drawing out our girl on her bed
             gmini.DrawImage(backbuffer, rect0, rectDest, GraphicsUnit.Pixel);
             gback.DrawImage(bmpGirl, rectDest, rect0, GraphicsUnit.Pixel);
 
             // girl's current position
-            curX = 19 * tileSize;
-            curY = 6 * tileSize;
+            curX = 18 * tileSize;
+            curY = 13 * tileSize;
             gback.Dispose();
             gmini.Dispose();
 
@@ -947,8 +662,6 @@ namespace codeCulminating
             }
 
         }
-
-
     }
+    
 }
-
