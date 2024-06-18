@@ -164,7 +164,7 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n     My friend is taking a while. I think i'll just order something.";
+                    lblTextBox.Text = "\n \n \n     I should find her here.";
                     clicksCount++;
                 }
 
