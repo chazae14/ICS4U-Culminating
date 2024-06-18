@@ -183,11 +183,6 @@ namespace codeCulminating
                 if (completedCount == 2 && curX > 16 * tileSize && curX < 18 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize && frmLevelOne.compCount < 3) // when level one was not done
                 {
                     picBlackScreen.Show();
-                    /*System.Threading.Thread.Sleep(2000);
-                    picFriendWaving.Show();
-                    picCar5.Show();
-                    System.Threading.Thread.Sleep(2000);*/
-
 
                     Epilogue inGamescreen = new Epilogue();
                     inGamescreen.Show();
@@ -197,12 +192,6 @@ namespace codeCulminating
                 else if (completedCount == 2 && curX > 16 * tileSize && curX < 18 * tileSize && curY > 5 * tileSize && curY < 7 * tileSize && frmLevelOne.compCount == 3) // when level one was done
                 {
                     picBlackScreen.Show();
-                    System.Threading.Thread.Sleep(2000);
-                    picFriendWaving.Show();
-                    picCar5.Show();
-                    System.Threading.Thread.Sleep(2000);
-
-
                     GoodEnding inGamescreen = new GoodEnding();
                     inGamescreen.Show();
                 }
