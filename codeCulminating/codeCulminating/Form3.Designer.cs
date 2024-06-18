@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPause));
             this.btnResume = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.timerPause = new System.Windows.Forms.Timer(this.components);
-            this.volumeBar = new System.Windows.Forms.TrackBar();
-            this.picVolume = new System.Windows.Forms.PictureBox();
             this.timerClose = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.volumeBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVolume)).BeginInit();
+            this.picSprite = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picSprite)).BeginInit();
             this.SuspendLayout();
             // 
             // btnResume
@@ -76,31 +75,20 @@
             this.timerPause.Interval = 10;
             this.timerPause.Tick += new System.EventHandler(this.timerPause_Tick);
             // 
-            // volumeBar
-            // 
-            this.volumeBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(185)))), ((int)(((byte)(85)))));
-            this.volumeBar.Location = new System.Drawing.Point(535, 659);
-            this.volumeBar.Name = "volumeBar";
-            this.volumeBar.Size = new System.Drawing.Size(349, 45);
-            this.volumeBar.TabIndex = 2;
-            this.volumeBar.Value = 5;
-            this.volumeBar.Scroll += new System.EventHandler(this.volumeBar_Scroll);
-            // 
-            // picVolume
-            // 
-            this.picVolume.BackColor = System.Drawing.Color.Transparent;
-            this.picVolume.Image = global::codeCulminating.Properties.Resources.Pause_menu;
-            this.picVolume.Location = new System.Drawing.Point(523, 597);
-            this.picVolume.Name = "picVolume";
-            this.picVolume.Size = new System.Drawing.Size(178, 76);
-            this.picVolume.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picVolume.TabIndex = 3;
-            this.picVolume.TabStop = false;
-            // 
             // timerClose
             // 
             this.timerClose.Interval = 10;
             this.timerClose.Tick += new System.EventHandler(this.timerClose_Tick);
+            // 
+            // picSprite
+            // 
+            this.picSprite.BackColor = System.Drawing.Color.Transparent;
+            this.picSprite.Image = ((System.Drawing.Image)(resources.GetObject("picSprite.Image")));
+            this.picSprite.Location = new System.Drawing.Point(685, 635);
+            this.picSprite.Name = "picSprite";
+            this.picSprite.Size = new System.Drawing.Size(50, 50);
+            this.picSprite.TabIndex = 2;
+            this.picSprite.TabStop = false;
             // 
             // frmPause
             // 
@@ -110,20 +98,17 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnResume;
             this.ClientSize = new System.Drawing.Size(1440, 900);
-            this.Controls.Add(this.volumeBar);
+            this.Controls.Add(this.picSprite);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnResume);
-            this.Controls.Add(this.picVolume);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPause";
             this.Opacity = 0D;
             this.Text = "PauseMenu";
             this.Load += new System.EventHandler(this.frmPause_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.volumeBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSprite)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -132,8 +117,7 @@
         private System.Windows.Forms.Button btnResume;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Timer timerPause;
-        private System.Windows.Forms.TrackBar volumeBar;
-        private System.Windows.Forms.PictureBox picVolume;
         private System.Windows.Forms.Timer timerClose;
+        private System.Windows.Forms.PictureBox picSprite;
     }
 }
