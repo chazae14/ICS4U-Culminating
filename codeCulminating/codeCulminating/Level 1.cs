@@ -21,11 +21,8 @@ namespace codeCulminating
         public frmLevelOne()
         {
             InitializeComponent();
-            //audPlayerLvl1.URL = "Lv1_Eerie_House.mp3";
-            
         }
-        
-        
+
         int tileSize = 50;
         public static int compCount = 0;
         frmGraphics frmG = new frmGraphics();
@@ -187,6 +184,7 @@ namespace codeCulminating
                     tmrRing.Stop();
                     phoneRing.Stop();
                     picPhone.Hide();
+                    picPhoneOn.Hide(); 
                     lblTransparent.Show();
                     picLockscreen.Show();
                     checkTexts = true;
@@ -219,7 +217,7 @@ namespace codeCulminating
                     picGirlInteract.Show();
                     lblTextBox.Show();
                     lblTransparent.Show();
-                    lblTextBox.Text = "\n \n \n      Hmmm. Should I leave yet? I need to make sure i have everything \n      I need.";
+                    lblTextBox.Text = "\n \n \n      Hmmm. Should I leave yet? I need to make sure i have \n      everything I need.";
                     clicksCount += 6;
                 }
                 
@@ -243,11 +241,11 @@ namespace codeCulminating
 
 
                 /// checkmarks for when level is completed
-                if (compCount == 2)
+                if (compCount == 2 || compCount == 3)
                 {
                     picCheckCombination.Show();
                 }
-                else if (compCount == 1)
+                else if (compCount == 1 || compCount == 3)
                 {
                     picCompletedSliding.Show();
                 }
@@ -295,20 +293,22 @@ namespace codeCulminating
             else if (clicksCount == 7 && compCount == 3)
             {
                 lblTextBox.Text = "\n \n \n      I'm all set! Let's go!";
-                clicksCount = 0;
-                this.Close();
+                clicksCount+=14;
             }
-            else if (clicksCount == 7 && (compCount == 2 || compCount == 1))
+            else if (clicksCount == 7 && (compCount == 2 || compCount == 1)) // when only one of the activities is completed
             {
                 lblTextBox.Text = "\n \n \n      I still have one last thing to do. Should I stay?";
                 lblYes.Show();
                 lblNo.Show();
             }
-            else if (clicksCount == 7 && (compCount == 2 || compCount == 1))
+            else if (clicksCount == 22)
             {
-                lblTextBox.Text = "\n \n \n      I still have to get ready! Should I stay?";
-                lblYes.Show();
-                lblNo.Show();
+                clicksCount = 0;
+                lblTextBox.Hide();
+                picGirlInteract.Hide();
+                lblTransparent.Hide();
+                lblTextBox.Text = ""; 
+                this.Close();
             }
             else if (clicksCount == 8)
             {
